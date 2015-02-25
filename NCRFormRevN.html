@@ -1,8 +1,5 @@
-<!--<link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/SPScreenInt.css' type='text/css'>
-<link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/NCRForm.css' type='text/css'>   -->
-<link rel="stylesheet" title="main" href="css/SPScreenExt.css" type="text/css">
-<link rel="stylesheet" title="main" href="css/NCRForm.css" type="text/css">
-
+<link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/SPScreenInt.css' type='text/css'>
+<link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/NCRForm.css' type='text/css'>
 
 
 <style>
@@ -313,24 +310,13 @@ ul.tabbernav li.tabberactive a {
 									<label for="txtDescriptionNCR">Decription of Non-Conformance:</label>
 								</div>
 								<div class="leftField">
-										<textarea id="txtDescriptionNCR"  class="textarea" alt="Decription of Non-Conformance" rows="5" cols="20" title="Decription of Non-Conformance" onKeyDown="expandTextArea(this);" onKeyUp="expandTextArea(this);"></textarea>
+									<div class="formField34">
+										<input id="txtDescriptionNCR" type="text" class="textfield" alt="Decription of Non-Conformance" title="Decription of Non-Conformance" />
+									</div>
 								</div>
 							</div>
 							<div class="clearBoth"></div>
-						
-
-
-							<div id="divContainment" class="fieldRow">
-								<div class="leftLabel labelWidth20">
-									<label for="txtContainment">Containment:</label>
-								</div>
-								<div class="leftField">
-									<textarea id="txtContainment" class="textarea initialDisNo" rows="5" cols="20" title="Containment" onKeyDown="expandTextArea(this);" onKeyUp="expandTextArea(this);"></textarea>
-								</div>
-							</div>
-							<div class="clearBoth"></div>
-						</div><!-- previous section end -->	
-
+						</div><!-- previous section end -->
 						<div class="sectionData">
 						<div class="sectionHeading">Information - Attachments & Links</div>
 							<div id="divInformation" class="fieldRow">
@@ -392,37 +378,6 @@ ul.tabbernav li.tabberactive a {
 							</div>
 
 						</div><!-- previous section end -->
-					<div style="display:none;"><!-- DIV contains all hidden and keyword fields Start-->
-						<input type="hidden" name="hlpExtReqApprovers" id="hlpExtReqApprovers" title="ER Approvers" alt="ER Approvers">
-						<input id="txtDefaultTab" name="txtDefaultTab" type="hidden" value="1" title="Selected Defualt Tab" >
-						<input name="mastercontrol.route.stepnumber" type="hidden" id="mastercontrol.route.stepnumber" title="Step Number" >
-						<input name="mastercontrol.route.stepid" type="hidden" id="mastercontrol.route.stepid" title="Step ID"/>
-						<input name="mastercontrol.form.title" type="hidden" id="mastercontrol.form.title" title="Form Title">
-						<input name="mastercontrol.form.creator" type="hidden" id="mastercontrol.form.creator" title="Creator Name">
-						<input name="mastercontrol.form.creatorname" type="hidden" id="mastercontrol.form.creatorname" title="Creator ID">
-						<select name="mastercontrol.route.stepstatus.step1" size="1" multiple="multiple" id="mastercontrol.route.stepstatus.step1" title="Step1 Statuses" style="display:none"></select>
-						<select name="mastercontrol.route.stepstatus.step2" size="1" multiple="multiple" id="mastercontrol.route.stepstatus.step2" title="Step2 Statuses" style="display:none"></select>
-						<select name="mastercontrol.route.stepstatus.step3" size="1" multiple="multiple" id="mastercontrol.route.stepstatus.step3" title="Step3 Statuses" style="display:none"></select>
-						<select id="mastercontrol.task.mapped.routes.ER"  name="mastercontrol.task.mapped.routes.ER" title="Available Routes for Extension Request" style="display:none"></select>
-						
-						<input name="txtSource" type="hidden" id="txtSource" title="Source"  alt="Source" maxlength="30" value="Supplier Deviation">
-						<input name="txtTaskType" type="hidden" id="txtTaskType" title="Task Type"  alt="Task Type" maxlength="30" value="SCAR">
-						<input name="txtSourceTitle" type="hidden" class="textfield readonly" id="txtSourceTitle" title="Source Title" alt="Source Title" maxlength="60">
-						<input name="mastercontrol.form.currentuser" type="hidden" id="mastercontrol.form.currentuser" title="Current User"/>
-						<select id="mastercontrol.links.Extension Request" multiple name="mastercontrol.links.Extension Request" title="Extension Request Reference" style="display:none"></select>
-						<input type="hidden" name="hlpParent" id="hlpParent" title="Parent"/>
-						<input name="txtDateCreated_date" type="hidden" id="txtDateCreated_date" title="Created Date"  alt="Created Date" />
-						<input name="txtNCRRNumber" type="hidden" id="txtNCRRNumber" title="NCR Number"  alt="NCR Number" />
-					<!--	<input name="IsSCARLaunched" type="hidden" id="IsSCARLaunched" title="Is SCAR Launched"/>  -->
-
-					   <select name="mastercontrol.role.SP_SDEV_ERApprovers" id="mastercontrol.role.SP_SDEV_ERApprovers" style="display:none;" title="Supplier Extension Approvers"></select>
-					   <select id="mastercontrol.links.source" multiple  size="1" name="mastercontrol.links.source" title="Source Reference" style="display:none"></select>
-						<input name="mastercontrol.form.created" type="text" class="textfield readonly" id="mastercontrol.form.created" title="Date Created" alt="Date Created" size="20" readonly />
-						<input type="text" name="txtReqCounter_num" id="txtReqCounter_num" class="textfield readonly" title="Extension Request Counter" 
-
-						<input type="hidden" name="txtAgentAnalyzerSource" id="txtAgentAnalyzerSource" title="Agent Analyzer Source"/>
-						
-					</div><!-- DIV contains all hidden and keyword fields End-->						
 					</div><!-- previouse page end -->
 				</div><!-- previous tabber end -->
 				<div id="divInitialDispositionTab" class="tabbertab" title="Initial Disposition"><!-- Initial Disposition tabbertab begin -->
@@ -944,19 +899,11 @@ ul.tabbernav li.tabberactive a {
 	</div><!-- container end -->
 </form><!-- form end -->
 
-<!--
 <script type='text/javascript' src='#mastercontrol.javascript(tabber.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(jquery-1.7.1.min.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(Calendar.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(StdLibrary.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(NCRForm.js)#'></script>
--->
-<script type="text/javascript" src="js/tabber.js"></script>
-<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-<script type="text/javascript" src="js/Calendar.js"></script>
-<script type="text/javascript" src="js/StdLibrary.js"></script>
-<script type="text/javascript" src="js/NCRForm.js"></script>
-
 
 <script language="javascript" type="text/javascript">
 var jQ = jQuery.noConflict();
