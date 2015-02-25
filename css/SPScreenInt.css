@@ -1,0 +1,787 @@
+/****************************************************
+               Signature Fields CSS
+****************************************************/
+.signatureData {
+    padding-top: 10px;
+    padding-left: 190px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.signatureTable {
+    border-width: 0;
+    border-top: 1px solid #000000;
+    border-right: 1px solid #000000;
+    width: 570px;
+}
+
+.signatureTable thead { height: 10px; }
+
+.signatureTable thead th {
+    font: 8pt Tahoma;
+    background-color: #EAEAEA;
+    padding-left: 5px;
+    border-left: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    text-align: left;
+}
+
+.signatureName { width: 40%; }
+.signatureDate { width: 30%; }
+.signatureStatus { width: 30%; }
+
+.signatureTable tbody td {
+    border-left: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    text-align: center;
+}
+
+.signatureField {
+    font: 9pt Helvetica;
+    color: #0000FF;
+    overflow: hidden;
+    border: 0;
+    width: 97%;
+    resize: none;
+}
+
+.sigmeaning {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+    border: 0 solid #CCCCCC;
+}
+
+.signaturefields {
+    font: 9pt Helvetica;
+    color: #0000FF;
+    overflow: hidden;
+    border: 0;
+    width: 97%;
+    resize: none;
+}
+
+.formButton115 {
+    font: 11px Arial;
+    width: 115px;
+}
+
+.formButton140 {
+    font: 11px Arial;
+    width: 140px;
+}
+
+.LButton {
+    font: 11px Arial;
+    width: 80px;
+}
+
+.sectionHeading {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #000000;
+    font-weight: bold;
+    margin-left: 0;
+    border-bottom: solid 2px #D9D9D9;
+    height: .2in;
+    padding-top: 5px;
+    padding-left: 10px;
+}
+
+.separator { height: 5px; }
+
+.reqdLabel {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size : 11px;
+	color: #FF0000;
+	text-align: right; vertical-align: middle; padding-right:5px;
+}
+
+.ProcessName {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+	font-weight: bold;
+    color: #2F4F4F;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.TopLabel {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #000000;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.TopLabelInfo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #000000;
+    font-weight: bold;
+    margin-left: 0;
+    border-bottom: solid 2px #D9D9D9;
+}
+
+.headerfield {
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #146;
+    border: 0 solid Black;
+}
+
+.userNameText {
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #666;
+    border: 0 solid Black;
+    background-image: url(../../../images/UI/mc_ui_top_grey2.jpg);
+    width: 88px;
+}
+
+.templateNumber {
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000000;
+    border: 0 solid Black;
+}
+
+.textfield {
+    border: 1px solid #A5C0dF;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 2px;
+    font-size: 11px;
+    color: #146;
+    margin-bottom: 1px;
+    width: 100%;
+}
+
+.textfield35 { width: 35%; }
+
+.headerTextfield {
+    border: 1px solid #A5C0dF;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 2px;
+    font-size: 11px;
+    color: #146;
+    margin-bottom: 1px;
+    width: 100%;
+}
+
+.longtextfield {
+    border: 1px solid #A5C0dF;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 2px;
+    font-size: 11px;
+    color: #146;
+    margin-bottom: 1.5px;
+    width: 99%;
+}
+
+.textfieldnowidth {
+    border: 1px solid #A5C0dF;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 2px;
+    font-size: 11px;
+    color: #146;
+    margin-bottom: 5px;
+}
+
+.textarea {
+    border: 1px solid #A5C0dF;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 2px;
+    font-size: 11px;
+    color: #146;
+    margin-bottom: 5px;
+    width: 99%;
+    overflow: hidden;
+    resize: none;
+}
+
+.shorttextarea {
+    border: 1px solid #A5C0dF;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 2px;
+    font-size: 11px;
+    color: #146;
+    margin-bottom: 1.5px;
+    width: 99%;
+    overflow: hidden;
+    height: 45px;
+    resize: none;
+}
+
+.longtextarea {
+    border: 1px solid #A5C0dF;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 2px;
+    font-size: 11px;
+    color: #146;
+    margin-bottom: 5px;
+    width: 99%;
+    overflow: hidden;
+    height: 75px;
+    resize: none;
+}
+
+.selectfield {
+    border: 1px solid #A5C0dF;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 2px;
+    font-size: 11px;
+    color: #146;
+    margin-bottom: 1px;
+    width: 100%;
+}
+
+.listfield {
+    border: 1px solid #A5C0dF;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 2px;
+    font-size: 11px;
+    color: #146;
+    margin-bottom: 1px;
+    width: 100%;
+}
+
+.dynamicLabel {
+    border: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #000000;
+    text-align: right;
+    vertical-align: middle;
+    padding-right: 0;
+}
+
+.dynamicRequiredLabel {
+    border: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #FF0000;
+    text-align: right;
+    vertical-align: middle;
+    padding-right: 0;
+}
+
+.calendarImage {
+    border: 0 outset #000000;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    margin-bottom: 4px;
+    background-image: url("../../main/NOC/library/image.cfm?file=calendar.jpg");
+}
+
+.formLogo {
+    float: right;
+}
+
+/* HTML Fields */
+.message { font: 9pt Arial; color: #FF0000; }
+.readonly { background-color: #CCCCCC; }
+.readonlyWhite { background-color: #CCCCCC; }
+
+.checkboxfield {
+    font: 9pt monospace;
+    color: #000000;
+}
+
+.DateField {
+    border: 1px solid #A5C0dF;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 2px;
+    font-size: 11px;
+    color: #146;
+    margin-bottom: 1px;
+    width: 92%;
+}
+
+/*
+    What To Do Classes - Used in JS
+*/
+.redColortextfield {
+    background-color: #cccccc;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 2px;
+    font-size: 11px;
+    color: #CC0000;
+}
+
+.greenColortextfield {
+    background-color: #cccccc;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 2px;
+    font-size: 11px;
+    color: #006600;
+}
+
+.yellowColortextfield {
+    background-color: #cccccc;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 2px;
+    font-size: 11px;
+    color: #FF9900;
+}
+
+/****************************************************
+                   Form DIVs CSS
+****************************************************/
+fieldset {
+    width: 100%;
+    clear: both;
+    margin: 0 0 20px 0;
+    padding: 5px 5px 5px 10px;
+}
+
+.fieldsetSkinnyBorder {
+    border: 1px solid #d9d9d9;
+}
+
+.fieldsetFatBorder {
+    border: 2px solid #809acc;
+}
+
+.fieldsetData {
+    padding: 5px 0 0 0;
+}
+
+.lgndLabel {
+    font: bold 11px Verdana, Helvetica, sans-serif;
+    padding-right: 7px;
+}
+
+/****************************************************
+                   Page CSS
+****************************************************/
+.container {
+    width: 1000px;
+}
+
+.formHeader {
+    width: 80%;
+    padding-top: 20px;
+    padding-left: 50px;
+}
+
+.formBody {
+    width: 90%;
+}
+
+.formFooter {
+    width: 90%;
+}
+
+.tabHeading {
+    display: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.sectionData {
+    padding: 3px 5px 3px 0;
+    width: 800px;
+}
+
+.sectionData .fieldRow {
+    margin-top: 3px;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
+
+.leftLabel {
+    padding-right: 5px;
+    text-align: right;
+    vertical-align: middle;
+    width: 22%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #000000;
+    float: left;
+}
+
+.leftField {
+    vertical-align: middle;
+    width: 76%;
+    float: left;
+}
+
+.labelWidth8 { width: 8%;}
+.labelWidth9 { width: 9%;}
+.labelWidth10 { width: 10%;}
+.labelWidth12 { width: 12%;}
+.labelWidth13 { width: 13%;}
+.labelWidth14 { width: 14%;}
+.labelWidth15 { width: 15%;}
+.labelWidth16 { width: 16%;}
+.labelWidth17 { width: 17%;}
+.labelWidth18 { width: 18%;}
+.labelWidth20 { width: 20%;}
+.labelWidth22 { width: 22%;}
+.labelWidth25 { width: 25%;}
+.labelWidth28 { width: 28%;}
+
+/****************************************************
+                   Form Field CSS
+****************************************************/
+.formField5 { width: 5%; float: left;}
+.formField10 { width: 10%; float: left;}
+.formField15 { width: 15%; float: left;}
+.formField20 { width: 20%; float: left;}
+.formField22 { width: 22%; float: left;}
+.formField25 { width: 25%; float: left;}
+.formField34 { width: 34%; float: left;}
+.formField40 { width: 40%; float: left;}
+.formField50 { width: 50%; float: left;}
+.formField56 { width: 56%; float: left;}
+.formField60 { width: 60%; float: left;}
+.formField68 { width: 68%; float: left;}
+.formField100 {	width: 100%; float: left;}
+
+.leftField .subLabel {
+    width: 31%;
+    text-align: right;
+    float: left;
+    padding-right: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #000000;
+}
+
+.clearBoth {
+    clear: both;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.hide { display: none; }
+.show { display: inline; }
+
+/************************************
+********** Calendar CSS ************
+************************************/
+.calendar {
+    position: relative;
+    display: none;
+    border: 1px solid;
+    border-color: #fff #000 #000 #fff;
+    font-size: 11px;
+    cursor: default;
+    background: Window;
+    color: WindowText;
+    font-family: tahoma,verdana,sans-serif;
+    z-index: 5;
+}
+
+.calendar table {
+    border: 1px solid;
+    border-color: #fff #000 #000 #fff;
+    font-size: 11px;
+    cursor: default;
+    background: Window;
+    color: WindowText;
+    font-family: tahoma,verdana,sans-serif;
+}
+
+/* Header part -- contains navigation buttons and day names. */
+
+.calendar .button { /* "<<", "<", ">", ">>" buttons have this class */
+    text-align: center;
+    padding: 1px;
+    border: 1px solid;
+    border-color: ButtonHighlight ButtonShadow ButtonShadow ButtonHighlight;
+    background: ButtonFace;
+}
+
+.calendar .nav {
+    background: ButtonFace url(menuarrow.gif) no-repeat 100% 100%;
+}
+
+.calendar thead .title { /* This holds the current "month, year" */
+    font-weight: bold;
+    padding: 1px;
+    border: 1px solid #000;
+    background: ActiveCaption;
+    color: CaptionText;
+    text-align: center;
+}
+
+.calendar thead .headrow { /* Row <TR> containing navigation buttons */
+}
+
+.calendar thead .daynames { /* Row <TR> containing the day names */
+}
+
+.calendar thead .name { /* Cells <TD> containing the day names */
+    border-bottom: 1px solid ButtonShadow;
+    padding: 2px;
+    text-align: center;
+    background: ButtonFace;
+    color: ButtonText;
+}
+
+.calendar thead .weekend { /* How a weekend day name shows in header */
+    color: #f00;
+}
+
+.calendar thead .hilite { /* How do the buttons in header appear when hover */
+    border: 2px solid;
+    padding: 0;
+    border-color: ButtonHighlight ButtonShadow ButtonShadow ButtonHighlight;
+}
+
+.calendar thead .active { /* Active (pressed) buttons in header */
+    border-width: 1px;
+    padding: 2px 0 0 2px;
+    border-color: ButtonShadow ButtonHighlight ButtonHighlight ButtonShadow;
+}
+
+.calendar tbody .day { /* Cells <TD> containing month days dates */
+    width: 2em;
+    text-align: right;
+    padding: 2px 4px 2px 2px;
+}
+.calendar tbody .day .othermonth {
+    font-size: 80%;
+    color: #aaa;
+}
+.calendar tbody .day .othermonth .oweekend {
+    color: #faa;
+}
+
+.calendar table .wn {
+    padding: 2px 3px 2px 2px;
+    border-right: 1px solid ButtonShadow;
+    background: ButtonFace;
+    color: ButtonText;
+}
+
+.calendar tbody .rowhilite td {
+    background: Highlight;
+    color: HighlightText;
+}
+
+.calendar tbody td.hilite { /* Hovered cells <TD> */
+    padding: 1px 3px 1px 1px;
+    border-top: 1px solid #fff;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #fff;
+}
+
+.calendar tbody td.active { /* Active (pressed) cells <TD> */
+    padding: 2px 2px 0 2px;
+    border: 1px solid;
+    border-color: ButtonShadow ButtonHighlight ButtonHighlight ButtonShadow;
+}
+
+.calendar tbody td.selected { /* Cell showing selected date */
+    font-weight: bold;
+    border: 1px solid;
+    border-color: ButtonShadow ButtonHighlight ButtonHighlight ButtonShadow;
+    padding: 2px 2px 0 2px;
+    background: ButtonFace;
+    color: ButtonText;
+}
+
+.calendar tbody td.weekend { /* Cells showing weekend days */
+    color: #f00;
+}
+
+.calendar tbody td.today { /* Cell showing today date */
+    font-weight: bold;
+    color: #00f;
+}
+
+.calendar tbody td.disabled { color: GrayText; }
+
+.calendar tbody .emptycell { /* Empty cells (the best is to hide them) */
+    visibility: hidden;
+}
+
+.calendar tbody .emptyrow { /* Empty row (some months need less than 6 rows) */
+    display: none;
+}
+
+/* The footer part -- status bar and "Close" button */
+
+.calendar tfoot .footrow { /* The <TR> in footer (only one right now) */
+}
+
+.calendar tfoot .ttip { /* Tooltip (status bar) cell <TD> */
+    background: ButtonFace;
+    padding: 1px;
+    border: 1px solid;
+    border-color: ButtonShadow ButtonHighlight ButtonHighlight ButtonShadow;
+    color: ButtonText;
+    text-align: center;
+}
+
+.calendar tfoot .hilite { /* Hover style for buttons in footer */
+    border-top: 1px solid #fff;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #fff;
+    padding: 1px;
+    background: #e4e0d8;
+}
+
+.calendar tfoot .active { /* Active (pressed) style for buttons in footer */
+    padding: 2px 0 0 2px;
+    border-top: 1px solid #000;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    border-left: 1px solid #000;
+}
+
+/* Combo boxes (menus that display months/years for direct selection) */
+
+.calendar .combo {
+    position: absolute;
+    display: none;
+    width: 4em;
+    top: 0;
+    left: 0;
+    cursor: default;
+    border: 1px solid;
+    border-color: ButtonHighlight ButtonShadow ButtonShadow ButtonHighlight;
+    background: Menu;
+    color: MenuText;
+    font-size: 90%;
+    padding: 1px;
+    z-index: 100;
+}
+
+.calendar .combo .label,
+.calendar .combo .label-IEfix {
+    text-align: center;
+    padding: 1px;
+}
+
+.calendar .combo .label-IEfix {
+    width: 4em;
+}
+
+.calendar .combo .active {
+    padding: 0;
+    border: 1px solid #000;
+}
+
+.calendar .combo .hilite {
+    background: Highlight;
+    color: HighlightText;
+}
+
+.calendar td.time {
+    border-top: 1px solid ButtonShadow;
+    padding: 1px 0;
+    text-align: center;
+    background-color: ButtonFace;
+}
+
+.calendar td.time .hour,
+.calendar td.time .minute,
+.calendar td.time .ampm {
+    padding: 0 3px 0 4px;
+    border: 1px solid #889;
+    font-weight: bold;
+    background-color: Menu;
+}
+
+.calendar td.time .ampm {
+    text-align: center;
+}
+
+.calendar td.time .colon {
+    padding: 0 2px 0 3px;
+    font-weight: bold;
+}
+
+.calendar td.time span.hilite {
+    border-color: #000;
+    background-color: Highlight;
+    color: HighlightText;
+}
+
+.calendar td.time span.active {
+    border-color: #f00;
+    background-color: #000;
+    color: #0f0;
+}
+
+/****************************************************
+                   Tabber Tab CSS
+****************************************************/
+.tabberlive .tabbertabhide {
+    display: none;
+}
+
+.tabberlive {
+    margin-top: 1em;
+    width: auto;
+}
+
+ul.tabbernav {
+    margin: 0;
+    padding: 23px 0;
+    border-bottom: 1px solid #778;
+    list-style: none;
+}
+
+ul.tabbernav li {
+    float: left;
+    background: url(../../images/tab_left.gif) no-repeat left top;
+    padding: 0 0 0 8px;
+}
+
+ul.tabbernav li a {
+    float: left;
+    display: block;
+    background: url(../../images/tab_right.gif) no-repeat right top;
+    padding: 5px 15px 4px 7px;
+    text-decoration: none;
+    color: #000;
+    white-space: nowrap;
+    font: normal 11px Arial, Helvetica, sans-serif;
+    width: auto;
+}
+
+ul.tabbernav li.tabberactive {
+    background-image: url(../../images/tab_left_on.gif);
+    border-bottom: 1px solid #ffffff;
+}
+
+ul.tabbernav li.tabberactive a {
+    background-image: url(../../images/tab_right_on.gif);
+    border-bottom: 1px solid #ffffff;
+}
+
+.tabberlive .tabbertab {
+    padding: 3px;
+    border: 1px solid #aaa;
+    border-top: 0;
+}
+
+.mcPage{
+	page-break-after:always;
+	width:100%;
+}
+
+@media print { 
+	.tabHeading {
+		display:block;
+	}
+	
+	.tabbertabhide {
+        display: block !important;
+    }
+
+    .tabbernav {
+        display: none;
+    }
+}
