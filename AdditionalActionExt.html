@@ -17,7 +17,7 @@
 						<td width="5%">&nbsp;</td>
 						<td width="20%" class="TopLabel"><label for="mastercontrol.form.number">Form Number</label></td>
 						<td width="1%">&nbsp;</td>
-						<td width="20%" class="TopLabel"><label for="mastercontrol.route.stepduedate">Step Due Date</label></td>
+						<td width="20%" class="TopLabel"><label for="mastercontrol.route.stepdname">Current Step</label></td>
 						<td width="5%">&nbsp;</td>
 					</tr><!-- header first row end -->
 					<tr><!-- header second row begin -->
@@ -27,7 +27,7 @@
 						</td>
 						<td>&nbsp;</td>
 						<td>
-							<input id="mastercontrol.route.stepduedate" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Step Due Date" title="" />
+							<input id="mastercontrol.route.stepname" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Step Name" title="" />
 						</td>
 						<td>&nbsp;</td>
 					</tr><!-- header second row end -->
@@ -74,7 +74,7 @@
 					<div id="mcPage_002" class="mcPage"><!-- page 2 begin -->
 					<span class="tabHeading">Information</span>
 						<div class="sectionData">
-						<div class="sectionHeading">Source</div>
+						<div class="sectionHeading">Source Form Information</div>
 
 							<div id="divSource" class="fieldRow">
 								<div class="leftLabel labelWidth20">
@@ -82,14 +82,14 @@
 								</div>
 								<div class="leftField">
 									<div class="formField34">
-										<input id="txtSource" type="text" class="textfield" alt="Source" title="Source" />
+										<input id="txtSource" type="text" class="textfield readonly" alt="Source" title="Source" readonly="readonly"/>
 									</div>
 
 									<div class="subLabel">
 										<label for="txtSourceDate">Source Create Date:</label>
 									</div>
 									<div class="formField34">
-										<input id="txtSourceDate" type="text" class="textfield" alt="Source Create Date" title="Source Create Date" />
+										<input id="txtSourceDate" type="text" class="textfield readonly" alt="Source Create Date" title="Source Create Date" readonly="readonly"/>
 									</div>
 								</div>
 							</div>
@@ -100,8 +100,8 @@
 									<label for="txtSourceTitle">Source Title:</label>
 								</div>
 								<div class="leftField">
-									<div class="formField34">
-										<input id="txtSourceTitle" type="text" class="textfield" alt="Source Title" title="Source Title" />
+									<div class="formField68">
+										<input id="txtSourceTitle" type="text" class="textfield readonly" alt="Source Title" title="Source Title" readonly="readonly"/>
 									</div>
 								</div>
 							</div>
