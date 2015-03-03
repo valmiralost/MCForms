@@ -1,38 +1,42 @@
 /* Hide fields on start and other functions */
 function formStart(){
-    
-        /* Add events to fields */
-    jQ("#mastercontrol\\.dataset\\.recordids\\.Products\\.Name").change(function() {
-    setProductDataEntry();
-    });
-    jQ('input[type=radio][name=rbInitialDisposition]').click(function() {
-        initalDisposition();
-    });
-   jQ('input[type=radio][name=rbInvestigationRequired]').click(function() {
+    stepId  =  document.getElementById("mastercontrol.route.stepid").value*1;
+    stepNumber =  document.getElementById("mastercontrol.route.stepnumber").value*1;
+        try
+    {
+            /* Add events to fields */
+        jQ("#mastercontrol\\.dataset\\.recordids\\.Products\\.Name").change(function() {
+        setProductDataEntry();
+        });
+        jQ('input[type=radio][name=rbInitialDisposition]').click(function() {
+            initalDisposition();
+        });
+       jQ('input[type=radio][name=rbInvestigationRequired]').click(function() {
+            investigationEval();
+        });
+        jQ('input[type=radio][name=rbSeverityRisk]').click(function() {
+            calcRisk('txtRiskScore','#rbSeverityRisk','#rbRecurrenceRisk','rbSeverityRisk');
+        });
+        jQ('input[type=radio][name=rbRecurrenceRisk]').click(function() {
+            calcRisk('txtRiskScore','#rbSeverityRisk','#rbRecurrenceRisk');
+        });
+            jQ('input[type=radio][name=rbCAPARequired]').click(function() {
+            capaRequired();
+        });
+         jQ('input[type=radio][name=rbDCN]').click(function() {
+           dcnLaunched();
+        });   
+        ///////Fields show/hide to start //////////
+        jQ("#mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name,label[for=mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name]").hide();
+        jQ("#txtNoInvestigationJustification,label[for=txtNoInvestigationJustification]").hide();
+       ////////Functions to set values and display ////////////
+        calcRisk();
         investigationEval();
-    });
-    jQ('input[type=radio][name=rbSeverityRisk]').click(function() {
-        calcRisk('txtRiskScore','#rbSeverityRisk','#rbRecurrenceRisk','rbSeverityRisk');
-    });
-    jQ('input[type=radio][name=rbRecurrenceRisk]').click(function() {
-        calcRisk('txtRiskScore','#rbSeverityRisk','#rbRecurrenceRisk');
-    });
-        jQ('input[type=radio][name=rbCAPARequired]').click(function() {
         capaRequired();
-    });
-     jQ('input[type=radio][name=rbDCN]').click(function() {
-       dcnLaunched();
-    });   
-    ///////Fields show/hide to start //////////
-    jQ("#mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name,label[for=mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name]").hide();
-    jQ("#txtNoInvestigationJustification,label[for=txtNoInvestigationJustification]").hide();
-   ////////Functions to set values and display ////////////
-    calcRisk();
-    investigationEval();
-    capaRequired();
-    dcnLaunched();
+        dcnLaunched();
+    } catch(e){}
 
-}/* END Hide fields on start  */
+}/* END start  */
 function setProductDataEntry(){
     var selectedValue = jQ("#mastercontrol\\.dataset\\.recordids\\.Products\\.Name").val();
     if (selectedValue == 'Documentation' || selectedValue == 'Quality System' ){
