@@ -1,7 +1,11 @@
-<!-- <link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/SPScreenInt.css' type='text/css'>
-<link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/NCRForm.css' type='text/css'> -->
-<link rel="stylesheet" title="main" href="css/SPScreenExt.css" type="text/css">
-<link rel="stylesheet" title="main" href="css/NCRForm.css" type="text/css">
+<!--  Inside MasterControl  
+<link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/SPScreenInt.css' type='text/css'>
+<link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/NCRForm.css' type='text/css'>
+-->
+<!--  Outside MasterControl -->
+<link rel='stylesheet' title='main' href='css/SPScreenInt.css' type='text/css'>
+<link rel='stylesheet' title='main' href='css/NCRForm.css' type='text/css'>
+
 
 
 <style>
@@ -40,6 +44,9 @@ ul.tabbernav li.tabberactive {
 ul.tabbernav li.tabberactive a {
 	background-image: url(../../../images/tab_right_on.gif);
 	border-bottom: 1px solid #ffffff;
+}
+body{
+	line-height: 150%;
 }
 </style>
 
@@ -100,7 +107,7 @@ ul.tabbernav li.tabberactive a {
 					<tr><!-- header sixth row begin -->
 						<td>&nbsp;</td>
 						<td colspan="3">
-							<input id="txtNCRTitle" type="text" class="headerTextfield" alt="H_Title" title="" />
+							<input id="txtTitle" type="text" class="headerTextfield" alt="H_Title" title="" />
 						</td>
 						<td>&nbsp;</td>
 					</tr><!-- header sixth row end -->
@@ -111,58 +118,21 @@ ul.tabbernav li.tabberactive a {
 			</div><!-- page001 end -->
 		</div><!-- formHeader end -->
 
-            <div class="clearBoth"></div>
-            <div style="display:none;">
-              <!-- DIV contains all hidden and keyword fields Start-->
-              <input name="mastercontrol.route.stepnumber" type="hidden" id="mastercontrol.route.stepnumber" title="Step Number">
-              <input name="mastercontrol.route.stepid" type="hidden" id="mastercontrol.route.stepid" title="Step ID">
-              <input name="mastercontrol.form.title" type="hidden" id="mastercontrol.form.title" title="Form Title">
-              <input name="mastercontrol.form.creator" type="hidden" id="mastercontrol.form.creator" title="Creator Name">
-              <input name="mastercontrol.form.creatorname" type="hidden" id="mastercontrol.form.creatorname" title="Creator ID">
-              <!-- Bug 26708 Related Keywords & Fields Starts-->
-              <select id="mastercontrol.links.Extension Request" multiple name="mastercontrol.links.Extension Request" title="Extension Request Reference" style="display:none">
-              </select>
-              <input name="hlpExtReqApprovers" id="hlpExtReqApprovers" type="hidden" title="ER Approvers" alt="ER Approvers"/>
-              <input name="txtSourceTitle" id="txtSourceTitle" type="hidden" title="Source Title"/>
-              <select name="mastercontrol.role.SP_COMP_ExtReqApprovers" id="mastercontrol.role.SP_COMP_ExtReqApprovers" style="display:none;" title="Complaint Extension Approvers">
-              </select>
-              <select id="mastercontrol.task.mapped.routes.ER"  name="mastercontrol.task.mapped.routes.ER" title="Available Routes for Extension Request" style="display:none">
-              </select>
-              <!-- Bug 26708 Related Keywords & Fields Starts-->
-              <!--26185-->
-              <input name="hlpSource" type="hidden" id="hlpSource" title="Source" value="Complaint" />
-              <!-- Help fields added under bug 32205; These will be used in template mapping with Action Item form -->
-              <input name="hlpAItitle" type="hidden" id="hlpAItitle" title="Action Item Task Title"  alt="Action Item Task Title" />
-              <input name="hlpAItaskOwner" type="hidden" id="hlpAItaskOwner" title="Action Item Task Owner"  alt="Action Item Task Owner" />
-              <input name="hlpAItaskDue_date" type="hidden" id="hlpAItaskDue_date" title="Action Item Task Due Date"  alt="Action Item Task Due Date" />
-              <!--Bug 33482 -->
-              <input name="hlpAITaskType" type="hidden" id="hlpAITaskType" title="Action Item Task Type"  alt="Action Item Task Type" />
-              <!-- Bug 33507 -->
-              <input name="hlpAItaskOwnerID" type="hidden" id="hlpAItaskOwnerID" title="Action Item Task Owner ID"  alt="Action Item Task Owner ID" />
-              <!-- Field Add under Bug 28859 -->
-              <input type="hidden" name="hlpFieldsNoCalender" id="hlpFieldsNoCalender" title="Fields not having Calender" alt="Fields not having Calender" value="" />
-              <!-- Field Added under Bug 29366 -->
-              <select id="mastercontrol.links.source" multiple  size="1" name="mastercontrol.links.source" title="Source Reference" style="display:none">
-              </select>
-              <input name="txtNCRNumber" type="hidden"  id="txtNCRNumbe" title="NCR Number" alt="NCR Number" />
-              <input name="txtSourceIssue" type="hidden"  id="txtSourceIssue" title="Source Issue" alt="Source Issue" readonly value="Customer Complaint" />
-              <input name="txtNCRDateCreated_date" type="hidden"  id="txtNCRDateCreated_date" title="Date Created" />
-
-              <select id="mastercontrol.task.routes"  name="mastercontrol.task.routes" title="Routes" style="display:none">
-              </select>
-    
-              <input type="text" name="mastercontrol.user.language" id="mastercontrol.user.language" title="User Language"/>
-              <input type="text" name="Complaint_Task_Count" id="Complaint_Task_Count" title="Complaint Task Counter" value="0" >
-              <input type="text" name="hlpVisibleTasks" id="hlpVisibleTasks" title="Visible Tasks" value="">
-              <input type="text" name="hlpLaunchedForm" id="hlpLaunchedForm" title="Launched Form" value="">
-              <input type="text" name="hlpLaunchedFormRefField" id="hlpLaunchedFormRefField" title="ID Of Reference Field" value="">
-            </div>
-            <!-- DIV contains all hidden and keyword fields End-->
-
-
-
-
-
+         <div>  <!-- DIV contains all hidden and keyword fields Start-->
+          <input name="mastercontrol.route.stepnumber" type="hidden" id="mastercontrol.route.stepnumber" title="Step Number">
+          <input name="mastercontrol.route.stepid" type="hidden" id="mastercontrol.route.stepid" title="Step ID">
+          <input name="mastercontrol.form.title" type="hidden" id="mastercontrol.form.title" title="Form Title">
+          <input name="mastercontrol.form.creator" type="hidden" id="mastercontrol.form.creator" title="Creator Name">
+          <input name="mastercontrol.form.creatorname" type="hidden" id="mastercontrol.form.creatorname" title="Creator ID">
+          <!--26185-->
+          <input name="hlpSource" type="hidden" id="hlpSource" title="Source" value="NCR" />
+          <!-- Help fields added under bug 32205; These will be used in template mapping with Action Item form -->
+          <input name="hlpAItitle" type="hidden" id="hlpAItitle" title="Action Item Task Title"  alt="Action Item Task Title" />
+          <input name="hlpAItaskOwner" type="hidden" id="hlpAItaskOwner" title="Action Item Task Owner"  alt="Action Item Task Owner" />
+          <input name="hlpAItaskDue_date" type="hidden" id="hlpAItaskDue_date" title="Action Item Task Due Date"  alt="Action Item Task Due Date" />
+          <input name="hlpAItaskOwnerID" type="hidden" id="hlpAItaskOwnerID" title="Action Item Task Owner ID"  alt="Action Item Task Owner ID" />
+        </div><!-- DIV contains all hidden and keyword fields End-->
+            
 		<div class="formBody"><!-- formBody begin -->
 			<div class="tabber" id="formTabs"><!-- formTabs begin -->
 				<div id="divInformationTab" class="tabbertab" title="Information"><!-- Information tabbertab begin -->
@@ -364,8 +334,20 @@ ul.tabbernav li.tabberactive a {
 									<label for="txtDescriptionNCR">Decription of Non-Conformance:</label>
 								</div>
 								<div class="leftField">
-									<div class="formField34">
-										<input id="txtDescriptionNCR" type="text" class="textfield" alt="Decription of Non-Conformance" title="Decription of Non-Conformance" />
+									<div class="formField68">
+										<textarea id="txtDescriptionNCR" type="text" class="textarea" alt="Decription of Non-Conformance" rows="5" cols="20" title="Decription of Non-Conformance" onKeyDown="expandTextArea(this);" onKeyUp="expandTextArea(this);"> </textarea> 
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divContainment" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtContainment">Containment:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<textarea id="txtContainment" type="text" class="textarea" alt="Containment" title="Containment" rows="5" cols="20"onKeyDown="expandTextArea(this);" onKeyUp="expandTextArea(this);"> </textarea> 
 									</div>
 								</div>
 							</div>
@@ -575,6 +557,7 @@ ul.tabbernav li.tabberactive a {
 							</div>
 							<div class="clearBoth"></div>
 
+
 							<div id="divmastercontrol.role.NCRInvestigators" class="fieldRow">
 								<div class="leftLabel labelWidth20">
 									<label for="mastercontrol.role.NCRInvestigators">Assigned To:</label>
@@ -626,31 +609,6 @@ ul.tabbernav li.tabberactive a {
 									<textarea id="txtNoInvestigationJustification" class="textarea noInvestigation" rows="5" cols="20" title="No Investigation Justification" onKeyDown="expandTextArea(this);" onKeyUp="expandTextArea(this);"></textarea>
 								</div>
 							</div>
-							<div id="divActionItem" class="fieldRow">
-								<div class="leftLabel labelWidth20">
-									<label for="">Launch Action Item</label>
-								</div>
-								<div class="leftField">
-									<div class="formField34">
-										 <span id="LaunchNONC" style="display:inline;">  
-                            			<input name="mastercontrol.task.mapped.launch.AI" type="button" style="width:180px;" class="IButton" id="mastercontrol.task.mapped.launch.AI" title="Launch Action Item" value="Launch Action Item" onmouseup="LaunchActionItem();" />
-											</span>
-                        <span id="ViewAI" style="display:none;">     
-												<input type="button" name="mastercontrol.links.view.AI" id="mastercontrol.links.view.AI" title="Action Item" class="IButton" value="View Action Item" alt="T2 View Action Item"/>
-           							</span>
-									</div>
-
-									<div class="subLabel">
-										<label for="txtActionItemNumber">Action Item Number:</label>
-									</div>
-									<div class="formField34">
-										<input id="txtActionItemNumber" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Action Item Number" title="Action Item Number" />
-	
-									</div>
-								</div>
-							</div>
-
-
 							<div class="clearBoth"></div>
 						</div><!-- previous section end -->
 						<div class="sectionData">
@@ -764,6 +722,17 @@ ul.tabbernav li.tabberactive a {
 							</div>
 							<div class="clearBoth"></div>
 
+							<div id="divNoCAPAJustification" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtNoCAPAJustification">No CAPA Justification:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtNoCAPAJustification" class="textarea" rows="5" cols="20" alt="txtNoCAPAJustification" title="No CAPA Justification" onKeyDown="expandTextArea(this);" onKeyUp="expandTextArea(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+
 							<div id="divDCNLaunced" class="fieldRow">
 								<div class="leftLabel labelWidth20">
 									<label for="">DCN Launched:</label>
@@ -782,6 +751,44 @@ ul.tabbernav li.tabberactive a {
 									</div>
 								</div>
 							</div>
+
+							<div id="divAdditionalActionForm" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="">Additional Action <br>Form Required:</label>
+								</div>
+								<div class="leftField">
+									<br>
+									<div class="formField34">
+										<input id="rbAAFormRequired" name="rbAAFormRequired" type="radio" class="radiobuttonfield" alt="Additional Action Form Required" title="Additional Action Form Required" value="Yes" />Yes
+										<input id="rbAAFormRequired" name="rbAAFormRequired" type="radio" class="radiobuttonfield" alt="Additional Action Form Required" title="Additional Action Form Required" value="No" />No
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divLaunchCAPA" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtLaunchCAPA">Launch Form:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="btnLaunchAAForm" type="button" class="formButton115" alt="Launch Form" title="Launch Form" value="Launch Form"/>
+										<div id="divFormToFormLaunch" class="hide"><!-- hidden form-to-form launch fields div begin -->
+											<select id="mastercontrol.task.routes" alt="Task Routes"></select>
+											<input type="button" id="mastercontrol.task.launch" alt="Task Launch" value="Launch Task" />
+										</div><!-- hidden form-to-form launch fields div end -->
+									</div>
+
+									<div class="subLabel">
+										<label for="txtAAFormNumber">Form Number:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtAAFormNumber" type="text" class="textfield readonly" alt="Form Number" title="Form Number" readonly="readonly" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
 							<div class="clearBoth"></div>
 						</div><!-- previous section end -->
 						<div class="sectionData">
@@ -977,33 +984,24 @@ ul.tabbernav li.tabberactive a {
 		</div><!-- formBody end -->
 	</div><!-- container end -->
 </form><!-- form end -->
-
-
-<!--
+<!--  Inside MasterControl  
 <script type='text/javascript' src='#mastercontrol.javascript(tabber.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(jquery-1.7.1.min.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(Calendar.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(StdLibrary.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(NCRForm.js)#'></script>
 -->
-
-<script type="text/javascript" src="js/tabber.js"></script>
-<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-<script type="text/javascript" src="js/Calendar.js"></script>
-<script type="text/javascript" src="js/StdLibrary.js"></script>
-<script type="text/javascript" src="js/NCRForm.js"></script>
+<!--  Inside MasterControl  -->
+<script type='text/javascript' src='js/tabber.js'></script>
+<script type='text/javascript' src='js/jquery-1.7.1.min.js'></script>
+<script type='text/javascript' src='js/Calendar.js'></script>
+<script type='text/javascript' src='js/StdLibrary.js'></script>
+<script type='text/javascript' src='js/NCRForm.js'></script>
 
 <script language="javascript" type="text/javascript">
-	/* Global Variables */
-	// Variable for step Number
-	var stepNumber;
-	var stepId;
-	var sFormStatus="";
-	var decisionVariable;
-	var jQ = jQuery.noConflict();
+var jQ = jQuery.noConflict();
 
 jQ(function() {
-
 	setTaskTitle();
 	retainHeightWidth();
 	formStart();

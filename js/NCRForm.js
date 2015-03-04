@@ -26,6 +26,9 @@ function formStart(){
          jQ('input[type=radio][name=rbDCN]').click(function() {
            dcnLaunched();
         });   
+         jQ('input[type=radio][name=rbAAFormRequired]').click(function() {
+            additionalActionRequired(); 
+        });
         ///////Fields show/hide to start //////////
         jQ("#mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name,label[for=mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name]").hide();
         jQ("#txtNoInvestigationJustification,label[for=txtNoInvestigationJustification]").hide();
@@ -34,6 +37,7 @@ function formStart(){
         investigationEval();
         capaRequired();
         dcnLaunched();
+        additionalActionRequired();
     } catch(e){}
 
 }/* END start  */
@@ -135,13 +139,15 @@ function capaRequired(){
         var rbValue = getCheckedValue('rbCAPARequired');
     if(rbValue== 'Yes'){
         jQ('#btnLaunchCAPA').prop("disabled",false);
-        jQ("#txtNoCAPARationale,label[for=txtNoCAPARationale]").hide();     
+        jQ('#txtNoCAPAJustification').val("");
+        jQ("#txtNoCAPAJustification,label[for=txtNoCAPAJustification]").hide();     
     }else {
         jQ('#btnLaunchCAPA').prop("disabled",true);
-        jQ("#txtNoCAPARationale,label[for=txtNoCAPARationale]").show();
+        jQ("#txtNoCAPAJustification,label[for=txtNoCAPAJustification]").show();
         if(rbValue!= 'Yes' && rbValue != 'No'){
             jQ('#btnLaunchCAPA').prop("disabled",true);
-            jQ("#txtNoCAPARationale,label[for=txtNoCAPARationale]").hide();
+            jQ('#txtNoCAPAJustification').val("");
+            jQ("#txtNoCAPAJustification,label[for=txtNoCAPAJustification]").hide();
         }
     }
 
@@ -153,6 +159,15 @@ function dcnLaunched(){
     }else {
         jQ('#btnLaunchCAPA').prop("disabled",true);
         radioEnableDisableClass(false,'yesDCN'); 
+    }
+
+}
+function additionalActionRequired(){
+        var rbValue = getCheckedValue('rbAAFormRequired');
+    if(rbValue== 'Yes'){
+        jQ('#btnLaunchAAForm').prop("disabled",false);   
+    }else {
+        jQ('#btnLaunchAAForm').prop("disabled",true);
     }
 
 }
