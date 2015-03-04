@@ -29,6 +29,11 @@ function formStart(){
          jQ('input[type=radio][name=rbAAFormRequired]').click(function() {
             additionalActionRequired(); 
         });
+        jQ("#btnLaunchAAForm").click(function () {
+        selectRouteLaunched("CAPA", "mastercontrol.task.routes");
+        jQ("#mastercontrol\\.task\\.launch").click();
+    });
+         
         ///////Fields show/hide to start //////////
         jQ("#mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name,label[for=mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name]").hide();
         jQ("#txtNoInvestigationJustification,label[for=txtNoInvestigationJustification]").hide();
