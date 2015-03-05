@@ -96,6 +96,7 @@ ul.tabbernav li.tabberactive a {
 						<input type="text" id="mastercontrol.form.title" alt="Task Title" />
 						<select id="mastercontrol.task.routes"  name="mastercontrol.task.routes" title="Routes" style="display:none">
 						</select>
+						<input name="mastercontrol.task.launch" type="button" class="button" id="mastercontrol.task.launch" title="Launch Form" value="Launch Form">
 						<input type="text" id="txtSourceRef" alt="Source Ref" title="Source Ref" value="Testie" />
 					</div><!-- hidden title fields div end -->
 				</table><!-- header table end -->
@@ -152,5 +153,6 @@ var jQ = jQuery.noConflict();
 jQ(function() {
 	setTaskTitle();
 	startup();
+	SetTabsFormat();
 });
 </script>
