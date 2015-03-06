@@ -101,13 +101,13 @@ body{
 					</tr><!-- header fourth row end -->
 					<tr><!-- header fifth row begin -->
 						<td>&nbsp;</td>
-						<td class="TopLabel" colspan="3"><label for="txtTitle">Title</label></td>
+						<td class="TopLabel reqdLabel" colspan="3"><label for="txtTitle">Title</label></td>
 						<td>&nbsp;</td>
 					</tr><!-- header fifth row end -->
 					<tr><!-- header sixth row begin -->
 						<td>&nbsp;</td>
 						<td colspan="3">
-							<input id="txtTitle" type="text" class="headerTextfield" alt="H_Title" title="" />
+							<input id="txtTitle" type="text" class="headerTextfield required" alt="H_Title" title="" />
 						</td>
 						<td>&nbsp;</td>
 					</tr><!-- header sixth row end -->
@@ -124,13 +124,18 @@ body{
           <input name="mastercontrol.form.title" type="hidden" id="mastercontrol.form.title" title="Form Title">
           <input name="mastercontrol.form.creator" type="hidden" id="mastercontrol.form.creator" title="Creator Name">
           <input name="mastercontrol.form.creatorname" type="hidden" id="mastercontrol.form.creatorname" title="Creator ID">
-          <!--26185-->
           <input name="hlpSource" type="hidden" id="hlpSource" title="Source" value="NCR" />
-          <!-- Help fields added under bug 32205; These will be used in template mapping with Action Item form -->
-          <input name="hlpAItitle" type="hidden" id="hlpAItitle" title="Action Item Task Title"  alt="Action Item Task Title" />
-          <input name="hlpAItaskOwner" type="hidden" id="hlpAItaskOwner" title="Action Item Task Owner"  alt="Action Item Task Owner" />
-          <input name="hlpAItaskDue_date" type="hidden" id="hlpAItaskDue_date" title="Action Item Task Due Date"  alt="Action Item Task Due Date" />
-          <input name="hlpAItaskOwnerID" type="hidden" id="hlpAItaskOwnerID" title="Action Item Task Owner ID"  alt="Action Item Task Owner ID" />
+          <!-- Required to Launch Form from Form  -->
+          <select id="mastercontrol.task.routes"  name="mastercontrol.task.routes" title="Available Routes" style="display:none" >
+          <input id="mastercontrol.task.launch" type="button" class="mastercontrol.task.launch" alt="Form launch" title="Form launch" style="display:none" />
+          <!--    -->
+
+          <select id="mastercontrol.links.CAPA" multiple  size="1" name="mastercontrol.links.CAPA" title="CAPA Reference">
+              </select>
+		<select id="mastercontrol.links.Additional Action" multiple  size="1" name="mastercontrol.links.Additional Action" title="Additional Action Reference">
+	        </select>
+
+
         </div><!-- DIV contains all hidden and keyword fields End-->
             
 		<div class="formBody"><!-- formBody begin -->
@@ -706,10 +711,7 @@ body{
 								<div class="leftField">
 									<div class="formField34">
 										<input id="btnLaunchCAPA" type="button" class="formButton115" alt="Launch CAPA" title="Launch CAPA" value="Launch CAPA"/>
-										<div id="divFormToFormLaunch" class="hide"><!-- hidden form-to-form launch fields div begin -->
-											<select id="mastercontrol.task.routes" alt="Task Routes"></select>
-											<input type="button" id="mastercontrol.task.launch" alt="Task Launch" value="Launch Task" />
-										</div><!-- hidden form-to-form launch fields div end -->
+										<input type="button" name="mastercontrol.links.view.CAPA" id="mastercontrol.links.view.CAPA" title="View CAPA" class="formButton115" value="" alt="View CAPA"/>
 									</div>
 
 									<div class="subLabel">
@@ -773,17 +775,14 @@ body{
 								<div class="leftField">
 									<div class="formField34">
 										<input id="btnLaunchAAForm" type="button" class="formButton115" alt="Launch Form" title="Launch Form" value="Launch Form"/>
-										<div id="divFormToFormLaunch" class="hide"><!-- hidden form-to-form launch fields div begin -->
-											<select id="mastercontrol.task.routes" alt="Task Routes"></select>
-											<input type="button" id="mastercontrol.task.launch" alt="Task Launch" value="Launch Task" />
-										</div><!-- hidden form-to-form launch fields div end -->
+										<input type="button" name="mastercontrol.links.view.Additional Action" id="mastercontrol.links.view.Additional Action" title="View Additional Action" class="formButton115" value="" alt="View Additional Action"/>
 									</div>
 
 									<div class="subLabel">
 										<label for="txtAAFormNumber">Form Number:</label>
 									</div>
 									<div class="formField34">
-										<input id="txtAAFormNumber" type="text" class="textfield readonly" alt="Form Number" title="Form Number" readonly="readonly" />
+										<input id="txtAAFormNumber" type="text" class="textfield readonly" alt="AA Form Number" title="AA Form Number" readonly="readonly" />
 									</div>
 								</div>
 							</div>
@@ -1002,14 +1001,8 @@ body{
 var jQ = jQuery.noConflict();
 
 jQ(function() {
-	setTaskTitle();
 	retainHeightWidth();
 	formStart();
-	//
-	//jQ("#btnLaunchCAPA").click(function () {
-	//	selectRouteLaunched("CAPA", "mastercontrol.task.routes");
-	//	jQ("#mastercontrol\\.task\\.launch").click();
-	//});
 
 });
 </script>

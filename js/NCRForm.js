@@ -29,11 +29,17 @@ function formStart(){
          jQ('input[type=radio][name=rbAAFormRequired]').click(function() {
             additionalActionRequired(); 
         });
-        jQ("#btnLaunchAAForm").click(function () {
+        jQ("#btnLaunchCAPA").click(function () {
         selectRouteLaunched("CAPA", "mastercontrol.task.routes");
+        //TO DO *************************build and add function to map fields
         jQ("#mastercontrol\\.task\\.launch").click();
-    });
-         
+        });
+        jQ("#btnLaunchAAForm").click(function () {
+        selectRouteLaunched("Additional Action", "mastercontrol.task.routes");
+        jQ("#mastercontrol\\.task\\.launch").click();
+         var tet = jQ("#mastercontrol\\.dataset\\.recordids\\.Products\\.Name option:selected").text();
+         alert(tet);  
+        });         
         ///////Fields show/hide to start //////////
         jQ("#mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name,label[for=mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name]").hide();
         jQ("#txtNoInvestigationJustification,label[for=txtNoInvestigationJustification]").hide();
@@ -175,4 +181,36 @@ function additionalActionRequired(){
         jQ('#btnLaunchAAForm').prop("disabled",true);
     }
 
+}
+
+function GetLaunchedFormNo()
+{
+    var oListFormNos = document.getElementById("mastercontrol\\.links\\.Additional.Action"); 
+
+    if(oListFormNos.length != 0)
+    {
+        var sLastFormNum;
+        var nRevIndex;
+        var arry = new Array();
+        var i;
+        
+        for (i=0; i<oListFormNos.length;i++)
+        {
+            var itemFace = oListFormNos[i].value;
+            arry[i] = itemFace;
+        }  
+        arry.sort();
+        
+        sLastFormNum = arry[arry.length-1];
+        nRevIndex = sLastFormNum.toLowerCase().indexOf(new String("Rev").toLowerCase());
+        if (nRevIndex>-1)
+        sLastFormNum = sLastFormNum.substr(0, nRevIndex-1);
+        
+        return sLastFormNum;
+    }
+    else
+    {
+        return "";
+    }
+    
 }

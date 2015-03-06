@@ -115,6 +115,31 @@ ul.tabbernav li.tabberactive a {
 						<div class="sectionData">
 						<div class="sectionHeading">Information</div>
 
+							<div id="divtxtSource" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtSource">Source:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<input id="txtSource" type="text" class="readonly textfield textfield35"  alt="Source" title="Source" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divtxtSourceNumber" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtSourceNumber">Source Number:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtSourceNmber" type="text" class="readonly textfield textfield35"  alt="Source Number" title="Source Number" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+
 							<div id="divtxtCAPAObserved_date" class="fieldRow">
 								<div class="leftLabel labelWidth20">
 									<label for="txttxtCAPAObserved_date_date" class="reqdLabel">* Date Requested:</label>
@@ -1955,9 +1980,8 @@ ul.tabbernav li.tabberactive a {
 
 <script language="javascript" type="text/javascript">
 var jQ = jQuery.noConflict();
-
 jQ(function() {
-	setTaskTitle();
-
-	retainHeightWidth();});
+	retainHeightWidth();
+	formStart();
+});
 </script>

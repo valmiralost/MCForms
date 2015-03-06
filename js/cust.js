@@ -1,9 +1,9 @@
 function startup()
 {
 		jQ("#btnLaunchSimple").click(function () {
-		selectRouteLaunched("simplert","mastercontrol.task.mapped.routes.simplert");
-	//	document.getElementById("mastercontrol.task.launch").click(); 
+		selectRouteLaunched("CAPA", "mastercontrol.task.routes");
 		jQ("#mastercontrol\\.task\\.launch").click();
+	//	document.getElementById("mastercontrol.task.launch").click(); 
 	alert("Hey Ya");
 	});		
 }

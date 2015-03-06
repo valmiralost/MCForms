@@ -533,7 +533,7 @@ function tabberAutomaticOnLoad(tabberArgs) {
         window.onload = function () {
             oldOnLoad();
             tabberAutomatic(tabberArgs);
-            SP_SetTabsFormat();
+            SetTabsFormat();
             //RetainHeightWidth();
         };
     }

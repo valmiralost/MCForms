@@ -1,0 +1,1008 @@
+<!--  Inside MasterControl  -->
+<link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/SPScreenInt.css' type='text/css'>
+<link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/NCRForm.css' type='text/css'>
+
+<!--  Outside MasterControl 
+<link rel='stylesheet' title='main' href='css/SPScreenInt.css' type='text/css'>
+<link rel='stylesheet' title='main' href='css/NCRForm.css' type='text/css'>
+-->
+
+
+<style>
+.calendarImage {
+	border: 0 outset #000000;
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+	margin-bottom: 4px;
+	background-image: url(../../../images/calendar.jpg);
+}
+
+ul.tabbernav li {
+	float: left;
+	background: url(../../../images/tab_left.gif) no-repeat left top;
+	padding: 0 0 0 8px;
+}
+
+ul.tabbernav li a {
+	float: left;
+	display: block;
+	background: url(../../../images/tab_right.gif) no-repeat right top;
+	padding: 5px 15px 4px 7px;
+	text-decoration: none;
+	color: #000;
+	white-space: nowrap;
+	font: normal 11px Arial, Helvetica, sans-serif;
+	width: auto;
+}
+
+ul.tabbernav li.tabberactive {
+	background-image: url(../../../images/tab_left_on.gif);
+	border-bottom: 1px solid #ffffff;
+}
+
+ul.tabbernav li.tabberactive a {
+	background-image: url(../../../images/tab_right_on.gif);
+	border-bottom: 1px solid #ffffff;
+}
+body{
+	line-height: 150%;
+}
+</style>
+
+<form id="mcForm" method="post" action=""><!-- form begin -->
+	<div class="container"><!-- container begin -->
+		<div class="formHeader"><!-- formHeader begin -->
+			<div id="mcPage_001" class="mcPage"><!-- page001 begin -->
+				<div class="formLogo"><img src="#mastercontrol.imagelink(logo.jpg)#" width="125px" height="125px" alt="Company Logo" /></div>
+				<table width="100%" border="0" cellspacing="0" cellpadding="0"><!-- header table begin -->
+					<tr><!-- processName row begin -->
+						<td width="5%">&nbsp;</td>
+						<td width="95%" colspan="4" class="ProcessName">NCR Form</td>
+					</tr>
+					<tr>
+						<td colspan="5">&nbsp;</td>
+					</tr><!-- process name end -->
+					<tr><!-- header first row begin -->
+						<td width="5%">&nbsp;</td>
+						<td width="20%" class="TopLabel"><label for="mastercontrol.form.number">Form Number</label></td>
+						<td width="1%">&nbsp;</td>
+						<td width="20%" class="TopLabel"><label for="mastercontrol.route.stepname">Current Step</label></td>
+						<td width="5%">&nbsp;</td>
+					</tr><!-- header first row end -->
+					<tr><!-- header second row begin -->
+						<td>&nbsp;</td>
+						<td>
+							<input id="mastercontrol.form.number" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Form Number" title="" />
+						</td>
+						<td>&nbsp;</td>
+						<td>
+							<input id="mastercontrol.route.stepname" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Step Due Date" title="" />
+						</td>
+						<td>&nbsp;</td>
+					</tr><!-- header second row end -->
+					<tr><!-- header third row begin -->
+						<td>&nbsp;</td>
+						<td class="TopLabel"><label for="mastercontrol.form.created">Date Created</label></td>
+						<td>&nbsp;</td>
+						<td class="TopLabel"><label for="mastercontrol.form.creatorname">Creator Name</label></td>
+						<td>&nbsp;</td>
+					</tr><!-- header third row end -->
+					<tr><!-- header fourth row begin -->
+						<td>&nbsp;</td>
+						<td>
+							<input id="mastercontrol.form.created" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Date Created" title="" />
+						</td>
+						<td>&nbsp;</td>
+						<td>
+							<input id="mastercontrol.form.creatorname" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Creator Name" title="" />
+						</td>
+						<td>&nbsp;</td>
+					</tr><!-- header fourth row end -->
+					<tr><!-- header fifth row begin -->
+						<td>&nbsp;</td>
+						<td class="TopLabel reqdLabel" colspan="3"><label for="txtTitle">Title</label></td>
+						<td>&nbsp;</td>
+					</tr><!-- header fifth row end -->
+					<tr><!-- header sixth row begin -->
+						<td>&nbsp;</td>
+						<td colspan="3">
+							<input id="txtTitle" type="text" class="headerTextfield required" alt="H_Title" title="" />
+						</td>
+						<td>&nbsp;</td>
+					</tr><!-- header sixth row end -->
+					<div id="divHiddenTitle" class="hide"><!-- hidden title fields div begin -->
+						<input type="text" id="mastercontrol.form.title" alt="Task Title" />
+					</div><!-- hidden title fields div end -->
+				</table><!-- header table end -->
+			</div><!-- page001 end -->
+		</div><!-- formHeader end -->
+
+         <div>  <!-- DIV contains all hidden and keyword fields Start-->
+          <input name="mastercontrol.route.stepnumber" type="hidden" id="mastercontrol.route.stepnumber" title="Step Number">
+          <input name="mastercontrol.route.stepid" type="hidden" id="mastercontrol.route.stepid" title="Step ID">
+          <input name="mastercontrol.form.title" type="hidden" id="mastercontrol.form.title" title="Form Title">
+          <input name="mastercontrol.form.creator" type="hidden" id="mastercontrol.form.creator" title="Creator Name">
+          <input name="mastercontrol.form.creatorname" type="hidden" id="mastercontrol.form.creatorname" title="Creator ID">
+          <input name="hlpSource" type="hidden" id="hlpSource" title="Source" value="NCR" />
+          <!-- Required to Launch Form from Form  -->
+          <select id="mastercontrol.task.routes"  name="mastercontrol.task.routes" title="Available Routes" style="display:none" >
+          <input id="mastercontrol.task.launch" type="button" class="mastercontrol.task.launch" alt="Form launch" title="Form launch" style="display:none" />
+          <!--    -->
+
+          <select id="mastercontrol.links.CAPA" multiple  size="1" name="mastercontrol.links.CAPA" title="CAPA Reference">
+              </select>
+		<select id="mastercontrol.links.Additional Action" multiple  size="1" name="mastercontrol.links.Additional Action" title="Additional Action Reference">
+	        </select>
+
+
+        </div><!-- DIV contains all hidden and keyword fields End-->
+            
+		<div class="formBody"><!-- formBody begin -->
+			<div class="tabber" id="formTabs"><!-- formTabs begin -->
+				<div id="divInformationTab" class="tabbertab" title="Information"><!-- Information tabbertab begin -->
+					<div id="mcPage_002" class="mcPage"><!-- page 2 begin -->
+					<span class="tabHeading">Information</span>
+						<div class="sectionData">
+						<div class="sectionHeading">Information</div>
+
+							<div id="divtxtDateObserved_date" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txttxtDateObserved_date_date" class="reqdLabel">* Date Observerd:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txttxtDateObserved_date_date" type="text" class="readonly textfield textfield35 required" readonly="readonly" alt="Date Observerd" title="Date Observerd" />
+										<input id="btntxtDateObserved_dateCalendar" type="button" class="calendarImage" title="Date Observerd" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divmastercontrol.dataset.recordids.Products.Name" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="mastercontrol.dataset.recordids.Products.Name" class="reqdLabel">* Product:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<select id="mastercontrol.dataset.recordids.Products.Name" class="selectfield required" title="Product"></select>
+									</div>
+
+									<div class="subLabel">
+										<label for="mastercontrol.dataset.recordids.QualitySystemLocation.Name">Location in Quality Systems:</label>
+									</div>
+									<div class="formField34">
+										<select id="mastercontrol.dataset.recordids.QualitySystemLocation.Name" class="selectfield nonProductField" title="Location in Quality Systems"></select>
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divPartNumberorRev" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtPartNumberorRev">Part Number or Rev:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtPartNumberorRev" type="text" class="textfield productField" alt="Part Number or Rev" title="Part Number or Rev" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divDescription" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtDescription">Description:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtDescription" type="text" class="textfield productField" alt="Description" title="Description" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divWorkOrderNumber" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtWorkOrderNumber">Work Order Number:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtWorkOrderNumber" type="text" class="textfield productField" alt="Work Order Number" title="Work Order Number" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divLotNumber" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtLotNumber">Lot Number:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtLotNumber" type="text" class="textfield productField" alt="Lot Number" title="Lot Number" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divSerialNumber" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtSerialNumber">Serial Number:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtSerialNumber" type="text" class="textfield productField" alt="Serial Number" title="Serial Number" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divManufacturingDateCode" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtManufacturingDateCode">Manufacturing Date Code:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtManufacturingDateCode" type="text" class="textfield productField" alt="Manufacturing Date Code" title="Manufacturing Date Code" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="mastercontrol.dataset.recordids.InspectionArea.Name" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="mastercontrol.dataset.recordids.InspectionArea.Name">Inspection Area:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<select id="mastercontrol.dataset.recordids.InspectionArea.Name" class="selectfield productField" title="Inspection Area"></select>
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divLotQuantity" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtLotQuantity">Lot Quantity:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtLotQuantity" type="text" class="textfield productField" alt="Lot Quantity" title="Lot Quantity" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divTotalNonConformingQuantity" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtTotalNonConformingQuantity">Total Non-Conforming Quantity:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtTotalNonConformingQuantity" type="text" class="textfield productField" alt="Total Non-Conforming Quantity" title="Total Non-Conforming Quantity" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divSuppler" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtSuppler">Supplier:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtSuppler" type="text" class="textfield productField" alt="Supplier" title="Supplier" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divPO Number" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtPO Number">PO Number:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtPO Number" type="text" class="textfield productField" alt="PO Number" title="PO Number" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divSupplierPartNumber" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtSupplierPartNumber">Supplier Part Number:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtSupplierPartNumber" type="text" class="textfield productField" alt="Supplier Part Number" title="Supplier Part Number" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divmastercontrol.dataset.recordids.NCRDefects.Name" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="mastercontrol.dataset.recordids.NCRDefects.Name">Defect:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<select id="mastercontrol.dataset.recordids.NCRDefects.Name" class="selectfield productField" title="Defect"></select>
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divDescriptionNCR" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtDescriptionNCR">Decription of Non-Conformance:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<textarea id="txtDescriptionNCR" type="text" class="textarea" alt="Decription of Non-Conformance" rows="5" cols="20" title="Decription of Non-Conformance" onKeyDown="expandTextArea(this);" onKeyUp="expandTextArea(this);"> </textarea> 
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divContainment" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtContainment">Containment:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<textarea id="txtContainment" type="text" class="textarea" alt="Containment" title="Containment" rows="5" cols="20"onKeyDown="expandTextArea(this);" onKeyUp="expandTextArea(this);"> </textarea> 
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Information - Attachments & Links</div>
+							<div id="divInformation" class="fieldRow">
+								<div class="leftLabel">&nbsp;</div>
+								<div class="leftField">
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="21%" align="center" valign="top">
+												<input id="mastercontrol.attachments.add.information" type="button" class="formButton115" title="Click to View or Add Attachments" value="Attached Files" onfocus="setAttachmentLinkFieldSize();" onmouseup="checkWin();" />
+											</td>
+											<td width="25%" valign="top">
+												<label for="mastercontrol.attachments.information">&nbsp;</label>
+												<select id="mastercontrol.attachments.information" size="1" multiple="multiple" class="listfield readonly" alt="Information Files" title=""></select>
+											</td>
+											<td width="21%" align="center" valign="top">
+												<input id="mastercontrol.links.add.information" type="button" class="formButton115" title="Click to View or Add Links" value="Linked InfoCards" onfocus="setAttachmentLinkFieldSize();" onmouseup="checkWin();" />
+											</td>
+											<td width="25%" valign="top">
+												<label for="mastercontrol.links.information">&nbsp;</label>
+												<select id="mastercontrol.links.information" size="1" multiple="multiple" class="listfield readonly" alt="Information Links" title=""></select>
+											</td>
+										</tr>
+									</table>
+								</div>
+								<div class="clearBoth"></div>
+							</div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Information Signature</div>
+							<div class="signatureData">
+								<table class="signatureTable" cellpadding="0" cellspacing="0">
+									<thead>
+										<tr>
+											<th scope="col" class="signatureName">
+												<label for="mastercontrol.route.esig.users.step1">Name</label>
+											</th>
+											<th scope="col" class="signatureDate">
+												<label for="mastercontrol.route.esig.timestamps.step1">Date</label>
+											</th>
+											<th scope="col" class="signatureStatus">
+												<label for="mastercontrol.route.esig.sigstatus.step1">Signoff Status</label>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<textarea id="mastercontrol.route.esig.users.step1" rows="3" readonly="readonly" class="signaturefields" title="Step1 Name"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.timestamps.step1" rows="3" readonly="readonly" class="signaturefields" title="Step1 Date"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.sigstatus.step1" rows="3" readonly="readonly" class="signaturefields" title="Step1 Signoff Status"></textarea>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+						</div><!-- previous section end -->
+					</div><!-- previouse page end -->
+				</div><!-- previous tabber end -->
+				<div id="divInitialDispositionTab" class="tabbertab" title="Initial Disposition"><!-- Initial Disposition tabbertab begin -->
+					<div id="mcPage_003" class="mcPage"><!-- page 3 begin -->
+					<span class="tabHeading">Initial Disposition</span>
+						<div class="sectionData">
+						<div class="sectionHeading">Initial Disposition</div>
+
+							<div id="divInitialDisposition" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="" class="reqdLabel">* Initial Disposition:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<input id="rbInitialDisposition" name="rbInitialDisposition" type="radio" class="radiobuttonfield required" alt="Initial Disposition" title="Initial Disposition" value="Rework in house" />Rework in house
+										<input id="rbInitialDisposition" name="rbInitialDisposition" type="radio" class="radiobuttonfield required" alt="Initial Disposition" title="Initial Disposition" value="Use as is" />Use as is
+										<input id="rbInitialDisposition" name="rbInitialDisposition" type="radio" class="radiobuttonfield required" alt="Initial Disposition" title="Initial Disposition" value="Not Applicable" />Not Applicable
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divInitialDispositionJustification" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtInitialDispositionJustification">Initial Disposition Justification:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtInitialDispositionJustification" class="textarea initialDisNo" rows="5" cols="20" title="Initial Disposition Justification" onKeyDown="expandTextArea(this);" onKeyUp="expandTextArea(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Initial Disposition - Attachments & Links</div>
+							<div id="divInitial Disposition" class="fieldRow">
+								<div class="leftLabel">&nbsp;</div>
+								<div class="leftField">
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="21%" align="center" valign="top">
+												<input id="mastercontrol.attachments.add.initial disposition" type="button" class="formButton115" title="Click to View or Add Attachments" value="Attached Files" onfocus="setAttachmentLinkFieldSize();" onmouseup="checkWin();" />
+											</td>
+											<td width="25%" valign="top">
+												<label for="mastercontrol.attachments.initial disposition">&nbsp;</label>
+												<select id="mastercontrol.attachments.initial disposition" size="1" multiple="multiple" class="listfield readonly" alt="Initial Disposition Files" title=""></select>
+											</td>
+											<td width="21%" align="center" valign="top">
+												<input id="mastercontrol.links.add.initial disposition" type="button" class="formButton115" title="Click to View or Add Links" value="Linked InfoCards" onfocus="setAttachmentLinkFieldSize();" onmouseup="checkWin();" />
+											</td>
+											<td width="25%" valign="top">
+												<label for="mastercontrol.links.initial disposition">&nbsp;</label>
+												<select id="mastercontrol.links.initial disposition" size="1" multiple="multiple" class="listfield readonly" alt="Initial Disposition Links" title=""></select>
+											</td>
+										</tr>
+									</table>
+								</div>
+								<div class="clearBoth"></div>
+							</div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Information Signature</div>
+							<div class="signatureData">
+								<table class="signatureTable" cellpadding="0" cellspacing="0">
+									<thead>
+										<tr>
+											<th scope="col" class="signatureName">
+												<label for="mastercontrol.route.esig.users.step2">Name</label>
+											</th>
+											<th scope="col" class="signatureDate">
+												<label for="mastercontrol.route.esig.timestamps.step2">Date</label>
+											</th>
+											<th scope="col" class="signatureStatus">
+												<label for="mastercontrol.route.esig.sigstatus.step2">Signoff Status</label>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<textarea id="mastercontrol.route.esig.users.step2" rows="3" readonly="readonly" class="signaturefields" title="Step2 Name"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.timestamps.step2" rows="3" readonly="readonly" class="signaturefields" title="Step2 Date"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.sigstatus.step2" rows="3" readonly="readonly" class="signaturefields" title="Step2 Signoff Status"></textarea>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+						</div><!-- previous section end -->
+					</div><!-- previouse page end -->
+				</div><!-- previous tabber end -->
+				<div id="divAssessmentTab" class="tabbertab" title="Assessment"><!-- Assessment tabbertab begin -->
+					<div id="mcPage_004" class="mcPage"><!-- page 4 begin -->
+					<span class="tabHeading">Assessment</span>
+						<div class="sectionData">
+						<div class="sectionHeading">MRB</div>
+
+							<div id="divReferedMRB" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="" class="reqdLabel">* Refered to MRB:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<input id="rbReferedMRB" name="rbReferedMRB" type="radio" class="radiobuttonfield required" alt="Refered to MRB" title="Refered to MRB" value="Yes" />Yes
+										<input id="rbReferedMRB" name="rbReferedMRB" type="radio" class="radiobuttonfield required" alt="Refered to MRB" title="Refered to MRB" value="No" />No
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Investigation</div>
+
+							<div id="divInvestigationRequired" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="" class="reqdLabel">* Investigation Required:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<input id="rbInvestigationRequired" name="rbInvestigationRequired" type="radio" class="radiobuttonfield required" alt="Investigation Required" title="Investigation Required" value="Yes" />Yes
+										<input id="rbInvestigationRequired" name="rbInvestigationRequired" type="radio" class="radiobuttonfield required" alt="Investigation Required" title="Investigation Required" value="No" />No
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divrbComplexity" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="">Investigation Complexity:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<input id="rbrbComplexity" name="rbrbComplexity" type="radio" class="radiobuttonfield yesInvestigation" alt="Investigation Complexity" title="Investigation Complexity" value="Low" />Low
+										<input id="rbrbComplexity" name="rbrbComplexity" type="radio" class="radiobuttonfield yesInvestigation" alt="Investigation Complexity" title="Investigation Complexity" value="High" />High
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+
+							<div id="divmastercontrol.role.NCRInvestigators" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="mastercontrol.role.NCRInvestigators">Assigned To:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<select id="mastercontrol.role.NCRInvestigators" class="selectfield yesInvestigation" title="Assigned To"></select>
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divDateAssigned" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtDateAssigned_date">Date Assigned:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtDateAssigned_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Date Assigned" title="Date Assigned" />
+										<input id="btnDateAssignedCalendar" type="button" class="calendarImage" title="Date Assigned" />
+									</div>
+
+									<div class="subLabel">
+										<label for="txtDateCompleted_date">Date Completd:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtDateCompleted_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Date Completd" title="Date Completd" />
+										<input id="btnDateCompletedCalendar" type="button" class="calendarImage" title="Date Completd" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divInvestigationResults" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtInvestigationResults">Investigation Results:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtInvestigationResults" class="textarea yesInvestigation" rows="5" cols="20" title="Investigation Results" onKeyDown="expandTextArea(this);" onKeyUp="expandTextArea(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divNoInvestigationJustification" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtNoInvestigationJustification">No Investigation Justification:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtNoInvestigationJustification" class="textarea noInvestigation" rows="5" cols="20" title="No Investigation Justification" onKeyDown="expandTextArea(this);" onKeyUp="expandTextArea(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Root Cause</div>
+
+							<div id="divRootCause" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtRootCause">Root Cause:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtRootCause" class="textarea" rows="5" cols="20" title="Root Cause" onKeyDown="expandTextArea(this);" onKeyUp="expandTextArea(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Risk</div>
+
+							<div id="divSeverityRisk" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="">Severity:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<input id="rbSeverityRisk" name="rbSeverityRisk" type="radio" class="radiobuttonfield" alt="Severity" title="Severity" value="1" />1
+										<input id="rbSeverityRisk" name="rbSeverityRisk" type="radio" class="radiobuttonfield" alt="Severity" title="Severity" value="2" />2
+										<input id="rbSeverityRisk" name="rbSeverityRisk" type="radio" class="radiobuttonfield" alt="Severity" title="Severity" value="3" />3
+										<input id="rbSeverityRisk" name="rbSeverityRisk" type="radio" class="radiobuttonfield" alt="Severity" title="Severity" value="4" />4
+										<input id="rbSeverityRisk" name="rbSeverityRisk" type="radio" class="radiobuttonfield" alt="Severity" title="Severity" value="5" />5
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divRecurrenceRisk" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="">Occurrence:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<input id="rbRecurrenceRisk" name="rbRecurrenceRisk" type="radio" class="radiobuttonfield" alt="Occurrence" title="Occurrence" value="1" />1
+										<input id="rbRecurrenceRisk" name="rbRecurrenceRisk" type="radio" class="radiobuttonfield" alt="Occurrence" title="Occurrence" value="2" />2
+										<input id="rbRecurrenceRisk" name="rbRecurrenceRisk" type="radio" class="radiobuttonfield" alt="Occurrence" title="Occurrence" value="3" />3
+										<input id="rbRecurrenceRisk" name="rbRecurrenceRisk" type="radio" class="radiobuttonfield" alt="Occurrence" title="Occurrence" value="4" />4
+										<input id="rbRecurrenceRisk" name="rbRecurrenceRisk" type="radio" class="radiobuttonfield" alt="Occurrence" title="Occurrence" value="5" />5
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divRiskScore" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtRiskScore">Risk Score:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtRiskScore" type="text" class="textfield readonly" alt="Risk Score" title="Risk Score" readonly="readonly" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divRiskAnalysisID" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtRiskAnalysisID">Risk Analysis ID:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtRiskAnalysisID" type="text" class="textfield" alt="Risk Analysis ID" title="Risk Analysis ID" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Additional Actions</div>
+
+							<div id="divCAPARequired" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="">CAPA Required:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<input id="rbCAPARequired" name="rbCAPARequired" type="radio" class="radiobuttonfield" alt="CAPA Required" title="CAPA Required" value="Yes" />Yes
+										<input id="rbCAPARequired" name="rbCAPARequired" type="radio" class="radiobuttonfield" alt="CAPA Required" title="CAPA Required" value="No" />No
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divLaunchCAPA" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="btnLaunchCAPA">Launch CAPA:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="btnLaunchCAPA" type="button" class="formButton115" alt="Launch CAPA" title="Launch CAPA" value="Launch CAPA"/>
+										<input type="button" name="mastercontrol.links.view.CAPA" id="mastercontrol.links.view.CAPA" title="View CAPA" class="formButton115" value="" alt="View CAPA"/>
+									</div>
+
+									<div class="subLabel">
+										<label for="txtCAPANumber">CAPA Number:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtCAPANumber" type="text" class="textfield readonly" alt="CAPA Number" title="CAPA Number" readonly="readonly" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divNoCAPAJustification" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtNoCAPAJustification">No CAPA Justification:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtNoCAPAJustification" class="textarea" rows="5" cols="20" alt="txtNoCAPAJustification" title="No CAPA Justification" onKeyDown="expandTextArea(this);" onKeyUp="expandTextArea(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+
+							<div id="divDCNLaunced" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="">DCN Launched:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="rbDCNLaunced" name="rbDCNLaunced" type="radio" class="radiobuttonfield" alt="DCN Launched" title="DCN Launched" value="Yes" />Yes
+										<input id="rbDCNLaunced" name="rbDCNLaunced" type="radio" class="radiobuttonfield" alt="DCN Launched" title="DCN Launched" value="No" />No
+									</div>
+
+									<div class="subLabel">
+										<label for="txtDCNNumber">DCN Number:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtDCNNumber" type="text" class="textfield yesDCN" alt="DCN Number" title="DCN Number" />
+									</div>
+								</div>
+							</div>
+
+							<div id="divAdditionalActionForm" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="">Additional Action <br>Form Required:</label>
+								</div>
+								<div class="leftField">
+									<br>
+									<div class="formField34">
+										<input id="rbAAFormRequired" name="rbAAFormRequired" type="radio" class="radiobuttonfield" alt="Additional Action Form Required" title="Additional Action Form Required" value="Yes" />Yes
+										<input id="rbAAFormRequired" name="rbAAFormRequired" type="radio" class="radiobuttonfield" alt="Additional Action Form Required" title="Additional Action Form Required" value="No" />No
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divLaunchAAForm" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="btnLaunchAAForm">Launch Form:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="btnLaunchAAForm" type="button" class="formButton115" alt="Launch Form" title="Launch Form" value="Launch Form"/>
+										<input type="button" name="mastercontrol.links.view.Additional Action" id="mastercontrol.links.view.Additional Action" title="View Additional Action" class="formButton115" value="" alt="View Additional Action"/>
+									</div>
+
+									<div class="subLabel">
+										<label for="txtAAFormNumber">Form Number:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtAAFormNumber" type="text" class="textfield readonly" alt="AA Form Number" title="AA Form Number" readonly="readonly" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div class="clearBoth"></div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Assessment - Attachments & Links</div>
+							<div id="divDetails" class="fieldRow">
+								<div class="leftLabel">&nbsp;</div>
+								<div class="leftField">
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="21%" align="center" valign="top">
+												<input id="mastercontrol.attachments.add.details" type="button" class="formButton115" title="Click to View or Add Attachments" value="Attached Files" onfocus="setAttachmentLinkFieldSize();" onmouseup="checkWin();" />
+											</td>
+											<td width="25%" valign="top">
+												<label for="mastercontrol.attachments.details">&nbsp;</label>
+												<select id="mastercontrol.attachments.details" size="1" multiple="multiple" class="listfield readonly" alt="Details Files" title=""></select>
+											</td>
+											<td width="21%" align="center" valign="top">
+												<input id="mastercontrol.links.add.details" type="button" class="formButton115" title="Click to View or Add Links" value="Linked InfoCards" onfocus="setAttachmentLinkFieldSize();" onmouseup="checkWin();" />
+											</td>
+											<td width="25%" valign="top">
+												<label for="mastercontrol.links.details">&nbsp;</label>
+												<select id="mastercontrol.links.details" size="1" multiple="multiple" class="listfield readonly" alt="Details Links" title=""></select>
+											</td>
+										</tr>
+									</table>
+								</div>
+								<div class="clearBoth"></div>
+							</div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Assessment Signature</div>
+							<div class="signatureData">
+								<table class="signatureTable" cellpadding="0" cellspacing="0">
+									<thead>
+										<tr>
+											<th scope="col" class="signatureName">
+												<label for="mastercontrol.route.esig.users.step3">Name</label>
+											</th>
+											<th scope="col" class="signatureDate">
+												<label for="mastercontrol.route.esig.timestamps.step3">Date</label>
+											</th>
+											<th scope="col" class="signatureStatus">
+												<label for="mastercontrol.route.esig.sigstatus.step3">Signoff Status</label>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<textarea id="mastercontrol.route.esig.users.step3" rows="3" readonly="readonly" class="signaturefields" title="Step3 Name"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.timestamps.step3" rows="3" readonly="readonly" class="signaturefields" title="Step3 Date"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.sigstatus.step3" rows="3" readonly="readonly" class="signaturefields" title="Step3 Signoff Status"></textarea>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+						</div><!-- previous section end -->
+					</div><!-- previouse page end -->
+				</div><!-- previous tabber end -->
+				<div id="divDispositionTab" class="tabbertab" title="Disposition"><!-- Disposition tabbertab begin -->
+					<div id="mcPage_005" class="mcPage"><!-- page 5 begin -->
+					<span class="tabHeading">Disposition</span>
+						<div class="sectionData">
+						<div class="sectionHeading">Disposition</div>
+
+							<div id="divFinalDisposition" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="">Disposition:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<input id="rbFinalDisposition" name="rbFinalDisposition" type="radio" class="radiobuttonfield" alt="Disposition" title="Disposition" value="Rework in house" />Rework in house
+										<input id="rbFinalDisposition" name="rbFinalDisposition" type="radio" class="radiobuttonfield" alt="Disposition" title="Disposition" value="Scrap" />Scrap
+										<input id="rbFinalDisposition" name="rbFinalDisposition" type="radio" class="radiobuttonfield" alt="Disposition" title="Disposition" value="Return to vendor" />Return to vendor
+										<input id="rbFinalDisposition" name="rbFinalDisposition" type="radio" class="radiobuttonfield" alt="Disposition" title="Disposition" value="Use as is" />Use as is
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divDispositionDescription" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtDispositionDescription">Describe Disposition:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtDispositionDescription" class="textarea" rows="5" cols="20" title="Describe Disposition" onKeyDown="expandTextArea(this);" onKeyUp="expandTextArea(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Dispositon - Attachments & Links</div>
+							<div id="divReview" class="fieldRow">
+								<div class="leftLabel">&nbsp;</div>
+								<div class="leftField">
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="21%" align="center" valign="top">
+												<input id="mastercontrol.attachments.add.review" type="button" class="formButton115" title="Click to View or Add Attachments" value="Attached Files" onfocus="setAttachmentLinkFieldSize();" onmouseup="checkWin();" />
+											</td>
+											<td width="25%" valign="top">
+												<label for="mastercontrol.attachments.review">&nbsp;</label>
+												<select id="mastercontrol.attachments.review" size="1" multiple="multiple" class="listfield readonly" alt="Review Files" title=""></select>
+											</td>
+											<td width="21%" align="center" valign="top">
+												<input id="mastercontrol.links.add.review" type="button" class="formButton115" title="Click to View or Add Links" value="Linked InfoCards" onfocus="setAttachmentLinkFieldSize();" onmouseup="checkWin();" />
+											</td>
+											<td width="25%" valign="top">
+												<label for="mastercontrol.links.review">&nbsp;</label>
+												<select id="mastercontrol.links.review" size="1" multiple="multiple" class="listfield readonly" alt="Review Links" title=""></select>
+											</td>
+										</tr>
+									</table>
+								</div>
+								<div class="clearBoth"></div>
+							</div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Disposition Signature</div>
+							<div class="signatureData">
+								<table class="signatureTable" cellpadding="0" cellspacing="0">
+									<thead>
+										<tr>
+											<th scope="col" class="signatureName">
+												<label for="mastercontrol.route.esig.users.step4">Name</label>
+											</th>
+											<th scope="col" class="signatureDate">
+												<label for="mastercontrol.route.esig.timestamps.step4">Date</label>
+											</th>
+											<th scope="col" class="signatureStatus">
+												<label for="mastercontrol.route.esig.sigstatus.step4">Signoff Status</label>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<textarea id="mastercontrol.route.esig.users.step4" rows="3" readonly="readonly" class="signaturefields" title="Step4 Name"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.timestamps.step4" rows="3" readonly="readonly" class="signaturefields" title="Step4 Date"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.sigstatus.step4" rows="3" readonly="readonly" class="signaturefields" title="Step4 Signoff Status"></textarea>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Approval Signature</div>
+							<div class="signatureData">
+								<table class="signatureTable" cellpadding="0" cellspacing="0">
+									<thead>
+										<tr>
+											<th scope="col" class="signatureName">
+												<label for="mastercontrol.route.esig.users.step5">Name</label>
+											</th>
+											<th scope="col" class="signatureDate">
+												<label for="mastercontrol.route.esig.timestamps.step5">Date</label>
+											</th>
+											<th scope="col" class="signatureStatus">
+												<label for="mastercontrol.route.esig.sigstatus.step5">Signoff Status</label>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<textarea id="mastercontrol.route.esig.users.step5" rows="3" readonly="readonly" class="signaturefields" title="Step5 Name"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.timestamps.step5" rows="3" readonly="readonly" class="signaturefields" title="Step5 Date"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.sigstatus.step5" rows="3" readonly="readonly" class="signaturefields" title="Step5 Signoff Status"></textarea>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div><!-- final section end -->
+					</div><!-- final page end -->
+				</div><!-- final tabbertab end -->
+			</div><!-- formTabs end -->
+		</div><!-- formBody end -->
+	</div><!-- container end -->
+</form><!-- form end -->
+<!--  Inside MasterControl  -->
+<script type='text/javascript' src='#mastercontrol.javascript(tabber.js)#'></script>
+<script type='text/javascript' src='#mastercontrol.javascript(jquery-1.7.1.min.js)#'></script>
+<script type='text/javascript' src='#mastercontrol.javascript(Calendar.js)#'></script>
+<script type='text/javascript' src='#mastercontrol.javascript(StdLibrary.js)#'></script>
+<script type='text/javascript' src='#mastercontrol.javascript(NCRForm.js)#'></script>
+
+<!--  Inside MasterControl 
+<script type='text/javascript' src='js/tabber.js'></script>
+<script type='text/javascript' src='js/jquery-1.7.1.min.js'></script>
+<script type='text/javascript' src='js/Calendar.js'></script>
+<script type='text/javascript' src='js/StdLibrary.js'></script>
+<script type='text/javascript' src='js/NCRForm.js'></script>
+ -->
+<script language="javascript" type="text/javascript">
+var jQ = jQuery.noConflict();
+
+jQ(function() {
+	retainHeightWidth();
+	formStart();
+
+});
+</script>
