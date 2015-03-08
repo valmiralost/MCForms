@@ -30,7 +30,6 @@ function formStart(){
             additionalActionRequired(); 
         });
         jQ("#btnLaunchCAPA").click(function () {
-            mapSourceFields();
             selectRouteLaunched("CAPANew", "mastercontrol.task.routes");
             jQ("#mastercontrol\\.task\\.launch").click();
             var vInput = document.getElementById("mastercontrol.links.CAPANew");
@@ -43,7 +42,6 @@ function formStart(){
             }
         });
         jQ("#btnLaunchAAForm").click(function () {
-            mapSourceFields();
             selectRouteLaunched("Additional Action", "mastercontrol.task.routes");
             jQ("#mastercontrol\\.task\\.launch").click();
             var vInput = document.getElementById("mastercontrol.links.Additional Action");
@@ -205,11 +203,6 @@ function additionalActionRequired(){
     }
 }/*END  Additional Action Required Functionality */
 
-/* Map source fields for Form to Form Data */
-function mapSourceFields(){
-    var sourceDate = document.getElementById("hlpNCRCreated");
-    sourceDate.value = document.getElementById("mastercontrol.form.created").value;
-}/* END source fields for Form to Form Data */
 
 function GetLaunchedFormNo(vform)
 {
