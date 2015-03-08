@@ -38,8 +38,7 @@ function formStart(){
                 vShow = "Something went wrong with tracking the linked form";
                 alert(vShow);
             }else{
-                capaRequired();  
-                jQ("#testB").click();                     
+                capaRequired();                   
             }
         });
         jQ("#btnLaunchAAForm").click(function () {
@@ -51,8 +50,7 @@ function formStart(){
                 vShow = "Something went wrong with tracking the linked form";
                 alert(vShow);
             }else{
-                additionalActionRequired();    
-                jQ("testB").click();                   
+                additionalActionRequired();                
             }
         });  
 
@@ -150,16 +148,21 @@ function calcRisk(riskFld,sevField,OccField,test) {
 function capaRequired(){
     var oListFormNos = document.getElementById("mastercontrol.links.CAPANew");
     var oViewButton = document.getElementById("mastercontrol.links.view.CAPANew");
-    var oLaunchbutton = document.getElementById("btnLaunchCAPA");  
+    var oLaunchbutton = document.getElementById("btnLaunchCAPA");
+    var valueField = document.getElementById("txtCAPANumber");  
     var rbValue = getCheckedValue('rbCAPARequired');
+//need to find view only status and check for it
     if(oListFormNos.length != 0)
     {
-            removeClass("hide",oViewButton);
-            oLaunchbutton.disabled = true;  
-            var radios = document.getElementsByName('rbCAPARequired');
-            for (var i = 0; i< radios.length;  i++){
-                radios[i].disabled = true;
-            } 
+        removeClass("hide",oViewButton);
+        oLaunchbutton.disabled = true;  
+        var radios = document.getElementsByName('rbCAPARequired');
+        for (var i = 0; i< radios.length;  i++){
+            radios[i].disabled = true;
+        }
+        if(valueField.value == "") {
+            valueField.value = GetLaunchedFormNo(2); 
+        }
     } else{
         var rbValue = getCheckedValue('rbCAPARequired');
         if(rbValue== 'Yes'){
@@ -185,16 +188,20 @@ function dcnLaunched(){
 function additionalActionRequired(){
     var oListFormNos = document.getElementById("mastercontrol.links.Additional Action");
     var oViewButton = document.getElementById("mastercontrol.links.view.Additional Action");
-    var oLaunchbutton = document.getElementById("btnLaunchAAForm");  
+    var oLaunchbutton = document.getElementById("btnLaunchAAForm"); 
+    var valueField = document.getElementById("txtAAFormNumber");   
 //need to find view only status and check for it
     if(oListFormNos.length != 0)
     {
-            removeClass("hide",oViewButton);
-            oLaunchbutton.disabled = true;  
-            var radios = document.getElementsByName('rbAAFormRequired');
-            for (var i = 0; i< radios.length;  i++){
-                radios[i].disabled = true;
-            } 
+        removeClass("hide",oViewButton);
+        oLaunchbutton.disabled = true;  
+        var radios = document.getElementsByName('rbAAFormRequired');
+        for (var i = 0; i< radios.length;  i++){
+            radios[i].disabled = true;
+        } 
+         if(valueField.value == "") {
+            valueField.value = GetLaunchedFormNo(1); 
+        }
     } else{
         var rbValue = getCheckedValue('rbAAFormRequired');
         if(rbValue== 'Yes'){
@@ -242,7 +249,7 @@ function GetLaunchedFormNo(vform)
     }
     else
     {
-        return "# not in list yet";
+        return "";
     }  
 }
 
@@ -297,7 +304,3 @@ function finalDisposition(){
 
 }/*END  Final dispositon functionality */
 
-
-function mapSourceFields(){
-    
-}
