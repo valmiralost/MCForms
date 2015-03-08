@@ -102,6 +102,8 @@ ul.tabbernav li.tabberactive a {
 					</tr><!-- header sixth row end -->
 					<div id="divHiddenTitle" class="hide"><!-- hidden title fields div begin -->
 						<input type="text" id="mastercontrol.form.title" alt="Task Title" />
+						<select id="mastercontrol.links.source" multiple=style="display:none""" size="1" name="mastercontrol.links.source" title="Source Reference" >
+						</select>
 					</div><!-- hidden title fields div end -->
 				</table><!-- header table end -->
 			</div><!-- page001 end -->
@@ -113,33 +115,58 @@ ul.tabbernav li.tabberactive a {
 					<div id="mcPage_002" class="mcPage"><!-- page 2 begin -->
 					<span class="tabHeading">Initiate</span>
 						<div class="sectionData">
-						<div class="sectionHeading">Information</div>
+						<div class="sectionHeading">Source Form Information</div>
 
-							<div id="divtxtSource" class="fieldRow">
+						<div id="divSourceType" class="fieldRow">
 								<div class="leftLabel labelWidth20">
-									<label for="txtSource">Source:</label>
-								</div>
-								<div class="leftField">
-									<div class="formField68">
-										<input id="txtSource" type="text" class="readonly textfield textfield35"  alt="Source" title="Source" />
-									</div>
-								</div>
-							</div>
-							<div class="clearBoth"></div>
-
-							<div id="divtxtSourceNumber" class="fieldRow">
-								<div class="leftLabel labelWidth20">
-									<label for="txtSourceNumber">Source Number:</label>
+									<label for="txtSourceType">Source Type:</label>
 								</div>
 								<div class="leftField">
 									<div class="formField34">
-										<input id="txtSourceNmber" type="text" class="readonly textfield textfield35"  alt="Source Number" title="Source Number" />
+										<input id="txtSourceType" name="txtSourceType" type="text" class="textfield" alt="Source Type" title="Source Type" disabled="disabled" />
+									</div>
+									<div class="subLabel">
+										<label for="txtSourceDate">Source Create Date:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtSourceDate" type="text" class="textfield" alt="Source Create Date" title="Source Create Date" disabled="disabled"/>
 									</div>
 								</div>
 							</div>
 							<div class="clearBoth"></div>
 
+							<div id="divSource" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtSource">Source Number:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="mastercontrol.task.parentformid" name="mastercontrol.task.parentformid" type="text" class="textfield" alt="Source" title="Source" disabled="disabled"/>
+									</div>
+									<div class="formField34">
+										<span id="ViewSource" class="print-hide" style="padding-left:10px;">
+											<input name="mastercontrol.links.view.source" type="button" class="formButton115 viewTask" id="mastercontrol.links.view.source" title="View Source" alt="View Source" value="View Source">
 
+              							</span>
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divSourceTitle" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtSourceTitle">Source Title:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<input id="txtSourceTitle" type="text" class="textfield " alt="Source Title" title="Source Title" disabled="disabled" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Information</div>					
 							<div id="divtxtCAPAObserved_date" class="fieldRow">
 								<div class="leftLabel labelWidth20">
 									<label for="txttxtCAPAObserved_date_date" class="reqdLabel">* Date Requested:</label>
@@ -1983,5 +2010,6 @@ var jQ = jQuery.noConflict();
 jQ(function() {
 	retainHeightWidth();
 	formStart();
+	setTaskTitle();
 });
 </script>

@@ -23,23 +23,50 @@ function formStart(){
             jQ('input[type=radio][name=rbCAPARequired]').click(function() {
             capaRequired();
         });
-         jQ('input[type=radio][name=rbDCN]').click(function() {
+         jQ('input[type=radio][name=rbDCNLaunced]').click(function() {
            dcnLaunched();
         });   
          jQ('input[type=radio][name=rbAAFormRequired]').click(function() {
             additionalActionRequired(); 
         });
         jQ("#btnLaunchCAPA").click(function () {
-        selectRouteLaunched("CAPA", "mastercontrol.task.routes");
-        //TO DO *************************build and add function to map fields
-        jQ("#mastercontrol\\.task\\.launch").click();
+            mapSourceFields();
+            selectRouteLaunched("CAPANew", "mastercontrol.task.routes");
+            jQ("#mastercontrol\\.task\\.launch").click();
+            var vInput = document.getElementById("mastercontrol.links.CAPANew");
+                 if(! vInput){
+                vShow = "Something went wrong with tracking the linked form";
+                alert(vShow);
+            }else{
+                document.getElementById("txtCAPANumber").value = GetLaunchedFormNo(2); 
+                capaRequired();                       
+            }
         });
         jQ("#btnLaunchAAForm").click(function () {
-        selectRouteLaunched("Additional Action", "mastercontrol.task.routes");
-        jQ("#mastercontrol\\.task\\.launch").click();
-         var tet = jQ("#mastercontrol\\.dataset\\.recordids\\.Products\\.Name option:selected").text();
-         alert(tet);  
-        });         
+            mapSourceFields();
+            selectRouteLaunched("Additional Action", "mastercontrol.task.routes");
+            jQ("#mastercontrol\\.task\\.launch").click();
+            var vInput = document.getElementById("mastercontrol.links.Additional Action");
+                 if(! vInput){
+                vShow = "Something went wrong with tracking the linked form";
+                alert(vShow);
+            }else{
+                additionalActionRequired();    
+                jQ("testB").click();                   
+            }
+        });  
+
+         jQ('input[type=radio][name=rbFinalDisposition]').click(function() {
+            finalDisposition(); 
+        });
+        jQ("#testB").click(function () { 
+
+         //   document.getElementById("txtAAFormNumber").value = GetLaunchedFormNo(1); 
+          document.getElementById("btnLaunchAAForm").disabled = false;  
+           document.getElementById("btnLaunchCAPA").disabled = false;
+                       
+        });   
+
         ///////Fields show/hide to start //////////
         jQ("#mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name,label[for=mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name]").hide();
         jQ("#txtNoInvestigationJustification,label[for=txtNoInvestigationJustification]").hide();
@@ -49,6 +76,7 @@ function formStart(){
         capaRequired();
         dcnLaunched();
         additionalActionRequired();
+        finalDisposition();
     } catch(e){}
 
 }/* END start  */
@@ -117,6 +145,119 @@ function calcRisk(riskFld,sevField,OccField,test) {
         jQ(riskFld).removeClass( "riskGreen riskYellow riskRed" )
      }
 }/* END Calculate Risk and background color */
+
+ /* CAPA Required Functionality */
+function capaRequired(){
+    var oListFormNos = document.getElementById("mastercontrol.links.CAPANew");
+    var oViewButton = document.getElementById("mastercontrol.links.view.CAPANew");
+    var oLaunchbutton = document.getElementById("btnLaunchCAPA");  
+    var rbValue = getCheckedValue('rbCAPARequired');
+    if(oListFormNos.length != 0)
+    {
+            removeClass("hide",oViewButton);
+            oLaunchbutton.disabled = true;  
+            var radios = document.getElementsByName('rbCAPARequired');
+            for (var i = 0; i< radios.length;  i++){
+                radios[i].disabled = true;
+            } 
+    } else{
+        var rbValue = getCheckedValue('rbCAPARequired');
+        if(rbValue== 'Yes'){
+            oLaunchbutton.disabled = false;    
+        }else {
+            oLaunchbutton.disabled = true;
+        }
+    }
+
+}/* END CAPA Required Functionality */
+
+/* DCR Launched Functionality */
+function dcnLaunched(){
+    var rbValue = getCheckedValue('rbDCNLaunced');
+    if(rbValue== 'Yes'){
+        radioEnableDisableClass('yesDCN',false);     
+    }else {
+        radioEnableDisableClass(false,'yesDCN'); 
+    }
+}/* END DCR Required Functionality */
+
+/* Additional Action Required Functionality */
+function additionalActionRequired(){
+    var oListFormNos = document.getElementById("mastercontrol.links.Additional Action");
+    var oViewButton = document.getElementById("mastercontrol.links.view.Additional Action");
+    var oLaunchbutton = document.getElementById("btnLaunchAAForm");  
+//need to find view only status and check for it
+    if(oListFormNos.length != 0)
+    {
+            removeClass("hide",oViewButton);
+            oLaunchbutton.disabled = true;  
+            var radios = document.getElementsByName('rbAAFormRequired');
+            for (var i = 0; i< radios.length;  i++){
+                radios[i].disabled = true;
+            } 
+    } else{
+        var rbValue = getCheckedValue('rbAAFormRequired');
+        if(rbValue== 'Yes'){
+            oLaunchbutton.disabled = false;    
+        }else {
+            oLaunchbutton.disabled = true;
+        }
+    }
+}/*END  Additional Action Required Functionality */
+
+/* Map source fields for Form to Form Data */
+function mapSourceFields(){
+    var sourceDate = document.getElementById("hlpNCRCreated");
+    sourceDate.value = document.getElementById("mastercontrol.form.created").value;
+}/* END source fields for Form to Form Data */
+
+function GetLaunchedFormNo(vform)
+{
+    if(vform == 1){
+        var oListFormNos = document.getElementById("mastercontrol.links.Additional Action");
+    } else if(vform == 2){
+        var oListFormNos = document.getElementById("mastercontrol.links.CAPANew");
+    } else{
+        alert("cannot locate form link");
+        return "issue locating links select";
+    }
+    if(oListFormNos.length != 0)
+    {
+        var sLastFormNum;
+        var nRevIndex;
+        var arry = new Array();
+        var i;
+        
+        for (i=0; i<oListFormNos.length;i++)
+        {
+            var itemFace = oListFormNos[i].value;
+            arry[i] = itemFace;
+        }  
+        arry.sort();
+        
+        sLastFormNum = arry[arry.length-1];
+        nRevIndex = sLastFormNum.toLowerCase().indexOf(new String("Rev").toLowerCase());
+        if (nRevIndex>-1)
+        sLastFormNum = sLastFormNum.substr(0, nRevIndex-1);
+        
+        return sLastFormNum;
+    }
+    else
+    {
+        return "issue retreving #";
+    }  
+}
+
+function removeClass(vclass,vobj){
+    var myClassName=" "+ vclass; //must keep a space before class name
+    vobj.className=vobj.className.replace(myClassName,"");
+}
+function addClass(vclass,vobj){
+    var myClassName=" "+ vclass; //must keep a space before class name
+    vobj.className=vobj.className.replace(myClassName,""); // first remove the class name if that already exists
+    vobj.className = vobj.className + myClassName; // adding new class name
+}
+
 /* Enable and Disable fields in a class */
 function radioEnableDisableClass(enableClass,disableClass)
 {
@@ -145,72 +286,15 @@ function radioEnableDisableClass(enableClass,disableClass)
         }  
     }   
 }/* END Enable and Disable fields in a class */
- 
-function capaRequired(){
-        var rbValue = getCheckedValue('rbCAPARequired');
-    if(rbValue== 'Yes'){
-        jQ('#btnLaunchCAPA').prop("disabled",false);
-        jQ('#txtNoCAPAJustification').val("");
-        jQ("#txtNoCAPAJustification,label[for=txtNoCAPAJustification]").hide();     
-    }else {
-        jQ('#btnLaunchCAPA').prop("disabled",true);
-        jQ("#txtNoCAPAJustification,label[for=txtNoCAPAJustification]").show();
-        if(rbValue!= 'Yes' && rbValue != 'No'){
-            jQ('#btnLaunchCAPA').prop("disabled",true);
-            jQ('#txtNoCAPAJustification').val("");
-            jQ("#txtNoCAPAJustification,label[for=txtNoCAPAJustification]").hide();
-        }
-    }
 
-}
-function dcnLaunched(){
-        var rbValue = getCheckedValue('rbDCN');
-    if(rbValue== 'Yes'){
-        radioEnableDisableClass('yesDCN',false);     
-    }else {
-        jQ('#btnLaunchCAPA').prop("disabled",true);
-        radioEnableDisableClass(false,'yesDCN'); 
-    }
-
-}
-function additionalActionRequired(){
-        var rbValue = getCheckedValue('rbAAFormRequired');
-    if(rbValue== 'Yes'){
-        jQ('#btnLaunchAAForm').prop("disabled",false);   
-    }else {
-        jQ('#btnLaunchAAForm').prop("disabled",true);
-    }
-
-}
-
-function GetLaunchedFormNo()
-{
-    var oListFormNos = document.getElementById("mastercontrol\\.links\\.Additional.Action"); 
-
-    if(oListFormNos.length != 0)
-    {
-        var sLastFormNum;
-        var nRevIndex;
-        var arry = new Array();
-        var i;
-        
-        for (i=0; i<oListFormNos.length;i++)
-        {
-            var itemFace = oListFormNos[i].value;
-            arry[i] = itemFace;
-        }  
-        arry.sort();
-        
-        sLastFormNum = arry[arry.length-1];
-        nRevIndex = sLastFormNum.toLowerCase().indexOf(new String("Rev").toLowerCase());
-        if (nRevIndex>-1)
-        sLastFormNum = sLastFormNum.substr(0, nRevIndex-1);
-        
-        return sLastFormNum;
-    }
-    else
-    {
-        return "";
-    }
+/* Final dispositon functionality */
+function finalDisposition(){
     
-}
+    var rbValue = getCheckedValue('rbFinalDisposition');
+    if(rbValue== 'Scrap'){
+        radioEnableDisableClass('yesScrap',false);     
+    }else {
+        radioEnableDisableClass(false,'yesScrap'); 
+    }
+
+}/*END  Final dispositon functionality */

@@ -1,0 +1,166 @@
+<link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/SPScreenInt.css' type='text/css'>
+
+<style>
+.calendarImage {
+	border: 0 outset #000000;
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+	margin-bottom: 4px;
+	background-image: url(../../../images/calendar.jpg);
+}
+
+ul.tabbernav li {
+	float: left;
+	background: url(../../../images/tab_left.gif) no-repeat left top;
+	padding: 0 0 0 8px;
+}
+
+ul.tabbernav li a {
+	float: left;
+	display: block;
+	background: url(../../../images/tab_right.gif) no-repeat right top;
+	padding: 5px 15px 4px 7px;
+	text-decoration: none;
+	color: #000;
+	white-space: nowrap;
+	font: normal 11px Arial, Helvetica, sans-serif;
+	width: auto;
+}
+
+ul.tabbernav li.tabberactive {
+	background-image: url(../../../images/tab_left_on.gif);
+	border-bottom: 1px solid #ffffff;
+}
+
+ul.tabbernav li.tabberactive a {
+	background-image: url(../../../images/tab_right_on.gif);
+	border-bottom: 1px solid #ffffff;
+}
+</style>
+
+<form id="mcForm" method="post" action=""><!-- form begin -->
+	<div class="container"><!-- container begin -->
+		<div class="formHeader"><!-- formHeader begin -->
+			<div id="mcPage_001" class="mcPage"><!-- page001 begin -->
+				<table width="100%" border="0" cellspacing="0" cellpadding="0"><!-- header table begin -->
+					<tr><!-- header first row begin -->
+						<td width="5%">&nbsp;</td>
+						<td width="20%" class="TopLabel"><label for="mastercontrol.form.number">Form Number</label></td>
+						<td width="1%">&nbsp;</td>
+						<td width="20%" class="TopLabel"><label for="mastercontrol.route.stepduedate">Step Due Date</label></td>
+						<td width="5%">&nbsp;</td>
+					</tr><!-- header first row end -->
+					<tr><!-- header second row begin -->
+						<td>&nbsp;</td>
+						<td>
+							<input id="mastercontrol.form.number" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Form Number" title="" />
+						</td>
+						<td>&nbsp;</td>
+						<td>
+							<input id="mastercontrol.route.stepduedate" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Step Due Date" title="" />
+						</td>
+						<td>&nbsp;</td>
+					</tr><!-- header second row end -->
+					<tr><!-- header third row begin -->
+						<td>&nbsp;</td>
+						<td class="TopLabel"><label for="mastercontrol.form.created">Date Created</label></td>
+						<td>&nbsp;</td>
+						<td class="TopLabel"><label for="mastercontrol.form.creatorname">Creator Name</label></td>
+						<td>&nbsp;</td>
+					</tr><!-- header third row end -->
+					<tr><!-- header fourth row begin -->
+						<td>&nbsp;</td>
+						<td>
+							<input id="mastercontrol.form.created" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Date Created" title="" />
+						</td>
+						<td>&nbsp;</td>
+						<td>
+							<input id="mastercontrol.form.creatorname" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Creator Name" title="" />
+						</td>
+						<td>&nbsp;</td>
+					</tr><!-- header fourth row end -->
+					<tr><!-- header fifth row begin -->
+						<td>&nbsp;</td>
+						<td class="TopLabel" colspan="3"><label for="txtTitle">Title</label></td>
+						<td>&nbsp;</td>
+					</tr><!-- header fifth row end -->
+					<tr><!-- header sixth row begin -->
+						<td>&nbsp;</td>
+						<td colspan="3">
+							<input id="txtTitle" type="text" class="headerTextfield" alt="H_Title" title="" />
+						</td>
+						<td>&nbsp;</td>
+					</tr><!-- header sixth row end -->
+					<div id="divHiddenTitle" class="hide"><!-- hidden title fields div begin -->
+						<input type="text" id="mastercontrol.form.title" alt="Task Title" />
+					</div><!-- hidden title fields div end -->
+				</table><!-- header table end -->
+			</div><!-- page001 end -->
+		</div><!-- formHeader end -->
+		<div>
+		    <select id="mastercontrol.task.routes"  name="mastercontrol.task.routes" title="Available Routes" style="display:none" >
+		    </select>
+          	<input id="mastercontrol.task.launch" type="button" class="mastercontrol.task.launch" alt="Form launch" title="Form launch" style="display:none" />
+		  	<select id="mastercontrol.links.NewCAPA" multiple  size="1" name="mastercontrol.links.NewCAPA" title="NewCAPA Reference">
+		  	</select>
+		</div>
+
+		<div class="formBody"><!-- formBody begin -->
+			<div class="tabber" id="formTabs"><!-- formTabs begin -->
+				<div id="divDetailsTab" class="tabbertab" title="Details"><!-- Details tabbertab begin -->
+					<div id="mcPage_002" class="mcPage"><!-- page 2 begin -->
+					<span class="tabHeading">Details</span>
+						<div class="sectionData">
+						<div class="sectionHeading">Details</div>
+
+
+							<div id="divLaunchCAPANew" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtLaunchCAPANew">Launch CAPANew:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="btnLaunchCAPANew" type="button" class="formButton115" alt="Launch CAPANew" title="Launch CAPANew" value="Launch CAPANew"/>
+										<input id="mastercontrol.links.view.CAPANew" type="button" class="formButton115" alt="View CAPANew" title="View CAPANew" value="View CAPANew"/>
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divCAPANewID" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtCAPANewID">CAPANew ID:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtCAPANewID" type="text" class="textfield" alt="CAPANew ID" title="CAPANew ID" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+						</div><!-- final section end -->
+					</div><!-- final page end -->
+				</div><!-- final tabbertab end -->
+			</div><!-- formTabs end -->
+		</div><!-- formBody end -->
+	</div><!-- container end -->
+</form><!-- form end -->
+
+<script type='text/javascript' src='#mastercontrol.javascript(tabber.js)#'></script>
+<script type='text/javascript' src='#mastercontrol.javascript(jquery-1.7.1.min.js)#'></script>
+<script type='text/javascript' src='#mastercontrol.javascript(StdLibrary.js)#'></script>
+
+<script language="javascript" type="text/javascript">
+var jQ = jQuery.noConflict();
+
+jQ(function() {
+	setTaskTitle();
+
+jQ("#btnLaunchCAPANew").click(function () {
+		selectRouteLaunched("CAPANew", "mastercontrol.task.routes");
+		jQ("#mastercontrol\\.task\\.launch").click();
+	});
+
+});
+</script>

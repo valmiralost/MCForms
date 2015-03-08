@@ -102,6 +102,9 @@ ul.tabbernav li.tabberactive a {
 					</tr><!-- header sixth row end -->
 					<div id="divHiddenTitle" class="hide"><!-- hidden title fields div begin -->
 						<input type="text" id="mastercontrol.form.title" alt="Task Title" />
+						<!-- hidden select for the launch source button -->
+						<select id="mastercontrol.links.source" multiple=style="display:none""" size="1" name="mastercontrol.links.source" title="Source Reference" >
+						</select>
 					</div><!-- hidden title fields div end -->
 				</table><!-- header table end -->
 			</div><!-- page001 end -->
@@ -117,11 +120,17 @@ ul.tabbernav li.tabberactive a {
 
 						<div id="divSourceType" class="fieldRow">
 								<div class="leftLabel labelWidth20">
-									<label for="txtSourceTitle">Source Type:</label>
+									<label for="txtSourceType">Source Type:</label>
 								</div>
 								<div class="leftField">
-									<div class="formField68">
-										<input id="txtSourceType" type="text" class="textfield readonly" alt="Source Type" title="Source Type" readonly="readonly"/>
+									<div class="formField34">
+										<input id="txtSourceType" name="txtSourceType" type="text" class="textfield" alt="Source Type" title="Source Type" disabled="disabled" />
+									</div>
+									<div class="subLabel">
+										<label for="txtSourceDate">Source Create Date:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtSourceDate" type="text" class="textfield" alt="Source Create Date" title="Source Create Date" disabled="disabled"/>
 									</div>
 								</div>
 							</div>
@@ -129,18 +138,17 @@ ul.tabbernav li.tabberactive a {
 
 							<div id="divSource" class="fieldRow">
 								<div class="leftLabel labelWidth20">
-									<label for="txtSource">Source:</label>
+									<label for="txtSource">Source Number:</label>
 								</div>
 								<div class="leftField">
 									<div class="formField34">
-										<input id="txtSource" type="text" class="textfield readonly" alt="Source" title="Source" readonly="readonly"/>
-									</div>
-
-									<div class="subLabel">
-										<label for="txtSourceDate">Source Create Date:</label>
+										<input id="mastercontrol.task.parentformid" name="mastercontrol.task.parentformid" type="text" class="textfield" alt="Source" title="Source" disabled="disabled"/>
 									</div>
 									<div class="formField34">
-										<input id="txtSourceDate" type="text" class="textfield readonly" alt="Source Create Date" title="Source Create Date" readonly="readonly"/>
+										<span id="ViewSource" class="print-hide" style="padding-left:10px;">
+											<input name="mastercontrol.links.view.source" type="button" class="formButton115 viewTask" id="mastercontrol.links.view.source" title="View Source" alt="View Source" value="View Source">
+
+              							</span>
 									</div>
 								</div>
 							</div>
@@ -152,14 +160,33 @@ ul.tabbernav li.tabberactive a {
 								</div>
 								<div class="leftField">
 									<div class="formField68">
-										<input id="txtSourceTitle" type="text" class="textfield readonly" alt="Source Title" title="Source Title" readonly="readonly"/>
+										<input id="txtSourceTitle" type="text" class="textfield " alt="Source Title" title="Source Title" disabled="disabled" />
 									</div>
 								</div>
 							</div>
 							<div class="clearBoth"></div>
+
 						</div><!-- previous section end -->
 						<div class="sectionData">
 						<div class="sectionHeading">Action</div>
+							<div id="divAssignedTo" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtAssignedTo" class="reqdLabel">Assigned To:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtAssignedTo" type="text" class="textfield required" alt="Assigned To" title="Assigned To" />
+									</div>
+									<div class="subLabel">
+										<label for="txtDueDate_date" class="reqdLabel">* Due Date:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtDueDate_date" type="text" class="readonly textfield textfield35 required" readonly="readonly" alt="Due Date" title="Due Date" />
+										<input id="btnDueDateCalendar" type="button" class="calendarImage" title="Due Date" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
 
 							<div id="divActionDescription" class="fieldRow">
 								<div class="leftLabel labelWidth20">
@@ -196,7 +223,7 @@ ul.tabbernav li.tabberactive a {
 							</div>
 						</div><!-- previous section end -->
 						<div class="sectionData">
-						<div class="sectionHeading">Information Signature</div>
+						<div class="sectionHeading">Action Signature</div>
 							<div class="signatureData">
 								<table class="signatureTable" cellpadding="0" cellspacing="0">
 									<thead>
@@ -267,10 +294,11 @@ ul.tabbernav li.tabberactive a {
 		</div><!-- formBody end -->
 	</div><!-- container end -->
 </form><!-- form end -->
-
 <script type='text/javascript' src='#mastercontrol.javascript(tabber.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(jquery-1.7.1.min.js)#'></script>
+<script type='text/javascript' src='#mastercontrol.javascript(Calendar.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(StdLibrary.js)#'></script>
+<script type='text/javascript' src='#mastercontrol.javascript(AAForm.js)#'></script>
 
 <script language="javascript" type="text/javascript">
 var jQ = jQuery.noConflict();
@@ -279,4 +307,6 @@ jQ(function() {
 	setTaskTitle();
 
 	retainHeightWidth();});
+
+	startup();
 </script>

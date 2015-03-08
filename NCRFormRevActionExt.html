@@ -1,11 +1,11 @@
-<!--  Inside MasterControl  -->
+<!--  Inside MasterControl  
 <link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/SPScreenInt.css' type='text/css'>
 <link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/NCRForm.css' type='text/css'>
-
-<!--  Outside MasterControl 
+-->
+<!--  Outside MasterControl -->
 <link rel='stylesheet' title='main' href='css/SPScreenInt.css' type='text/css'>
 <link rel='stylesheet' title='main' href='css/NCRForm.css' type='text/css'>
--->
+
 
 
 <style>
@@ -126,17 +126,18 @@ body{
           <input name="mastercontrol.form.creatorname" type="hidden" id="mastercontrol.form.creatorname" title="Creator ID">
           <input name="hlpSourceType" type="hidden" id="hlpSourceType" title="SourceType" value="NCR" />
           <input name="hlpNCRNumber" type="hidden" id="hlpNCRNumber" title="Source Number" />
-          <input name="hlpNCRCreated" type="hidden" id="hlpNCRCreated" title="Source Create Date"  />
+          <input name="hlpNCRCreated" type="hidden" id="hlpNCRCreated" title="Source Create Date">
           <!-- Required to Launch Form from Form  -->
           <select id="mastercontrol.task.routes"  name="mastercontrol.task.routes" title="Available Routes" style="display:none" >
-          </select>
           <input id="mastercontrol.task.launch" type="button" class="mastercontrol.task.launch" alt="Form launch" title="Form launch" style="display:none" />
           <!--    -->
 
-			<select id="mastercontrol.links.CAPANew" multiple  size="1" name="mastercontrol.links.CAPANew" title="CAPANew Reference">
-		    </select>
+          <select id="mastercontrol.links.CAPA" multiple  size="1" name="mastercontrol.links.CAPA" title="CAPA Reference">
+              </select>
+         <div id="AAselect">     
 			<select id="mastercontrol.links.Additional Action" multiple  size="1" name="mastercontrol.links.Additional Action" title="Additional Action Reference">
-		    </select>
+		        </select>
+	     </div>
 	        <input name="testB" id="testB" type="button" title="Test Button" />
         </div><!-- DIV contains all hidden and keyword fields End-->
             
@@ -723,7 +724,7 @@ body{
 								<div class="leftField">
 									<div class="formField34">
 										<input id="btnLaunchCAPA" type="button" class="formButton115" alt="Launch CAPA" title="Launch CAPA" value="Launch CAPA"/>
-										<input type="button" name="mastercontrol.links.view.CAPANew" id="mastercontrol.links.view.CAPANew" value="View CAPA" title="View CAPA" class="formButton11 hide" value="" alt="View CAPA"/>
+										<input type="button" name="mastercontrol.links.view.CAPA" id="mastercontrol.links.view.CAPA" value="View CAPA" class="formButton115 hide" value="" alt="View CAPA"/>
 									</div>
 
 									<div class="subLabel">
@@ -892,7 +893,7 @@ body{
 								</div>
 								<div class="leftField">
 									<div class="formField34">
-										<input id="txtScrapCost" type="text" class="textfield yesScrap" alt="Scrap Cost" title="Scrap Cost" />
+										<input id="txtScrapCost" type="text" class="textfield" alt="Scrap Cost" title="Scrap Cost" />
 									</div>
 								</div>
 							</div>
@@ -1017,26 +1018,26 @@ body{
 		</div><!-- formBody end -->
 	</div><!-- container end -->
 </form><!-- form end -->
-<!--  Inside MasterControl  -->
+<!--  Inside MasterControl 
 <script type='text/javascript' src='#mastercontrol.javascript(tabber.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(jquery-1.7.1.min.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(Calendar.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(StdLibrary.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(NCRForm.js)#'></script>
-
-<!--  Inside MasterControl 
+ -->
+<!--  Inside MasterControl  -->
 <script type='text/javascript' src='js/tabber.js'></script>
 <script type='text/javascript' src='js/jquery-1.7.1.min.js'></script>
 <script type='text/javascript' src='js/Calendar.js'></script>
 <script type='text/javascript' src='js/StdLibrary.js'></script>
 <script type='text/javascript' src='js/NCRForm.js'></script>
- -->
+
 <script language="javascript" type="text/javascript">
 var jQ = jQuery.noConflict();
 
 jQ(function() {
 	retainHeightWidth();
 	formStart();
-	setTaskTitle();
+
 });
 </script>
