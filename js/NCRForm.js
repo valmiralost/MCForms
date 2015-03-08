@@ -1,4 +1,4 @@
-/* Hide fields on start and other functions */
+/* Hide fields on start and other functions  3-8*/
 function formStart(){
     stepId  =  document.getElementById("mastercontrol.route.stepid").value*1;
     stepNumber =  document.getElementById("mastercontrol.route.stepnumber").value*1;
@@ -37,8 +37,8 @@ function formStart(){
                 vShow = "Something went wrong with tracking the linked form";
                 alert(vShow);
             }else{
-                document.getElementById("txtCAPANumber").value = GetLaunchedFormNo(2); 
-                capaRequired();                       
+                capaRequired();  
+                jQ("#testB").click();                     
             }
         });
         jQ("#btnLaunchAAForm").click(function () {
@@ -58,7 +58,7 @@ function formStart(){
             finalDisposition(); 
         });
         jQ("#testB").click(function () { 
-
+            document.getElementById("txtCAPANumber").value = GetLaunchedFormNo(2); 
          //   document.getElementById("txtAAFormNumber").value = GetLaunchedFormNo(1); 
           document.getElementById("btnLaunchAAForm").disabled = false;  
            document.getElementById("btnLaunchCAPA").disabled = false;
@@ -227,17 +227,15 @@ function GetLaunchedFormNo(vform)
             arry[i] = itemFace;
         }  
         arry.sort();
-        
         sLastFormNum = arry[arry.length-1];
         nRevIndex = sLastFormNum.toLowerCase().indexOf(new String("Rev").toLowerCase());
         if (nRevIndex>-1)
         sLastFormNum = sLastFormNum.substr(0, nRevIndex-1);
-        
         return sLastFormNum;
     }
     else
     {
-        return "issue retreving #";
+        return "# not in list yet";
     }  
 }
 
@@ -291,3 +289,8 @@ function finalDisposition(){
     }
 
 }/*END  Final dispositon functionality */
+
+
+function mapSourceFields(){
+    
+}
