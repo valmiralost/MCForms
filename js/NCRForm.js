@@ -36,41 +36,18 @@ function formStart(){
             mapSourceFields();
             selectRouteLaunched("CAPANew", "mastercontrol.task.routes");
             jQ("#mastercontrol\\.task\\.launch").click();
-            var vInput = document.getElementById("mastercontrol.links.CAPANew");
-                 if(! vInput){
-                vShow = "Something went wrong with tracking the linked form";
-                alert(vShow);
-            }else{
-                capaRequired();                   
-            }
+            capaRequired();                   
         });
         jQ("#btnLaunchAAForm").click(function () {
             mapSourceFields();
             selectRouteLaunched("Additional Action", "mastercontrol.task.routes");
             jQ("#mastercontrol\\.task\\.launch").click();
-            var vInput = document.getElementById("mastercontrol.links.Additional Action");
-                 if(! vInput){
-                vShow = "Something went wrong with tracking the linked form";
-                alert(vShow);
-            }else{
-                additionalActionRequired();                
-            }
+            additionalActionRequired();                
         });  
 
          jQ('input[type=radio][name=rbFinalDisposition]').click(function() {
             finalDisposition(); 
         });
-        jQ("#testB").click(function () { 
-        //    document.getElementById("txtCAPANumber").value = GetLaunchedFormNo(2); 
-         //   document.getElementById("txtAAFormNumber").value = GetLaunchedFormNo(1); 
-         // document.getElementById("btnLaunchAAForm").disabled = false;  
-        //   document.getElementById("btnLaunchCAPA").disabled = false;
-      //  radios = document.getElementById("rbInitialDisposition").disabled = true;
-
-            
-            
-                       
-        });   
 
         ///////Fields show/hide to start //////////
         jQ("#mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name,label[for=mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name]").hide();
@@ -176,9 +153,12 @@ function capaRequired(){
         if(rbValue== 'Yes'){
             oLaunchbutton.disabled = false;
             jQ("#txtNoCAPAJustification,label[for=txtNoCAPAJustification]").hide();     
-        }else {
-            oLaunchbutton.disabled = true;
+        }else if(rbValue== 'No'){
             jQ("#txtNoCAPAJustification,label[for=txtNoCAPAJustification]").show();
+             oLaunchbutton.disabled = true;
+        } else {
+            oLaunchbutton.disabled = true;
+            
         }
     }
 
