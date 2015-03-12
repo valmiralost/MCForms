@@ -154,6 +154,7 @@ function capaRequired(){
     var oViewButton = document.getElementById("mastercontrol.links.view.CAPANew");
     var oLaunchbutton = document.getElementById("btnLaunchCAPA");
     var valueField = document.getElementById("txtCAPANumber");  
+    var justField = document.getElementById("txtNoCAPAJustification"); 
     var rbValue = getCheckedValue('rbCAPARequired');
 //need to find view only status and check for it
     if(oListFormNos.length != 0)
@@ -161,15 +162,19 @@ function capaRequired(){
         removeClass("hide",oViewButton);
         oLaunchbutton.disabled = true;  
         jQ('input[name=rbCAPARequired]').attr("disabled",true);
+        justField.value = "";
+        jQ("#txtNoCAPAJustification,label[for=txtNoCAPAJustification]").hide();
         if(valueField.value == "") {
             valueField.value = GetLaunchedFormNo(2); 
         }
     } else{
         var rbValue = getCheckedValue('rbCAPARequired');
         if(rbValue== 'Yes'){
-            oLaunchbutton.disabled = false;    
+            oLaunchbutton.disabled = false;
+            jQ("#txtNoCAPAJustification,label[for=txtNoCAPAJustification]").hide();     
         }else {
             oLaunchbutton.disabled = true;
+            jQ("#txtNoCAPAJustification,label[for=txtNoCAPAJustification]").show();
         }
     }
 
@@ -272,6 +277,8 @@ function radioEnableDisableClass(enableClass,disableClass)
             jQ(enableArray[i]).val('');
              if(jQ(enableArray[i]).is("select")) {
                 jQ(enableArray[i]).removeAttr('disabled');
+            } else if (jQ(enableArray[i]).is(":radio")){
+                jQ(enableArray[i]).attr("disabled",false);
             }
         }
     }
@@ -283,7 +290,11 @@ function radioEnableDisableClass(enableClass,disableClass)
             jQ(disableArray[i]).val('');
             if(jQ(disableArray[i]).is("select")) {
                 jQ(disableArray[i]).attr("disabled", "disabled");
-            } else  {
+            }else if (jQ(disableArray[i]).is(":radio")){
+                jQ(disableArray[i]).attr('checked',false);
+                jQ(disableArray[i]).attr("disabled",true);
+            } 
+            else  {
             //   jQ(disableArray[i]).prop('readonly', true);
             jQ(disableArray[i]).disabled = true;
             }
