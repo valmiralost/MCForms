@@ -124,6 +124,8 @@ body{
           <input name="hlpSourceType" type="hidden" id="hlpSourceType" title="SourceType" value="NCR" />
           <input name="hlpNCRNumber" type="hidden" id="hlpNCRNumber" title="Source Number" />
           <input name="hlpNCRCreated" type="hidden" id="hlpNCRCreated" title="Source Create Date"  />
+          <input name="hlpAAtaskOwner" type="hidden" id="hlpAAtaskOwner" title="Additional Action Task Owner"  alt="Additional Action Task Owner" />
+          <input name="hlpAAtaskOwnerID" type="hidden" id="hlpAAtaskOwnerID" title="Addtional Action Task Owner ID"  alt="Additional ActionbTask Owner ID" />
           <!-- Required to Launch Form from Form  -->
           <select id="mastercontrol.task.routes"  name="mastercontrol.task.routes" title="Available Routes" style="display:none" >
           </select>
@@ -429,9 +431,9 @@ body{
 								</div>
 								<div class="leftField">
 									<div class="formField68">
-										<input id="rbInitialDisposition" name="rbInitialDisposition" type="radio" class="radiobuttonfield required rd" alt="Initial Disposition" title="Initial Disposition" value="Rework in house" />Rework in house
-										<input id="rbInitialDisposition" name="rbInitialDisposition" type="radio" class="radiobuttonfield required rd" alt="Initial Disposition" title="Initial Disposition" value="Use as is" />Use as is
-										<input id="rbInitialDisposition" name="rbInitialDisposition" type="radio" class="radiobuttonfield required rd" alt="Initial Disposition" title="Initial Disposition" value="Not Applicable" />Not Applicable
+										<input id="rbInitialDisposition" name="rbInitialDisposition" type="radio" class="radiobuttonfield required" alt="Initial Disposition" title="Initial Disposition" value="Rework in house" />Rework in house
+										<input id="rbInitialDisposition" name="rbInitialDisposition" type="radio" class="radiobuttonfield required" alt="Initial Disposition" title="Initial Disposition" value="Use as is" />Use as is
+										<input id="rbInitialDisposition" name="rbInitialDisposition" type="radio" class="radiobuttonfield required" alt="Initial Disposition" title="Initial Disposition" value="Not Applicable" />Not Applicable
 									</div>
 								</div>
 							</div>
@@ -797,6 +799,22 @@ body{
 								</div>
 							</div>
 							<div class="clearBoth"></div>
+
+							<div id="divAssignAAForm" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="cmbAssignAAForm">Assign Form:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										 <select name="mastercontrol.role.(roleName)" class="selectfield" id="mastercontrol.role.(roleName)"  alt="Addtional Action Assignee" title="ddtional Action Assignee">
+                						</select>
+									</div>
+
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+
 
 							<div class="clearBoth"></div>
 						</div><!-- previous section end -->
