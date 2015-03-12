@@ -1,7 +1,10 @@
+/* Global Vars */
+    var stepId  =  document.getElementById("mastercontrol.route.stepid").value*1;
+    var stepNumber =  document.getElementById("mastercontrol.route.stepnumber").value*1;
+    var sFormStatus= document.getElementById("mastercontrol.hidden.event").value;  /*viewOnly*/
+
 /* Hide fields on start and other functions  3-8*/
 function formStart(){
-    stepId  =  document.getElementById("mastercontrol.route.stepid").value*1;
-    stepNumber =  document.getElementById("mastercontrol.route.stepnumber").value*1;
         try
     {
             /* Add events to fields */
@@ -79,6 +82,7 @@ function formStart(){
         dcnLaunched();
         additionalActionRequired();
         finalDisposition();
+        setProductDataEntry();
     } catch(e){}
 
 }/* END start  */
@@ -269,12 +273,11 @@ function addClass(vclass,vobj){
 /* Enable and Disable fields in a class */
 function radioEnableDisableClass(enableClass,disableClass)
 {
-    if (enableClass != false) {
+    if (enableClass != false && sFormStatus=='editStep') {
         var enableArray = document.getElementsByClassName(enableClass);
         for(i = 0; i < enableArray.length; i++) {
             jQ(enableArray[i]).removeClass('readonly');
             jQ(enableArray[i]).prop('readonly', false);
-            jQ(enableArray[i]).val('');
              if(jQ(enableArray[i]).is("select")) {
                 jQ(enableArray[i]).removeAttr('disabled');
             } else if (jQ(enableArray[i]).is(":radio")){

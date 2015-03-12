@@ -1023,6 +1023,10 @@ body{
 <script type='text/javascript' src='#mastercontrol.javascript(Calendar.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(StdLibrary.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(NCRForm.js)#'></script>
+<script type='text/javascript' src='#mastercontrol.javascript(RHLib.js)#'></script>
+
+
+<script type="text/javascript" src="#mastercontrol.javascript(SPLib-1.0.0.js)#"> </script>
 
 <!--  Inside MasterControl 
 <script type='text/javascript' src='js/tabber.js'></script>
@@ -1035,8 +1039,9 @@ body{
 var jQ = jQuery.noConflict();
 
 jQ(function() {
-	retainHeightWidth();
 	formStart();
+	retainHeightWidth();
 	setTaskTitle();
+	InsertBlank();
 });
 </script>
