@@ -289,7 +289,7 @@ function radioEnableDisableClass(enableClass,disableClass)
         var disableArray = document.getElementsByClassName(disableClass);
          for(i = 0; i < disableArray.length; i++) {
             jQ(disableArray[i]).addClass('readonly');
-            
+            jQ(disableArray[i]).prop('readonly', true);
             jQ(disableArray[i]).val('');
             if(jQ(disableArray[i]).is("select")) {
                 jQ(disableArray[i]).attr("disabled", "disabled");
