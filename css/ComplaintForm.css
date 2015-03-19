@@ -8,3 +8,21 @@
 	text-align: left;
 	margin-left: 20px;
 }
+@media print {
+
+	html, body { height: auto; }
+	ul.tabbernav {
+	border-bottom:none;
+	}
+	.tabberlive .tabbertab {
+
+  	border: none;
+
+	}
+
+	#mcPage_001, #mcPage_005{
+  	page-break-after: avoid;
+  	width: 100%;
+	}
+
+}
