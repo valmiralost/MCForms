@@ -1,11 +1,11 @@
-<!--  Inside MasterControl 
+<!--  Inside MasterControl -->
 <link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/SPScreenInt.css' type='text/css'>
 <link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/ComplaintForm.css' type='text/css'>
--->
-<!--  Outside MasterControl -->
+
+<!--  Outside MasterControl 
 <link rel='stylesheet' title='main' href='css/SPScreenInt.css' type='text/css'>
 <link rel='stylesheet' title='main' href='css/ComplaintForm.css' type='text/css'>
-
+-->
 
 
 
@@ -109,10 +109,22 @@ ul.tabbernav li.tabberactive a {
 						</td>
 						<td>&nbsp;</td>
 					</tr><!-- header sixth row end -->
-					<div id="divHiddenTitle" class="hide"><!-- hidden title fields div begin -->
-						<input type="text" id="mastercontrol.form.title" alt="Task Title" />
-					</div><!-- hidden title fields div end -->
 				</table><!-- header table end -->
+				<div>  <!-- DIV contains all hidden and keyword fields Start-->
+		          <input name="mastercontrol.route.stepnumber" type="hidden" id="mastercontrol.route.stepnumber" title="Step Number">
+		          <input name="mastercontrol.route.stepid" type="hidden" id="mastercontrol.route.stepid" title="Step ID">
+		          <input name="mastercontrol.form.title" type="hidden" id="mastercontrol.form.title" title="Form Title">
+		          <input name="mastercontrol.form.creator" type="hidden" id="mastercontrol.form.creator" title="Creator Name">
+		          <input name="mastercontrol.form.creatorname" type="hidden" id="mastercontrol.form.creatorname" title="Creator ID">
+		          <input name="hlpSourceType" type="hidden" id="hlpSourceType" title="SourceType" value="Complaint" />
+		          <input name="hlpComplaintNumber" type="hidden" id="hlpComplaintNumber" title="Source Number" />
+		          <input name="hlpComplaintCreated" type="hidden" id="hlpComplaintCreated" title="Source Create Date"  />
+		          <!-- Required to Launch Form from Form  -->
+		          <select id="mastercontrol.task.routes"  name="mastercontrol.task.routes" title="Available Routes" style="display:none" >
+		          </select>
+		          <input id="mastercontrol.task.launch" type="button" class="mastercontrol.task.launch" alt="Form launch" title="Form launch" style="display:none" />
+          		<!--    -->
+        		</div><!-- DIV contains all hidden and keyword fields End-->
 			</div><!-- page001 end -->
 		</div><!-- formHeader end -->
 
@@ -1636,15 +1648,14 @@ ul.tabbernav li.tabberactive a {
 						</div><!-- previous section end -->
 						<div class="sectionData">
 						<div class="sectionHeading">CAPA</div>
-
-							<div id="divCAPARequestRequired" class="fieldRow">
+							<div id="divCAPARequired" class="fieldRow">
 								<div class="leftLabel labelWidth20">
-									<label for="">CAPA Requred:</label>
+									<label for="">CAPA Required:</label>
 								</div>
 								<div class="leftField">
 									<div class="formField68">
-										<input id="rbCAPARequestRequired" name="rbCAPARequestRequired" type="radio" class="radiobuttonfield" alt="CAPA Required" title="CAPA Required" value="Yes" />Yes
-										<input id="rbCAPARequestRequired" name="rbCAPARequestRequired" type="radio" class="radiobuttonfield" alt="CAPA Required" title="CAPA Required" value="No" />No
+										<input id="rbCAPARequired" name="rbCAPARequired" type="radio" class="radiobuttonfield" alt="CAPA Required" title="CAPA Required" value="Yes" />Yes
+										<input id="rbCAPARequired" name="rbCAPARequired" type="radio" class="radiobuttonfield" alt="CAPA Required" title="CAPA Required" value="No" />No
 									</div>
 								</div>
 							</div>
@@ -1652,33 +1663,32 @@ ul.tabbernav li.tabberactive a {
 
 							<div id="divLaunchCAPA" class="fieldRow">
 								<div class="leftLabel labelWidth20">
-									<label for="txtLaunchCAPA">Launch CAPA:</label>
+									<label for="btnLaunchCAPA">Launch CAPA:</label>
 								</div>
 								<div class="leftField">
 									<div class="formField34">
 										<input id="btnLaunchCAPA" type="button" class="formButton115" alt="Launch CAPA" title="Launch CAPA" value="Launch CAPA"/>
-										<div id="divFormToFormLaunch" class="hide"><!-- hidden form-to-form launch fields div begin -->
-											<select id="mastercontrol.task.routes" alt="Task Routes"></select>
-											<input type="button" id="mastercontrol.task.launch" alt="Task Launch" value="Launch Task" />
-										</div><!-- hidden form-to-form launch fields div end -->
+										<input type="button" name="mastercontrol.links.view.CAPANew" id="mastercontrol.links.view.CAPANew" value="View Form" class="formButton11 hide"  alt="View Additional Action"/>
 									</div>
 
 									<div class="subLabel">
 										<label for="txtCAPANumber">CAPA Number:</label>
 									</div>
 									<div class="formField34">
-										<input id="txtCAPANumber" type="text" class="textfield" alt="CAPA Number" title="CAPA Number" />
+										<select id="mastercontrol.links.CAPANew" multiple  size="1" name="mastercontrol.links.CAPANew" title="CAPANew Reference" style="display:none" >
+		    							</select>
+										<input id="txtCAPANumber" type="text" class="textfield readonly" alt="CAPA Number" title="CAPA Number" readonly="readonly" />
 									</div>
 								</div>
 							</div>
 							<div class="clearBoth"></div>
 
-							<div id="divNoRequestRationale" class="fieldRow">
+							<div id="divNoCAPAJustification" class="fieldRow">
 								<div class="leftLabel labelWidth20">
-									<label for="txtNoRequestRationale">Rationale for No CAPA:</label>
+									<label for="txtNoCAPAJustification">No CAPA Justification:</label>
 								</div>
 								<div class="leftField">
-									<textarea id="txtNoRequestRationale" class="textarea" rows="5" cols="20" title="Rationale for No CAPA" onKeyDown="expandTextArea(this);" onKeyUp="expandTextArea(this);"></textarea>
+									<textarea id="txtNoCAPAJustification" class="textarea" rows="5" cols="20" alt="txtNoCAPAJustification" title="No CAPA Justification" onKeyDown="expandTextArea(this);" onKeyUp="expandTextArea(this);"></textarea>
 								</div>
 							</div>
 							<div class="clearBoth"></div>
@@ -1999,23 +2009,22 @@ ul.tabbernav li.tabberactive a {
 	</div><!-- container end -->
 </form><!-- form end -->
 
-<!--  Inside MasterControl  
+<!--  Inside MasterControl  --> 
 <script type='text/javascript' src='#mastercontrol.javascript(tabber.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(jquery-1.7.1.min.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(Calendar.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(StdLibrary.js)#'></script>
-<script type="text/javascript" src="#mastercontrol.javascript(SPLib-1.0.0.js)#"> </script>
-<script type="text/javascript" src="#mastercontrol.javascript(RHLib.js)#"> </script>
-<script type='text/javascript' src='#mastercontrol.javascript(NCRForm.js)#'></script>
---> 
-<!--  Outside MasterControl  -->
+<!--<script type="text/javascript" src="#mastercontrol.javascript(RHLib.js)#"> </script> -->
+<script type='text/javascript' src='#mastercontrol.javascript(ComplaintForm.js)#'></script>
+
+<!--  Outside MasterControl  
 <script type='text/javascript' src='js/tabber.js'></script>
 <script type='text/javascript' src='js/jquery-1.7.1.min.js'></script>
 <script type='text/javascript' src='js/Calendar.js'></script>
 <script type='text/javascript' src='js/StdLibrary.js'></script>
 <script type='text/javascript' src='js/RHLib.js'></script>
-
-
+<script type='text/javascript' src='js/ComplaintForm.js'></script>
+-->
 
 <script language="javascript" type="text/javascript">
 var jQ = jQuery.noConflict();
@@ -2024,10 +2033,7 @@ jQ(function() {
 	setTaskTitle();
 
 	retainHeightWidth();
-	jQ("#btnLaunchCAPA").click(function () {
-		selectRouteLaunched("CAPA", "mastercontrol.task.routes");
-		jQ("#mastercontrol\\.task\\.launch").click();
-	});
+	formStart();
 
 });
 </script>
