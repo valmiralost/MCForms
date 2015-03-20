@@ -13,7 +13,7 @@ function radioEnableDisableClass(enableClass,disableClass)
             }
         }
     }
-    if (disableClass != false) {
+    if (disableClass != false && sFormStatus=='editStep') {
         var disableArray = document.getElementsByClassName(disableClass);
          for(i = 0; i < disableArray.length; i++) {
             jQ(disableArray[i]).addClass('readonly');

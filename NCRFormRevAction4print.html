@@ -1,11 +1,11 @@
-<!--  Inside MasterControl  
+<!--  Inside MasterControl  -->
 <link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/SPScreenInt.css' type='text/css'>
 <link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/NCRForm.css' type='text/css'>
--->
-<!--  Outside MasterControl -->
+
+<!--  Outside MasterControl 
 <link rel='stylesheet' title='main' href='css/SPScreenInt.css' type='text/css'>
 <link rel='stylesheet' title='main' href='css/NCRForm.css' type='text/css'>
-
+-->
 
 
 <style>
@@ -681,7 +681,6 @@ body{
 										<input id="rbSeverityRisk" name="rbSeverityRisk" type="radio" class="radiobuttonfield" alt="Severity" title="Severity" value="2" />2
 										<input id="rbSeverityRisk" name="rbSeverityRisk" type="radio" class="radiobuttonfield" alt="Severity" title="Severity" value="3" />3
 										<input id="rbSeverityRisk" name="rbSeverityRisk" type="radio" class="radiobuttonfield" alt="Severity" title="Severity" value="4" />4
-										<input id="rbSeverityRisk" name="rbSeverityRisk" type="radio" class="radiobuttonfield" alt="Severity" title="Severity" value="5" />5
 									</div>
 								</div>
 							</div>
@@ -698,6 +697,7 @@ body{
 										<input id="rbRecurrenceRisk" name="rbRecurrenceRisk" type="radio" class="radiobuttonfield" alt="Occurrence" title="Occurrence" value="3" />3
 										<input id="rbRecurrenceRisk" name="rbRecurrenceRisk" type="radio" class="radiobuttonfield" alt="Occurrence" title="Occurrence" value="4" />4
 										<input id="rbRecurrenceRisk" name="rbRecurrenceRisk" type="radio" class="radiobuttonfield" alt="Occurrence" title="Occurrence" value="5" />5
+										<input id="rbRecurrenceRisk" name="rbRecurrenceRisk" type="radio" class="radiobuttonfield" alt="Occurrence" title="Occurrence" value="6" />6
 									</div>
 								</div>
 							</div>
@@ -730,6 +730,43 @@ body{
 						<div class="sectionData">
 						<div class="sectionHeading">Additional Actions</div>
 
+							<div id="divAdditionalActionForm" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="">Additional Action <br>Form Required:</label>
+								</div>
+								<div class="leftField">
+									<br>
+									<div class="formField34">
+										<input id="rbAAFormRequired" name="rbAAFormRequired" type="radio" class="radiobuttonfield" alt="Additional Action Form Required" title="Additional Action Form Required" value="Yes" />Yes
+										<input id="rbAAFormRequired" name="rbAAFormRequired" type="radio" class="radiobuttonfield" alt="Additional Action Form Required" title="Additional Action Form Required" value="No" />No
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divLaunchAAForm" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="btnLaunchAAForm">Launch Form:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="btnLaunchAAForm" type="button" class="formButton115" alt="Launch Form" title="Launch Form" value="Launch Form"/>
+										<input type="button" name="mastercontrol.links.view.Additional Action" id="mastercontrol.links.view.Additional Action" value="View Form" class="formButton11 hide"  alt="View Additional Action"/>
+									</div>
+
+									<div class="subLabel">
+										<label for="txtAAFormNumber">Form Number:</label>
+									</div>
+									<div class="formField34">
+										<select id="mastercontrol.links.Additional Action" multiple  size="1" name="mastercontrol.links.Additional Action" title="Additional Action Reference" style="display:none">
+										</select>
+										<input id="txtAAFormNumber" type="text" class="textfield readonly" alt="AA Form Number" title="AA Form Number" readonly="readonly" />
+									</div>
+								</div>
+							</div>
+							
+
+							<div class="clearBoth"></div>
 							<div id="divCAPARequired" class="fieldRow">
 								<div class="leftLabel labelWidth20">
 									<label for="">CAPA Required:</label>
@@ -794,44 +831,8 @@ body{
 									</div>
 								</div>
 							</div>
-
-							<div id="divAdditionalActionForm" class="fieldRow">
-								<div class="leftLabel labelWidth20">
-									<label for="">Additional Action <br>Form Required:</label>
-								</div>
-								<div class="leftField">
-									<br>
-									<div class="formField34">
-										<input id="rbAAFormRequired" name="rbAAFormRequired" type="radio" class="radiobuttonfield" alt="Additional Action Form Required" title="Additional Action Form Required" value="Yes" />Yes
-										<input id="rbAAFormRequired" name="rbAAFormRequired" type="radio" class="radiobuttonfield" alt="Additional Action Form Required" title="Additional Action Form Required" value="No" />No
-									</div>
-								</div>
-							</div>
 							<div class="clearBoth"></div>
 
-							<div id="divLaunchAAForm" class="fieldRow">
-								<div class="leftLabel labelWidth20">
-									<label for="btnLaunchAAForm">Launch Form:</label>
-								</div>
-								<div class="leftField">
-									<div class="formField34">
-										<input id="btnLaunchAAForm" type="button" class="formButton115" alt="Launch Form" title="Launch Form" value="Launch Form"/>
-										<input type="button" name="mastercontrol.links.view.Additional Action" id="mastercontrol.links.view.Additional Action" value="View Form" class="formButton11 hide"  alt="View Additional Action"/>
-									</div>
-
-									<div class="subLabel">
-										<label for="txtAAFormNumber">Form Number:</label>
-									</div>
-									<div class="formField34">
-										<select id="mastercontrol.links.Additional Action" multiple  size="1" name="mastercontrol.links.Additional Action" title="Additional Action Reference" style="display:none">
-										</select>
-										<input id="txtAAFormNumber" type="text" class="textfield readonly" alt="AA Form Number" title="AA Form Number" readonly="readonly" />
-									</div>
-								</div>
-							</div>
-							<div class="clearBoth"></div>
-
-							<div class="clearBoth"></div>
 						</div><!-- previous section end -->
 						<div class="sectionData">
 						<div class="sectionHeading">Assessment - Attachments & Links</div>
@@ -944,7 +945,7 @@ body{
 									<label for="txtDispositionJustification">Disposition Justification:</label>
 								</div>
 								<div class="leftField">
-									<textarea id="txtDispositionJustification" class="textarea" rows="5" cols="20" title="Describe Disposition" onKeyDown="expandTextArea(this);" onKeyUp="expandTextArea(this);"></textarea>
+									<textarea id="txtDispositionJustification" class="textarea reqJust" rows="5" cols="20" title="Describe Disposition" onKeyDown="expandTextArea(this);" onKeyUp="expandTextArea(this);"></textarea>
 								</div>
 							</div>
 							<div class="clearBoth"></div>
@@ -1048,23 +1049,23 @@ body{
 		</div><!-- formBody end -->
 	</div><!-- container end -->
 </form><!-- form end -->
-<!--  Inside MasterControl  
+<!--  Inside MasterControl  --> 
 <script type='text/javascript' src='#mastercontrol.javascript(tabber.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(jquery-1.7.1.min.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(Calendar.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(StdLibrary.js)#'></script>
 <script type="text/javascript" src="#mastercontrol.javascript(SPLib-1.0.0.js)#"> </script>
-<script type="text/javascript" src="#mastercontrol.javascript(RHLib.js)#"> </script>
+<script type='text/javascript' src='#mastercontrol.javascript(RHLib.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(NCRForm.js)#'></script>
---> 
-<!--  Inside MasterControl  -->
+
+<!--  Inside MasterControl  
 <script type='text/javascript' src='js/tabber.js'></script>
 <script type='text/javascript' src='js/jquery-1.7.1.min.js'></script>
 <script type='text/javascript' src='js/Calendar.js'></script>
 <script type='text/javascript' src='js/StdLibrary.js'></script>
 <script type='text/javascript' src='js/RHLib.js'></script>
 <script type='text/javascript' src='js/NCRForm.js'></script>
-
+-->
 <script language="javascript" type="text/javascript">
 var jQ = jQuery.noConflict();
 

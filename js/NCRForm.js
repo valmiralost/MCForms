@@ -256,11 +256,18 @@ function addClass(vclass,vobj){
 function finalDisposition(){
     
     var rbValue = getCheckedValue('rbFinalDisposition');
-    if(rbValue== 'Scrap'){
-        radioEnableDisableClass('yesScrap',false);     
+
+    if(rbValue  =='Rework in house'|| rbValue  =='Use as is'){
+       // radioEnableDisableClass('productField','nonProductField'); 
+       radioEnableDisableClass('reqJust','yesScrap'); 
+    } else if (rbValue  =='Scrap'){
+        radioEnableDisableClass('yesScrap','reqJust'); 
+
     }else {
-        radioEnableDisableClass(false,'yesScrap'); 
-    }
+        radioEnableDisableClass(false,'reqJust');
+        radioEnableDisableClass(false,'yesScrap');
+     }
 
 }/*END  Final dispositon functionality */
+
 
