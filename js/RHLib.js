@@ -5,12 +5,15 @@ function radioEnableDisableClass(enableClass,disableClass)
             if (enableClass != false ) {
         var enableArray = document.getElementsByClassName(enableClass);
         for(i = 0; i < enableArray.length; i++) {
-            jQ(enableArray[i]).removeClass('readonly');
-            jQ(enableArray[i]).prop('readonly', false);
-             if(jQ(enableArray[i]).is("select")) {
-                jQ(enableArray[i]).removeAttr('disabled');
-            } else if (jQ(enableArray[i]).is(":radio")){
-                jQ(enableArray[i]).attr("disabled",false);
+            var vid = jQ(enableArray[i]).attr("id");
+            if(vid.indexOf("_date")<0){
+                jQ(enableArray[i]).removeClass('readonly');
+                jQ(enableArray[i]).prop('readonly', false);
+                 if(jQ(enableArray[i]).is("select")) {
+                    jQ(enableArray[i]).removeAttr('disabled');
+                } else if (jQ(enableArray[i]).is(":radio")){
+                    jQ(enableArray[i]).attr("disabled",false);
+                }
             }
         }
     }
