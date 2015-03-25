@@ -20,19 +20,65 @@ function formStart(){
     jQ("#cmbReceivedVia").change(function() {
         displayOther('cmbReceivedVia','txtOtherDetails','lbOtherDetails');  
     }); 
+    jQ("#cmbClassification").change(function() {
+        displayOther('cmbClassification','txtClassificationOther','lbClassificationOther');
+    });    
+
+        jQ('input[type=radio][name=rbSeverityRisk]').click(function() {
+            calcRisk('txtRiskScore','#rbSeverityRisk','#rbRecurrenceRisk','rbSeverityRisk');
+        });
+        jQ('input[type=radio][name=rbRecurrenceRisk]').click(function() {
+            calcRisk('txtRiskScore','#rbSeverityRisk','#rbRecurrenceRisk');
+        });
+       jQ('input[type=radio][name=rbInvestigationRequired]').click(function() {
+            investigationEval();
+        });
+
    jQ('input[type=radio][name=rbReviewDHR]').click(function() {
         dhrReview();
     });
-    displayOther('cmbReceivedVia','txtOtherDetails','lbOtherDetails');  
+      jQ('input[type=radio][name=rbNotificationRequired]').click(function() {
+        notifyRequired();
+    });
+    displayOther('cmbReceivedVia','txtOtherDetails','lbOtherDetails');
+    displayOther('cmbClassification','txtClassificationOther','lbClassificationOther');
+
+    investigationEval();
+    dhrReview(); 
+    notifyRequired();
+    capaRequired();  
 }
+
+/* Investigation Functionality */
+function investigationEval(){
+    var rbValue = getCheckedValue('rbInvestigationRequired');
+    if(rbValue== 'Yes'){
+        jQ('#btnDateAssignedCalendar').prop("disabled",false);
+        jQ('#btnDateCompletedCalendar').prop("disabled",false);
+        radioEnableDisableClass('yesInvestigation','noInvestigation'); 
+        
+    }else if(rbValue== 'No'){
+        radioEnableDisableClass('noInvestigation','yesInvestigation'); 
+        jQ('#btnDateAssignedCalendar').prop("disabled",true);
+        jQ('#btnDateCompletedCalendar').prop("disabled",true);
+    } else{
+        radioEnableDisableClass(false,'yesInvestigation');
+        radioEnableDisableClass(false,'noInvestigation'); 
+        jQ('#btnDateAssignedCalendar').prop("disabled",true);
+        jQ('#btnDateCompletedCalendar').prop("disabled",true);
+    }
+}/* END Investigation Functionality */
+
 
 /* DHR Review */
 function dhrReview(){
     var rbValue = getCheckedValue('rbReviewDHR');
     if(rbValue  =='Yes'){
-       radioEnableDisableClass('yesDHR',false); 
+       radioEnableDisableClass('yesDHR',false);
+       document.getElementById("btnDHRReivewDateCalendar").disabled = false;        
     } else{
         radioEnableDisableClass(false,'yesDHR');
+        document.getElementById("btnDHRReivewDateCalendar").disabled = true;   
      }
 }/* END DHR Review*/
 
@@ -66,7 +112,7 @@ function capaRequired(){
         oLaunchbutton.disabled = true;  
         jQ('input[name=rbCAPARequired]').attr("disabled",true);
         justField.value = "";
-        jQ("#txtNoCAPAJustification,label[for=txtNoCAPAJustification]").hide();
+
         if(valueField.value == "") {
             valueField.value = GetLaunchedFormNo(2); 
         }
@@ -74,18 +120,32 @@ function capaRequired(){
         var rbValue = getCheckedValue('rbCAPARequired');
         if(rbValue== 'Yes'){
             oLaunchbutton.disabled = false;
-            jQ("#txtNoCAPAJustification,label[for=txtNoCAPAJustification]").hide();     
-        }else if(rbValue== 'No'){
-            jQ("#txtNoCAPAJustification,label[for=txtNoCAPAJustification]").show();
-             oLaunchbutton.disabled = true;
-        } else {
+            radioEnableDisableClass(false,'noCAPA'); 
+       } else {
             oLaunchbutton.disabled = true;
-            jQ("#txtNoCAPAJustification,label[for=txtNoCAPAJustification]").hide();   
+            radioEnableDisableClass(false,'noCAPA');
+            if (rbValue== 'No'){
+            radioEnableDisableClass('noCAPA',false);
+        }
             
         }
     }
 
 }/* END CAPA Required Functionality */
+
+
+/* Is Notification Requred Funcationality */
+function notifyRequired(){
+        var rbValue = getCheckedValue('rbNotificationRequired');
+    if(rbValue  =='Yes'){
+       radioEnableDisableClass('yesNotify',false);
+       document.getElementById("btnNotificationDateCalendar").disabled = false;        
+    } else{
+        radioEnableDisableClass(false,'yesNotify');
+        document.getElementById("btnNotificationDateCalendar").disabled = true;   
+     }
+
+}/* END Is Notification Requred Funcationality */
 
 function GetLaunchedFormNo(vform)
 {

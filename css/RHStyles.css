@@ -1,0 +1,33 @@
+.riskClear{
+	background-color: white;
+
+}
+.riskGreen{
+	background-color: green;
+}
+.riskYellow{
+	background-color: yellow;
+}
+.riskRed{
+	background-color: red;
+}
+
+
+@media print {
+
+	html, body { height: auto; }
+	ul.tabbernav {
+	border-bottom:none;
+	}
+	.tabberlive .tabbertab {
+
+  	border: none;
+
+	}
+
+	#mcPage_001{
+  	page-break-after: avoid;
+  	width: 100%;
+	}
+
+}
