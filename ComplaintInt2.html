@@ -606,18 +606,6 @@ ul.tabbernav li.tabberactive a {
 								</div>
 							</div>
 							<div class="clearBoth"></div>
-
-							<div id="mastercontrol.dataset.recordids.ComplaintPriority.Name" class="fieldRow">
-								<div class="leftLabel labelWidth20">
-									<label for="mastercontrol.dataset.recordids.ComplaintPriority.Name">Priority:</label>
-								</div>
-								<div class="leftField">
-									<div class="formField34">
-										<select id="mastercontrol.dataset.recordids.ComplaintPriority.Name" class="selectfield" title="Priority"></select>
-									</div>
-								</div>
-							</div>
-							<div class="clearBoth"></div>
 						</div><!-- previous section end -->
 						<div class="sectionData">
 						<div class="sectionHeading">Complaint Evaluation</div>
@@ -694,7 +682,7 @@ ul.tabbernav li.tabberactive a {
 
 							<div id="divmastercontrol.role.NCRInvestigators" class="fieldRow">
 								<div class="leftLabel labelWidth20">
-									<label for="mastercontrol.role.NCRInvestigators">Assigned To:</label>
+									<label for="mastercontrol.role.ComplaintInvestigators">Assigned To:</label>
 								</div>
 								<div class="leftField">
 									<div class="formField34">
@@ -706,7 +694,7 @@ ul.tabbernav li.tabberactive a {
 										<label for="cmbPriority">Priority:</label>
 									</div>
 									<div class="formField34">
-										<select id="cmbPriority" class="selectfield yesInvestigation" title="Priority"></select>
+										<select id="mastercontrol.dataset.recordids.ComplaintPriority.Name" class="selectfield yesInvestigation" title="Priority"></select>
 									</div>
 								</div>
 							</div>
@@ -718,7 +706,7 @@ ul.tabbernav li.tabberactive a {
 								</div>
 								<div class="leftField">
 									<div class="formField34">
-										<input id="txtDateAssigned_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Date Assigned" title="Date Assigned" />
+										<input id="txtDateAssigned_date" type="text" class="readonly textfield textfield35  yesInvestigation" readonly="readonly" alt="Date Assigned" title="Date Assigned" />
 										<input id="btnDateAssignedCalendar" type="button" class="calendarImage" title="Date Assigned" />
 									</div>
 
@@ -726,7 +714,7 @@ ul.tabbernav li.tabberactive a {
 										<label for="txtDateCompleted_date">Date Completd:</label>
 									</div>
 									<div class="formField34">
-										<input id="txtDateCompleted_date" type="text" class="readonly textfield textfield35" disabled="disabled" alt="Date Completd" title="Date Completd" />
+										<input id="txtDateCompleted_date" type="text" class="readonly textfield textfield35 yesInvestigation" readonly="readonly" alt="Date Completd" title="Date Completd" />
 										<input id="btnDateCompletedCalendar" type="button" class="calendarImage" title="Date Completd" />
 									</div>
 								</div>
@@ -1486,8 +1474,8 @@ ul.tabbernav li.tabberactive a {
 										<label for="txtDHRReivewDate_date">DHR Review Date:</label>
 									</div>
 									<div class="formField34">
-										<input id="txtDHRReivewDate_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="DHR Review Date" title="DHR Review Date" />
-										<input id="btnDHRReivewDateCalendar" type="button" class="calendarImage yesDHR" title="DHR Review Date" />
+										<input id="txtDHRReivewDate_date" type="text" class="readonly textfield textfield35 yesDHR" readonly="readonly" alt="DHR Review Date" title="DHR Review Date" />
+										<input id="btnDHRReivewDateCalendar" type="button" class="calendarImage " title="DHR Review Date" />
 									</div>
 								</div>
 							</div>
@@ -1547,7 +1535,7 @@ ul.tabbernav li.tabberactive a {
 								</div>
 								<div class="leftField">
 									<div class="formField34">
-										<input id="txtResolutionDetails" type="text" class="textfield" alt="Resolution Details" title="Resolution Details" />
+										<textarea id="txtResolutionDetails" class="textarea" rows="5" cols="20" title="Resolution Details" onKeyDown="expandTextArea(this);" onKeyUp="expandTextArea(this);"></textarea>
 									</div>
 								</div>
 							</div>
@@ -1624,7 +1612,7 @@ ul.tabbernav li.tabberactive a {
 								</div>
 								<div class="leftField">
 									<div class="formField34">
-										<input id="txtNotificationDate_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Notification Date" title="Notification Date" />
+										<input id="txtNotificationDate_date" type="text" class="readonly textfield textfield35 yesNotify" readonly="readonly" alt="Notification Date" title="Notification Date" />
 										<input id="btnNotificationDateCalendar" type="button" class="calendarImage" title="Notification Date" />
 									</div>
 
@@ -1895,7 +1883,7 @@ ul.tabbernav li.tabberactive a {
 <script type='text/javascript' src='#mastercontrol.javascript(jquery-1.7.1.min.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(Calendar.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(StdLibrary.js)#'></script>
-<script type="text/javascript" src="#mastercontrol.javascript(RHLLib.js)#"> </script>
+<script type="text/javascript" src="#mastercontrol.javascript(RHLib.js)#"> </script>
 <script type='text/javascript' src='#mastercontrol.javascript(ComplaintForm.js)#'></script>
 
 <!-- outside links 
