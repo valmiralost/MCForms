@@ -17,6 +17,12 @@ function formStart(){
        jQ('input[type=radio][name=rbInvestigationRequired]').click(function() {
             investigationEval();
         });
+        jQ('input[type=radio][name=rbIDSeverityRisk]').click(function() {
+            calcRisk('txtIDRiskScore','#rbIDSeverityRisk','#rbIDRecurrenceRisk','rbIDSeverityRisk');
+        });
+        jQ('input[type=radio][name=rbIDRecurrenceRisk]').click(function() {
+            calcRisk('txtIDRiskScore','#rbIDSeverityRisk','#rbIDRecurrenceRisk');
+        });
         jQ('input[type=radio][name=rbSeverityRisk]').click(function() {
             calcRisk('txtRiskScore','#rbSeverityRisk','#rbRecurrenceRisk','rbSeverityRisk');
         });
