@@ -1,22 +1,57 @@
 /* ComplaintForm.js */
 /* Global Vars */
-    var stepId  =  document.getElementById("mastercontrol.route.stepid").value*1;
-    var stepNumber =  document.getElementById("mastercontrol.route.stepnumber").value*1;
+//    var stepId  =  document.getElementById("mastercontrol.route.stepid").value*1;
+ //   var stepNumber =  document.getElementById("mastercontrol.route.stepnumber").value*1;
   //  var sFormStatus= document.getElementById("mastercontrol.hidden.event").value;  /*viewOnly*/
+
+ var sFormStatus="ww";
 
 /* Hide fields on start and other functions  3-8*/
 function formStart(){
-	        jQ('input[type=radio][name=rbCAPARequired]').click(function() {
-            capaRequired();
-        });
-	        jQ("#btnLaunchCAPA").click(function () {
-            mapSourceFields();
-            selectRouteLaunched("CAPANew", "mastercontrol.task.routes");
-            jQ("#mastercontrol\\.task\\.launch").click();
-            capaRequired();                   
-        });
+    jQ('input[type=radio][name=rbCAPARequired]').click(function() {
+        capaRequired();
+    });
+    jQ("#btnLaunchCAPA").click(function () {
+        mapSourceFields();
+        selectRouteLaunched("CAPANew", "mastercontrol.task.routes");
+        jQ("#mastercontrol\\.task\\.launch").click();
+        capaRequired();                    
+    });
+    jQ("#cmbReceivedVia").change(function() {
+        displayOther('cmbReceivedVia','txtOtherDetails','lbOtherDetails');  
+    }); 
+   jQ('input[type=radio][name=rbReviewDHR]').click(function() {
+        dhrReview();
+    });
+    displayOther('cmbReceivedVia','txtOtherDetails','lbOtherDetails');  
 }
+
+/* DHR Review */
+function dhrReview(){
+    var rbValue = getCheckedValue('rbReviewDHR');
+    if(rbValue  =='Yes'){
+       radioEnableDisableClass('yesDHR',false); 
+    } else{
+        radioEnableDisableClass(false,'yesDHR');
+     }
+}/* END DHR Review*/
+
+function displayOther(ddField,otherField,otherLabel){
+    var dValue = document.getElementById(ddField);
+    var ddValue = dValue.options[dValue.selectedIndex].value;
+    var oField = document.getElementById(otherField);
+    var oLabel = document.getElementById(otherLabel);
+    if (ddValue == "Other"){
+        jQ(oField).show(); 
+        jQ(oLabel).show();         
+    } else {
+            oField.value = "";
+            jQ(oField).hide(); 
+            jQ(oLabel).hide();
+        }   
+    }
  /* CAPA Required Functionality */
+
 function capaRequired(){
     var oListFormNos = document.getElementById("mastercontrol.links.CAPANew");
     var oViewButton = document.getElementById("mastercontrol.links.view.CAPANew");
@@ -102,4 +137,3 @@ function addClass(vclass,vobj){
     vobj.className=vobj.className.replace(myClassName,""); // first remove the class name if that already exists
     vobj.className = vobj.className + myClassName; // adding new class name
 }
-
