@@ -111,30 +111,7 @@ function investigationEval(){
         }
     }
 }
-/* Calculate Risk and background color */
-function calcRisk(riskFld,sevField,OccField,test) {
-    //sevField and occField include # with fieldid
-    var oRadioCheck = document.getElementsByName(test);
-    if (!oRadioCheck){
-      return false;  
-    }
-     var riskNum = document.getElementById(riskFld);
-     var severity = parseInt(jQ(sevField+":checked").val(), 10);
-    var selected = parseInt(jQ(OccField+":checked").val(), 10);
-     var riskScore = selected + severity;
-     if(riskScore >0){
-            riskNum.value = riskScore;
-            if (riskScore < 6) { 
-                jQ(riskNum).removeClass( "riskYellow riskRed" ).addClass('riskGreen');
-            } else if (riskScore < 10) {
-                jQ(riskNum).removeClass( "riskGreen riskRed" ).addClass('riskYellow');
-            } else {
-                jQ(riskNum).removeClass( "riskGreen riskYellow" ).addClass('riskRed');
-            }
-     }else{
-        jQ(riskFld).removeClass( "riskGreen riskYellow riskRed" )
-     }
-}/* END Calculate Risk and background color */
+
 
  /* CAPA Required Functionality */
 function capaRequired(){
