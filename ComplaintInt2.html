@@ -1,12 +1,13 @@
-<!-- Inside MC Links 
+<!-- Inside MC Links -->
 <link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/SPScreenInt.css' type='text/css'>
+<link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/RHStyles.css' type='text/css'>
 <link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/ComplaintForm.css' type='text/css'>
--->
-<!-- Outside links -->
+
+<!-- Outside links
 <link rel="stylesheet" title="main" href="css/SPScreenExt.css" type="text/css">
 <link rel="stylesheet" title="main" href="css/RHStyles.css" type="text/css">
 <link rel="stylesheet" title="main" href="css/ComplaintForm.css" type="text/css">
-
+ -->
 
 <style>
 .calendarImage {
@@ -109,7 +110,19 @@ ul.tabbernav li.tabberactive a {
 						<td>&nbsp;</td>
 					</tr><!-- header sixth row end -->
 					<div id="divHiddenTitle" class="hide"><!-- hidden title fields div begin -->
-						<input type="text" id="mastercontrol.form.title" alt="Task Title" />
+						<input name="mastercontrol.route.stepnumber" type="hidden" id="mastercontrol.route.stepnumber" title="Step Number">
+			          	<input name="mastercontrol.route.stepid" type="hidden" id="mastercontrol.route.stepid" title="Step ID">
+			          	<input name="mastercontrol.form.title" type="hidden" id="mastercontrol.form.title" title="Form Title">
+			          	<input name="mastercontrol.form.creator" type="hidden" id="mastercontrol.form.creator" title="Creator Name">
+			          	<input name="mastercontrol.form.creatorname" type="hidden" id="mastercontrol.form.creatorname" title="Creator ID">
+			          	<input name="hlpSourceType" type="hidden" id="hlpSourceType" title="SourceType" value="Complaint" />
+          				<input name="hlpComplaintNumber" type="hidden" id="hlpComplaintNumber" title="Source Number" />
+         				<input name="hlpComplaintCreated" type="hidden" id="hlpComplaintCreated" title="Source Create Date"  />
+				        <!-- Required to Launch Form from Form  -->
+				        <select id="mastercontrol.task.routes"  name="mastercontrol.task.routes" title="Available Routes" style="display:none" >
+				        </select>
+				        <input id="mastercontrol.task.launch" type="button" class="mastercontrol.task.launch" alt="Form launch" title="Form launch" style="display:none" />
+
 					</div><!-- hidden title fields div end -->
 				</table><!-- header table end -->
 			</div><!-- page001 end -->
@@ -1877,22 +1890,22 @@ ul.tabbernav li.tabberactive a {
 	</div><!-- container end -->
 </form><!-- form end -->
 
-<!-- inside MC links  
+<!-- inside MC links  -->
 <script type='text/javascript' src='#mastercontrol.javascript(tabber.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(jquery-1.7.1.min.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(Calendar.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(StdLibrary.js)#'></script>
 <script type="text/javascript" src="#mastercontrol.javascript(RHLLib.js)#"> </script>
 <script type='text/javascript' src='#mastercontrol.javascript(ComplaintForm.js)#'></script>
--->
-<!-- outside links -->
+
+<!-- outside links 
 <script type="text/javascript" src="js/tabber.js"></script>
 <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="js/Calendar.js"></script>
 <script type="text/javascript" src="js/StdLibrary.js"></script>
 <script type="text/javascript" src="js/RHLib.js"></script>
 <script type="text/javascript" src="js/ComplaintForm.js"></script>
-
+-->
 
 
 <script language="javascript" type="text/javascript">

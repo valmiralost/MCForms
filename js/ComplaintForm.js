@@ -1,10 +1,9 @@
 /* ComplaintForm.js */
 /* Global Vars */
-//    var stepId  =  document.getElementById("mastercontrol.route.stepid").value*1;
- //   var stepNumber =  document.getElementById("mastercontrol.route.stepnumber").value*1;
-  //  var sFormStatus= document.getElementById("mastercontrol.hidden.event").value;  /*viewOnly*/
+    var stepId  =  document.getElementById("mastercontrol.route.stepid").value*1;
+    var stepNumber =  document.getElementById("mastercontrol.route.stepnumber").value*1;
+    var sFormStatus= document.getElementById("mastercontrol.hidden.event").value;  /*viewOnly*/
 
- var sFormStatus="ww";
 
 /* Hide fields on start and other functions  3-8*/
 function formStart(){
