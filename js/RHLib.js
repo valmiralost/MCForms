@@ -274,3 +274,387 @@ function SP_ValidateCRnLineFeed()
         arguments[0].value = arguments[0].value.substring(0, 2000-noOfEnterKey.length);
             
 }
+//////////////////////////////////// Section-4: START TABBER FORMATTING FUNCTIONS /////////////////////////////////////////////////////////
+
+/*
+To check data in a tab.
+
+Arguments:
+1) Tab object.
+
+Sample Call
+var tabObject =  $("#mcPage_003");
+var ValueExist = SP_IsTabContainData(tabObject);
+*/
+function SP_IsTabContainData(tabObj)
+{
+    var isDataExist = false;
+    
+    tabObj.find("input").each(function(indexInput){
+        if($(this).attr("type") != "hidden" && $(this).attr("type") != "button")
+        {
+            if($(this).attr("value") != "")
+                if(("checkbox" == $(this).attr("type") && $(this).attr("checked")) || ("radio" == $(this).attr("type") && $(this).attr("checked")))
+                    isDataExist = true;
+                else if("text" == $(this).attr("type")) // else case for input field with type text;
+                    isDataExist = true; 
+                
+        }
+        
+        if(isDataExist) // break each loop if "isDataExist == true"
+            return false;
+        
+    });
+    
+    if(!isDataExist)
+    {
+        tabObj.find("textarea").each(function(indexTextarea){
+            if("" != $(this).attr("value"))
+                isDataExist = true; 
+            
+            if(isDataExist) // break each loop if "isDataExist == true"
+                return false;   
+        });
+    }
+    
+    if(!isDataExist)
+    {
+        tabObj.find("select").each(function(indexTextarea){
+            if($(this).attr("value") != "" && $(this).attr("value") != 0 && $(this).attr("value") != "N/A")
+                isDataExist = true; 
+            
+            if(isDataExist) // break each loop if "isDataExist == true"
+                return false;   
+        });
+    }
+    
+    return isDataExist;
+}
+
+/*
+To check data in textarea fields within a tab such as Signatures tab.
+
+Arguments:
+1) Tab object.
+
+Sample Call
+var tabObject =  $("#mcPage_002");
+var ValueExist = SP_IsDataExistInTextarea(tabObject);
+*/
+function SP_IsDataExistInTextarea(tabObj)
+{
+    var isDataExist = false;
+    if(!isDataExist)
+    {
+        tabObj.find("textarea").each(function(indexTextarea){
+            if($(this).attr("value") != "" && $(this).attr("class") == "signatureField")
+                isDataExist = true; 
+            
+            if(isDataExist) // break each loop if "isDataExist == true"
+                return false;   
+        });
+    }
+        
+    return isDataExist;
+}
+
+/*
+To check for editable fields in a tab.
+
+Arguments:
+1) Tab object.
+
+Sample Call
+var tabObject =  $("#mcPage_003");
+var FieldsEnabled = SP_EditableFields(tabObject);
+*/
+
+function SP_EditableFields(tabObj)//33864
+{
+    var isEditableFieldExist = false;
+    tabObj.find("input").each(function(indexInput){
+        if(($(this).attr("type") != "hidden" && $(this).attr("type") != "button") || ($(this).attr("type") == "button" && $(this).hasClass("enabled")))
+        {
+            if(!$(this).attr("disabled") && !$(this).attr("readonly"))
+                isEditableFieldExist = true;
+                
+        }
+        
+        if(isEditableFieldExist) // break each loop if "isEditableFieldExist == true"
+            return false;
+        
+    });
+    
+    if(!isEditableFieldExist)
+    {
+        tabObj.find("textarea").each(function(indexTextarea){
+            if(!$(this).attr("disabled") && !$(this).attr("readonly"))
+                isEditableFieldExist = true;    
+            
+            if(isEditableFieldExist) // break each loop if "isEditableFieldExist == true"
+                return false;   
+        });
+    }
+    
+    if(!isEditableFieldExist)
+    {
+        tabObj.find("select").each(function(indexTextarea){
+            if(-1 == $(this).attr("name").indexOf("mastercontrol.links") && -1 == $(this).attr("name").indexOf("mastercontrol.attachments") && -1 == $(this).attr("name").indexOf("mastercontrol.packet.listLaunched") && !$(this).attr("disabled"))
+                isEditableFieldExist = true;    
+            
+            if(isEditableFieldExist) // break each loop if "isEditableFieldExist == true"
+                return false;   
+        });
+    }
+    
+    return isEditableFieldExist; 
+}
+//Helper function
+function SP_FormatingTab(ValueExist, FieldsEnabled,anchorObj)
+{
+    if((true == ValueExist || false == ValueExist) && true == FieldsEnabled)
+    {
+        anchorObj.css({'color':'black','font-weight':700});
+    }
+    else if(true == ValueExist && false == FieldsEnabled)
+    {
+        anchorObj.css({'color':'black','font-weight':'normal'});
+    }
+    else if(false == ValueExist && false == FieldsEnabled)
+    {
+        anchorObj.css({'color':'gray','font-weight':'normal'});
+    }
+}
+
+/*
+To Set up tabs format.
+
+Arguments:
+None.
+
+Sample Call: SP_SetTabsFormat();
+*/
+
+function SP_SetTabsFormat()
+{
+    var tabObject,valueExist,edFieldExist,pageObj;
+    var pageMC = 2; // value assign 2, to get mcPageId
+    var oFormStatus = document.getElementById("mastercontrol.hidden.event");
+    var oPage = "";
+    var nPagesInTab = 0;
+    
+    // For tab having more than one page in it.
+    var pgCnData = new Array();
+    pgCnData[0] = false; // Value Exist
+    pgCnData[1] = false;// Editable Field Exist;
+    
+    if(SP_Trim(oFormStatus.value) != "")
+    {
+
+        $("ul.tabbernav li a").each(function(anchorIndex){
+    
+            // get mcPages
+            var tabName = $(this).text()+"";
+            
+            if(tabName.indexOf('*') != -1)
+                tabName = tabName.replace('*','');
+                
+            var oAnchor = $(this);
+            if($(this).attr("name"))
+            {tabName = SP_Trim($(this).attr("name"));}
+            else
+            {
+                var tempTabName = tabName.split("(");
+                tabName = SP_Trim(tempTabName[0]);                                
+                tabName = tabName.replace(/ /g,'_'); //replace space with underscore
+                tabName = tabName.replace(/\//g,'_'); //replace "/" with underscore Bug 34054
+                tabName = tabName.replace(/&/g,'and'); // replace & sign with 'and'
+                tabName = tabName.replace(/,/g,''); // remove "," from tab name Bug 35570
+            
+                }
+                    
+            $("#"+tabName+" div.mcPageDiv").each(function(){
+                nPagesInTab = $("#"+tabName+" div.mcPageDiv").size() * 1;
+                
+                if(SP_Trim(tabName) == "Signatures")
+                {
+                    valueExist = SP_IsDataExistInTextarea($(this));
+                    if(valueExist)
+                    {
+                        oAnchor.css("color","black");
+                    }
+                    else
+                    {
+                        oAnchor.css("color","gray");
+                    }
+                }
+                else
+                {
+                    valueExist = SP_IsTabContainData($(this));
+                    edFieldExist  = SP_EditableFields($(this));
+                     
+                    pgCnData[0] = (valueExist || pgCnData[0]) ? true : false;
+                    pgCnData[1] = (edFieldExist || pgCnData[1]) ? true : false;                 
+                     
+                    if(nPagesInTab > 1)
+                    {
+                        SP_FormatingTab(pgCnData[0],pgCnData[1],oAnchor);
+                    }
+                    else
+                    {
+                        SP_FormatingTab(valueExist,edFieldExist,oAnchor);
+                    }
+                        
+                }
+            });
+            
+            pgCnData[0] = false; // re initialize with default value
+            pgCnData[1] = false; // re initialize with default value                    
+
+    
+        });
+    }   
+    
+}
+
+/* Modified by new Jquery Implementation */
+/*
+To add a leading asterik with tab name, If there is any dynamically required/required field in that tab.
+
+Arguments:
+1) Tab Label Text.
+2) Tab Page.
+
+Sample Call: SP_DynamicTabLabel('Supplier (T2)','mcPage_003');
+*/
+
+function SP_DynamicTabLabel()
+{
+    if(arguments.length == 1)
+    {
+        var PageId = arguments[0];
+        var TabLabelText = "";  
+        $("ul.tabbernav li a").each(function(anchorIndex){
+            TabLabelText = $(this).attr("name");                                 
+            if($("#"+TabLabelText+ " #"+PageId+"").find(".dynamicRequiredLabel").attr("id") != null)
+            {   
+                    if($(this).html().indexOf('*') == -1)
+                    $(this).html("* "+$(this).html());
+            }
+                else if($("#"+TabLabelText+ " #"+PageId+"").find(".dynamicRequiredLabel").attr("id") == null)
+                    {$(this).html(SP_Trim ($(this).html().replace('*','')))}
+        });
+    }
+    else
+    {
+        var PageId = arguments[1];
+        var TabLabelText = arguments[0];    
+        
+        $("ul.tabbernav li a").each(function(anchorIndex){
+        if($(this).html() == TabLabelText)
+        {
+            if($("#"+PageId+"").find(".dynamicRequiredLabel").attr("id") != null)
+                $(this).html("* "+TabLabelText);
+        }       
+        else if($(this).html() == "* "+TabLabelText)
+        {
+            if($("#"+PageId+"").find(".dynamicRequiredLabel").attr("id") == null)
+            {
+                TabLabelText = TabLabelText.slice(0);
+                $(this).html(TabLabelText);
+            }
+        }
+        });
+    }
+
+}
+
+/*
+To adjust language-specific width of tabber, this function call can be used in case your tabber get disturb while switching MC languages.
+
+Arguments:
+1) Widthset (Array of 8 string elements where value at 0 index is default width for tabber and rest of 7 indexs would hold values for each MC-Language in a predetermined order).
+
+Sample Call: 
+                default,en,jp  du     es  ch fr ko 
+var WidthSet = ["820px","","","920px","","","",""];
+SP_AdjustTabberWidth(WidthSet,tabberID);
+
+Note: if any array element is set null for a language then default width would be set. 
+*/
+function SP_AdjustTabberWidth()
+{
+    var arrWidthSet =  arguments[0];
+    var UserLang = document.getElementById('mastercontrol.user.language').value.toLowerCase();
+    var TabberObj = document.getElementById(arguments[1]);
+    var defaultWidth = arrWidthSet[0];
+    
+    if(arrWidthSet.length > 1)
+    {
+        switch(UserLang)
+        {
+            case 'en_us':
+                
+                if(arrWidthSet[1] != '')
+                    TabberObj.style.width = arrWidthSet[1];
+                else
+                    TabberObj.style.width = defaultWidth;
+            break;
+            
+            case 'ja_jp':
+                
+                if(arrWidthSet[2] != '')
+                    TabberObj.style.width = arrWidthSet[2];
+                else
+                    TabberObj.style.width = defaultWidth;
+            break;
+            
+            case 'de_de':
+                
+                if(arrWidthSet[3] != '')
+                    TabberObj.style.width = arrWidthSet[3];
+                else
+                    TabberObj.style.width = defaultWidth;
+            break;
+            
+            case 'es_es':
+                
+                if(arrWidthSet[4] != '')
+                    TabberObj.style.width = arrWidthSet[4];
+                else
+                    TabberObj.style.width = defaultWidth;
+            break;
+            
+            case 'zh_cn':
+                
+                if(arrWidthSet[5] != '')
+                    TabberObj.style.width = arrWidthSet[5];
+                else
+                    TabberObj.style.width = defaultWidth;
+            break;
+            
+            case 'fr_fr':
+                
+                if(arrWidthSet[6] != '')
+                    TabberObj.style.width = arrWidthSet[6];
+                else
+                    TabberObj.style.width = defaultWidth;
+            break;
+            
+            case 'ko_kr':
+                
+                if(arrWidthSet[7] != '')
+                    TabberObj.style.width = arrWidthSet[7];
+                else
+                    TabberObj.style.width = defaultWidth;
+            break;
+        
+        }
+    }
+    else
+    {
+        TabberObj.style.width = defaultWidth;
+    }
+}
+
+//////////////////////////////////// END TABBER FORMATTING FUNCTIONS /////////////////////////////////////////////////////////
