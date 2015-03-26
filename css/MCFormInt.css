@@ -337,6 +337,13 @@ fieldset {
 .labelWidth25 { width: 25%;}
 .labelWidth28 { width: 28%;}
 
+.URLLink {
+    color: #0000FF;
+    font-family : Verdana, Helvetica, sans-serif;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 /****************************************************
                    Form Field CSS
 ****************************************************/
@@ -712,11 +719,11 @@ ul.tabbernav li.tabberactive a {
 	width:100%;
 }
 
-@media print { 
+@media print {
 	.tabHeading {
 		display:block;
 	}
-	
+
 	.tabbertabhide {
         display: block !important;
     }
