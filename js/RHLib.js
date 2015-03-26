@@ -658,3 +658,17 @@ function SP_AdjustTabberWidth()
 }
 
 //////////////////////////////////// END TABBER FORMATTING FUNCTIONS /////////////////////////////////////////////////////////
+
+/*
+To remove extra spaces from a value.
+
+Arguments:
+1) Value to be trimmed.
+
+Sample Call: SP_Trim(obj.value);
+*/
+function SP_Trim(value) 
+{
+    value = new String(value);
+    return value.replace(/^\s+|\s+$/g, "");
+}
