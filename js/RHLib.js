@@ -170,3 +170,107 @@ function SP_InsertOption()
         
     }
 }
+/*
+To set Height of textareas.
+
+Arguments:
+1) Textarea object
+
+Sample Call: SP_SetTextAreaHeightWidth(oTextArea);
+*/
+function SP_SetTextAreaHeightWidth(oTextArea)
+{
+    var nTextLength = oTextArea.text();
+    nTextLength = nTextLength.length;
+    var nHeight, nWidth;
+    var nTA3Height = 45;
+    var nTA5Height = 75;
+    
+    if (oTextArea.attr("class").indexOf("short")>=0)
+    {
+        nHeight = nTA3Height;
+    }
+    else
+    {
+        nHeight = nTA5Height;       
+    }
+    
+    oTextArea.prop("style").height = "75px";
+    
+    if (oTextArea.prop("scrollHeight") >= nHeight)
+    {
+        
+        var textareaHeight = oTextArea.prop("scrollHeight");
+        oTextArea.prop("style").height = textareaHeight+"px";
+        
+        
+        if(navigator.userAgent.indexOf("Firefox") > 0)
+        {
+            var stextareaHeight = oTextArea.prop("scrollHeight") * 1 + 8;
+            oTextArea.prop("style").height = stextareaHeight+"px";
+            
+        }
+    }   
+}
+/* MODIFIED */
+/*
+Automatically grows the textareas per text entry.
+
+Arguments:
+1) Textarea object
+
+Sample Call: SP_GrowUP(oTextArea);
+*/
+
+function SP_GrowUP(oTextArea) // We shall rename as SP_GrowTextArea
+{
+    SP_SetTextAreaHeightWidth(jQ(oTextArea));
+}
+
+/*
+A sort of helper function used in validating newline characters across IE and other browsers
+
+Arguments:
+1) String
+
+Returns: 
+validated string
+
+Sample Call: SP_FixNewLines(String)
+*/
+function SP_FixNewLines()
+{
+    var fixedString = arguments[0];
+      // Adjust newlines so can do correct character counting.
+    if (fixedString.indexOf('\r\n')!=-1)
+        return fixedString;  // this is IE on windows. Puts both characters for a newline, No need to alter
+    else if (fixedString.indexOf('\r')!=-1)
+        fixedString.replace ( /\r/g, "\r\n" );        // this is IE on a Mac. Need to add the line feed
+    else if (arguments[0].indexOf('\n')!=-1)
+        fixedString.replace ( /\n/g, "\r\n" );        // this is Firefox,chrome or safari on any platform. Need to add carriage return
+   
+    return fixedString;
+    
+}
+
+
+/*
+A helper function used in validating newline characters on browsers other than IE
+
+Arguments: 
+1- field object
+
+Sample Call: SP_ValidateCRnLineFeed(fieldObj)
+*/
+
+function SP_ValidateCRnLineFeed()
+{
+    var totalLength = arguments[0].value.length;
+    var noOfEnterKey = arguments[0].value.match(/\n/gi);
+    var inProcessString = "";
+    var userAgentInfo = navigator.userAgent.toLowerCase();
+    
+    if(noOfEnterKey && totalLength + noOfEnterKey.length > 2000 && userAgentInfo.indexOf('msie') == -1)
+        arguments[0].value = arguments[0].value.substring(0, 2000-noOfEnterKey.length);
+            
+}
