@@ -495,7 +495,7 @@ function selected(cal, date) {
     handleCalendarClicks(cal.sel);
 }
 
-/*
+
 
 function handleCalendarClicks(field) {
     var todaysDate = new Date(getTodaysDate());
@@ -507,7 +507,7 @@ function handleCalendarClicks(field) {
     jQ('#txtImplDaysLeft').val(diffDays);
 }
 
-*/
+
 
 function getTodaysDate() {
     var today = setDateFormat(new Date());
