@@ -2,7 +2,7 @@
 /* Global Vars */
     var stepId  =  document.getElementById("mastercontrol.route.stepid").value*1;
     var stepNumber =  document.getElementById("mastercontrol.route.stepnumber").value*1;
-    var sFormStatus= document.getElementById("mastercontrol.hidden.event").value;  /*viewOnly*/
+//    var sFormStatus= document.getElementById("mastercontrol.hidden.event").value;  /*viewOnly*/
 
 /* Hide fields on start and other functions  3-8*/
 function formStart(){
@@ -18,10 +18,9 @@ function formStart(){
        jQ('input[type=radio][name=rbInvestigationRequired]').click(function() {
             investigationEval();
         });
-        jQ("mastercontrol\\.role\\.NCRInvestigators").change(function(){
+        jQ("#mastercontrol\\.role\\.NCRInvestigators").change(function(){
             var selectedValue = jQ("#mastercontrol\\.role\\.NCRInvestigators").val();
-            jQ("mastercontrol\\.route\\.stepusers\\.step4_2").val(selectedValue );
-
+           jQ("#mastercontrol\\.route\\.stepusers\\.step4_2").val(selectedValue );
         });
 
 
