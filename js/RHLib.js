@@ -672,3 +672,17 @@ function SP_Trim(value)
     value = new String(value);
     return value.replace(/^\s+|\s+$/g, "");
 }
+
+/*
+To remove the full name and end parenthisis when getting name from role list
+*/
+
+function trimUserID(vfield){
+      var pStr=vfield;
+  var newTxt = pStr.split('('); //remove everything outside (
+  for (var i = 1; i < newTxt.length; i++) {
+    var subStr = newTxt[i].split(')')[0]; //remove everything outside )
+}
+
+  return subStr ; // return just the UserID
+}
