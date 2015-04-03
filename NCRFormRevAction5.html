@@ -60,7 +60,7 @@ body{
 				<table width="100%" border="0" cellspacing="0" cellpadding="0"><!-- header table begin -->
 					<tr><!-- processName row begin -->
 						<td width="5%">&nbsp;</td>
-						<td width="95%" colspan="4" class="ProcessName">NCR Form</td>
+						<td width="95%" colspan="4" class="ProcessName">ReliantHeart - NCR Form</td>
 					</tr>
 					<tr>
 						<td colspan="5">&nbsp;</td>
@@ -663,6 +663,23 @@ body{
 							</div>
 							<div class="clearBoth"></div>
 
+
+
+							<div id="divtemp" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="mastercontrol.role.stepusers.step4_2">Investigation step:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<select id="mastercontrol.role.stepusers.step3_2" class="selectfield yesInvestigation" title="Invest Step"></select>
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+
+
+
 							<div id="divDateAssigned" class="fieldRow">
 								<div class="leftLabel labelWidth20">
 									<label for="txtDateAssigned_date">Date Assigned:</label>
@@ -923,32 +940,66 @@ body{
 							</div>
 						</div><!-- previous section end -->
 						<div class="sectionData">
-						<div class="sectionHeading">Assessment Signature</div>
+						<div class="sectionHeading">Investigation Signature</div>
 							<div class="signatureData">
 								<table class="signatureTable" cellpadding="0" cellspacing="0">
 									<thead>
 										<tr>
 											<th scope="col" class="signatureName">
-												<label for="mastercontrol.route.esig.users.step3">Name</label>
+												<label for="mastercontrol.route.esig.users.step4_2">Name</label>
 											</th>
 											<th scope="col" class="signatureDate">
-												<label for="mastercontrol.route.esig.timestamps.step3">Date</label>
+												<label for="mastercontrol.route.esig.timestamps.step4_2">Date</label>
 											</th>
 											<th scope="col" class="signatureStatus">
-												<label for="mastercontrol.route.esig.sigstatus.step3">Signoff Status</label>
+												<label for="mastercontrol.route.esig.sigstatus.step4_2">Signoff Status</label>
 											</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
 											<td>
-												<textarea id="mastercontrol.route.esig.users.step3" rows="3" readonly="readonly" class="signaturefields" title="Step3 Name"></textarea>
+												<textarea id="mastercontrol.route.esig.users.step4_2" rows="3" readonly="readonly" class="signaturefields" title="Step4_2 Name"></textarea>
 											</td>
 											<td>
-												<textarea id="mastercontrol.route.esig.timestamps.step3" rows="3" readonly="readonly" class="signaturefields" title="Step3 Date"></textarea>
+												<textarea id="mastercontrol.route.esig.timestamps.step4_2" rows="3" readonly="readonly" class="signaturefields" title="Step4_2 Date"></textarea>
 											</td>
 											<td>
-												<textarea id="mastercontrol.route.esig.sigstatus.step3" rows="3" readonly="readonly" class="signaturefields" title="Step3 Signoff Status"></textarea>
+												<textarea id="mastercontrol.route.esig.sigstatus.step4_2" rows="3" readonly="readonly" class="signaturefields" title="Step4_2 Signoff Status"></textarea>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Assessment Signature</div>
+							<div class="signatureData">
+								<table class="signatureTable" cellpadding="0" cellspacing="0">
+									<thead>
+										<tr>
+											<th scope="col" class="signatureName">
+												<label for="mastercontrol.route.esig.users.step4_1">Name</label>
+											</th>
+											<th scope="col" class="signatureDate">
+												<label for="mastercontrol.route.esig.timestamps.step4_1">Date</label>
+											</th>
+											<th scope="col" class="signatureStatus">
+												<label for="mastercontrol.route.esig.sigstatus.step4_1">Signoff Status</label>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<textarea id="mastercontrol.route.esig.users.step4_1" rows="3" readonly="readonly" class="signaturefields" title="Step4_1 Name"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.timestamps.step4_1" rows="3" readonly="readonly" class="signaturefields" title="Step4_1 Date"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.sigstatus.step4_1" rows="3" readonly="readonly" class="signaturefields" title="Step4_1 Signoff Status"></textarea>
 											</td>
 										</tr>
 									</tbody>
@@ -1115,18 +1166,18 @@ body{
 <script type='text/javascript' src='#mastercontrol.javascript(jquery-1.7.1.min.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(Calendar.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(StdLibrary.js)#'></script>
-<!--  <script type="text/javascript" src="#mastercontrol.javascript(SPLib-1.0.0.js)#"> </script> -->
+
 <script type='text/javascript' src='#mastercontrol.javascript(RHLib.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(NCRForm.js)#'></script>
 
-<!--  Inside MasterControl  
+<!--  Inside MasterControl 
 <script type='text/javascript' src='js/tabber.js'></script>
 <script type='text/javascript' src='js/jquery-1.7.1.min.js'></script>
 <script type='text/javascript' src='js/Calendar.js'></script>
 <script type='text/javascript' src='js/StdLibrary.js'></script>
 <script type='text/javascript' src='js/RHLib.js'></script>
 <script type='text/javascript' src='js/NCRForm.js'></script>
--->
+ -->
 <script language="javascript" type="text/javascript">
 var jQ = jQuery.noConflict();
 

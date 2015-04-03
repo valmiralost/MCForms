@@ -18,6 +18,13 @@ function formStart(){
        jQ('input[type=radio][name=rbInvestigationRequired]').click(function() {
             investigationEval();
         });
+        jQ("mastercontrol\\.role\\.NCRInvestigators").change(function(){
+            var selectedValue = jQ("#mastercontrol\\.role\\.NCRInvestigators").val();
+            jQ("mastercontrol\\.route\\.stepusers\\.step4_2").val(selectedValue );
+
+        });
+
+
         jQ('input[type=radio][name=rbIDSeverityRisk]').click(function() {
             calcRisk('txtIDRiskScore','#rbIDSeverityRisk','#rbIDRecurrenceRisk','rbIDSeverityRisk');
         });
