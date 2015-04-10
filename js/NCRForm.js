@@ -11,6 +11,7 @@ function formStart(){
             /* Add events to fields */
         jQ("#mastercontrol\\.dataset\\.recordids\\.Products\\.Name").change(function() {
         setProductDataEntry();
+        createFailureModeSelect();
         });
         jQ('input[type=radio][name=rbInitialDisposition]').click(function() {
             initalDisposition();
@@ -90,6 +91,26 @@ function setProductDataEntry(){
         jQ("#mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name,label[for=mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name]").hide();
         
     }
+}
+
+function createFailureModeSelect(){
+    var selectedValue = jQ("#mastercontrol\\.dataset\\.recordids\\.Products\\.Name").val();
+    if (jQ("#failModes").length == 0) {
+        var sel = jQ('<select id="failModes">').appendTo('#createdSelect');
+       jQ("#failModes").change(function(){
+        var defect =  jQ(this).val();
+            jQ('#txtDefect').val(defect);
+        });
+        var arr = [{val : 1, text: 'One'},{val : 2, text: 'Two'},{val : 3, text: 'Three'}];
+    }
+    else {
+        var sel = jQ('#failModes').empty();
+        var arr = [{val : 1, text: '1111One'},{val : 2, text: '2222Two'},{val : 3, text: 'T3333hree'}];
+
+    }
+    jQ(arr).each(function() {
+        sel.append(jQ("<option>").attr('value',this.val).text(this.text));
+     });
 }
 /* Initial Dispositon Functionality */
 function initalDisposition(){

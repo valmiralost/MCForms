@@ -13,6 +13,18 @@ function formStart(){
     jQ('input[type=radio][name=rbRecurrenceRisk]').click(function() {
         calcRisk('txtRiskScore','#rbSeverityRisk','#rbRecurrenceRisk');
     }); 
+    jQ("#mastercontrol\\.role\\.NCRInvestigators").change(function(){
+        var selectedValue = jQ("#mastercontrol\\.role\\.NCRInvestigators").val();
+        var testArray = addUsersToRouteStepListByClass("actionDiv");
+        alert(testArray);
+  //      var routeArray = jQ("#mastercontrol.role\\.CAPAActionTaskOwner\\.CAPAActionTask1Owner").val();
+  //      var trimmedValue = trimUserID(selectedValue);
+  //      if (routeArray.indexOf(trimmedValue) < 0){
+  //          routeArray.push(trimmedValue);
+  //      }
+ //       
+   //     jQ("#mastercontrol\\.route\\.stepusers\\.step4_2").val(routeArray);
+    });
     ///////Fields show/hide to start //////////
 
    ////////Functions to set values and display ////////////
@@ -70,6 +82,16 @@ function radioEnableDisableClass(enableClass,disableClass)
                jQ(disableArray[i]).prop('readonly', true);
             }
         }  
-    }   
+    } 
 }/* END Enable and Disable fields in a class */
  
+ function addUsersToRouteStepListByClass(vclass)  {
+    var divArray = document.getElementsByClassName(vclass);
+    var valArray = new Array();
+    
+   for(i = 0; i < divArray.length; i++) {
+        var selectedValue = jQ(divArray[i]).val();
+        valArray.push(selectedValue);
+    }
+    return valArray;
+ }
