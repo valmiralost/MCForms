@@ -96,9 +96,8 @@ function setProductDataEntry(){
 function createFailureModeSelect(){
     var selectedValue = jQ("#mastercontrol\\.dataset\\.recordids\\.Products\\.Name").val();
     if (jQ("#failModes").length == 0) {
-        jQ('<select id="failModes">').appendTo('#createdSelect');
-        jQ('<input type="button" id="#mastercontrol\\.dataset\\.show\\.Products" value="Refresh" /button>').appendTo('#createdSelect');
-        //TO DO add a data structure dd to the form to see if I can dynamiclly generate the button and have it refresh
+        var sel = jQ('<select id="#mastercontrol\\.dataset\\.recordids\\.Products\\.Name2">').appendTo('#createdSelect');
+        jQ('<select id="failModes">').appendTo('#createdSelect');)
        jQ("#failModes").change(function(){
             var defect =  jQ(this).val();
             jQ('#txtDefect').val(defect);
