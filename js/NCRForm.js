@@ -22,8 +22,10 @@ function formStart(){
             var selectedValue = jQ("#mastercontrol\\.role\\.NCRInvestigators").val();
             var routeUsers = jQ("#mastercontrol\\.route\\.stepusers\\.step4").val();
             var trimmedValue = trimUserID(selectedValue);
-            routeUsers.push(trimmedValue);
-           jQ("#mastercontrol\\.route\\.stepusers\\.step4").val(routeUsers);
+            if (trimmedValue){
+                routeUsers.push(trimmedValue);
+               jQ("#mastercontrol\\.route\\.stepusers\\.step4").val(routeUsers);
+       }
         });
 
 
