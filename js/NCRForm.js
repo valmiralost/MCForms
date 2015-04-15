@@ -20,7 +20,8 @@ function formStart(){
         });
         jQ("#mastercontrol\\.role\\.NCRInvestigators").change(function(){
             var selectedValue = jQ("#mastercontrol\\.role\\.NCRInvestigators").val();
-            var routeUsers = jQ("#mastercontrol\\.route\\.stepusers\\.step4").val();
+            var routeUsers = [];
+            routeUsers.push(jQ("#mastercontrol\\.route\\.stepusers\\.step4").val());
             var trimmedValue = trimUserID(selectedValue);
             if (trimmedValue){
                 routeUsers.push(trimmedValue);
