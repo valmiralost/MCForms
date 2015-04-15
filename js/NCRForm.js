@@ -20,13 +20,12 @@ function formStart(){
         });
         jQ("#mastercontrol\\.role\\.NCRInvestigators").change(function(){
             var selectedValue = jQ("#mastercontrol\\.role\\.NCRInvestigators").val();
-            var routeUsers = [];
-            routeUsers.push(jQ("#mastercontrol\\.route\\.stepusers\\.step4").val());
             var trimmedValue = trimUserID(selectedValue);
-            if (trimmedValue){
-                routeUsers.push(trimmedValue);
-               jQ("#mastercontrol\\.route\\.stepusers\\.step4").val(routeUsers);
-       }
+            if (trimmedValue != ""){
+                var selected=jQ("#mastercontrol\\.route\\.stepusers\\.step4 option:selected").map(function(){ return this.value }).get();
+                selected.push(trimmedValue);
+                jQ('#mastercontrol\\.route\\.stepusers\\.step4').val(selected);
+            }    
         });
 
 
