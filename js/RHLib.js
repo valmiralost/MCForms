@@ -7,7 +7,7 @@ function radioEnableDisableClass(enableClass,disableClass)
         for(i = 0; i < enableArray.length; i++) {
             var vid = jQ(enableArray[i]).attr("id");
             if(vid.indexOf("_date")<0){
-                jQ(enableArray[i]).removeClass('readonly');
+                jQ(enableArray[i]).removeClass('readonlyNoDataEntry');
                 jQ(enableArray[i]).prop('readonly', false);
                  if(jQ(enableArray[i]).is("select")) {
                     jQ(enableArray[i]).removeAttr('disabled');
@@ -21,7 +21,7 @@ function radioEnableDisableClass(enableClass,disableClass)
             if (disableClass != false ) {
         var disableArray = document.getElementsByClassName(disableClass);
          for(i = 0; i < disableArray.length; i++) {
-            jQ(disableArray[i]).addClass('readonly');
+            jQ(disableArray[i]).addClass('readonlyNoDataEntry');
             jQ(disableArray[i]).prop('readonly', true);
             jQ(disableArray[i]).val('');
             if(jQ(disableArray[i]).is("select")) {
@@ -51,14 +51,14 @@ function calcRisk(riskFld,sevField,OccField,test) {
      if(riskScore >0){
             riskNum.value = riskScore;
             if (riskScore < 6) { 
-                jQ(riskNum).removeClass( "riskYellow riskRed" ).addClass('riskGreen');
+                jQ(riskNum).removeClass( "riskYellow riskRed readonly" ).addClass('riskGreen');
             } else if (riskScore < 10) {
-                jQ(riskNum).removeClass( "riskGreen riskRed" ).addClass('riskYellow');
+                jQ(riskNum).removeClass( "riskGreen riskRed readonly" ).addClass('riskYellow');
             } else {
-                jQ(riskNum).removeClass( "riskGreen riskYellow" ).addClass('riskRed');
+                jQ(riskNum).removeClass( "riskGreen riskYellow readonly" ).addClass('riskRed');
             }
      }else{
-        jQ(riskFld).removeClass( "riskGreen riskYellow riskRed" )
+        jQ(riskFld).removeClass( "riskGreen riskYellow riskRed").addClass('readonly');
      }
 }/* END Calculate Risk and background color */
 function SP_InsertBlank()

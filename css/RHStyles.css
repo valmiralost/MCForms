@@ -3,16 +3,21 @@
 
 }
 .riskGreen{
-	background-color: green;
+	background-color: #C2E6C2;
 }
 .riskYellow{
-	background-color: yellow;
+	background-color: #FFFFB2;
 }
 .riskRed{
-	background-color: red;
+	background-color: #EACCCC;
 }
 
-
+.readonly{
+	background-color: #F7F7F7;
+	}
+.readonlyNoDataEntry{
+	background-color: #CCCCCC;
+	}
 @media print {
 
 	html, body { height: auto; }
@@ -31,3 +36,4 @@
 	}
 
 }
+

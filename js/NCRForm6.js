@@ -11,6 +11,7 @@ function formStart(){
             /* Add events to fields */
         jQ("#mastercontrol\\.dataset\\.recordids\\.Products\\.Name").change(function() {
         setProductDataEntry();
+        createFailureModeSelect();
         });
         jQ('input[type=radio][name=rbInitialDisposition]').click(function() {
             initalDisposition();
@@ -20,10 +21,8 @@ function formStart(){
         });
         jQ("#mastercontrol\\.role\\.NCRInvestigators").change(function(){
             var selectedValue = jQ("#mastercontrol\\.role\\.NCRInvestigators").val();
-            var routeUsers = jQ("#mastercontrol\\.route\\.stepusers\\.step4").val();
             var trimmedValue = trimUserID(selectedValue);
-            routeUsers.push(trimmedValue);
-           jQ("#mastercontrol\\.route\\.stepusers\\.step4").val(routeUsers);
+           jQ("#mastercontrol\\.route\\.stepusers\\.step4_2").val(trimmedValue);
         });
 
 
@@ -92,6 +91,27 @@ function setProductDataEntry(){
         jQ("#mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name,label[for=mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name]").hide();
         
     }
+}
+
+function createFailureModeSelect(){
+    var selectedValue = jQ("#mastercontrol\\.dataset\\.recordids\\.Products\\.Name").val();
+    if (jQ("#failModes").length == 0) {
+        jQ('<select id="failModes">').appendTo('#createdSelect');
+        jQ('<select id="mastercontrol.dataset.recordids.Controller.FailureMode">').appendTo('#createdSelect');
+        jQ('<input type="button" id="mastercontrol.dataset.show.Controller" value="Refresh" /button>').appendTo('#createdSelect');
+        //TO DO add a data structure dd to the form to see if I can dynamiclly generate the button and have it refresh
+       jQ("#failModes").change(function(){
+            var defect =  jQ(this).val();
+            jQ('#txtDefect').val(defect);
+
+        });
+    }
+    else {
+        var sel = jQ('#failModes').empty();
+    }
+        //change this to the mc datasource dd that will be created dynamiclly and populated dynamiclly
+        var voptions = jQ("#mastercontrol\\.dataset\\.recordids\\.Products\\.Name > option").clone();
+        jQ('#failModes').append(voptions);
 }
 /* Initial Dispositon Functionality */
 function initalDisposition(){
