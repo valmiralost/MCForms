@@ -1,8 +1,10 @@
 /*NCRForm.js*/
 /* Global Vars */
     var stepId  =  document.getElementById("mastercontrol.route.stepid").value*1;
-    var stepNumber =  document.getElementById("mastercontrol.route.stepnumber").value*1;
-    var sFormStatus= document.getElementById("mastercontrol.hidden.event").value;  /*viewOnly*/
+    var stepNumber =  4;//document.getElementById("mastercontrol.route.stepnumber").value*1;
+//    var sFormStatus= document.getElementById("mastercontrol.hidden.event").value;  /*viewOnly*/
+    var sinvestigatorCount = 0;
+    
 
 /* Hide fields on start and other functions  3-8*/
 function formStart(){
@@ -21,13 +23,20 @@ function formStart(){
         jQ("#mastercontrol\\.role\\.NCRInvestigators").change(function(){
             var selectedValue = jQ("#mastercontrol\\.role\\.NCRInvestigators").val();
             var trimmedValue = trimUserID(selectedValue);
-            if (trimmedValue != ""){
+            if (trimmedValue != "" && sinvestigatorCount ==0){
                 var selected=jQ("#mastercontrol\\.route\\.stepusers\\.step4 option:selected").map(function(){ return this.value }).get();
-                selected.push(trimmedValue);
-                jQ('#mastercontrol\\.route\\.stepusers\\.step4').val(selected);
-            }    
+                sinvestigatorCount = 1;
+                    if(jQ.inArray(trimmedValue, selected) ==-1) {
+                        selected.push(trimmedValue);
+                        jQ('#mastercontrol\\.route\\.stepusers\\.step4').val(selected);
+                    }
+            } else if(sinvestigatorCount >0) {
+                alert("need to remove last added entry");
+            }
         });
-
+        // FOR TESTING ONLY
+        var varray = ['1','3'];
+        jQ('#mastercontrol\\.route\\.stepusers\\.step4').val(varray);
 
         jQ('input[type=radio][name=rbIDSeverityRisk]').click(function() {
             calcRisk('txtIDRiskScore','#rbIDSeverityRisk','#rbIDRecurrenceRisk','rbIDSeverityRisk');
