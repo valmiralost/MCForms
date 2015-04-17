@@ -131,11 +131,15 @@ function setDefectCombo() {
             for (i = 0; i < defects.length; i++)
             {
                 opt = document.createElement('option');
-                 //update to column from the datasource that you are using 
+                 //update to column from the datasource that you are using  Defect
                 opt.text = opt.value = defects[i].Defect;
                 item2Options.options.add(opt, (item2Options.options.length + 1));
             }
         }
+            opt = document.createElement('option');
+            opt.text = "Other";
+            opt.value = "Other";
+            item2Options.options.add(opt, (item2Options.options.length + 1));
     }
 }
 
