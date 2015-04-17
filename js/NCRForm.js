@@ -2,7 +2,7 @@
 /* Global Vars */
     var stepId  =  document.getElementById("mastercontrol.route.stepid").value*1;
     var stepNumber =  4;//document.getElementById("mastercontrol.route.stepnumber").value*1;
-//    var sFormStatus= document.getElementById("mastercontrol.hidden.event").value;  /*viewOnly*/
+    var sFormStatus= document.getElementById("mastercontrol.hidden.event").value;  /*viewOnly*/
     var sinvestigatorCount = 0;
     
 
