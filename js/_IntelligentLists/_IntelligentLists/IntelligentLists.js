@@ -1,7 +1,7 @@
 var jQ = jQuery.noConflict();//remove conflict with MasterControl added jquery library
 
 jQ(function() {
-    jQ('#mastercontrol\\.set\\.getItem1').change(function() {
+    jQ('#mastercontrol\\.dataset\\.recordids\\.Item1\\.Item1').change(function() {
         setItem2Combo();
     });
 
@@ -11,7 +11,7 @@ jQ(function() {
 });
 
 function setItem2Combo() {
-    var item1 = document.getElementById("mastercontrol.set.getItem1");
+    var item1 = document.getElementById("mastercontrol.dataset.recordids.Item1.Item1");
     var selItem1;
     var defects;
     var fldName = "cmbItem2";
