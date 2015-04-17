@@ -28,6 +28,10 @@ function formStart(){
     ///////Fields show/hide to start //////////
 
    ////////Functions to set values and display ////////////
+   var parentForm = document.getElementById("mastercontrol.task.parentformid").value;
+   if (parentForm == null || parentForm == ""){
+      document;getElementById("mastercontrol.links.view.source").disabled = true;
+   }
     calcRisk();
 }/* END Hide fields on start  */
 
