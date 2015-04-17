@@ -101,9 +101,46 @@ function setProductDataEntry(){
     } else {
         radioEnableDisableClass('productField','nonProductField');
         jQ("#mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name,label[for=mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name]").hide();
-        
+        setDefectCombo();
     }
 }
+
+function setDefectCombo() {
+    //Parent dropdown
+    var item1 = document.getElementById("mastercontrol.dataset.recordids.Products.Name");
+    var selItem1;
+    var defects;
+    // name of the dropdown that will be populated dynamiclly
+    var fldName = "cmbDefect";
+    var item2Options = document.getElementById(fldName);
+    var opt;
+    var i;
+    if (item1 != null && item2Options != null)
+    {
+        selItem1 = item1.options[item1.options.selectedIndex].value;
+        if (selItem1 != "")
+        {
+            //dataset=Name of External DataSource and the filter parametername   GetProductDefects  Product  this is the xml query string that will get the data
+            var Url = document.getElementById("txtMCUrl").value + "/Main/NOC/html_forms/query.cfm?dataset=getProductDefects&Product=" + selItem1;
+            cmbClear(fldName);
+            defects = xmlQuery(Url);
+            opt = document.createElement('option');
+            opt.text = "";
+            opt.value = "";
+
+            item2Options.options.add(opt, (item2Options.options.length + 1));
+
+            for (i = 0; i < defects.length; i++)
+            {
+                opt = document.createElement('option');
+                opt.text = opt.value = defects[i].Item2;
+                item2Options.options.add(opt, (item2Options.options.length + 1));
+            }
+        }
+    }
+}
+
+
 /* Initial Dispositon Functionality */
 function initalDisposition(){
     var rbValue = getCheckedValue('rbInitialDisposition');
