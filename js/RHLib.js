@@ -37,7 +37,7 @@ function radioEnableDisableClass(enableClass,disableClass)
         }  
     }   
 }/* END Enable and Disable fields in a class */
-/* Calculate Risk and background color */
+
 function calcRisk(riskFld,sevField,OccField,test) {
     //sevField and occField include # with fieldid
     var oRadioCheck = document.getElementsByName(test);
@@ -50,17 +50,42 @@ function calcRisk(riskFld,sevField,OccField,test) {
      var riskScore = selected + severity;
      if(riskScore >0){
             riskNum.value = riskScore;
-            if (riskScore < 6) { 
-                jQ(riskNum).removeClass( "riskYellow riskRed readonly" ).addClass('riskGreen');
-            } else if (riskScore < 10) {
-                jQ(riskNum).removeClass( "riskGreen riskRed readonly" ).addClass('riskYellow');
-            } else {
-                jQ(riskNum).removeClass( "riskGreen riskYellow readonly" ).addClass('riskRed');
+            if (severity == 1) { 
+                if (selected < 4) {
+                    jQ(riskNum).removeClass( "riskYellow riskRed readonly" ).addClass('riskGreen');
+                } else {
+                    jQ(riskNum).removeClass( "riskGreen riskRed readonly" ).addClass('riskYellow');
+                }
+            } else if (severity == 2){
+                if(selected == 1){
+                    jQ(riskNum).removeClass( "riskYellow riskRed readonly" ).addClass('riskGreen');
+                } else if (selected == 6){
+                    jQ(riskNum).removeClass( "riskGreen riskYellow readonly" ).addClass('riskRed');
+                } else {
+                    jQ(riskNum).removeClass( "riskGreen riskRed readonly" ).addClass('riskYellow');
+                }
+            } else if (severity == 3){
+                if (selected == 1){
+                    jQ(riskNum).removeClass( "riskYellow riskRed readonly" ).addClass('riskGreen');
+                } else if (selected == 2 || selected == 3) {
+                    jQ(riskNum).removeClass( "riskGreen riskRed readonly" ).addClass('riskYellow');
+                } else {
+                    jQ(riskNum).removeClass( "riskGreen riskYellow readonly" ).addClass('riskRed');
+                }
+            } else if ( severity == 4) {
+                if (selected == 1) {
+                    jQ(riskNum).removeClass( "riskYellow riskRed readonly" ).addClass('riskGreen');
+                } else if (selected == 2) {
+                    jQ(riskNum).removeClass( "riskGreen riskRed readonly" ).addClass('riskYellow');
+                } else {
+                    jQ(riskNum).removeClass( "riskGreen riskYellow readonly" ).addClass('riskRed');
+                }
             }
      }else{
         jQ(riskFld).removeClass( "riskGreen riskYellow riskRed").addClass('readonly');
      }
-}/* END Calculate Risk and background color */
+
+} /* END Calculate Risk and background color */
 function SP_InsertBlank()
 {   
     
