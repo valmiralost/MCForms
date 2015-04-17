@@ -34,8 +34,6 @@ function formStart(){
                 alert("need to remove last added entry");
             }
         });
-        // FOR TESTING ONLY
-        var varray = ['1','3'];
         jQ('#mastercontrol\\.route\\.stepusers\\.step4').val(varray);
 
         jQ('input[type=radio][name=rbIDSeverityRisk]').click(function() {
@@ -133,7 +131,8 @@ function setDefectCombo() {
             for (i = 0; i < defects.length; i++)
             {
                 opt = document.createElement('option');
-                opt.text = opt.value = defects[i].Item2;
+                 //update to column from the datasource that you are using 
+                opt.text = opt.value = defects[i].Defect;
                 item2Options.options.add(opt, (item2Options.options.length + 1));
             }
         }
