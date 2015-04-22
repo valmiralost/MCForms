@@ -2,7 +2,7 @@
 /* Global Vars */
     var stepId  =  document.getElementById("mastercontrol.route.stepid").value*1;
     var stepNumber =  4;//document.getElementById("mastercontrol.route.stepnumber").value*1;
-    var sFormStatus= document.getElementById("mastercontrol.hidden.event").value;  /*viewOnly*/
+//    var sFormStatus= document.getElementById("mastercontrol.hidden.event").value;  /*viewOnly*/
     var sinvestigatorCount = 0;
     
 
@@ -84,7 +84,7 @@ function formStart(){
         dcnLaunched();
         additionalActionRequired();
         finalDisposition();
-        setProductDataEntry();
+    //    setProductDataEntry();
     } catch(e){}
      SP_CheckAndAddBlank("mastercontrol.role.NCRInvestigators"); 
 
@@ -97,8 +97,8 @@ function setProductDataEntry(){
         
 
     } else {
-        radioEnableDisableClass('productField','nonProductField');
         jQ("#mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name,label[for=mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name]").hide();
+        radioEnableDisableClass('productField','nonProductField'); 
         setDefectCombo();
     }
 }

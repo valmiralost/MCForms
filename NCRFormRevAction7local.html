@@ -1,8 +1,8 @@
-<!--  Inside MasterControl 
+<!--  Inside MasterControl  
 <link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/SPScreenInt.css' type='text/css'>
 <link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/RHStyles.css' type='text/css'>
 <link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/NCRForm.css' type='text/css'>
- -->
+-->
 <!--  Outside MasterControl -->
 <link rel='stylesheet' title='main' href='css/SPScreenInt.css' type='text/css'>
 <link rel='stylesheet' title='main' href='css/RHStyles.css' type='text/css'>
@@ -126,6 +126,7 @@ body{
           <input name="hlpSourceType" type="hidden" id="hlpSourceType" title="SourceType" value="NCR" />
           <input name="hlpNCRNumber" type="hidden" id="hlpNCRNumber" title="Source Number" />
           <input name="hlpNCRCreated" type="hidden" id="hlpNCRCreated" title="Source Create Date"  />
+          <input id="txtMCUrl" type="hidden" title="MasterControl URL" alt="MasterControl URL" value="#mastercontrol.url#">
           <!-- Required to Launch Form from Form  -->
           <select id="mastercontrol.task.routes"  name="mastercontrol.task.routes" title="Available Routes" style="display:none" >
           </select>
@@ -161,7 +162,10 @@ body{
 								<div class="leftField">
 									<div class="formField34">
 										<select id="mastercontrol.dataset.recordids.Products.Name" class="selectfield" title="Product">
-
+											<option value=""></option>
+											<option value="Prod 1">Prod 1</option>
+											<option value="Documentation">Documentaiton</option>
+											<option value="Quality System">Quality System</option>
 										</select>
 									</div>
 
@@ -321,11 +325,11 @@ body{
 
 							<div id="divmastercontrol.dataset.recordids.NCRDefects.Name" class="fieldRow">
 								<div class="leftLabel labelWidth20">
-									<label for="mastercontrol.dataset.recordids.NCRDefects.Name">Defect:</label>
+									<label for="cmbDefect">Defect:</label>
 								</div>
 								<div class="leftField">
 									<div class="formField34">
-										<select id="mastercontrol.dataset.recordids.NCRDefects.Name" class="selectfield productField" title="Defect"></select>
+										<select id="cmbDefect" class="selectfield productField" title="Defect"></select>
 									</div>
 								</div>
 							</div>
@@ -660,51 +664,13 @@ body{
 								<div class="leftField">
 									<div class="formField34">
 										<select id="mastercontrol.role.NCRInvestigators" class="selectfield yesInvestigation" title="Assigned To">
-										<option value=""></option>
-										<option value="one (1)"> one (1)</option>
-										<option value="one (2)"> one (2)</option>
-										<option value="one (3)"> one (3)</option>
-										<option value="one (4)"> one (4)</option>
-										<option value="one (5)"> one (5)</option>
-										<option value="one (6)"> one (6)</option>
-										<option value="one (7)"> one (7)</option>
-										<option value="one (8)"> one (8)</option>
+										</select>
+										<select multiple id="mastercontrol.route.stepusers.step4" class="selectfield" title="Invest Step" visibility="hidden">
 										</select>
 									</div>
 								</div>
 							</div>
 							<div class="clearBoth"></div>
-
-
-
-							<div id="divtemp" class="fieldRow">
-								<div class="leftLabel labelWidth20">
-									<label for="mastercontrol.route.stepusers.step4">Investigation step:</label>
-								</div>
-								<div class="leftField">
-									<div class="formField34">
-										<select multiple id="mastercontrol.route.stepusers.step4" class="selectfield" title="Invest Step" >
-										<option value="1"> one (1)</option>
-										<option value="2"> one (2)</option>
-										<option value="3"> one (3)</option>
-										<option value="4"> one (4)</option>
-										<option value="5"> one (5)</option>
-										<option value="6"> one (6)</option>
-										<option value="7"> one (7)</option>
-										<option value="8"> one (8)</option>
-										<option value="9"> one (9)</option>
-										<option value="10"> one (10)</option>
-										<option value="11"> one (11)</option>
-
-										</select>
-									</div>
-								</div>
-							</div>
-							<div class="clearBoth"></div>
-
-
-
-
 							<div id="divDateAssigned" class="fieldRow">
 								<div class="leftLabel labelWidth20">
 									<label for="txtDateAssigned_date">Date Assigned:</label>
