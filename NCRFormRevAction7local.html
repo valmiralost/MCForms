@@ -664,8 +664,20 @@ body{
 								<div class="leftField">
 									<div class="formField34">
 										<select id="mastercontrol.role.NCRInvestigators" class="selectfield yesInvestigation" title="Assigned To">
+											<option value=""></option>
+											<option value="One (A)">One (A)</option>
+											<option value="Two (B)">Two (B)</option>
+											<option value="Three (C)">Three (C)</option>
+											<option value="Four (D)">Four (D)</option>
 										</select>
-										<select multiple id="mastercontrol.route.stepusers.step4" class="selectfield" title="Invest Step" visibility="hidden">
+										<select multiple id="mastercontrol.route.stepusers.step4" class="selectfield" title="Invest Step" >
+											<option value=""></option>
+											<option value="A">One (A)</option>
+											<option value="B">Two (B)</option>
+											<option value="C">Three (C)</option>
+											<option value="D" selected>Four (D)</option>
+											<option value="E" selected>Five (E)</option>
+											<option value="F" selected>Six (F)</option>
 										</select>
 									</div>
 								</div>
@@ -1174,6 +1186,7 @@ body{
 var jQ = jQuery.noConflict();
 
 jQ(function() {
+
 	formStart();
 	retainHeightWidth();
 	setTaskTitle();

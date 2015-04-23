@@ -13,8 +13,8 @@ function formStart(){
     jQ('input[type=radio][name=rbRecurrenceRisk]').click(function() {
         calcRisk('txtRiskScore','#rbSeverityRisk','#rbRecurrenceRisk');
     }); 
-    jQ("#mastercontrol\\.role\\.NCRInvestigators").change(function(){
-        var selectedValue = jQ("#mastercontrol\\.role\\.NCRInvestigators").val();
+    jQ("#mastercontrol\\.role\\.CAPAInvestigators").change(function(){
+        var selectedValue = jQ("#mastercontrol\\.role\\.CAPAInvestigators").val();
         var testArray = addUsersToRouteStepListByClass("actionDiv");
         alert(testArray);
   //      var routeArray = jQ("#mastercontrol.role\\.CAPAActionTaskOwner\\.CAPAActionTask1Owner").val();

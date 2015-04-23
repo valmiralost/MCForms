@@ -2,8 +2,8 @@
 /* Global Vars */
     var stepId  =  document.getElementById("mastercontrol.route.stepid").value*1;
     var stepNumber =  4;//document.getElementById("mastercontrol.route.stepnumber").value*1;
-//    var sFormStatus= document.getElementById("mastercontrol.hidden.event").value;  /*viewOnly*/
-    var sinvestigatorCount = 0;
+    var sFormStatus= document.getElementById("mastercontrol.hidden.event").value;  /*viewOnly*/
+    var gSelected=jQ("#mastercontrol\\.route\\.stepusers\\.step4 option:selected").map(function(){ return this.value }).get();
     
 
 /* Hide fields on start and other functions  3-8*/
@@ -20,19 +20,24 @@ function formStart(){
        jQ('input[type=radio][name=rbInvestigationRequired]').click(function() {
             investigationEval();
         });
+
         jQ("#mastercontrol\\.role\\.NCRInvestigators").change(function(){
+            
             var selectedValue = jQ("#mastercontrol\\.role\\.NCRInvestigators").val();
             var trimmedValue = trimUserID(selectedValue);
-            if (trimmedValue != "" && sinvestigatorCount ==0){
-                var selected=jQ("#mastercontrol\\.route\\.stepusers\\.step4 option:selected").map(function(){ return this.value }).get();
-                sinvestigatorCount = 1;
-                    if(jQ.inArray(trimmedValue, selected) ==-1) {
-                        selected.push(trimmedValue);
-                        jQ('#mastercontrol\\.route\\.stepusers\\.step4').val(selected);
-                    }
-            } else if(sinvestigatorCount >0) {
-                alert("need to remove last added entry");
+            if (selectedValue != ""){
+                if(jQ.inArray(trimmedValue, gSelected) == -1 ) {
+                    var currentSelected = gSelected.slice();
+                    currentSelected.push(trimmedValue);
+                    jQ('#mastercontrol\\.route\\.stepusers\\.step4').val(currentSelected);
+                } else {
+                    jQ('#mastercontrol\\.route\\.stepusers\\.step4').val(gSelected);
+                }
+
+            } else {
+                jQ('#mastercontrol\\.route\\.stepusers\\.step4').val(gSelected);
             }
+
         });
         jQ('#mastercontrol\\.route\\.stepusers\\.step4').val(varray);
 
