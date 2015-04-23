@@ -39,7 +39,6 @@ function formStart(){
             }
 
         });
-        jQ('#mastercontrol\\.route\\.stepusers\\.step4').val(varray);
 
         jQ('input[type=radio][name=rbIDSeverityRisk]').click(function() {
             calcRisk('txtIDRiskScore','#rbIDSeverityRisk','#rbIDRecurrenceRisk','rbIDSeverityRisk');
