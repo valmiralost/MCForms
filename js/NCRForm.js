@@ -145,6 +145,8 @@ function setDefectCombo() {
             opt.text = "Other";
             opt.value = "Other";
             item2Options.options.add(opt, (item2Options.options.length + 1));
+    } else{
+        cmbClear(fldName);
     }
 }
 
