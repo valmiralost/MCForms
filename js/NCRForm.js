@@ -1,7 +1,7 @@
 /*NCRForm.js*/
 /* Global Vars */
     var stepId  =  document.getElementById("mastercontrol.route.stepid").value*1;
-    var stepNumber =  4;//document.getElementById("mastercontrol.route.stepnumber").value*1;
+    var stepNumber =  document.getElementById("mastercontrol.route.stepnumber").value*1;
     var sFormStatus= document.getElementById("mastercontrol.hidden.event").value;  /*viewOnly*/
     var gSelected=jQ("#mastercontrol\\.route\\.stepusers\\.step4 option:selected").map(function(){ return this.value }).get();
     
@@ -39,6 +39,15 @@ function formStart(){
             }
 
         });
+
+        jQ("#cmbDefect").change(function(){
+            displayOther('cmbDefect','txtDefectOther','lblDefectOther');
+        });
+
+
+
+
+
 
         jQ('input[type=radio][name=rbIDSeverityRisk]').click(function() {
             calcRisk('txtIDRiskScore','#rbIDSeverityRisk','#rbIDRecurrenceRisk','rbIDSeverityRisk');
