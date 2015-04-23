@@ -140,13 +140,13 @@ function setDefectCombo() {
                 opt.text = opt.value = defects[i].Defect;
                 item2Options.options.add(opt, (item2Options.options.length + 1));
             }
-        }
             opt = document.createElement('option');
             opt.text = "Other";
             opt.value = "Other";
             item2Options.options.add(opt, (item2Options.options.length + 1));
-    } else{
-        jQ("#cmbDefect option").remove();
+        } else { 
+            jQ("#cmbDefect option").remove();
+        }
     }
 }
 
