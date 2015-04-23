@@ -118,19 +118,21 @@ body{
 		</div><!-- formHeader end -->
 
          <div>  <!-- DIV contains all hidden and keyword fields Start-->
-          <input name="mastercontrol.route.stepnumber" type="hidden" id="mastercontrol.route.stepnumber" title="Step Number">
-          <input name="mastercontrol.route.stepid" type="hidden" id="mastercontrol.route.stepid" title="Step ID">
-          <input name="mastercontrol.form.title" type="hidden" id="mastercontrol.form.title" title="Form Title">
-          <input name="mastercontrol.form.creator" type="hidden" id="mastercontrol.form.creator" title="Creator Name">
-          <input name="mastercontrol.form.creatorname" type="hidden" id="mastercontrol.form.creatorname" title="Creator ID">
+          <input name="mastercontrol.route.stepnumber" type="hidden" id="mastercontrol.route.stepnumber" title="Step Number" />
+          <input name="mastercontrol.route.stepid" type="hidden" id="mastercontrol.route.stepid" title="Step ID" />
+          <input name="mastercontrol.form.title" type="hidden" id="mastercontrol.form.title" title="Form Title" />
+          <input name="mastercontrol.form.creator" type="hidden" id="mastercontrol.form.creator" title="Creator Name" />
+          <input name="mastercontrol.form.creatorname" type="hidden" id="mastercontrol.form.creatorname" title="Creator ID" />
           <input name="hlpSourceType" type="hidden" id="hlpSourceType" title="SourceType" value="NCR" />
           <input name="hlpNCRNumber" type="hidden" id="hlpNCRNumber" title="Source Number" />
           <input name="hlpNCRCreated" type="hidden" id="hlpNCRCreated" title="Source Create Date"  />
-          <input id="txtMCUrl" type="hidden" title="MasterControl URL" alt="MasterControl URL" value="#mastercontrol.url#">
+          <input id="txtMCUrl" type="hidden" title="MasterControl URL" alt="MasterControl URL" value="#mastercontrol.url#" />
           <!-- Required to Launch Form from Form  -->
           <select id="mastercontrol.task.routes"  name="mastercontrol.task.routes" title="Available Routes" style="display:none" >
           </select>
           <input id="mastercontrol.task.launch" type="button" class="mastercontrol.task.launch" alt="Form launch" title="Form launch" style="display:none" />
+          <select multiple id="mastercontrol.route.stepusers.step4" class="selectfield" title="Invest Step" style="display:none" >
+		</select>
           <!--    -->
         </div><!-- DIV contains all hidden and keyword fields End-->
             
@@ -661,8 +663,6 @@ body{
 								<div class="leftField">
 									<div class="formField34">
 										<select id="mastercontrol.role.NCRInvestigators" class="selectfield yesInvestigation" title="Assigned To">
-										</select>
-										<select multiple id="mastercontrol.route.stepusers.step4" class="selectfield" title="Invest Step" style="visibility:hidden;">
 										</select>
 									</div>
 								</div>
