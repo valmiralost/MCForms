@@ -97,6 +97,7 @@ function formStart(){
         dcnLaunched();
         additionalActionRequired();
         finalDisposition();
+        displayOther('cmbDefect','txtDefectOther','lblDefectOther');
     //    setProductDataEntry();
     } catch(e){}
      SP_CheckAndAddBlank("mastercontrol.role.NCRInvestigators"); 
