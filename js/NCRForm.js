@@ -43,12 +43,6 @@ function formStart(){
         jQ("#cmbDefect").change(function(){
             displayOther('cmbDefect','txtDefectOther','lblDefectOther');
         });
-
-
-
-
-
-
         jQ('input[type=radio][name=rbIDSeverityRisk]').click(function() {
             calcRisk('txtIDRiskScore','#rbIDSeverityRisk','#rbIDRecurrenceRisk','rbIDSeverityRisk');
         });
@@ -108,13 +102,11 @@ function setProductDataEntry(){
     if (selectedValue == 'Documentation' || selectedValue == 'Quality System' ){
         radioEnableDisableClass('nonProductField','productField');
         jQ("#mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name,label[for=mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name]").show();
-        
-
     } else {
-        jQ("#mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name,label[for=mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name]").hide();
-        radioEnableDisableClass('productField','nonProductField'); 
+        jQ("#mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name,label[for=mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name]").hide();     
         setDefectCombo();
     }
+    radioEnableDisableClass('productField','nonProductField'); 
 }
 
 function setDefectCombo() {
@@ -157,6 +149,7 @@ function setDefectCombo() {
             jQ("#cmbDefect option").remove();
         }
     }
+    displayOther('cmbDefect','txtDefectOther','lblDefectOther');
 }
 
 

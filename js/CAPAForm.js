@@ -3,9 +3,9 @@
     var stepId  =  document.getElementById("mastercontrol.route.stepid").value*1;
     var stepNumber =  document.getElementById("mastercontrol.route.stepnumber").value*1;
     var sFormStatus= document.getElementById("mastercontrol.hidden.event").value;  /*viewOnly*/
+    var gSelected=jQ("#mastercontrol\\.route\\.stepusers\\.step2 option:selected").map(function(){ return this.value }).get();
 /* Hide fields on start and other functions */
-function formStart(){
-    
+function formStart(){   
         /* Add events to fields */
     jQ('input[type=radio][name=rbSeverityRisk]').click(function() {
         calcRisk('txtRiskScore','#rbSeverityRisk','#rbRecurrenceRisk');
@@ -13,26 +13,38 @@ function formStart(){
     jQ('input[type=radio][name=rbRecurrenceRisk]').click(function() {
         calcRisk('txtRiskScore','#rbSeverityRisk','#rbRecurrenceRisk');
     }); 
-    jQ("#mastercontrol\\.role\\.CAPAInvestigators").change(function(){
-        var selectedValue = jQ("#mastercontrol\\.role\\.CAPAInvestigators").val();
-        var testArray = addUsersToRouteStepListByClass("actionDiv");
-        alert(testArray);
-  //      var routeArray = jQ("#mastercontrol.role\\.CAPAActionTaskOwner\\.CAPAActionTask1Owner").val();
-  //      var trimmedValue = trimUserID(selectedValue);
-  //      if (routeArray.indexOf(trimmedValue) < 0){
-  //          routeArray.push(trimmedValue);
-  //      }
- //       
-   //     jQ("#mastercontrol\\.route\\.stepusers\\.step4_2").val(routeArray);
-    });
+        jQ("#mastercontrol\\.role\\.CAPAInvestigators").change(function(){           
+            var selectedValue = jQ("#mastercontrol\\.role\\.CAPAInvestigators").val();
+            var trimmedValue = trimUserID(selectedValue);
+            if (selectedValue != ""){
+                if(jQ.inArray(trimmedValue, gSelected) == -1 ) {
+                    var currentSelected = gSelected.slice();
+                    currentSelected.push(trimmedValue);
+                    jQ('#mastercontrol\\.route\\.stepusers\\.step2').val(currentSelected);
+                } else {
+                    jQ('#mastercontrol\\.route\\.stepusers\\.step2').val(gSelected);
+                }
+            } else {
+                jQ('#mastercontrol\\.route\\.stepusers\\.step2').val(gSelected);
+            }
+        });
     ///////Fields show/hide to start //////////
 
    ////////Functions to set values and display ////////////
    var parentForm = document.getElementById("mastercontrol.task.parentformid").value;
    if (parentForm == null || parentForm == ""){
-      document;getElementById("mastercontrol.links.view.source").disabled = true;
+      document.getElementById("mastercontrol.links.view.source").disabled = true;
    }
     calcRisk();
+    var stype = document.getElementById("txtSourceType");
+    var snum = document.getElementById("mastercontrol.task.parentformid");
+    var stitle = document.getElementById("txtSourceTitle");
+    if (stepNumber ==1 && snum.value == ""){
+      stype.value = "N/A";
+      snum.value = "N/A";
+      stitle.value = "N/A";
+      alert("empty");
+    }
 }/* END Hide fields on start  */
 
 

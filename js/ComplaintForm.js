@@ -80,21 +80,7 @@ function dhrReview(){
         document.getElementById("btnDHRReivewDateCalendar").disabled = true;   
      }
 }/* END DHR Review*/
-/* displays related other field with other is selected from a dd */
-function displayOther(ddField,otherField,otherLabel){
-    var dValue = document.getElementById(ddField);
-    var ddValue = dValue.options[dValue.selectedIndex].value;
-    var oField = document.getElementById(otherField);
-    var oLabel = document.getElementById(otherLabel);
-    if (ddValue == "Other"){
-        jQ(oField).show(); 
-        jQ(oLabel).show();         
-    } else {
-            oField.value = "";
-            jQ(oField).hide(); 
-            jQ(oLabel).hide();
-        }   
-    } /* END  displays related other field with other is selected from a dd */
+
  /* CAPA Required Functionality */
 
 function capaRequired(){
