@@ -41,7 +41,7 @@ function formStart(){
     });
     displayOther('cmbReceivedVia','txtOtherDetails','lbOtherDetails');
     displayOther('cmbClassification','txtClassificationOther','lbClassificationOther');
-
+    calcRisk('txtRiskScore','#rbSeverityRisk','#rbRecurrenceRisk','rbSeverityRisk');
     investigationEval();
     dhrReview(); 
     notifyRequired();

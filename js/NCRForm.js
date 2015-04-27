@@ -85,7 +85,8 @@ function formStart(){
         jQ("#mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name,label[for=mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name]").hide();
         jQ("#txtNoInvestigationJustification,label[for=txtNoInvestigationJustification]").hide();
        ////////Functions to set values and display ////////////
-        calcRisk();
+        calcRisk('txtIDRiskScore','#rbIDSeverityRisk','#rbIDRecurrenceRisk','rbIDSeverityRisk');
+        calcRisk('txtRiskScore','#rbSeverityRisk','#rbRecurrenceRisk','rbSeverityRisk');
         investigationEval();
         capaRequired();
         dcnLaunched();

@@ -13,29 +13,26 @@ function formStart(){
     jQ('input[type=radio][name=rbRecurrenceRisk]').click(function() {
         calcRisk('txtRiskScore','#rbSeverityRisk','#rbRecurrenceRisk');
     }); 
-        jQ("#mastercontrol\\.role\\.CAPAInvestigators").change(function(){           
-            var selectedValue = jQ("#mastercontrol\\.role\\.CAPAInvestigators").val();
-            var trimmedValue = trimUserID(selectedValue);
-            if (selectedValue != ""){
-                if(jQ.inArray(trimmedValue, gSelected) == -1 ) {
-                    var currentSelected = gSelected.slice();
-                    currentSelected.push(trimmedValue);
-                    jQ('#mastercontrol\\.route\\.stepusers\\.step2').val(currentSelected);
-                } else {
-                    jQ('#mastercontrol\\.route\\.stepusers\\.step2').val(gSelected);
-                }
+    jQ("#mastercontrol\\.role\\.CAPAInvestigators").change(function(){           
+        var selectedValue = jQ("#mastercontrol\\.role\\.CAPAInvestigators").val();
+        var trimmedValue = trimUserID(selectedValue);
+        if (selectedValue != ""){
+            if(jQ.inArray(trimmedValue, gSelected) == -1 ) {
+                var currentSelected = gSelected.slice();
+                currentSelected.push(trimmedValue);
+                jQ('#mastercontrol\\.route\\.stepusers\\.step2').val(currentSelected);
             } else {
                 jQ('#mastercontrol\\.route\\.stepusers\\.step2').val(gSelected);
             }
-        });
+        } else {
+            jQ('#mastercontrol\\.route\\.stepusers\\.step2').val(gSelected);
+        }
+    });
     ///////Fields show/hide to start //////////
 
    ////////Functions to set values and display ////////////
-   var parentForm = document.getElementById("mastercontrol.task.parentformid").value;
-   if (parentForm == null || parentForm == ""){
-      document.getElementById("mastercontrol.links.view.source").disabled = true;
-   }
-    calcRisk();
+
+    calcRisk('txtRiskScore','#rbSeverityRisk','#rbRecurrenceRisk');
     var stype = document.getElementById("txtSourceType");
     var snum = document.getElementById("mastercontrol.task.parentformid");
     var stitle = document.getElementById("txtSourceTitle");
@@ -43,7 +40,7 @@ function formStart(){
       stype.value = "N/A";
       snum.value = "N/A";
       stitle.value = "N/A";
-      alert("empty");
+      document.getElementById("mastercontrol.links.view.source").disabled = true;
     }
 }/* END Hide fields on start  */
 
