@@ -2,11 +2,11 @@
 function radioEnableDisableClass(enableClass,disableClass)
 {
 //    if (enableClass != false && sFormStatus=='editStep') {
-            if (enableClass != false ) {
+    if (enableClass != false ) {
         var enableArray = document.getElementsByClassName(enableClass);
         for(i = 0; i < enableArray.length; i++) {
             var vid = jQ(enableArray[i]).attr("id");
-            if(vid.indexOf("_date")<0){
+ //           if(vid.indexOf("_date")<0){
                 jQ(enableArray[i]).removeClass('readonlyNoDataEntry');
                 jQ(enableArray[i]).prop('readonly', false);
                  if(jQ(enableArray[i]).is("select")) {
@@ -14,7 +14,7 @@ function radioEnableDisableClass(enableClass,disableClass)
                 } else if (jQ(enableArray[i]).is(":radio")){
                     jQ(enableArray[i]).attr("disabled",false);
                 }
-            }
+ //           }
         }
     }
  //   if (disableClass != false && sFormStatus=='editStep') {
