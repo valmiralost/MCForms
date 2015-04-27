@@ -36,6 +36,9 @@ function formStart(){
     var stype = document.getElementById("txtSourceType");
     var snum = document.getElementById("mastercontrol.task.parentformid");
     var stitle = document.getElementById("txtSourceTitle");
+    if (snum.value == ""){
+        document.getElementById("mastercontrol.links.view.source").disabled = true;
+    } 
     if (stepNumber ==1 && snum.value == ""){
       stype.value = "N/A";
       snum.value = "N/A";
