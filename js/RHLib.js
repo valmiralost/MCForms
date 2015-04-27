@@ -88,7 +88,11 @@ function calcRisk(riskFld,sevField,OccField,test) {
 /* displays related other field with other is selected from a dd */
 function displayOther(ddField,otherField,otherLabel){
     var dValue = document.getElementById(ddField);
-    var ddValue = dValue.options[dValue.selectedIndex].value;
+    if (dValue.selectedIndex != -1) {
+        var ddValue = dValue.options[dValue.selectedIndex].value;
+    } else {
+        var ddValue = "";
+    }
     var oField = document.getElementById(otherField);
     var oLabel = document.getElementById(otherLabel);
     if (ddValue == "Other"){
