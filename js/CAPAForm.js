@@ -40,7 +40,9 @@ function formStart(){
       stype.value = "N/A";
       snum.value = "N/A";
       stitle.value = "N/A";
-      document.getElementById("mastercontrol.links.view.source").disabled = true;
+    }
+    if (stype == "N/A"){
+        document.getElementById("mastercontrol.links.view.source").disabled = true;
     }
 }/* END Hide fields on start  */
 
