@@ -3,7 +3,7 @@
 <link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/RHStyles.css' type='text/css'>
 <link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/ComplaintForm.css' type='text/css'>
 
-<!-- Outside links
+<!-- Outside links 
 <link rel="stylesheet" title="main" href="css/SPScreenExt.css" type="text/css">
 <link rel="stylesheet" title="main" href="css/RHStyles.css" type="text/css">
 <link rel="stylesheet" title="main" href="css/ComplaintForm.css" type="text/css">
@@ -99,7 +99,7 @@ ul.tabbernav li.tabberactive a {
 					</tr><!-- header fourth row end -->
 					<tr><!-- header fifth row begin -->
 						<td>&nbsp;</td>
-						<td class="TopLabel" colspan="3"><label for="txtTitle">Title</label></td>
+						<td class="TopLabel" colspan="3"><label for="txtTitle"class="reqdLabel" >* Title</label></td>
 						<td>&nbsp;</td>
 					</tr><!-- header fifth row end -->
 					<tr><!-- header sixth row begin -->
@@ -292,7 +292,6 @@ ul.tabbernav li.tabberactive a {
 								</div>
 							</div>
 							<div class="clearBoth"></div>
-							
 							<div id="divPhone" class="fieldRow">
 								<div class="leftLabel labelWidth20">
 									<label for="txtPhone">Phone Number:</label>
@@ -327,7 +326,7 @@ ul.tabbernav li.tabberactive a {
 
 							<div id="divmastercontrol.set.ceProducts" class="fieldRow">
 								<div class="leftLabel labelWidth20">
-									<label for="mastercontrol.set.ceProducts">Product:</label>
+									<label for="mastercontrol.dataset.recordids.Products.Name">Product:</label>
 								</div>
 								<div class="leftField">
 									<div class="formField34">
@@ -338,21 +337,17 @@ ul.tabbernav li.tabberactive a {
 								</div>
 							</div>
 							<div class="clearBoth"></div>
-
-							<div id="divmastercontrol.dataset.recordids.NCRDefects.Name" class="fieldRow">
+							<div id="divcmbDefect" class="fieldRow">
 								<div class="leftLabel labelWidth20">
 									<label for="cmbDefect">Defect:</label>
 								</div>
 								<div class="leftField">
 									<div class="formField34">
 										<select id="cmbDefect" class="selectfield productField" title="Defect">
-											<option value =""></option>
-											<option value ="one">one</option>
-											<option value ="two">two</option>
 										</select>
 									</div>
 									<div class="subLabel">
-										<label for="txtDefectOther" id="lbDefectOther"> Defect Other:</label>
+										<label for="txtDefectOther" id="lblDefectOther">Defect Other:</label>
 									</div>
 									<div class="formField34">
 										<input id="txtDefectOther" type="text" class="textfield" title="Defect Other Please Specify" />
@@ -423,6 +418,25 @@ ul.tabbernav li.tabberactive a {
 							</div>
 							<div class="clearBoth"></div>
 
+							<div id="divPatientInjury" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="chbPatientInjury">Patient Injury:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="chbPatientInjury" type="checkbox" class="checkboxfield" alt="Patient Injury" title="Patient Injury" value="Yes" />
+									</div>
+
+									<div class="subLabel">
+										<label for="chbPatientDeath">Patient Death:</label>
+									</div>
+									<div class="formField34">
+										<input id="chbPatientDeath" type="checkbox" class="checkboxfield" alt="Patient Death" title="Patient Death" value="Yes" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
 
 							<div id="divAdverseEvent" class="fieldRow">
 								<div class="leftLabel labelWidth20">
@@ -431,6 +445,11 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<select id="mastercontrol.dataset.recordids.AdverseEvents.Name" class="selectfield required" title="Adverse Events">
+											<option value=""></option>
+											<option value="Prod 1">Prod 1</option>
+											<option value="Prod 1">Prod 2</option>
+											<option value="Documentation">Documentation</option>
+											<option value="Quality System">Quality System</option>
 										</select>
 									</div>
 									<div class="subLabel">
@@ -450,6 +469,9 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<select id="cmbAdverseEventSubCategory" class="selectfield" title="Adverse Event Sub Category">
+											<option value =""></option>
+											<option value ="one">one</option>
+											<option value ="two">two</option>
 										</select>
 									</div>
 									<div class="subLabel">
@@ -457,25 +479,6 @@ ul.tabbernav li.tabberactive a {
 									</div>
 									<div class="formField34">
 										<input id="txtAdverseEventSubCategoryOther" type="text" class="textfield" title="Adverse Event Sub Category Other Please Specify" />
-									</div>
-								</div>
-							</div>
-							<div class="clearBoth"></div>
-
-							<div id="divPatientInjury" class="fieldRow">
-								<div class="leftLabel labelWidth20">
-									<label for="chbPatientInjury">Patient Injury:</label>
-								</div>
-								<div class="leftField">
-									<div class="formField34">
-										<input id="chbPatientInjury" type="checkbox" class="checkboxfield" alt="Patient Injury" title="Patient Injury" value="Yes" />
-									</div>
-
-									<div class="subLabel">
-										<label for="chbPatientDeath">Patient Death:</label>
-									</div>
-									<div class="formField34">
-										<input id="chbPatientDeath" type="checkbox" class="checkboxfield" alt="Patient Death" title="Patient Death" value="Yes" />
 									</div>
 								</div>
 							</div>
@@ -1916,7 +1919,7 @@ ul.tabbernav li.tabberactive a {
 <script type="text/javascript" src="#mastercontrol.javascript(RHLib.js)#"> </script>
 <script type='text/javascript' src='#mastercontrol.javascript(ComplaintForm.js)#'></script>
 
-<!-- outside links 
+<!-- outside links
 
 <script type="text/javascript" src="js/tabber.js"></script>
 <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
@@ -1924,8 +1927,8 @@ ul.tabbernav li.tabberactive a {
 <script type="text/javascript" src="js/StdLibrary.js"></script>
 <script type="text/javascript" src="js/RHLib.js"></script>
 <script type="text/javascript" src="js/ComplaintForm.js"></script>
+ -->
 
--->
 <script language="javascript" type="text/javascript">
 var jQ = jQuery.noConflict();
 

@@ -54,7 +54,7 @@ function formStart(){
     displayOther('cmbCategory','txtCategoryOther','lbCategoryOther');
     displayOther('cmbAdverseEventSubCategory','txtAdverseEventSubCategoryOther','lbAdverseEventSubCategoryOther');
     displayOther('mastercontrol.dataset.recordids.AdverseEvents.Name','txtAdverseEventOther','lbAdverseEventOther');
-    displayOther('cmbDefect','txtDefectOther','lbDefectOther');
+    displayOther('cmbDefect','txtDefectOther','lblDefectOther');
     displayOther('cmbClassification','txtClassificationOther','lbClassificationOther');
     calcRisk('txtRiskScore','#rbSeverityRisk','#rbRecurrenceRisk','rbSeverityRisk');
     investigationEval();
