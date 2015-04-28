@@ -8,7 +8,9 @@
 /* Hide fields on start and other functions  3-8*/
 function formStart(){
     jQ("#mastercontrol\\.dataset\\.recordids\\.Products\\.Name").change(function() {
-        setProductDefectDD();
+       if (this.options[this.selectedIndex].value){
+            setDefectCombo();
+       }
     });
     jQ("#mastercontrol\\.dataset\\.recordids\\.AdverseEvents\\.Name").change(function() {
         setAdverseEventDD();
@@ -61,8 +63,8 @@ function formStart(){
     capaRequired();  
 }
 
-function setProductDefectDD() {
-        //Parent dropdown
+function setDefectCombo() {
+    //Parent dropdown
     var item1 = document.getElementById("mastercontrol.dataset.recordids.Products.Name");
     var selItem1;
     var defects;
@@ -76,7 +78,6 @@ function setProductDefectDD() {
         selItem1 = item1.options[item1.options.selectedIndex].value;
         if (selItem1 != "")
         {
-            //TODO Check is this is the same as NCR, if so remove Complaint from DS name
             //dataset=Name of External DataSource and the filter parametername   GetProductDefects  Product  this is the xml query string that will get the data
             var Url = document.getElementById("txtMCUrl").value + "/Main/NOC/html_forms/query.cfm?dataset=getProductDefects&Product=" + selItem1;
             cmbClear(fldName);
