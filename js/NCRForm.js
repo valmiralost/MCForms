@@ -2,7 +2,7 @@
 /* Global Vars */
     var stepId  =  document.getElementById("mastercontrol.route.stepid").value*1;
     var stepNumber =  document.getElementById("mastercontrol.route.stepnumber").value*1;
-    var sFormStatus= document.getElementById("mastercontrol.hidden.event").value;  /*viewOnly*/
+//    var sFormStatus= document.getElementById("mastercontrol.hidden.event").value;  /*viewOnly*/
     var gSelected=jQ("#mastercontrol\\.route\\.stepusers\\.step4 option:selected").map(function(){ return this.value }).get();
     
 
@@ -21,8 +21,7 @@ function formStart(){
             investigationEval();
         });
 
-        jQ("#mastercontrol\\.role\\.NCRInvestigators").change(function(){
-            
+        jQ("#mastercontrol\\.role\\.NCRInvestigators").change(function(){   
             var selectedValue = jQ("#mastercontrol\\.role\\.NCRInvestigators").val();
             var trimmedValue = trimUserID(selectedValue);
             if (selectedValue != ""){
@@ -93,7 +92,7 @@ function formStart(){
         additionalActionRequired();
         finalDisposition();
         displayOther('cmbDefect','txtDefectOther','lblDefectOther');
-    //    setProductDataEntry();
+        setProductDataEntry();
     } catch(e){}
      SP_CheckAndAddBlank("mastercontrol.role.NCRInvestigators"); 
 
@@ -103,11 +102,14 @@ function setProductDataEntry(){
     if (selectedValue == 'Documentation' || selectedValue == 'Quality System' ){
         radioEnableDisableClass('nonProductField','productField');
         jQ("#mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name,label[for=mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name]").show();
+    } else if (selectedValue == ""){
+
     } else {
-        jQ("#mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name,label[for=mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name]").hide();     
+        jQ("#mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name,label[for=mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name]").hide(); 
+        radioEnableDisableClass('productField','nonProductField');    
         setDefectCombo();
     }
-    radioEnableDisableClass('productField','nonProductField'); 
+  //  radioEnableDisableClass('productField','nonProductField'); 
 }
 
 function setDefectCombo() {
