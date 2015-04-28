@@ -1,0 +1,1933 @@
+<!-- Inside MC Links 
+<link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/SPScreenInt.css' type='text/css'>
+<link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/RHStyles.css' type='text/css'>
+<link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/ComplaintForm.css' type='text/css'-->
+
+<!-- Outside links -->
+<link rel="stylesheet" title="main" href="css/SPScreenExt.css" type="text/css">
+<link rel="stylesheet" title="main" href="css/RHStyles.css" type="text/css">
+<link rel="stylesheet" title="main" href="css/ComplaintForm.css" type="text/css">
+ 
+
+<style>
+.calendarImage {
+	border: 0 outset #000000;
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+	margin-bottom: 4px;
+	background-image: url(../../../images/calendar.jpg);
+}
+
+ul.tabbernav li {
+	float: left;
+	background: url(../../../images/tab_left.gif) no-repeat left top;
+	padding: 0 0 0 8px;
+}
+
+ul.tabbernav li a {
+	float: left;
+	display: block;
+	background: url(../../../images/tab_right.gif) no-repeat right top;
+	padding: 5px 15px 4px 7px;
+	text-decoration: none;
+	color: #000;
+	white-space: nowrap;
+	font: normal 11px Arial, Helvetica, sans-serif;
+	width: auto;
+}
+
+ul.tabbernav li.tabberactive {
+	background-image: url(../../../images/tab_left_on.gif);
+	border-bottom: 1px solid #ffffff;
+}
+
+ul.tabbernav li.tabberactive a {
+	background-image: url(../../../images/tab_right_on.gif);
+	border-bottom: 1px solid #ffffff;
+}
+</style>
+
+<form id="mcForm" method="post" action=""><!-- form begin -->
+	<div class="container"><!-- container begin -->
+		<div class="formHeader"><!-- formHeader begin -->
+			<div id="mcPage_001" class="mcPage"><!-- page001 begin -->
+				<div class="formLogo"><img src="#mastercontrol.imagelink(logo.jpg)#" width="125px" height="125px" alt="Company Logo" /></div>
+				<table width="100%" border="0" cellspacing="0" cellpadding="0"><!-- header table begin -->
+					<tr><!-- processName row begin -->
+						<td width="5%">&nbsp;</td>
+						<td width="95%" colspan="4" class="ProcessName">ReliantHeart - Complaint</td>
+					</tr>
+					<tr>
+						<td colspan="5">&nbsp;</td>
+					</tr><!-- process name end -->
+					<tr><!-- header first row begin -->
+						<td width="5%">&nbsp;</td>
+						<td width="20%" class="TopLabel"><label for="mastercontrol.form.number">Form Number</label></td>
+						<td width="1%">&nbsp;</td>
+						<td width="20%" class="TopLabel"><label for="mastercontrol.route.stepduedate">Step Due Date</label></td>
+						<td width="5%">&nbsp;</td>
+					</tr><!-- header first row end -->
+					<tr><!-- header second row begin -->
+						<td>&nbsp;</td>
+						<td>
+							<input id="mastercontrol.form.number" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Form Number" title="" />
+						</td>
+						<td>&nbsp;</td>
+						<td>
+							<input id="mastercontrol.route.stepduedate" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Step Due Date" title="" />
+						</td>
+						<td>&nbsp;</td>
+					</tr><!-- header second row end -->
+					<tr><!-- header third row begin -->
+						<td>&nbsp;</td>
+						<td class="TopLabel"><label for="mastercontrol.form.created">Date Created</label></td>
+						<td>&nbsp;</td>
+						<td class="TopLabel"><label for="mastercontrol.form.creatorname">Creator Name</label></td>
+						<td>&nbsp;</td>
+					</tr><!-- header third row end -->
+					<tr><!-- header fourth row begin -->
+						<td>&nbsp;</td>
+						<td>
+							<input id="mastercontrol.form.created" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Date Created" title="" />
+						</td>
+						<td>&nbsp;</td>
+						<td>
+							<input id="mastercontrol.form.creatorname" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Creator Name" title="" />
+						</td>
+						<td>&nbsp;</td>
+					</tr><!-- header fourth row end -->
+					<tr><!-- header fifth row begin -->
+						<td>&nbsp;</td>
+						<td class="TopLabel" colspan="3"><label for="txtTitle"class="reqdLabel" >* Title</label></td>
+						<td>&nbsp;</td>
+					</tr><!-- header fifth row end -->
+					<tr><!-- header sixth row begin -->
+						<td>&nbsp;</td>
+						<td colspan="3">
+							<input id="txtTitle" type="text" class="headerTextfield" alt="H_Title" title="" />
+						</td>
+						<td>&nbsp;</td>
+					</tr><!-- header sixth row end -->
+					<div id="divHiddenTitle" class="hide"><!-- hidden title fields div begin -->
+						<input name="mastercontrol.route.stepnumber" type="hidden" id="mastercontrol.route.stepnumber" title="Step Number">
+			          	<input name="mastercontrol.route.stepid" type="hidden" id="mastercontrol.route.stepid" title="Step ID">
+			          	<input name="mastercontrol.form.title" type="hidden" id="mastercontrol.form.title" title="Form Title">
+			          	<input name="mastercontrol.form.creator" type="hidden" id="mastercontrol.form.creator" title="Creator Name">
+			          	<input name="mastercontrol.form.creatorname" type="hidden" id="mastercontrol.form.creatorname" title="Creator ID">
+			          	<input name="hlpSourceType" type="hidden" id="hlpSourceType" title="SourceType" value="Complaint" />
+          				<input name="hlpComplaintNumber" type="hidden" id="hlpComplaintNumber" title="Source Number" />
+         				<input name="hlpComplaintCreated" type="hidden" id="hlpComplaintCreated" title="Source Create Date"  />
+				        <!-- Required to Launch Form from Form  -->
+				        <select id="mastercontrol.task.routes"  name="mastercontrol.task.routes" title="Available Routes" style="display:none" >
+				        </select>
+				        <input id="mastercontrol.task.launch" type="button" class="mastercontrol.task.launch" alt="Form launch" title="Form launch" style="display:none" />
+
+					</div><!-- hidden title fields div end -->
+				</table><!-- header table end -->
+			</div><!-- page001 end -->
+		</div><!-- formHeader end -->
+
+		<div class="formBody"><!-- formBody begin -->
+			<div class="tabber" id="formTabs"><!-- formTabs begin -->
+				<div id="divExperienceTab" class="tabbertab" title="Experience"><!-- Experience tabbertab begin -->
+					<div id="mcPage_002" class="mcPage"><!-- page 2 begin -->
+					<span class="tabHeading">Experience</span>
+						<div class="sectionData">
+						<div class="sectionHeading">Experience Recording</div>
+
+							<div id="divDateRecieved" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtReported_date" class="reqdLabel">* Date Reported:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtReported_date" type="text" class="readonly textfield textfield35 required" readonly="readonly" alt="Date Reported" title="Date Reported" />
+										<input id="btnReportedCalendar" type="button" class="calendarImage" title="Date Reported" />
+									</div>
+								</div>
+
+
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divDateofOccurence" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtDateofOccurence_date" class="reqdLabel">* Date of Occurence:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtDateofOccurence_date" type="text" class="readonly textfield textfield35 required" readonly="readonly" alt="Date of Occurence" title="Date of Occurence" />
+										<input id="btnDateofOccurenceCalendar" type="button" class="calendarImage" title="Date of Occurence" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divVerificationDate" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtVerificationDate_date" class="reqdLabel">* Verification Date:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtVerificationDate_date" type="text" class="readonly textfield textfield35 required" readonly="readonly" alt="Verification Date" title="Verification Date" />
+										<input id="btnVerificationDateCalendar" type="button" class="calendarImage" title="Verification Date" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divRecievedBy" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtSFOwner" class="reqdLabel">* Owner:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtSFOwner" type="text" class="textfield required" alt="Owner" title="Owner" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divReceivedVia" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="cmbReceivedVia"  class="reqdLabel">* Recieved Via:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<select id="cmbReceivedVia" name="cmbReceivedVia" class="selectfield required" title="RecievedVia">
+											<option value=""></option>
+											<option value="Email">Email</option>
+											<option value="Team Member">Team Member</option>
+											<option value="Phone">Phone</option>
+											<option value="Other">Other</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divOtherDetails" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label id = "lbOtherDetails"for="txtOtherDetails">Other:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<input id="txtOtherDetails" type="text" class="textfield" alt="Other" title="Other" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+
+							<div id="divCategory" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="cmbCategory" class="reqdLabel">* Category:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<select id="cmbCategory" class="selectfield required" title="Category">
+											<option value=""></option>
+											<option value="Customer">Customer</option>
+											<option value="Team Member">Team Member</option>
+											<option value="Other">Other</option>
+
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divReportedIssue" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtReportedIssue" class="reqdLabel">* Reported Issue:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtReportedIssue" class="textarea required" rows="5" cols="20" title="Reported Issue" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Customer Information</div>
+
+							<div id="divAccount" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtAccout" class="reqdLabel">* Account:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtAccout" type="text" class="textfield required" alt="Account" title="Account" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divName" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtName" class="reqdLabel">* Contact Name:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtName" type="text" class="textfield required" alt="Name" title="Name" />
+									</div>
+									<div class="sublabel">
+										<label for="txtTitleorDepart">Title or Department:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtTitleorDepart" type="text" class="textfield" alt="Title or Department" title="Title or Department" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<div id="divPhone" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtPhone">Phone Number:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtPhone" type="text" class="textfield" alt="Phone Number" title="Phone Number" />
+									</div>
+
+									<div class="subLabel">
+										<label for="txtEmail">Email Address:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtEmail" type="text" class="textfield" alt="Email Address" title="Email Address" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<div id="divReportedIssue" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtAddress" >Address:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtAddress" class="textarea required" rows="5" cols="20" title="Address" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Product Information</div>
+
+
+							<div id="divmastercontrol.set.ceProducts" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="mastercontrol.set.ceProducts">Product:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<select id="mastercontrol.dataset.recordids.Products.Name" class="selectfield required" title="Product">
+											<option value=""></option>
+											<option value="Prod 1">Prod 1</option>
+											<option value="Prod 1">Prod 2</option>
+											<option value="Documentation">Documentation</option>
+											<option value="Quality System">Quality System</option>
+										</select>
+									</div>
+
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divmastercontrol.dataset.recordids.NCRDefects.Name" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="cmbDefect">Defect:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<select id="cmbDefect" class="selectfield productField" title="Defect">
+											<option value =""></option>
+											<option value ="one">one</option>
+											<option value ="two">two</option>
+										</select>
+									</div>
+									<div class="subLabel">
+										<label for="txtDefectOther" id="lblDefectOther">Other:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtDefectOther" type="text" class="textfield" title="Defect Other Please Specify" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divPartNumber" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtPartNumber">Part Number:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtPartNumber" type="text" class="textfield" alt="Part Number" title="Part Number" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divProductSerial" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtProductSerial">Lot/Serial No.:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtProductSerial" type="text" class="textfield" alt="Lot/Serial No." title="Lot/Serial No." />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+						</div><!-- previous section end -->
+												<div class="sectionData">
+						<div class="sectionHeading">Patient Information</div>
+
+							<div id="divPatientCode" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="rbInPatientUse">In Patient Use:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="rbInPatientUse" name="rbInPatientUse" type="radio" class="radiobuttonfield" alt="In Patient Use" title="In Patient Use" value="Yes" />Yes
+										<input id="rbInPatientUse" name="rbInPatientUse" type="radio" class="radiobuttonfield" alt="In Patient Use" title="In Patient Use" value="No" />No
+									</div>
+
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divImplantDate" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtDateofImplant_date">Implant Date:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtDateofImplant_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Implant Date" title="Implant Date" />
+										<input id="btnDateofImplantCalendar" type="button" class="calendarImage" title="Implant Date" />
+									</div>
+									<div class="subLabel">
+										<label for="txtDaysOnSupport">Days on Support At Time of Event:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtDaysOnSupport" type="text" class="textfield" alt="Days on Support" title="Day on Support"  />
+									</div>
+
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divPatientInjury" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="chbPatientInjury">Patient Injury:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="chbPatientInjury" type="checkbox" class="checkboxfield" alt="Patient Injury" title="Patient Injury" value="Yes" />
+									</div>
+
+									<div class="subLabel">
+										<label for="chbPatientDeath">Patient Death:</label>
+									</div>
+									<div class="formField34">
+										<input id="chbPatientDeath" type="checkbox" class="checkboxfield" alt="Patient Death" title="Patient Death" value="Yes" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+
+							<div id="divAdverseEvent" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="mastercontrol.dataset.recordids.AdverseEvents.Name">Adverse Event:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<select id="mastercontrol.dataset.recordids.AdverseEvents.Name" class="selectfield required" title="Adverse Events">
+											<option value=""></option>
+											<option value="Prod 1">Prod 1</option>
+											<option value="Prod 1">Prod 2</option>
+											<option value="Documentation">Documentation</option>
+											<option value="Quality System">Quality System</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+<div id="cmbAdverseEventSubcategory" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="cmbAdverseEventSubcategory">Adverse Event Sub Category:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<select id="cmbAdverseEventSubcategory" class="selectfield" title="Adverse Event Sub Category">
+											<option value =""></option>
+											<option value ="one">one</option>
+											<option value ="two">two</option>
+										</select>
+									</div>
+									<div class="subLabel">
+										<label for="txtDefectOther" id="lblDefectOther">Other:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtcmbAdverseEventSubcategoryOther" type="text" class="textfield" title="Defect Other Please Specify" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divPatientCode" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtPatientCode">Patient Code:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtPatientCode" type="text" class="textfield" alt="Patient Code" title="Patient Code" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+
+							<div id="divExperience" class="fieldRow">
+								<div class="leftLabel">&nbsp;</div>
+								<div class="leftField">
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="21%" align="center" valign="top">
+												<input id="mastercontrol.attachments.add.experience" type="button" class="formButton115" title="Click to View or Add Attachments" value="Attached Files" onfocus="setAttachmentLinkFieldSize();" onmouseup="checkWin();" />
+											</td>
+											<td width="25%" valign="top">
+												<label for="mastercontrol.attachments.experience">&nbsp;</label>
+												<select id="mastercontrol.attachments.experience" size="1" multiple="multiple" class="listfield readonly" alt="Experience Files" title=""></select>
+											</td>
+											<td width="21%" align="center" valign="top">
+												<input id="mastercontrol.links.add.experience" type="button" class="formButton115" title="Click to View or Add Links" value="Linked InfoCards" onfocus="setAttachmentLinkFieldSize();" onmouseup="checkWin();" />
+											</td>
+											<td width="25%" valign="top">
+												<label for="mastercontrol.links.experience">&nbsp;</label>
+												<select id="mastercontrol.links.experience" size="1" multiple="multiple" class="listfield readonly" alt="Experience Links" title=""></select>
+											</td>
+										</tr>
+									</table>
+								</div>
+								<div class="clearBoth"></div>
+							</div>
+
+						</div><!-- previous section end -->
+					</div><!-- previouse page end -->
+				</div><!-- previous tabber end -->
+				<div id="divEvaluationTab" class="tabbertab" title="Evaluation"><!-- Evaluation tabbertab begin -->
+					<div id="mcPage_003" class="mcPage"><!-- page 3 begin -->
+					<span class="tabHeading">Evaluation</span>
+						<div class="sectionData">
+						<div class="sectionHeading">Team Review</div>
+
+							<div id="divDateRev" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtDateRev_date" class="reqdLabel">* Date Reviewed:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtDateRev_date" type="text" class="readonly textfield textfield35 required" readonly="readonly" alt="Date Reviewed" title="Date Reviewed" />
+										<input id="btnDateRevCalendar" type="button" class="calendarImage" title="Date Reviewed" />
+									</div>
+
+									<div class="subLabel">
+										<label for="" class="reqdLabel">* Investigational Device:</label>
+									</div>
+									<div class="formField34">
+										<input id="rbInvestigationalDevice" name="rbInvestigationalDevice" type="radio" class="radiobuttonfield required" alt="Investigational Device" title="Investigational Device" value="Yes" />Yes
+										<input id="rbInvestigationalDevice" name="rbInvestigationalDevice" type="radio" class="radiobuttonfield required" alt="Investigational Device" title="Investigational Device" value="No" />No
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divClassification" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="cmbClassification" class="reqdLabel">* Classification:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<select id="cmbClassification" class="selectfield required" title="Classification">
+											<option></option>
+											<option value="Patient event: Non device">Patient event: Non device</option>
+											<option value="Device Performance">Device Performance</option>
+											<option value="Packaging">Packaging</option>
+											<option value="Effectiveness">Effectiveness</option>
+											<option value="Saftey">Safety</option>
+											<option value="Durability">Durability</option>
+											<option value="Quality">Quality</option>
+											<option value="Labeling">Labeling</option>
+											<option value="Other">Other</option>
+										</select>
+									</div>
+									<div class="subLabel">
+										<label for="txtClassificationOther" id="lbClassificationOther">Other</label>
+									</div>
+									<div class="formField34">
+										<input id="txtClassificationOther" type="text" class="textfield" alt="Classification Other" title="Classification Other" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Risk</div>
+
+							<div id="divSeverityRisk" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="">Severity:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<input id="rbSeverityRisk" name="rbSeverityRisk" type="radio" class="radiobuttonfield" alt="Severity" title="Severity" value="1" />1
+										<input id="rbSeverityRisk" name="rbSeverityRisk" type="radio" class="radiobuttonfield" alt="Severity" title="Severity" value="2" />2
+										<input id="rbSeverityRisk" name="rbSeverityRisk" type="radio" class="radiobuttonfield" alt="Severity" title="Severity" value="3" />3
+										<input id="rbSeverityRisk" name="rbSeverityRisk" type="radio" class="radiobuttonfield" alt="Severity" title="Severity" value="4" />4
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divRecurrenceRisk" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="">Occurrence:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<input id="rbRecurrenceRisk" name="rbRecurrenceRisk" type="radio" class="radiobuttonfield" alt="Occurrence" title="Occurrence" value="1" />1
+										<input id="rbRecurrenceRisk" name="rbRecurrenceRisk" type="radio" class="radiobuttonfield" alt="Occurrence" title="Occurrence" value="2" />2
+										<input id="rbRecurrenceRisk" name="rbRecurrenceRisk" type="radio" class="radiobuttonfield" alt="Occurrence" title="Occurrence" value="3" />3
+										<input id="rbRecurrenceRisk" name="rbRecurrenceRisk" type="radio" class="radiobuttonfield" alt="Occurrence" title="Occurrence" value="4" />4
+										<input id="rbRecurrenceRisk" name="rbRecurrenceRisk" type="radio" class="radiobuttonfield" alt="Occurrence" title="Occurrence" value="5" />5
+										<input id="rbRecurrenceRisk" name="rbRecurrenceRisk" type="radio" class="radiobuttonfield" alt="Occurrence" title="Occurrence" value="6" />6
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divRiskScore" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtRiskScore">Risk Score:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtRiskScore" type="text" class="textfield readonly" alt="Risk Score" title="Risk Score" readonly="readonly" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divRiskAnalysisID" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtRiskAnalysisID">Risk Analysis ID:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtRiskAnalysisID" type="text" class="textfield" alt="Risk Analysis ID" title="Risk Analysis ID" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Complaint Evaluation</div>
+
+							<div id="divImpactOnPatient" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtImpactOnPatient">Impact on Patient:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtImpactOnPatient" class="textarea" rows="5" cols="20" title="Impact in Patient" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divImmediateActionRequired" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="">Immediate Action Required:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<input id="rbImmediateActionRequired" name="rbImmediateActionRequired" type="radio" class="radiobuttonfield" alt="Immediate Action Required" title="Immediate Action Required" value="Yes" />Yes
+										<input id="rbImmediateActionRequired" name="rbImmediateActionRequired" type="radio" class="radiobuttonfield" alt="Immediate Action Required" title="Immediate Action Required" value="No" />No
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divImmediateAction" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtImmediateAction">Decision Rationale/Action List:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtImmediateAction" class="textarea" rows="5" cols="20" title="Decision Rationale/Action List" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divReturnRequired" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="">Product Return Required:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<input id="rbReturnRequired" name="rbReturnRequired" type="radio" class="radiobuttonfield" alt="Product Return Required" title="Product Return Required" value="Yes" />Yes
+										<input id="rbReturnRequired" name="rbReturnRequired" type="radio" class="radiobuttonfield" alt="Product Return Required" title="Product Return Required" value="No" />No
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divNoReturnRationale" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtNoReturnRationale">Decision Rationale:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtNoReturnRationale" class="textarea" rows="5" cols="20" title="Decision Rationale" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divInvestigationRequired" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="" >Investigation Required:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<input id="rbInvestigationRequired" name="rbInvestigationRequired" type="radio" class="radiobuttonfield" alt="Investigation Required" title="Investigation Required" value="Yes" />Yes
+										<input id="rbInvestigationRequired" name="rbInvestigationRequired" type="radio" class="radiobuttonfield" alt="Investigation Required" title="Investigation Required" value="No" />No
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+
+							<div id="divmastercontrol.role.NCRInvestigators" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="mastercontrol.role.ComplaintInvestigators">Assigned To:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<select id="mastercontrol.role.ComplaintInvestigators" class="selectfield yesInvestigation" title="Assigned To"></select>
+									</div>
+
+
+									<div class="subLabel">
+										<label for="cmbPriority">Priority:</label>
+									</div>
+									<div class="formField34">
+										<select id="mastercontrol.dataset.recordids.ComplaintPriority.Name" class="selectfield yesInvestigation" title="Priority"></select>
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divDateAssigned" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtDateAssigned_date">Date Assigned:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtDateAssigned_date" type="text" class="readonly textfield textfield35  yesInvestigation" readonly="readonly" alt="Date Assigned" title="Date Assigned" />
+										<input id="btnDateAssignedCalendar" type="button" class="calendarImage" title="Date Assigned" />
+									</div>
+
+									<div class="subLabel">
+										<label for="txtDateCompleted_date">Date Completd:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtDateCompleted_date" type="text" class="readonly textfield textfield35 yesInvestigation" readonly="readonly" alt="Date Completd" title="Date Completd" />
+										<input id="btnDateCompletedCalendar" type="button" class="calendarImage" title="Date Completd" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divNoInvestigationJustification" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtNoInvestigationJustification">No Investigation Justification:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtNoInvestigationJustification" class="textarea noInvestigation" rows="5" cols="20" title="No Investigation Justification" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divComplaintEvaluation" class="fieldRow">
+								<div class="leftLabel">&nbsp;</div>
+								<div class="leftField">
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="21%" align="center" valign="top">
+												<input id="mastercontrol.attachments.add.complaintevaluation" type="button" class="formButton115" title="Click to View or Add Attachments" value="Attached Files" onfocus="setAttachmentLinkFieldSize();" onmouseup="checkWin();" />
+											</td>
+											<td width="25%" valign="top">
+												<label for="mastercontrol.attachments.complaintevaluation">&nbsp;</label>
+												<select id="mastercontrol.attachments.complaintevaluation" size="1" multiple="multiple" class="listfield readonly" alt="Complaint Evaluation Files" title=""></select>
+											</td>
+											<td width="21%" align="center" valign="top">
+												<input id="mastercontrol.links.add.complaintevaluation" type="button" class="formButton115" title="Click to View or Add Links" value="Linked InfoCards" onfocus="setAttachmentLinkFieldSize();" onmouseup="checkWin();" />
+											</td>
+											<td width="25%" valign="top">
+												<label for="mastercontrol.links.complaintevaluation">&nbsp;</label>
+												<select id="mastercontrol.links.complaintevaluation" size="1" multiple="multiple" class="listfield readonly" alt="Complaint Evaluation Links" title=""></select>
+											</td>
+										</tr>
+									</table>
+								</div>
+								<div class="clearBoth"></div>
+							</div>
+
+						</div><!-- previous section end -->
+					</div><!-- previouse page end -->
+				</div><!-- previous tabber end -->
+<div id="divReportabilityTab" class="tabbertab" title="Reportability"><!-- Reportability tabbertab begin -->
+					<div id="mcPage_004" class="mcPage"><!-- page 4 begin -->
+					<span class="tabHeading">Reportability</span>
+						<div class="sectionData">
+						<div class="sectionHeading">Reportability Evaluation</div>
+
+							<div id="divReportableQuestion1" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label for="">1. Was there a death or serious injury to which our device could have caused or contributed to?:</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbReportableQuestion1" name="rbReportableQuestion1" type="radio" class="radiobuttonfield" alt="Reportable Quesiton 1" tilte="Reportable Quesiton 1" value="Yes" />Yes
+										<input id="rbReportableQuestion1" name="rbReportableQuestion1" type="radio" class="radiobuttonfield" alt="Reportable Quesiton 1" title="Reportable Quesiton 1" value="No" />No
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divReportableQuestion2" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label for="">2. Was there a device malfunction which could cause or contributed to a death/serioWas there a malfunction which could cause or contributed to a death/serious injury were it to recur?us injury were it to recur?:</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbReportableQuestion2" name="rbReportableQuestion2" type="radio" class="radiobuttonfield" alt="Reportable Quesiton 2" title="Reportable Quesiton 2" value="Yes" />Yes
+										<input id="rbReportableQuestion2" name="rbReportableQuestion2" type="radio" class="radiobuttonfield" alt="Reportable Quesiton 2" title="Reportable Quesiton 2" value="No" />No
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divReportableQuestion3" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label for="">3. Was there a malfunction of a life-sustaining device?:</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbReportableQuestion3" name="rbReportableQuestion3" type="radio" class="radiobuttonfield" alt="Reportable Quesiton 3" title="Reportable Quesiton 3" value="Yes" />Yes
+										<input id="rbReportableQuestion3" name="rbReportableQuestion3" type="radio" class="radiobuttonfield" alt="Reportable Quesiton 3" title="Reportable Quesiton 3" value="No" />No
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divReportableQuestion4" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label for="">4. Did an event occur?:</label>
+								</div>
+								<div class="shirtField">
+									<div class="formField15">
+										<input id="rbReportableQuestion4" name="rbReportableQuestion4" type="radio" class="radiobuttonfield" alt="Reportable Quesiton 4" title="Reportable Quesiton 4" value="Yes" />Yes
+										<input id="rbReportableQuestion4" name="rbReportableQuestion4" type="radio" class="radiobuttonfield" alt="Reportable Quesiton 4" title="Reportable Quesiton 4" value="No" />No
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+						</div><!-- previous section end -->
+					</div><!-- previouse page end -->
+				</div><!-- previous tabber end -->
+				<div id="divMDRTab" class="tabbertab" title="MDR"><!-- MDR tabbertab begin -->
+					<div id="mcPage_005" class="mcPage"><!-- page 5 begin -->
+					<span class="tabHeading">MDR</span>
+						<div class="sectionData">
+						<div class="sectionHeading">MDR Reporting Decision Tree</div>
+
+							<div id="divMDRQestion1" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label for="">1. Has a death occurred?:</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbMDRQestion1" name="rbMDRQestion1" type="radio" class="radiobuttonfield" alt="MDR Question 1" title="MDR Question 1?" value="Yes" />Yes
+										<input id="rbMDRQestion1" name="rbMDRQestion1" type="radio" class="radiobuttonfield" alt="MDR Question 1" title="MDR Question 1" value="No" />No
+										<input id="rbMDRQestion1" name="rbMDRQestion1" type="radio" class="radiobuttonfield" alt="HMDR Question 1" title="MDR Question 1" value="NA" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divMDRQestion1a" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label class="indent20" for="rbMDRQestion1a"> a. Is there a reasonable possibility that the device may have "caused or contributed" to the death?":</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbMDRQestion1a" name="rbMDRQestion1a" type="radio" class="radiobuttonfield" alt="MDR Question 1a" title="MDR Question 1a" value="Yes" />Yes
+										<input id="rbMDRQestion1a" name="rbMDRQestion1a" type="radio" class="radiobuttonfield" alt="MDR Question 1a" title="MDR Question 1a" value="Yes" />No
+										<input id="rbMDRQestion1a" name="rbMDRQestion1a" type="radio" class="radiobuttonfield" alt="MDR Question 1a" title="MDR Question 1a" value="Yes" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divMDRQuestion2" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label for="">2. Has a serious injury occurred to a patient- health professional- or other person coming into contact with the device?:</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbMDRQuestion2" name="rbMDRQuestion2" type="radio" class="radiobuttonfield" alt="MDR Question 2" title="MDR Question 2" value="Yes" />Yes
+										<input id="rbMDRQuestion2" name="rbMDRQuestion2" type="radio" class="radiobuttonfield" alt="HMDR Question 2" title="MDR Question 2" value="No" />No
+										<input id="rbMDRQuestion2" name="rbMDRQuestion2" type="radio" class="radiobuttonfield" alt="MDR Question 2" title="MDR Question 2" value="NA" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divMDRQuestion2a" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label class="indent20"  for="">a. Is there a resonable possibility that the device may have "caused or contributed" to the serious injury?:</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbMDRQuestion2a" name="rbMDRQuestion2a" type="radio" class="radiobuttonfield" alt="MDR Question 2a" title="MDR Question 2a" value="Yes" />Yes
+										<input id="rbMDRQuestion2a" name="rbMDRQuestion2a" type="radio" class="radiobuttonfield" alt="MDR Question 2a" title="MDR Question 2a" value="No" />No
+										<input id="rbMDRQuestion2a" name="rbMDRQuestion2a" type="radio" class="radiobuttonfield" alt="MDR Question 2a" title="MDR Question 2a" value="NA" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divMDRQuestion3" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label for="">3. Has a malfunction occurred?:</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbMDRQuestion3" name="rbMDRQuestion3" type="radio" class="radiobuttonfield" alt="MDR Question 3" title="MDR Question 3" value="Yes" />Yes
+										<input id="rbMDRQuestion3" name="rbMDRQuestion3" type="radio" class="radiobuttonfield" alt="MDR Question 3" title="MDR Question 3" value="No" />No
+										<input id="rbMDRQuestion3" name="rbMDRQuestion3" type="radio" class="radiobuttonfield" alt="MDR Question 3" title="MDR Question 3" value="NA" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divMDRQuestion3a" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label class="indent20" for="">a. Is thre a likelihood of the malfunction causing or contributiong to a death or serious injury upon recurrence?:</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbMDRQuestion3a" name="rbMDRQuestion3a" type="radio" class="radiobuttonfield" alt="MDR Question 3a" title="MDR Question 3a" value="Yes" />Yes
+										<input id="rbMDRQuestion3a" name="rbMDRQuestion3a" type="radio" class="radiobuttonfield" alt="MDR Question 3a" title="MDR Question 3a" value="No" />No
+										<input id="rbMDRQuestion3a" name="rbMDRQuestion3a" type="radio" class="radiobuttonfield" alt="MDR Question 3a" title="MDR Question 3a" value="NA" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divMDRQuestion3b" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label class="indent20"  for="">b. Is the malfunction of a life-sustaining device?:</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbMDRQuestion3b" name="rbMDRQuestion3b" type="radio" class="radiobuttonfield" alt="MDR Question 3b" title="MDR Question 3b" value="Yes" />Yes
+										<input id="rbMDRQuestion3b" name="rbMDRQuestion3b" type="radio" class="radiobuttonfield" alt="MDR Question 3b" title="MDR Question 3b" value="No" />No
+										<input id="rbMDRQuestion3b" name="rbMDRQuestion3b" type="radio" class="radiobuttonfield" alt="MDR Question 3b" title="MDR Question 3b" value="NA" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divMDRQuestion4" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label for="">4. Does this incident meet the criteria for an MDR reportable event? ("Yes" to any of 1a, 2a, 3a, or 3b):</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbMDRQuestion4" name="rbMDRQuestion4" type="radio" class="radiobuttonfield" alt="MDR Question 4" title="MDR Question 4" value="Yes" />Yes
+										<input id="rbMDRQuestion4" name="rbMDRQuestion4" type="radio" class="radiobuttonfield" alt="MDR Question 4" title="MDR Question 4" value="No" />No
+										<input id="rbMDRQuestion4" name="rbMDRQuestion4" type="radio" class="radiobuttonfield" alt="MDR Question 4" title="MDR Question 4" value="NA" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divMDRComments" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtMDRComments">MDR Comments:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtMDRComments" class="textarea" rows="5" cols="20" title="Comments" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divMDRSubmissionDate" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtMDRSubmissionDate_date">MDR Submission Date:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtMDRSubmissionDate_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="MDR Submission Date" title="MDR Submission Date" />
+										<input id="btnMDRSubmissionDateCalendar" type="button" class="calendarImage" title="MDR Submission Date" />
+									</div>
+
+									<div class="subLabel">
+										<label for="txtMDRSupplementFileDate_date">MDR Suppliment File Date:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtMDRSupplementFileDate_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="MDR Suppliment File Date" title="MDR Suppliment File Date" />
+										<input id="btnMDRSupplementFileDateCalendar" type="button" class="calendarImage" title="MDR Suppliment File Date" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+						</div><!-- previous section end -->
+					</div><!-- previouse page end -->
+				</div><!-- previous tabber end -->
+				<div id="divCanadianMandatoryTab" class="tabbertab" title="Canadian Mandatory"><!-- Canadian Mandatory tabbertab begin -->
+					<div id="mcPage_006" class="mcPage"><!-- page 6 begin -->
+					<span class="tabHeading">Canadian Mandatory</span>
+						<div class="sectionData">
+						<div class="sectionHeading">Canadian Mandatory Problem Reporting Decision Tree</div>
+
+							<div id="divCanadianMPR1" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label for="">1. Did the incident occur in Canada?:</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbCanadianMPR1" name="rbCanadianMPR1" type="radio" class="radiobuttonfield" alt="Canadian MPR 1" title="Canadian MPR 1" value="Yes" />Yes
+										<input id="rbCanadianMPR1" name="rbCanadianMPR1" type="radio" class="radiobuttonfield" alt="Canadian MPR 1" title="Canadian MPR 1" value="No" />No
+										<input id="rbCanadianMPR1" name="rbCanadianMPR1" type="radio" class="radiobuttonfield" alt="Canadian MPR 1" title="Canadian MPR 1" value="NA" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divCanadianMPR1a" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label class="indent20" for="">a. Was there a failure of the device?:</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbCanadianMPR1a" name="rbCanadianMPR1a" type="radio" class="radiobuttonfield" alt="Canadian MPR 1" title="Canadian MPR 1a" value="Yes" />Yes
+										<input id="rbCanadianMPR1a" name="rbCanadianMPR1a" type="radio" class="radiobuttonfield" alt="Canadian MPR 1a" title="Canadian MPR 1a" value="No" />No
+										<input id="rbCanadianMPR1a" name="rbCanadianMPR1a" type="radio" class="radiobuttonfield" alt="Canadian MPR 1a" title="Canadian MPR 1a" value="NA" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divCanadianMPR1b" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label class="indent20" for="">b. Was there a deterioration in the effectiveness of the device?:</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbCanadianMPR1b" name="rbCanadianMPR1b" type="radio" class="radiobuttonfield" alt="Canadian MPR 1b" title="Canadian MPR 1b" value="Yes" />Yes
+										<input id="rbCanadianMPR1b" name="rbCanadianMPR1b" type="radio" class="radiobuttonfield" alt="Canadian MPR 1b" title="Canadian MPR 1b" value="No" />No
+										<input id="rbCanadianMPR1b" name="rbCanadianMPR1b" type="radio" class="radiobuttonfield" alt="Canadian MPR 1b" title="Canadian MPR 1b" value="NA" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divCanadianMPR1c" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label class="indent20" for="">c. Was there an inadequacy in the labeling or directions for use?:</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbCanadianMPR1c" name="rbCanadianMPR1c" type="radio" class="radiobuttonfield" alt="Canadian MPR 1c" title="Canadian MPR 1c" value="Yes" />Yes
+										<input id="rbCanadianMPR1c" name="rbCanadianMPR1c" type="radio" class="radiobuttonfield" alt="Canadian MPR 1c" title="Canadian MPR 1c" value="No" />No
+										<input id="rbCanadianMPR1c" name="rbCanadianMPR1c" type="radio" class="radiobuttonfield" alt="Canadian MPR 1c" title="Canadian MPR 1c" value="NA" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divCanadianMPR1d" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label class="indent20" for="">d. Did any of these things lead to a death or serious deterioration in the state of health of a patient, user, or other person or could they do so if they were to recur?:</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbCanadianMPR1d" name="rbCanadianMPR1d" type="radio" class="radiobuttonfield" alt="Canadian MPR 1d" title="Canadian MPR 1d" value="Yes" />Yes
+										<input id="rbCanadianMPR1d" name="rbCanadianMPR1d" type="radio" class="radiobuttonfield" alt="Canadian MPR 1d" title="Canadian MPR 1d" value="No" />No
+										<input id="rbCanadianMPR1d" name="rbCanadianMPR1d" type="radio" class="radiobuttonfield" alt="Canadian MPR 1d" title="Canadian MPR 1d" value="NA" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divCanadianMPR2" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label for="">2. Did the incident occur outside Canada?:</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbCanadianMPR2" name="rbCanadianMPR2" type="radio" class="radiobuttonfield" alt="Canadian MPR 2" title="Canadian MPR 2" value="Yes" />Yes
+										<input id="rbCanadianMPR2" name="rbCanadianMPR2" type="radio" class="radiobuttonfield" alt="Canadian MPR 2" title="Canadian MPR 2" value="No" />No
+										<input id="rbCanadianMPR2" name="rbCanadianMPR2" type="radio" class="radiobuttonfield" alt="Canadian MPR 2" title="Canadian MPR 2" value="NA" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divCanadianMPR2a" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label class="indent20" for="">a. Did ReliantHeart indicate to a regulatory agency of the country in which the incident occurred that it would take corrective action?:</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbCanadianMPR2a" name="rbCanadianMPR2a" type="radio" class="radiobuttonfield" alt="Canadian MPR 2a" title="Canadian MPR 2a" value="Yes" />Yes
+										<input id="rbCanadianMPR2a" name="rbCanadianMPR2a" type="radio" class="radiobuttonfield" alt="Canadian MPR 2a" title="Canadian MPR 2a" value="No" />No
+										<input id="rbCanadianMPR2a" name="rbCanadianMPR2a" type="radio" class="radiobuttonfield" alt="Canadian MPR 2a" title="Canadian MPR 2a" value="NA" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divCanadianMPR2b" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label class="indent20" for="">b. Did the regulatory agency in the country in which the incident occurred require ReliantHeart to take corrective action?:</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbCanadianMPR2b" name="rbCanadianMPR2b" type="radio" class="radiobuttonfield" alt="Canadian MPR 2b" title="Canadian MPR 2b" value="Yes" />Yes
+										<input id="rbCanadianMPR2b" name="rbCanadianMPR2b" type="radio" class="radiobuttonfield" alt="Canadian MPR 2b" title="Canadian MPR 2b" value="No" />No
+										<input id="rbCanadianMPR2b" name="rbCanadianMPR2b" type="radio" class="radiobuttonfield" alt="Canadian MPR 2b" title="Canadian MPR 2b" value="NA" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divCanadianMPR3" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label for="">3. Does this incident meet the criteria for a Mandatory Problem Reporting reportable event? (“Yes” to any of 1d, 2a, 2b):</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbCanadianMPR3" name="rbCanadianMPR3" type="radio" class="radiobuttonfield" alt="Canadian MPR 3" title="Canadian MPR 3" value="Yes" />Yes
+										<input id="rbCanadianMPR3" name="rbCanadianMPR3" type="radio" class="radiobuttonfield" alt="Canadian MPR 3" title="Canadian MPR 3" value="Yes" />No
+										<input id="rbCanadianMPR3" name="rbCanadianMPR3" type="radio" class="radiobuttonfield" alt="Canadian MPR 3" title="Canadian MPR 3" value="Yes" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divCanadianMPRComments" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtCanadianMPRComments">Canadian MPR Comments:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtCanadianMPRComments" class="textarea" rows="5" cols="20" title="Canadian MPR Comments" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divCanadianMPRSubmissionDate" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtCanadianMPRSubmissionDate_date">Canadian MPR Submission Date:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtCanadianMPRSubmissionDate_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Canadian MPR Submission Date" title="Canadian MPR Submission Date" />
+										<input id="btnCanadianMPRSubmissionDateCalendar" type="button" class="calendarImage" title="Canadian MPR Submission Date" />
+									</div>
+
+									<div class="subLabel">
+										<label for="txtCanadianMPRSupplimentFileDate_date">Canadian MPR Suppliment File Date:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtCanadianMPRSupplimentFileDate_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Canadian MPR Suppliment File Date" title="Canadian MPR Suppliment File Date" />
+										<input id="btnCanadianMPRSupplimentFileDateCalendar" type="button" class="calendarImage" title="Canadian MPR Suppliment File Date" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+						</div><!-- previous section end -->
+					</div><!-- previouse page end -->
+				</div><!-- previous tabber end -->
+				<div id="divVigilanceTab" class="tabbertab" title="Vigilance"><!-- Vigilance tabbertab begin -->
+					<div id="mcPage_007" class="mcPage"><!-- page 7 begin -->
+					<span class="tabHeading">Vigilance</span>
+						<div class="sectionData">
+						<div class="sectionHeading">Vigilance Reporting Decision Tree</div>
+							<div id="divVigilance1" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label for="rbVigilance1">1. Has an event occurred?:</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbVigilance1" name="rbVigilance1" type="radio" class="radiobuttonfield" alt="Vigilance 1" title="Vigilance 1" value="Yes" />Yes
+										<input id="rbVigilance1" name="rbVigilance1" type="radio" class="radiobuttonfield" alt="Vigilance 1" title="Vigilance 1" value="No" />No
+										<input id="rbVigilance1" name="rbVigilance1" type="radio" class="radiobuttonfield" alt="Vigilance 1" title="Vigilance 1" value="NA" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+							<div id="divVigilance2" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label for="rbVigilance1">2. Was a ReliantHeart device suspected to be a contributory cause of the incident?:</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbVigilance2" name="rbVigilance2" type="radio" class="radiobuttonfield" alt="Vigilance 2" title="Vigilance 2" value="Yes" />Yes
+										<input id="rbVigilance2" name="rbVigilance2" type="radio" class="radiobuttonfield" alt="Vigilance 2" title="Vigilance 2" value="No" />No
+										<input id="rbVigilance2" name="rbVigilance2" type="radio" class="radiobuttonfield" alt="Vigilance 2" title="Vigilance 2" value="NA" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divVigilance3" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label for="">3. Did the event lead or might it lead to one of the following outcomes?:</label>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divVigilance3a" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label class="indent20" for="">a. the death of a patient, user or other person:</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbVigilance3a" name="rbVigilance3a" type="radio" class="radiobuttonfield" alt="tVigilance 3a" title="tVigilance 3a" value="Yes" />Yes
+										<input id="rbVigilance3a" name="rbVigilance3a" type="radio" class="radiobuttonfield" alt="tVigilance 3a" title="tVigilance 3a" value="No" />No
+										<input id="rbVigilance3a" name="rbVigilance3a" type="radio" class="radiobuttonfield" alt="tVigilance 3a" title="tVigilance 3a" value="NA" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divVigilance3b" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label class="indent20" for="">b. serious deterioration in the state of health of a patient, user orother person:</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbVigilance3b" name="rbVigilance3b" type="radio" class="radiobuttonfield" alt="Vigilance 3b" title="Vigilance 3b" value="Yes" />Yes
+										<input id="rbVigilance3b" name="rbVigilance3b" type="radio" class="radiobuttonfield" alt="Vigilance 3b" title="Vigilance 3b" value="No" />No
+										<input id="rbVigilance3b" name="rbVigilance3b" type="radio" class="radiobuttonfield" alt="Vigilance 3b" title="Vigilance 3b" value="NA" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+							<div class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<strong>If the answer to questions 1, 2 and 3 is Yes, complete the following questions</strong>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divVigilance4" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label for="">4. Can the incident be reported in a Summary Report:</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbVigilance4" name="rbVigilance4" type="radio" class="radiobuttonfield" alt="Vigilance 4" title="Vigilance 4" value="Yes" />Yes
+										<input id="rbVigilance4" name="rbVigilance4" type="radio" class="radiobuttonfield" alt="Vigilance 4" title="Vigilance 4" value="No" />No
+										<input id="rbVigilance4" name="rbVigilance4" type="radio" class="radiobuttonfield" alt="Vigilance 4" title="Vigilance 4" value="NA" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divVigilance4a" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label class="indent20" for="">a. Is the incident descrbed in a Field Safety Notice?:</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbVigilance4a" name="rbVigilance4a" type="radio" class="radiobuttonfield" alt="Vigilance 4a" title="Vigilance 4a" value="Yes" />Yes
+										<input id="rbVigilance4a" name="rbVigilance4a" type="radio" class="radiobuttonfield" alt="Vigilance 4a" title="Vigilance 4a" value="No" />No
+										<input id="rbVigilance4a" name="rbVigilance4a" type="radio" class="radiobuttonfield" alt="Vigilance 4a" title="Vigilance 4a" value="NA" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divVigilance4ai" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label class="indent20" for=""><span class="indent20">i. Is there an agreement with the Competent Authority to allow summary reporting of the incident?:</span></label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbVigilance4ai" name="rbVigilance4ai" type="radio" class="radiobuttonfield" alt="Vigilance 4ai" title="Vigilance 4a1" value="Yes" />Yes
+										<input id="rbVigilance4ai" name="rbVigilance4ai" type="radio" class="radiobuttonfield" alt="Vigilance 4ai" title="Vigilance 4ai" value="No" />No
+										<input id="rbVigilance4ai" name="rbVigilance4ai" type="radio" class="radiobuttonfield" alt="Vigilance 4ai" title="Vigilance 4ai" value="NA" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divVigilance4b" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label class="indent20" for="">b. Is the incident a common and well documented incident (identified as such in the risk analysis of the device and which had led to incident reports assessed by Reliant Heart and the relevant Competent Authority) for which the Competent Authority has agreed to allow periodic summary reporting?:</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbVigilance4b" name="rbVigilance4b" type="radio" class="radiobuttonfield" alt="Vigilance 4b" title="Vigilance 4b" value="Yes" />Yes
+										<input id="rbVigilance4b" name="rbVigilance4b" type="radio" class="radiobuttonfield" alt="Vigilance 4b" title="Vigilance 4b" value="No" />No
+										<input id="rbVigilance4b" name="rbVigilance4b" type="radio" class="radiobuttonfield" alt="Vigilance 4b" title="Vigilance 4b" value="NA" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divVigilance5" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label for="">5. Is there a condition where reporting under the Medical Device Vigilance System is not required?:</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbVigilance5" name="rbVigilance5" type="radio" class="radiobuttonfield" alt="Vigilance 5" title="Vigilance 5" value="Yes" />Yes
+										<input id="rbVigilance5" name="rbVigilance5" type="radio" class="radiobuttonfield" alt="Vigilance 5" title="Vigilance 5" value="No" />No
+										<input id="rbVigilance5" name="rbVigilance5" type="radio" class="radiobuttonfield" alt="Vigilance 5" title="Vigilance 5" value="NA" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divVigilance5a" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label class="indent20" for="">a. Was the deficiency of the device found by the user prior to using the device?:</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbVigilance5a" name="rbVigilance5a" type="radio" class="radiobuttonfield" alt="Vigilance 5a" title="Vigilance 5a" value="Yes" />Yes
+										<input id="rbVigilance5a" name="rbVigilance5a" type="radio" class="radiobuttonfield" alt="Vigilance 5a" title="Vigilance 5a" value="No" />No
+										<input id="rbVigilance5a" name="rbVigilance5a" type="radio" class="radiobuttonfield" alt="Vigilance 5a" title="Vigilance 5a" value="NA" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divVigilance5b" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label class="indent20" for="">b. Was the event caused by patient conditions?:</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbVigilance5b" name="rbVigilance5b" type="radio" class="radiobuttonfield" alt="Vigilance 5b" title="Vigilance 5b" value="Yes" />Yes
+										<input id="rbVigilance5b" name="rbVigilance5b" type="radio" class="radiobuttonfield" alt="Vigilance 5b" title="Vigilance 5b" value="No" />No
+										<input id="rbVigilance5b" name="rbVigilance5b" type="radio" class="radiobuttonfield" alt="Vigilance 5b" title="Vigilance 5b" value="NA" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divVigilance5c" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label class="indent20" for="">c. Was the service life or shelf life of the device exceeded?:</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbVigilance5c" name="rbVigilance5c" type="radio" class="radiobuttonfield" alt="Vigilance 5c" title="Vigilance 5c" value="Yes" />Yes
+										<input id="rbVigilance5c" name="rbVigilance5c" type="radio" class="radiobuttonfield" alt="Vigilance 5c" title="Vigilance 5c" value="No" />No
+										<input id="rbVigilance5c" name="rbVigilance5c" type="radio" class="radiobuttonfield" alt="Vigilance 5c" title="Vigilance 5c" value="NA" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divVigilance5d" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label class="indent20" for="">d. Did the protection against the fault function correctly?:</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbVigilance5d" name="rbVigilance5d" type="radio" class="radiobuttonfield" alt="Vigilance 5d" title="Vigilance 5d" value="Yes" />Yes
+										<input id="rbVigilance5d" name="rbVigilance5d" type="radio" class="radiobuttonfield" alt="Vigilance 5d" title="Vigilance 5d" value="No" />No
+										<input id="rbVigilance5d" name="rbVigilance5d" type="radio" class="radiobuttonfield" alt="Vigilance 5d" title="Vigilance 5d" value="NA" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divVigilance5e" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label class="indent20" for="">e. Was the incident an expected and foreseeable side effect?:</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbVigilance5e" name="rbVigilance5e" type="radio" class="radiobuttonfield" alt="Vigilance 5e" title="Vigilance 5e" value="Yes" />Yes
+										<input id="rbVigilance5e" name="rbVigilance5e" type="radio" class="radiobuttonfield" alt="Vigilance 5e" title="Vigilance 5e" value="No" />No
+										<input id="rbVigilance5e" name="rbVigilance5e" type="radio" class="radiobuttonfield" alt="Vigilance 5e" title="Vigilance 5e" value="NA" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divVigilance5f" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label class="indent20" for="">f. Is there a negligible likelihood of occurrence of death or serious deterioration in the state of health?:</label>
+								</div>
+								<div class="shortField">
+									<div class="formField15">
+										<input id="rbVigilance5f" name="rbVigilance5f" type="radio" class="radiobuttonfield" alt="Vigilance 5f" title="Vigilance 5f" value="Yes" />Yes
+										<input id="rbVigilance5f" name="rbVigilance5f" type="radio" class="radiobuttonfield" alt="Vigilance 5f" title="Vigilance 5f" value="No" />No
+										<input id="rbVigilance5f" name="rbVigilance5f" type="radio" class="radiobuttonfield" alt="Vigilance 5f" title="Vigilance 5f" value="NA" />NA
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+							<div class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<strong>If the answer to the questions 4 and 5 is No, the event is reportable</strong>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<br>
+
+							<div id="divVigilanceComments" class="fieldRow">
+								<div class="leftLabel labelWidth80">
+									<label for="txtVigilanceComments">Vigilance Comments:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtVigilanceComments" class="textarea" rows="5" cols="20" title="Vigilance Comments" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divVigilanceSubmissionDate" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtVigilanceSubmissionDate_date">Vigilance Submission Date:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtVigilanceSubmissionDate_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Vigilance Submission Date" title="Vigilance Submission Date" />
+										<input id="btnVigilanceSubmissionDateCalendar" type="button" class="calendarImage" title="Vigilance Submission Date" />
+									</div>
+
+									<div class="subLabel">
+										<label for="txtVigilanceSupplimentFileDate_date">Vigilance Suppliment File Date:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtVigilanceSupplimentFileDate_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Vigilance Suppliment File Date" title="Vigilance Suppliment File Date" />
+										<input id="btnVigilanceSupplimentFileDateCalendar" type="button" class="calendarImage" title="Vigilance Suppliment File Date" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+						</div><!-- previous section end -->
+					</div><!-- previouse page end -->
+				</div><!-- previous tabber end -->
+				<div id="divResolutionTab" class="tabbertab" title="Resolution"><!-- Resolution tabbertab begin -->
+					<div id="mcPage_008" class="mcPage"><!-- page 8 begin -->
+					<span class="tabHeading">Resolution</span>
+						<div class="sectionData">
+						<div class="sectionHeading">Investigation</div>
+
+							<div id="divReviewDHR" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="">Review DHR:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<input id="rbReviewDHR" name="rbReviewDHR" type="radio" class="radiobuttonfield" alt="Review DHR" title="Review DHR" value="Yes" />Yes
+										<input id="rbReviewDHR" name="rbReviewDHR" type="radio" class="radiobuttonfield" alt="Review DHR" title="Review DHR" value="No" />No
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divDHRReviewedBy" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtDHRReviewedBy">DHR Reviewed By:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtDHRReviewedBy" type="text" class="textfield yesDHR" alt="DHR Reviewed By" title="DHR Reviewed By" />
+									</div>
+
+									<div class="subLabel">
+										<label for="txtDHRReivewDate_date">DHR Review Date:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtDHRReivewDate_date" type="text" class="readonly textfield textfield35 yesDHR" readonly="readonly" alt="DHR Review Date" title="DHR Review Date" />
+										<input id="btnDHRReivewDateCalendar" type="button" class="calendarImage " title="DHR Review Date" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divInvestigationStatus" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtInvestigationStatus">Investigation Status:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtInvestigationStatus" class="textarea yesInvestigation" rows="5" cols="20" title="Investigation Status" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divInvestigationResults" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtInvestigationResults">Investigation Results:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtInvestigationResults" class="textarea yesInvestigation" rows="5" cols="20" title="Investigation Results" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<div class="clearBoth"></div>
+							<div id="divInvestigation" class="fieldRow">
+								<div class="leftLabel">&nbsp;</div>
+								<div class="leftField">
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="21%" align="center" valign="top">
+												<input id="mastercontrol.attachments.add.investigation" type="button" class="formButton115" title="Click to View or Add Attachments" value="Attached Files" onfocus="setAttachmentLinkFieldSize();" onmouseup="checkWin();" />
+											</td>
+											<td width="25%" valign="top">
+												<label for="mastercontrol.attachments.investigation">&nbsp;</label>
+												<select id="mastercontrol.attachments.investigation" size="1" multiple="multiple" class="listfield readonly" alt="Investigation Files" title=""></select>
+											</td>
+											<td width="21%" align="center" valign="top">
+												<input id="mastercontrol.links.add.investigation" type="button" class="formButton115" title="Click to View or Add Links" value="Linked InfoCards" onfocus="setAttachmentLinkFieldSize();" onmouseup="checkWin();" />
+											</td>
+											<td width="25%" valign="top">
+												<label for="mastercontrol.links.investigation">&nbsp;</label>
+												<select id="mastercontrol.links.investigation" size="1" multiple="multiple" class="listfield readonly" alt="Investigation Links" title=""></select>
+											</td>
+										</tr>
+									</table>
+								</div>
+								<div class="clearBoth"></div>
+							</div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Resolution Details</div>
+
+							<div id="divResolutionDetails" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtResolutionDetails">Resolution Details:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<textarea id="txtResolutionDetails" class="textarea" rows="5" cols="20" title="Resolution Details" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">CAPA</div>
+
+							<div class="clearBoth"></div>
+							<div id="divCAPARequired" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="">CAPA Required:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<input id="rbCAPARequired" name="rbCAPARequired" type="radio" class="radiobuttonfield" alt="CAPA Required" title="CAPA Required" value="Yes" />Yes
+										<input id="rbCAPARequired" name="rbCAPARequired" type="radio" class="radiobuttonfield" alt="CAPA Required" title="CAPA Required" value="No" />No
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divLaunchCAPA" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="btnLaunchCAPA">Launch CAPA:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="btnLaunchCAPA" type="button" class="formButton115" alt="Launch CAPA" title="Launch CAPA" value="Launch CAPA" disabled="disabled" />
+										<input type="button" name="mastercontrol.links.view.CAPANew" id="mastercontrol.links.view.CAPANew" value="View Form" class="formButton11 hide"  alt="View Additional Action"/>
+									</div>
+
+									<div class="subLabel">
+										<label for="txtCAPANumber">CAPA Number:</label>
+									</div>
+									<div class="formField34">
+										<select id="mastercontrol.links.CAPANew" multiple  size="1" name="mastercontrol.links.CAPANew" title="CAPANew Reference" style="display:none" >
+		    							</select>
+										<input id="txtCAPANumber" type="text" class="textfield readonly" alt="CAPA Number" title="CAPA Number" readonly="readonly" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divNoCAPAJustification" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtNoCAPAJustification">No CAPA Justification:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtNoCAPAJustification" class="textarea noCAPA" rows="5" cols="20" alt="txtNoCAPAJustification" title="No CAPA Justification" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Customer Notification</div>
+
+							<div id="divNotificationRequred" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="rbNotificationRequired">Customer Notification Requred:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="rbNotificationRequired" name="rbNotificationRequired" type="radio" class="radiobuttonfield" alt="Customer Notification Required" title="Customer Notification Required" value="Yes" />Yes
+										<input id="rbNotificationRequired" name="rbNotificationRequired" type="radio" class="radiobuttonfield" alt="Customer Notification Required" title="Customer Notification Required" value="No" />No
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divNotificationDate" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtNotificationDate_date">Notification Date:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtNotificationDate_date" type="text" class="readonly textfield textfield35 yesNotify" readonly="readonly" alt="Notification Date" title="Notification Date" />
+										<input id="btnNotificationDateCalendar" type="button" class="calendarImage" title="Notification Date" />
+									</div>
+
+									<div class="subLabel">
+										<label for="txtNotifiedBy">Notified By:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtNotifiedBy" type="text" class="textfield yesNotify" alt="Notified By" title="Notified By" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divNotificationDetails" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtNotificationDetails">Notification Details:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtNotificationDetails" class="textarea yesNotify" rows="5" cols="20" title="NotifcationDetails" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+						</div><!-- previous section end -->
+					</div><!-- previouse page end -->
+				</div><!-- previous tabber end -->
+				<div id="divVerificationTab" class="tabbertab" title="Verification"><!-- Verification tabbertab begin -->
+					<div id="mcPage_009" class="mcPage"><!-- page 9 begin -->
+					<span class="tabHeading">Verification</span>
+						<div class="sectionData">
+						<div class="sectionHeading">Verification Plan Task 1</div>
+
+							<div id="divVerificationTask1Description" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtVerificationTask1Description">Verification Task 1 Description:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtVerificationTask1Description" class="textarea" rows="5" cols="20" title="Verification Task 1 Description" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divtxtVerificationTaskOwner1" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="mastercontrol.role.ComplaintVerTaskOwner.VerTask1Owner">Task 1 Owner:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<select id="mastercontrol.role.ComplaintVerTaskOwner.CAPAVerTask1Owner" class="selectfield" alt="Verification Task 1 Owner" title="Verification Task 1 Owner"></select>
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divVerificationTask1TargetDate" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtVerificationTask1TargetDate_date">Verification Task 1 Target Date:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtVerificationTask1TargetDate_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Verification Task 1 Target Date" title="Verification Task 1 Target Date" />
+										<input id="btnVerificationTask1TargetDateCalendar" type="button" class="calendarImage" title="Verification Task 1 Target Date" />
+									</div>
+
+									<div class="subLabel">
+										<label for="txtVerificationTask1CompleteDate_date">Verification Task 1 Completed:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtVerificationTask1CompleteDate_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Verification Task 1 Completed" title="Verification Task 1 Completed" />
+										<input id="btnVerificationTask1CompleteDateCalendar" type="button" class="calendarImage" title="Verification Task 1 Completed" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Verification Plan Task 2</div>
+
+							<div id="divVerificationTask2Description" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtVerificationTask2Description">Verification Task 2 Description:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtVerificationTask2Description" class="textarea" rows="5" cols="20" title="Verification Task 2 Description" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divtxtVerificationTaskOwner2" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="mastercontrol.role.ComplaintVerTaskOwner.VerTask2Owner">Task 2 Owner:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<select id="mastercontrol.role.ComplaintVerTaskOwner.CAPAVerTask2Owner" class="selectfield" alt="Verification Task 2 Owner" title="Verification Task 2 Owner"></select>
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divVerificationTask2TargetDate" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtVerificationTask2TargetDate_date">Verification Task 2 Target Date:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtVerificationTask2TargetDate_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Verification Task 2 Target Date" title="Verification Task 2 Target Date" />
+										<input id="btnVerificationTask2TargetDateCalendar" type="button" class="calendarImage" title="Verification Task 2 Target Date" />
+									</div>
+
+									<div class="subLabel">
+										<label for="txtVerificationTask2CompleteDate_date">Verification Task 2 Completed:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtVerificationTask2CompleteDate_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Verification Task 2 Completed" title="Verification Task 2 Completed" />
+										<input id="btnVerificationTask2CompleteDateCalendar" type="button" class="calendarImage" title="Verification Task 2 Completed" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Verification Plan Task 3</div>
+
+							<div id="divVerificationTask3Description" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtVerificationTask3Description">Verification Task 3 Description:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtVerificationTask3Description" class="textarea" rows="5" cols="20" title="Verification Task 3 Description" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divtxtVerificationTaskOwner3" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="mastercontrol.role.ComplaintVerTaskOwner.VerTask3Owner">Task 3 Owner:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<select id="mastercontrol.role.ComplaintVerTaskOwner.CAPAVerTask3Owner" class="selectfield" alt="Verification Task 3 Owner" title="Verification Task 3 Owner"></select>
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divVerificationTask3TargetDate" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtVerificationTask3TargetDate_date">Verification Task 3 Target Date:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtVerificationTask3TargetDate_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Verification Task 3 Target Date" title="Verification Task 3 Target Date" />
+										<input id="btnVerificationTask3TargetDateCalendar" type="button" class="calendarImage" title="Verification Task 3 Target Date" />
+									</div>
+
+									<div class="subLabel">
+										<label for="txtVerificationTask3CompleteDate_date">Verification Task 3 Completed:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtVerificationTask3CompleteDate_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Verification Task 3 Completed" title="Verification Task 3 Completed" />
+										<input id="btnVerificationTask3CompleteDateCalendar" type="button" class="calendarImage" title="Verification Task 3 Completed" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Verification Plan Task 4</div>
+
+							<div id="divVerificationTask4Description" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtVerificationTask4Description">Verification Task 4 Description:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtVerificationTask4Description" class="textarea" rows="5" cols="20" title="Verification Task 4 Description" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divtxtVerificationTaskOwner4" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="mastercontrol.role.ComplaintVerTaskOwner.VerTask4Owner">Task 4 Owner:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<select id="mastercontrol.role.ComplaintVerTaskOwner.CAPAVerTask4Owner" class="selectfield" alt="Verification Task 4 Owner" title="Verification Task 4 Owner"></select>
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divVerificationTask4TargetDate" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtVerificationTask4TargetDate_date">Verification Task 4 Target Date:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtVerificationTask4TargetDate_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Verification Task 4 Target Date" title="Verification Task 4 Target Date" />
+										<input id="btnVerificationTask4TargetDateCalendar" type="button" class="calendarImage" title="Verification Task 4 Target Date" />
+									</div>
+
+									<div class="subLabel">
+										<label for="txtVerificationTask4CompleteDate_date">Verification Task 4 Completed:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtVerificationTask4CompleteDate_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Verification Task 4 Completed" title="Verification Task 4 Completed" />
+										<input id="btnVerificationTask4CompleteDateCalendar" type="button" class="calendarImage" title="Verification Task 4 Completed" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Verification Plan Task 5</div>
+
+							<div id="divVerificationTask5Description" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtVerificationTask5Description">Verification Task 5 Description:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtVerificationTask5Description" class="textarea" rows="5" cols="20" title="Verification Task 5 Description" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divtxtVerificationTaskOwner5" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="mastercontrol.role.ComplaintVerTaskOwner.VerTask5Owner">Task 5 Owner:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<select id="mastercontrol.role.ComplaintVerTaskOwner.CAPAVerTask5Owner" class="selectfield" alt="Verification Task 5 Owner" title="Verification Task 5 Owner"></select>
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divVerificationTask5TargetDate" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtVerificationTask5TargetDate_date">Verification Task 5 Target Date:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtVerificationTask5TargetDate_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Verification Task 5 Target Date" title="Verification Task 5 Target Date" />
+										<input id="btnVerificationTask5TargetDateCalendar" type="button" class="calendarImage" title="Verification Task 5 Target Date" />
+									</div>
+
+									<div class="subLabel">
+										<label for="txtVerificationTask5CompleteDate_date">Verification Task 5 Completed:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtVerificationTask5CompleteDate_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Verification Task 5 Completed" title="Verification Task 5 Completed" />
+										<input id="btnVerificationTask5CompleteDateCalendar" type="button" class="calendarImage" title="Verification Task 5 Completed" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+						</div><!-- final section end -->
+					</div><!-- final page end -->
+				</div><!-- final tabbertab end -->
+			</div><!-- formTabs end -->
+		</div><!-- formBody end -->
+	</div><!-- container end -->
+</form><!-- form end -->
+
+<!-- inside MC links  
+<script type='text/javascript' src='#mastercontrol.javascript(tabber.js)#'></script>
+<script type='text/javascript' src='#mastercontrol.javascript(jquery-1.7.1.min.js)#'></script>
+<script type='text/javascript' src='#mastercontrol.javascript(Calendar.js)#'></script>
+<script type='text/javascript' src='#mastercontrol.javascript(StdLibrary.js)#'></script>
+<script type="text/javascript" src="#mastercontrol.javascript(RHLib.js)#"> </script>
+<script type='text/javascript' src='#mastercontrol.javascript(ComplaintForm.js)#'></script>
+-->
+<!-- outside links -->
+
+<script type="text/javascript" src="js/tabber.js"></script>
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/Calendar.js"></script>
+<script type="text/javascript" src="js/StdLibrary.js"></script>
+<script type="text/javascript" src="js/RHLib.js"></script>
+<script type="text/javascript" src="js/ComplaintForm.js"></script>
+
+
+<script language="javascript" type="text/javascript">
+var jQ = jQuery.noConflict();
+
+jQ(function() {
+	setTaskTitle();
+
+	retainHeightWidth();
+	SP_InsertBlank();
+	formStart();
+
+});
+</script>

@@ -2,7 +2,7 @@
 /* Global Vars */
     var stepId  =  document.getElementById("mastercontrol.route.stepid").value*1;
     var stepNumber =  document.getElementById("mastercontrol.route.stepnumber").value*1;
-//    var sFormStatus= document.getElementById("mastercontrol.hidden.event").value;  /*viewOnly*/
+    var sFormStatus= document.getElementById("mastercontrol.hidden.event").value;  /*viewOnly*/
     var gSelected=jQ("#mastercontrol\\.route\\.stepusers\\.step4 option:selected").map(function(){ return this.value }).get();
     
 
@@ -103,7 +103,7 @@ function setProductDataEntry(){
         radioEnableDisableClass('nonProductField','productField');
         jQ("#mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name,label[for=mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name]").show();
     } else if (selectedValue == ""){
-
+        jQ("#mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name,label[for=mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name]").hide(); 
     } else {
         jQ("#mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name,label[for=mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name]").hide(); 
         radioEnableDisableClass('productField','nonProductField');    

@@ -7,6 +7,12 @@
 
 /* Hide fields on start and other functions  3-8*/
 function formStart(){
+    jQ("#mastercontrol\\.dataset\\.recordids\\.Products\\.Name").change(function() {
+        setProductDefectDD();
+    });
+    jQ("#mastercontrol\\.dataset\\.recordids\\.AdverseEvents\\.Name").change(function() {
+        setAdverseEventDD();
+    });
     jQ('input[type=radio][name=rbCAPARequired]').click(function() {
         capaRequired();
     });
@@ -46,6 +52,94 @@ function formStart(){
     dhrReview(); 
     notifyRequired();
     capaRequired();  
+}
+
+function setProductDefectDD() {
+        //Parent dropdown
+    var item1 = document.getElementById("mastercontrol.dataset.recordids.Products.Name");
+    var selItem1;
+    var defects;
+    // name of the dropdown that will be populated dynamiclly
+    var fldName = "cmbDefect";
+    var item2Options = document.getElementById(fldName);
+    var opt;
+    var i;
+    if (item1 != null && item2Options != null)
+    {
+        selItem1 = item1.options[item1.options.selectedIndex].value;
+        if (selItem1 != "")
+        {
+            //TODO Check is this is the same as NCR, if so remove Complaint from DS name
+            //dataset=Name of External DataSource and the filter parametername   GetProductDefects  Product  this is the xml query string that will get the data
+            var Url = document.getElementById("txtMCUrl").value + "/Main/NOC/html_forms/query.cfm?dataset=getProductDefects&Product=" + selItem1;
+            cmbClear(fldName);
+            defects = xmlQuery(Url);
+            opt = document.createElement('option');
+            opt.text = "";
+            opt.value = "";
+
+            item2Options.options.add(opt, (item2Options.options.length + 1));
+
+            for (i = 0; i < defects.length; i++)
+            {
+                opt = document.createElement('option');
+                 //update to column from the datasource that you are using  Defect
+                opt.text = opt.value = defects[i].Defect;
+                item2Options.options.add(opt, (item2Options.options.length + 1));
+            }
+            opt = document.createElement('option');
+            opt.text = "Other";
+            opt.value = "Other";
+            item2Options.options.add(opt, (item2Options.options.length + 1));
+        } else { 
+            jQ("#cmbDefect option").remove();
+        }
+    }
+    displayOther('cmbDefect','txtDefectOther','lblDefectOther');
+}
+
+function setAdverseEventDD(){
+            //Parent dropdown
+    var item1 = document.getElementById("mastercontrol.dataset.recordids.AdverseEvents.Name");
+    var selItem1;
+    var defects;
+    // name of the dropdown that will be populated dynamiclly
+    var fldName = "cmbAdverseEventSubcategoryDefect";
+    var item2Options = document.getElementById(fldName);
+    var opt;
+    var i;
+    if (item1 != null && item2Options != null)
+    {
+        selItem1 = item1.options[item1.options.selectedIndex].value;
+        if (selItem1 != "")
+        {
+            //TODO Check is this is the same as NCR, if so remove Complaint from DS name
+            //dataset=Name of External DataSource and the filter parametername   GetProductDefects  Product  this is the xml query string that will get the data
+            var Url = document.getElementById("txtMCUrl").value + "/Main/NOC/html_forms/query.cfm?dataset=getAdverseEventSubCatorgies&AdverseEvent=" + selItem1;
+            cmbClear(fldName);
+            defects = xmlQuery(Url);
+            opt = document.createElement('option');
+            opt.text = "";
+            opt.value = "";
+
+            item2Options.options.add(opt, (item2Options.options.length + 1));
+
+            for (i = 0; i < defects.length; i++)
+            {
+                opt = document.createElement('option');
+                 //update to column from the datasource that you are using  Defect
+                opt.text = opt.value = defects[i].EventCategory;
+                item2Options.options.add(opt, (item2Options.options.length + 1));
+            }
+            opt = document.createElement('option');
+            opt.text = "Other";
+            opt.value = "Other";
+            item2Options.options.add(opt, (item2Options.options.length + 1));
+        } else { 
+            jQ("#cmbAdverseEventSubcategory option").remove();
+        }
+    }
+    displayOther('cmbAdverseEventSubcategory','txtAdverseEventSubcategoryOther','lblAdverseEventOther');
 }
 
 /* Investigation Functionality */
