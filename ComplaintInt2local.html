@@ -207,13 +207,13 @@ ul.tabbernav li.tabberactive a {
 							</div>
 							<div class="clearBoth"></div>
 
-							<div id="divOtherDetails" class="fieldRow">
+							<div id="divReceivedViaOther" class="fieldRow">
 								<div class="leftLabel labelWidth20">
-									<label id = "lbOtherDetails"for="txtOtherDetails">Other:</label>
+									<label id = "lbReceivedViaOther"for="txtReceivedViaOther">Received Via Other:</label>
 								</div>
 								<div class="leftField">
 									<div class="formField68">
-										<input id="txtOtherDetails" type="text" class="textfield" alt="Other" title="Other" />
+										<input id="txtReceivedViaOther" type="text" class="textfield" alt="Received Via Other" title="Received Via Other" />
 									</div>
 								</div>
 							</div>
@@ -233,6 +233,18 @@ ul.tabbernav li.tabberactive a {
 											<option value="Other">Other</option>
 
 										</select>
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divCategoryOther" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label id = "lbCategoryOther"for="txtCategoryOther">Category Other:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<input id="txtCategoryOther" type="text" class="textfield" alt="Category Other" title="Category Other" />
 									</div>
 								</div>
 							</div>
@@ -344,7 +356,7 @@ ul.tabbernav li.tabberactive a {
 										</select>
 									</div>
 									<div class="subLabel">
-										<label for="txtDefectOther" id="lblDefectOther">Other:</label>
+										<label for="txtDefectOther" id="lbDefectOther"> Defect Other:</label>
 									</div>
 									<div class="formField34">
 										<input id="txtDefectOther" type="text" class="textfield" title="Defect Other Please Specify" />
@@ -449,26 +461,33 @@ ul.tabbernav li.tabberactive a {
 											<option value="Quality System">Quality System</option>
 										</select>
 									</div>
+									<div class="subLabel">
+										<label for="txtAdverseEventOther" id="lbAdverseEventOther"> Adverse Event Other:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtAdverseEventOther" type="text" class="textfield" title="Adverse Event Other Please Specify" />
+									</div>
 								</div>
 							</div>
 							<div class="clearBoth"></div>
-<div id="cmbAdverseEventSubcategory" class="fieldRow">
+
+							<div id="divAdverseEventSubCat" class="fieldRow">
 								<div class="leftLabel labelWidth20">
-									<label for="cmbAdverseEventSubcategory">Adverse Event Sub Category:</label>
+									<label for="cmbAdverseEventSubCategory">Adverse Event Sub Category:</label>
 								</div>
 								<div class="leftField">
 									<div class="formField34">
-										<select id="cmbAdverseEventSubcategory" class="selectfield" title="Adverse Event Sub Category">
+										<select id="cmbAdverseEventSubCategory" class="selectfield" title="Adverse Event Sub Category">
 											<option value =""></option>
 											<option value ="one">one</option>
 											<option value ="two">two</option>
 										</select>
 									</div>
 									<div class="subLabel">
-										<label for="txtDefectOther" id="lblDefectOther">Other:</label>
+										<label for="txtAdverseEventSubCategoryOther" id="lbAdverseEventSubCategoryOther"> Adverse Event Sub Category Other:</label>
 									</div>
 									<div class="formField34">
-										<input id="txtcmbAdverseEventSubcategoryOther" type="text" class="textfield" title="Defect Other Please Specify" />
+										<input id="txtAdverseEventSubCategoryOther" type="text" class="textfield" title="Adverse Event Sub Category Other Please Specify" />
 									</div>
 								</div>
 							</div>

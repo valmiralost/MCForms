@@ -207,13 +207,13 @@ ul.tabbernav li.tabberactive a {
 							</div>
 							<div class="clearBoth"></div>
 
-							<div id="divOtherDetails" class="fieldRow">
+							<div id="divReceivedViaOther" class="fieldRow">
 								<div class="leftLabel labelWidth20">
-									<label id = "lbOtherDetails"for="txtOtherDetails">Other:</label>
+									<label id = "lbReceivedViaOther"for="txtReceivedViaOther">Received Via Other:</label>
 								</div>
 								<div class="leftField">
 									<div class="formField68">
-										<input id="txtOtherDetails" type="text" class="textfield" alt="Other" title="Other" />
+										<input id="txtReceivedViaOther" type="text" class="textfield" alt="Received Via Other" title="Received Via Other" />
 									</div>
 								</div>
 							</div>
@@ -233,6 +233,18 @@ ul.tabbernav li.tabberactive a {
 											<option value="Other">Other</option>
 
 										</select>
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divCategoryOther" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label id = "lbCategoryOther"for="txtCategoryOther">Category Other:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<input id="txtCategoryOther" type="text" class="textfield" alt="Category Other" title="Category Other" />
 									</div>
 								</div>
 							</div>
@@ -318,15 +330,7 @@ ul.tabbernav li.tabberactive a {
 								</div>
 								<div class="leftField">
 									<div class="formField34">
-										<select id="ceProducts" class="selectfield" title="Product">
-											<option value=""></option>
-											<option value="Batteries">Batteries</option>
-											<option value="Charger">Charger</option>
-											<option value="Controller">Controller</option>
-											<option value="Graft">Graft</option>
-											<option value="HeartAttendant">HeartAttendant</option>
-											<option value="Battery Pocket">Battery Pocket</option>
-											<option value="Pump">Pump</option>
+										<select id="mastercontrol.dataset.recordids.Products.Name" class="selectfield required" title="Product">
 										</select>
 									</div>
 
@@ -334,16 +338,24 @@ ul.tabbernav li.tabberactive a {
 							</div>
 							<div class="clearBoth"></div>
 
-							<div id="divSubCategory" class="fieldRow">
+							<div id="divmastercontrol.dataset.recordids.NCRDefects.Name" class="fieldRow">
 								<div class="leftLabel labelWidth20">
-									<label for="cmbSubCategory">Product Subcateogry:</label>
+									<label for="cmbDefect">Defect:</label>
 								</div>
 								<div class="leftField">
 									<div class="formField34">
-										<select id="cmbSubCategory" class="selectfield" alt="Product Subcateogry" title="Product Subcateogry">
+										<select id="cmbDefect" class="selectfield productField" title="Defect">
+											<option value =""></option>
+											<option value ="one">one</option>
+											<option value ="two">two</option>
 										</select>
 									</div>
-
+									<div class="subLabel">
+										<label for="txtDefectOther" id="lbDefectOther"> Defect Other:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtDefectOther" type="text" class="textfield" title="Defect Other Please Specify" />
+									</div>
 								</div>
 							</div>
 							<div class="clearBoth"></div>
@@ -413,20 +425,37 @@ ul.tabbernav li.tabberactive a {
 
 							<div id="divAdverseEvent" class="fieldRow">
 								<div class="leftLabel labelWidth20">
-									<label for="cmbAdverseEvent">Adverse Event:</label>
+									<label for="mastercontrol.dataset.recordids.AdverseEvents.Name">Adverse Event:</label>
 								</div>
 								<div class="leftField">
 									<div class="formField34">
-										<select id="ceAdverseEvent" class="selectfield" title="Adverse Event">
-											<option value=""></option>
-											<option value="Batteries">Batteries</option>
-											<option value="Charger">Charger</option>
-											<option value="Controller">Controller</option>
-											<option value="Graft">Graft</option>
-											<option value="HeartAttendant">HeartAttendant</option>
-											<option value="Battery Pocket">Battery Pocket</option>
-											<option value="Pump">Pump</option>
+										<select id="mastercontrol.dataset.recordids.AdverseEvents.Name" class="selectfield required" title="Adverse Events">
 										</select>
+									</div>
+									<div class="subLabel">
+										<label for="txtAdverseEventOther" id="lbAdverseEventOther"> Adverse Event Other:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtAdverseEventOther" type="text" class="textfield" title="Adverse Event Other Please Specify" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divAdverseEventSubCat" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="cmbAdverseEventSubCategory">Adverse Event Sub Category:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<select id="cmbAdverseEventSubCategory" class="selectfield" title="Adverse Event Sub Category">
+										</select>
+									</div>
+									<div class="subLabel">
+										<label for="txtAdverseEventSubCategoryOther" id="lbAdverseEventSubCategoryOther"> Adverse Event Sub Category Other:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtAdverseEventSubCategoryOther" type="text" class="textfield" title="Adverse Event Sub Category Other Please Specify" />
 									</div>
 								</div>
 							</div>

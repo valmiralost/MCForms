@@ -2,7 +2,7 @@
 /* Global Vars */
     var stepId  =  document.getElementById("mastercontrol.route.stepid").value*1;
     var stepNumber =  document.getElementById("mastercontrol.route.stepnumber").value*1;
-    var sFormStatus= document.getElementById("mastercontrol.hidden.event").value;  /*viewOnly*/
+//    var sFormStatus= document.getElementById("mastercontrol.hidden.event").value;  /*viewOnly*/
 
 
 /* Hide fields on start and other functions  3-8*/
@@ -23,8 +23,11 @@ function formStart(){
         capaRequired();                    
     });
     jQ("#cmbReceivedVia").change(function() {
-        displayOther('cmbReceivedVia','txtOtherDetails','lbOtherDetails');  
-    }); 
+        displayOther('cmbReceivedVia','txtReceivedViaOther','lbReceivedViaOther'); 
+    });
+    jQ("#cmbCategory").change(function() {
+        displayOther('cmbCategory','txtCategoryOther','lbCategoryOther'); 
+    });  
     jQ("#cmbClassification").change(function() {
         displayOther('cmbClassification','txtClassificationOther','lbClassificationOther');
     });    
@@ -45,7 +48,11 @@ function formStart(){
       jQ('input[type=radio][name=rbNotificationRequired]').click(function() {
         notifyRequired();
     });
-    displayOther('cmbReceivedVia','txtOtherDetails','lbOtherDetails');
+    displayOther('cmbReceivedVia','txtReceivedViaOther','lbReceivedViaOther');
+    displayOther('cmbCategory','txtCategoryOther','lbCategoryOther');
+    displayOther('cmbAdverseEventSubCategory','txtAdverseEventSubCategoryOther','lbAdverseEventSubCategoryOther');
+    displayOther('mastercontrol.dataset.recordids.AdverseEvents.Name','txtAdverseEventOther','lbAdverseEventOther');
+    displayOther('cmbDefect','txtDefectOther','lbDefectOther');
     displayOther('cmbClassification','txtClassificationOther','lbClassificationOther');
     calcRisk('txtRiskScore','#rbSeverityRisk','#rbRecurrenceRisk','rbSeverityRisk');
     investigationEval();
