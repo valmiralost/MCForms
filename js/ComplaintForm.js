@@ -112,7 +112,7 @@ function setAdverseEventDD(){
     var selItem1;
     var defects;
     // name of the dropdown that will be populated dynamiclly
-    var fldName = "cmbAdverseEventSubcategoryDefect";
+    var fldName = "cmbAdverseEventSubCategory";
     var item2Options = document.getElementById(fldName);
     var opt;
     var i;
@@ -144,10 +144,10 @@ function setAdverseEventDD(){
             opt.value = "Other";
             item2Options.options.add(opt, (item2Options.options.length + 1));
         } else { 
-            jQ("#cmbAdverseEventSubcategory option").remove();
+            jQ("#cmbAdverseEventSubCategory option").remove();
         }
     }
-    displayOther('cmbAdverseEventSubcategory','txtAdverseEventSubcategoryOther','lblAdverseEventOther');
+  //  displayOther('cmbAdverseEventSubcategory','txtAdverseEventSubcategoryOther','lblAdverseEventOther');
 }
 
 /* Investigation Functionality */
