@@ -2,7 +2,7 @@
 /* Global Vars */
     var stepId  =  document.getElementById("mastercontrol.route.stepid").value*1;
     var stepNumber =  document.getElementById("mastercontrol.route.stepnumber").value*1;
-//    var sFormStatus= document.getElementById("mastercontrol.hidden.event").value;  /*viewOnly*/
+    var sFormStatus= document.getElementById("mastercontrol.hidden.event").value;  /*viewOnly*/
 
 
 /* Hide fields on start and other functions  3-8*/
@@ -38,20 +38,20 @@ function formStart(){
     jQ("#cmbAdverseEventSubCategory").change(function() {
         displayOther('cmbAdverseEventSubCategory','txtAdverseEventSubCategoryOther','lblAdverseEventSubCategoryOther');
     });
-        jQ('input[type=radio][name=rbSeverityRisk]').click(function() {
-            calcRisk('txtRiskScore','#rbSeverityRisk','#rbRecurrenceRisk','rbSeverityRisk');
-        });
-        jQ('input[type=radio][name=rbRecurrenceRisk]').click(function() {
-            calcRisk('txtRiskScore','#rbSeverityRisk','#rbRecurrenceRisk');
-        });
-       jQ('input[type=radio][name=rbInvestigationRequired]').click(function() {
-            investigationEval();
-        });
+    jQ('input[type=radio][name=rbSeverityRisk]').click(function() {
+        calcRisk('txtRiskScore','#rbSeverityRisk','#rbRecurrenceRisk','rbSeverityRisk');
+    });
+    jQ('input[type=radio][name=rbRecurrenceRisk]').click(function() {
+        calcRisk('txtRiskScore','#rbSeverityRisk','#rbRecurrenceRisk');
+    });
+    jQ('input[type=radio][name=rbInvestigationRequired]').click(function() {
+        investigationEval();
+    });
 
    jQ('input[type=radio][name=rbReviewDHR]').click(function() {
         dhrReview();
     });
-      jQ('input[type=radio][name=rbNotificationRequired]').click(function() {
+    jQ('input[type=radio][name=rbNotificationRequired]').click(function() {
         notifyRequired();
     });
     displayOther('cmbReceivedVia','txtReceivedViaOther','lbReceivedViaOther');
