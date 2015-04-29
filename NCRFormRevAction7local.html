@@ -69,7 +69,7 @@ body{
 						<td width="5%">&nbsp;</td>
 						<td width="20%" class="TopLabel"><label for="mastercontrol.form.number">Form Number</label></td>
 						<td width="1%">&nbsp;</td>
-						<td width="20%" class="TopLabel"><label for="mastercontrol.route.stepname">Current Step</label></td>
+						<td width="20%" class="TopLabel"><label for="mastercontrol.route.stepduedate">Step Due Date</label></td>
 						<td width="5%">&nbsp;</td>
 					</tr><!-- header first row end -->
 					<tr><!-- header second row begin -->
@@ -79,7 +79,7 @@ body{
 						</td>
 						<td>&nbsp;</td>
 						<td>
-							<input id="mastercontrol.route.stepname" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Step Due Date" title="" />
+							<input id="mastercontrol.route.stepduedate" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Step Due Date" title="" />
 						</td>
 						<td>&nbsp;</td>
 					</tr><!-- header second row end -->
@@ -103,16 +103,34 @@ body{
 					</tr><!-- header fourth row end -->
 					<tr><!-- header fifth row begin -->
 						<td>&nbsp;</td>
-						<td class="TopLabel" colspan="3"><label for="txtTitle" class="reqdLabel">*Title</label></td>
+						<td class="TopLabel"><label for="mastercontrol.template.number">Form Template Number </label></td>
+						<td>&nbsp;</td>
+						<td class="TopLabel"><label for="mastercontrol.template.revision">Form Template Revision</label></td>
 						<td>&nbsp;</td>
 					</tr><!-- header fifth row end -->
 					<tr><!-- header sixth row begin -->
 						<td>&nbsp;</td>
-						<td colspan="3">
-							<input id="txtTitle" type="text" class="headerTextfield required" alt="H_Title" title="" />
+						<td>
+							<input id="mastercontrol.template.number" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Form Template" title="" />
+						</td>
+						<td>&nbsp;</td>
+						<td>
+							<input id="mastercontrol.template.revision" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Template Revision" title="" />
 						</td>
 						<td>&nbsp;</td>
 					</tr><!-- header sixth row end -->
+					<tr><!-- header seventh row begin -->
+						<td>&nbsp;</td>
+						<td class="TopLabel" colspan="3"><label for="txtTitle"class="reqdLabel" >* Title</label></td>
+						<td>&nbsp;</td>
+					</tr><!-- header seventh row end -->
+					<tr><!-- header eigth row begin -->
+						<td>&nbsp;</td>
+						<td colspan="3">
+							<input id="txtTitle" type="text" class="headerTextfield" alt="H_Title" title="" />
+						</td>
+						<td>&nbsp;</td>
+					</tr><!-- header eight row end -->
 				</table><!-- header table end -->
 			</div><!-- page001 end -->
 		</div><!-- formHeader end -->
@@ -522,6 +540,18 @@ body{
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtIDRiskScore" type="text" class="textfield readonly" alt="Initial Disposition Risk Score" title="Initial Disposition Risk Score" readonly="readonly" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divIDRiskAnalysisID" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtIDRiskAnalysisID">Risk Analysis ID:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtIDRiskAnalysisID" type="text" class="textfield" alt="Initial Disposition Risk Analysis ID" title="Initial Disposition Risk Analysis ID" />
 									</div>
 								</div>
 							</div>

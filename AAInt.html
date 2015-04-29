@@ -1,4 +1,5 @@
 <link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/SPScreenInt.css' type='text/css'>
+<link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/RHStyles.css' type='text/css'>
 
 <style>
 .calendarImage {
@@ -90,16 +91,34 @@ ul.tabbernav li.tabberactive a {
 					</tr><!-- header fourth row end -->
 					<tr><!-- header fifth row begin -->
 						<td>&nbsp;</td>
-						<td class="TopLabel" colspan="3"><label for="txtTitle">Title</label></td>
+						<td class="TopLabel"><label for="mastercontrol.template.number">Form Template Number </label></td>
+						<td>&nbsp;</td>
+						<td class="TopLabel"><label for="mastercontrol.template.revision">Form Template Revision</label></td>
 						<td>&nbsp;</td>
 					</tr><!-- header fifth row end -->
 					<tr><!-- header sixth row begin -->
+						<td>&nbsp;</td>
+						<td>
+							<input id="mastercontrol.template.number" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Form Template" title="" />
+						</td>
+						<td>&nbsp;</td>
+						<td>
+							<input id="mastercontrol.template.revision" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Template Revision" title="" />
+						</td>
+						<td>&nbsp;</td>
+					</tr><!-- header sixth row end -->
+					<tr><!-- header seventh row begin -->
+						<td>&nbsp;</td>
+						<td class="TopLabel" colspan="3"><label for="txtTitle"class="reqdLabel" >* Title</label></td>
+						<td>&nbsp;</td>
+					</tr><!-- header seventh row end -->
+					<tr><!-- header eigth row begin -->
 						<td>&nbsp;</td>
 						<td colspan="3">
 							<input id="txtTitle" type="text" class="headerTextfield" alt="H_Title" title="" />
 						</td>
 						<td>&nbsp;</td>
-					</tr><!-- header sixth row end -->
+					</tr><!-- header eight row end -->
 					<div id="divHiddenTitle" class="hide"><!-- hidden title fields div begin -->
 						<input type="text" id="mastercontrol.form.title" alt="Task Title" />
 						<!-- hidden select for the launch source button -->
