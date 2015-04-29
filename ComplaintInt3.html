@@ -118,6 +118,8 @@ ul.tabbernav li.tabberactive a {
 			          	<input name="hlpSourceType" type="hidden" id="hlpSourceType" title="SourceType" value="Complaint" />
           				<input name="hlpComplaintNumber" type="hidden" id="hlpComplaintNumber" title="Source Number" />
          				<input name="hlpComplaintCreated" type="hidden" id="hlpComplaintCreated" title="Source Create Date"  />
+         				<!-- Required for the dynamic dropdown data poulation -->
+         				<input id="txtMCUrl" type="hidden" title="MasterControl URL" alt="MasterControl URL" value="#mastercontrol.url#" />
 				        <!-- Required to Launch Form from Form  -->
 				        <select id="mastercontrol.task.routes"  name="mastercontrol.task.routes" title="Available Routes" style="display:none" >
 				        </select>
@@ -324,6 +326,37 @@ ul.tabbernav li.tabberactive a {
 						</div><!-- previous section end -->
 						<div class="sectionData">
 						<div class="sectionHeading">Product Information</div>
+
+							<div id="divmastercontrol.dataset.recordids.Products.Name" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="mastercontrol.dataset.recordids.Products.Name" class="reqdLabel">*Product:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<select id="mastercontrol.dataset.recordids.Products.Name" class="selectfield required" title="Product">
+
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<div id="divcmbDefect" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="cmbDefect">Defect:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<select id="cmbDefect" class="selectfield productField" title="Defect"></select>
+									</div>
+									<div class="subLabel">
+										<label for="txtDefectOther" id="lblDefectOther">Defect Other:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtDefectOther" type="text" class="textfield" title="Defect Other Please Specify" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
 
 							<div id="divPartNumber" class="fieldRow">
 								<div class="leftLabel labelWidth20">
