@@ -3,6 +3,7 @@
     var stepId  =  document.getElementById("mastercontrol.route.stepid").value*1;
     var stepNumber =  document.getElementById("mastercontrol.route.stepnumber").value*1;
     var sFormStatus= document.getElementById("mastercontrol.hidden.event").value;  /*viewOnly*/
+    var gSelected=jQ("#mastercontrol\\.route\\.stepusers\\.step2 option:selected").map(function(){ return this.value }).get();
 
 
 /* Hide fields on start and other functions  3-8*/
@@ -54,6 +55,23 @@ function formStart(){
    jQ('input[type=radio][name=rbReviewDHR]').click(function() {
         dhrReview();
     });
+   jQ("#mastercontrol\\.role\\.ComplaintInvestigators").change(function(){   
+    var selectedValue = jQ("#mastercontrol\\.role\\.ComplaintInvestigators").val();
+    var trimmedValue = trimUserID(selectedValue);
+    if (selectedValue != ""){
+        if(jQ.inArray(trimmedValue, gSelected) == -1 ) {
+            var currentSelected = gSelected.slice();
+            currentSelected.push(trimmedValue);
+            jQ('#mastercontrol\\.route\\.stepusers\\.step2').val(currentSelected);
+        } else {
+            jQ('#mastercontrol\\.route\\.stepusers\\.step2').val(gSelected);
+        }
+
+    } else {
+        jQ('#mastercontrol\\.route\\.stepusers\\.step2').val(gSelected);
+    }
+
+        });
     jQ('input[type=radio][name=rbNotificationRequired]').click(function() {
         notifyRequired();
     });
