@@ -32,8 +32,8 @@ function formStart(){
     jQ("#cmbCategory").change(function() {
         displayOther('cmbCategory','txtCategoryOther','lbCategoryOther'); 
     });  
-    jQ("#cmbClassification").change(function() {
-        displayOther('cmbClassification','txtClassificationOther','lbClassificationOther');
+    jQ("#mastercontrol\\.dataset\\.recordids\\.ComplaintClassification\\.Name").change(function() {
+        displayOther('mastercontrol.dataset.recordids.ComplaintClassification.Name','txtClassificationOther','lbClassificationOther');
     });
     jQ("#cmbDefect").change(function() {
         displayOther('cmbDefect','txtDefectOther','lblDefectOther');
@@ -62,7 +62,7 @@ function formStart(){
     displayOther('cmbAdverseEventSubCategory','txtAdverseEventSubCategoryOther','lblAdverseEventSubCategoryOther');
     displayOther('mastercontrol.dataset.recordids.AdverseEvents.Name','txtAdverseEventOther','lbAdverseEventOther');
     displayOther('cmbDefect','txtDefectOther','lblDefectOther');
-    displayOther('cmbClassification','txtClassificationOther','lbClassificationOther');
+    displayOther('mastercontrol.dataset.recordids.ComplaintClassification.Name','txtClassificationOther','lbClassificationOther');
     calcRisk('txtRiskScore','#rbSeverityRisk','#rbRecurrenceRisk','rbSeverityRisk');
     investigationEval();
     dhrReview(); 
