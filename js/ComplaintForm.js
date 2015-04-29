@@ -34,7 +34,10 @@ function formStart(){
     });  
     jQ("#cmbClassification").change(function() {
         displayOther('cmbClassification','txtClassificationOther','lbClassificationOther');
-    });    
+    });
+    jQ("#cmbDefect").change(function() {
+        displayOther('cmbDefect','txtDefectOther','lblDefectOther');
+    });     
     jQ("#cmbAdverseEventSubCategory").change(function() {
         displayOther('cmbAdverseEventSubCategory','txtAdverseEventSubCategoryOther','lblAdverseEventSubCategoryOther');
     });
