@@ -50,12 +50,12 @@ function formStart(){
       jQ('input[type=radio][name=rbNotificationRequired]').click(function() {
         notifyRequired();
     });
- //   displayOther('cmbReceivedVia','txtReceivedViaOther','lbReceivedViaOther');
- //   displayOther('cmbCategory','txtCategoryOther','lbCategoryOther');
-  //  displayOther('cmbAdverseEventSubCategory','txtAdverseEventSubCategoryOther','lbAdverseEventSubCategoryOther');
- //   displayOther('mastercontrol.dataset.recordids.AdverseEvents.Name','txtAdverseEventOther','lbAdverseEventOther');
- //   displayOther('cmbDefect','txtDefectOther','lblDefectOther');
-  //  displayOther('cmbClassification','txtClassificationOther','lbClassificationOther');
+    displayOther('cmbReceivedVia','txtReceivedViaOther','lbReceivedViaOther');
+    displayOther('cmbCategory','txtCategoryOther','lbCategoryOther');
+    displayOther('cmbAdverseEventSubCategory','txtAdverseEventSubCategoryOther','lblAdverseEventSubCategoryOther');
+    displayOther('mastercontrol\\.dataset\\.recordids\\.AdverseEvents\\.Name','txtAdverseEventOther','lbAdverseEventOther');
+    displayOther('cmbDefect','txtDefectOther','lblDefectOther');
+    displayOther('cmbClassification','txtClassificationOther','lbClassificationOther');
     calcRisk('txtRiskScore','#rbSeverityRisk','#rbRecurrenceRisk','rbSeverityRisk');
     investigationEval();
     dhrReview(); 
@@ -147,7 +147,7 @@ function setAdverseEventDD(){
             jQ("#cmbAdverseEventSubCategory option").remove();
         }
     }
-  //  displayOther('cmbAdverseEventSubcategory','txtAdverseEventSubcategoryOther','lblAdverseEventOther');
+    displayOther('cmbAdverseEventSubCategory','txtAdverseEventSubCategoryOther','lblAdverseEventSubCategoryOther');
 }
 
 /* Investigation Functionality */
