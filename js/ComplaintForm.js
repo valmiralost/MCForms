@@ -14,6 +14,8 @@ function formStart(){
     });
     jQ("#mastercontrol\\.dataset\\.recordids\\.AdverseEvents\\.Name").change(function() {
         setAdverseEventDD();
+        displayOther('mastercontrol.dataset.recordids.AdverseEvents.Name','txtAdverseEventOther','lbAdverseEventOther');
+        displayOther('cmbAdverseEventSubCategory','txtAdverseEventSubCategoryOther','lblAdverseEventSubCategoryOther');
     });
     jQ('input[type=radio][name=rbCAPARequired]').click(function() {
         capaRequired();
@@ -33,7 +35,9 @@ function formStart(){
     jQ("#cmbClassification").change(function() {
         displayOther('cmbClassification','txtClassificationOther','lbClassificationOther');
     });    
-
+    jQ("#cmbAdverseEventSubCategory").change(function() {
+        displayOther('cmbAdverseEventSubCategory','txtAdverseEventSubCategoryOther','lblAdverseEventSubCategoryOther');
+    });
         jQ('input[type=radio][name=rbSeverityRisk]').click(function() {
             calcRisk('txtRiskScore','#rbSeverityRisk','#rbRecurrenceRisk','rbSeverityRisk');
         });
@@ -53,7 +57,6 @@ function formStart(){
     displayOther('cmbReceivedVia','txtReceivedViaOther','lbReceivedViaOther');
     displayOther('cmbCategory','txtCategoryOther','lbCategoryOther');
     displayOther('cmbAdverseEventSubCategory','txtAdverseEventSubCategoryOther','lblAdverseEventSubCategoryOther');
-
     displayOther('mastercontrol.dataset.recordids.AdverseEvents.Name','txtAdverseEventOther','lbAdverseEventOther');
     displayOther('cmbDefect','txtDefectOther','lblDefectOther');
     displayOther('cmbClassification','txtClassificationOther','lbClassificationOther');
@@ -148,7 +151,6 @@ function setAdverseEventDD(){
             jQ("#cmbAdverseEventSubCategory option").remove();
         }
     }
-    displayOther('cmbAdverseEventSubCategory','txtAdverseEventSubCategoryOther','lblAdverseEventSubCategoryOther');
 }
 
 /* Investigation Functionality */
