@@ -2,37 +2,35 @@
 function radioEnableDisableClass(enableClass,disableClass)
 {
 //    if (enableClass != false && sFormStatus=='editStep') {
-            if (enableClass != false ) {
+        if (enableClass != false ) {
         var enableArray = document.getElementsByClassName(enableClass);
         for(i = 0; i < enableArray.length; i++) {
-            var vid = jQ(enableArray[i]).attr("id");
-            if(vid.indexOf("_date")<0){
-                jQ(enableArray[i]).removeClass('readonlyNoDataEntry');
-                jQ(enableArray[i]).prop('readonly', false);
-                 if(jQ(enableArray[i]).is("select")) {
-                    jQ(enableArray[i]).removeAttr('disabled');
-                } else if (jQ(enableArray[i]).is(":radio")){
-                    jQ(enableArray[i]).attr("disabled",false);
-                }
+            jQ(enableArray[i]).prop('readonly', false);
+            jQ(enableArray[i]).removeClass('readonlyNoDataEntry');
+             if(jQ(enableArray[i]).is("select")) {
+                jQ(enableArray[i]).prop('disabled', false);
+            } else if (jQ(enableArray[i]).is(":radio")){
+                jQ(enableArray[i]).attr("disabled",false);
+
             }
+
         }
     }
  //   if (disableClass != false && sFormStatus=='editStep') {
             if (disableClass != false ) {
         var disableArray = document.getElementsByClassName(disableClass);
          for(i = 0; i < disableArray.length; i++) {
-            jQ(disableArray[i]).addClass('readonlyNoDataEntry');
-            jQ(disableArray[i]).prop('readonly', true);
-            jQ(disableArray[i]).val('');
+            jQ(disableArray[i]).val("");
+            jQ(disableArray[i]).prop('readonly', true);   
+            jQ(disableArray[i]).addClass('readonlyNoDataEntry');    
             if(jQ(disableArray[i]).is("select")) {
-                jQ(disableArray[i]).attr("disabled", "disabled");
+                jQ(disableArray[i]).prop('disabled', 'disabled');
             }else if (jQ(disableArray[i]).is(":radio")){
                 jQ(disableArray[i]).attr('checked',false);
                 jQ(disableArray[i]).attr("disabled",true);
             } 
             else  {
-            //   jQ(disableArray[i]).prop('readonly', true);
-            jQ(disableArray[i]).disabled = true;
+
             }
         }  
     }   

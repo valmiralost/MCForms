@@ -86,20 +86,20 @@ function calcRisk(riskFld,sevField,OccField,test) {
 /* displays related other field with other is selected from a dd */
 function displayOther(ddField,otherField,otherLabel){
     var dValue = document.getElementById(ddField);
-    if (dValue.selectedIndex != -1) {
+    if(dValue.options.length) {
         var ddValue = dValue.options[dValue.selectedIndex].value;
-    } else {
+} else {
         var ddValue = "";
-    }
+}
     var oField = document.getElementById(otherField);
     var oLabel = document.getElementById(otherLabel);
     if (ddValue == "Other"){
         jQ(oField).show(); 
         jQ(oLabel).show();         
     } else {
-            oField.value = "";
             jQ(oField).hide(); 
             jQ(oLabel).hide();
+            oField.value = '';
         }   
     } /* END  displays related other field with other is selected from a dd */
 

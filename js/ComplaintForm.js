@@ -2,7 +2,7 @@
 /* Global Vars */
     var stepId  =  document.getElementById("mastercontrol.route.stepid").value*1;
     var stepNumber =  document.getElementById("mastercontrol.route.stepnumber").value*1;
-    var sFormStatus= document.getElementById("mastercontrol.hidden.event").value;  /*viewOnly*/
+//    var sFormStatus= document.getElementById("mastercontrol.hidden.event").value;  /*viewOnly*/
 
 
 /* Hide fields on start and other functions  3-8*/
@@ -53,7 +53,8 @@ function formStart(){
     displayOther('cmbReceivedVia','txtReceivedViaOther','lbReceivedViaOther');
     displayOther('cmbCategory','txtCategoryOther','lbCategoryOther');
     displayOther('cmbAdverseEventSubCategory','txtAdverseEventSubCategoryOther','lblAdverseEventSubCategoryOther');
-    displayOther('mastercontrol\\.dataset\\.recordids\\.AdverseEvents\\.Name','txtAdverseEventOther','lbAdverseEventOther');
+
+    displayOther('mastercontrol.dataset.recordids.AdverseEvents.Name','txtAdverseEventOther','lbAdverseEventOther');
     displayOther('cmbDefect','txtDefectOther','lblDefectOther');
     displayOther('cmbClassification','txtClassificationOther','lbClassificationOther');
     calcRisk('txtRiskScore','#rbSeverityRisk','#rbRecurrenceRisk','rbSeverityRisk');
