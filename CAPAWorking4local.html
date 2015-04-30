@@ -66,7 +66,7 @@ ul.tabbernav li.tabberactive a {
 						<td width="5%">&nbsp;</td>
 						<td width="20%" class="TopLabel"><label for="mastercontrol.form.number">Form Number</label></td>
 						<td width="1%">&nbsp;</td>
-						<td width="20%" class="TopLabel"><label for="mastercontrol.route.stepduedate">Step Due Date</label></td>
+						<td width="20%" class="TopLabel"><label for="mastercontrol.route.stepname">Step Name</label></td>
 						<td width="5%">&nbsp;</td>
 					</tr><!-- header first row end -->
 					<tr><!-- header second row begin -->
@@ -76,7 +76,7 @@ ul.tabbernav li.tabberactive a {
 						</td>
 						<td>&nbsp;</td>
 						<td>
-							<input id="mastercontrol.route.stepduedate" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Step Due Date" title="" />
+							<input id="mastercontrol.route.stepname" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Step Name" title="" />
 						</td>
 						<td>&nbsp;</td>
 					</tr><!-- header second row end -->
@@ -130,6 +130,8 @@ ul.tabbernav li.tabberactive a {
 					</tr><!-- header eight row end -->
 					<div id="divHiddenTitle" class="hide"><!-- hidden title fields div begin -->
 						<input type="text" id="mastercontrol.form.title" alt="Task Title" />
+						 <input name="mastercontrol.form.creator" type="hidden" id="mastercontrol.form.creator" title="Creator Name">
+          				<input name="mastercontrol.form.creatorname" type="hidden" id="mastercontrol.form.creatorname" title="Creator ID">
 						<input name="mastercontrol.route.stepnumber" type="hidden" id="mastercontrol.route.stepnumber" title="Step Number" />
           				<input name="mastercontrol.route.stepid" type="hidden" id="mastercontrol.route.stepid" title="Step ID" />
 						<select id="mastercontrol.links.source" multiple=style="display:none" size="1" name="mastercontrol.links.source" title="Source Reference" >
