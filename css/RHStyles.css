@@ -18,6 +18,9 @@
 .readonlyNoDataEntry{
 	background-color: #EBEBE4;
 	}
+.print-hide {
+		display: none;
+	}
 @media print {
 
 	html, body { height: auto; }
