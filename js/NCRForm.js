@@ -268,7 +268,7 @@ function GetLaunchedFormNo(vform)
     if(vform == 1){
         var oListFormNos = document.getElementById("mastercontrol.links.Additional Action");
     } else if(vform == 2){
-        var oListFormNos = document.getElementById("mastercontrol.links.CAPANew");
+        var oListFormNos = document.getElementById("mastercontrol.links.CAPA");
     } else{
         alert("cannot locate form link");
         return "issue locating links select";
