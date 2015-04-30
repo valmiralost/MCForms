@@ -1,9 +1,11 @@
-<!-- Inside MC Links -->
+<!-- Inside MC Links  -->
 <link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/SPScreenInt.css' type='text/css'>
 <link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/RHStyles.css' type='text/css'>
 <link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/CAPAForm.css' type='text/css'>
-<!-- Outside links
+
+<!-- Outside links 
 <link rel="stylesheet" title="main" href="css/SPScreenExt.css" type="text/css">
+<link rel="stylesheet" title="main" href="css/RHStyles.css" type="text/css">
 <link rel="stylesheet" title="main" href="css/CAPAForm.css" type="text/css">
 -->
 
@@ -55,7 +57,7 @@ ul.tabbernav li.tabberactive a {
 				<table width="100%" border="0" cellspacing="0" cellpadding="0"><!-- header table begin -->
 					<tr><!-- processName row begin -->
 						<td width="5%">&nbsp;</td>
-						<td width="95%" colspan="4" class="ProcessName">CAPA Form</td>
+						<td width="95%" colspan="4" class="ProcessName">ReliantHeart - CAPA Form</td>
 					</tr>
 					<tr>
 						<td colspan="5">&nbsp;</td>
@@ -64,7 +66,7 @@ ul.tabbernav li.tabberactive a {
 						<td width="5%">&nbsp;</td>
 						<td width="20%" class="TopLabel"><label for="mastercontrol.form.number">Form Number</label></td>
 						<td width="1%">&nbsp;</td>
-						<td width="20%" class="TopLabel"><label for="mastercontrol.route.stepname">Current Step</label></td>
+						<td width="20%" class="TopLabel"><label for="mastercontrol.route.stepname">Step Name</label></td>
 						<td width="5%">&nbsp;</td>
 					</tr><!-- header first row end -->
 					<tr><!-- header second row begin -->
@@ -74,7 +76,7 @@ ul.tabbernav li.tabberactive a {
 						</td>
 						<td>&nbsp;</td>
 						<td>
-							<input id="mastercontrol.route.stepname" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Step Current" title="" />
+							<input id="mastercontrol.route.stepname" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Step Name" title="" />
 						</td>
 						<td>&nbsp;</td>
 					</tr><!-- header second row end -->
@@ -98,19 +100,43 @@ ul.tabbernav li.tabberactive a {
 					</tr><!-- header fourth row end -->
 					<tr><!-- header fifth row begin -->
 						<td>&nbsp;</td>
-						<td class="TopLabel" colspan="3"><label for="txtTitle">Title</label></td>
+						<td class="TopLabel"><label for="mastercontrol.template.number">Form Template Number </label></td>
+						<td>&nbsp;</td>
+						<td class="TopLabel"><label for="mastercontrol.template.revision">Form Template Revision</label></td>
 						<td>&nbsp;</td>
 					</tr><!-- header fifth row end -->
 					<tr><!-- header sixth row begin -->
+						<td>&nbsp;</td>
+						<td>
+							<input id="mastercontrol.template.number" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Form Template" title="" />
+						</td>
+						<td>&nbsp;</td>
+						<td>
+							<input id="mastercontrol.template.revision" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Template Revision" title="" />
+						</td>
+						<td>&nbsp;</td>
+					</tr><!-- header sixth row end -->
+					<tr><!-- header seventh row begin -->
+						<td>&nbsp;</td>
+						<td class="TopLabel" colspan="3"><label for="txtTitle"class="reqdLabel" >* Title</label></td>
+						<td>&nbsp;</td>
+					</tr><!-- header seventh row end -->
+					<tr><!-- header eigth row begin -->
 						<td>&nbsp;</td>
 						<td colspan="3">
 							<input id="txtTitle" type="text" class="headerTextfield" alt="H_Title" title="" />
 						</td>
 						<td>&nbsp;</td>
-					</tr><!-- header sixth row end -->
+					</tr><!-- header eight row end -->
 					<div id="divHiddenTitle" class="hide"><!-- hidden title fields div begin -->
 						<input type="text" id="mastercontrol.form.title" alt="Task Title" />
-						<select id="mastercontrol.links.source" multiple=style="display:none""" size="1" name="mastercontrol.links.source" title="Source Reference" >
+						 <input name="mastercontrol.form.creator" type="hidden" id="mastercontrol.form.creator" title="Creator Name">
+          				<input name="mastercontrol.form.creatorname" type="hidden" id="mastercontrol.form.creatorname" title="Creator ID">
+						<input name="mastercontrol.route.stepnumber" type="hidden" id="mastercontrol.route.stepnumber" title="Step Number" />
+          				<input name="mastercontrol.route.stepid" type="hidden" id="mastercontrol.route.stepid" title="Step ID" />
+						<select id="mastercontrol.links.source" multiple=style="display:none" size="1" name="mastercontrol.links.source" title="Source Reference" >
+						</select>
+						<select multiple id="mastercontrol.route.stepusers.step2" class="selectfield" title="Invest Step" style="display:none" >
 						</select>
 					</div><!-- hidden title fields div end -->
 				</table><!-- header table end -->
@@ -176,7 +202,7 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtCAPAObserved_date_date" type="text" class="readonly textfield textfield35 required" readonly="readonly" alt="Date Requested" title="Date Requested" />
-										<input id="btntxtCAPAObserved_dateCalendar" type="button" class="calendarImage" title="Date Requested" />
+										<input id="btnCAPAObserved_dateCalendar" type="button" class="calendarImage" title="Date Requested" />
 									</div>
 								</div>
 							</div>
@@ -237,7 +263,7 @@ ul.tabbernav li.tabberactive a {
 										<input id="rbSeverityRisk" name="rbSeverityRisk" type="radio" class="radiobuttonfield" alt="Severity" title="Severity" value="1" />1
 										<input id="rbSeverityRisk" name="rbSeverityRisk" type="radio" class="radiobuttonfield" alt="Severity" title="Severity" value="2" />2
 										<input id="rbSeverityRisk" name="rbSeverityRisk" type="radio" class="radiobuttonfield" alt="Severity" title="Severity" value="3" />3
-										<input id="rbSeverityRisk" name="rbSeverityRisk" type="radio" class="radiobuttonfield" alt="Severity" title="Severity" value="4" />4
+										<input id="rbSeverityRisk" name="rbSeverityRisk" type="radio" class="radiobuttonfield" alt="Severity" title="Severity" value="4" checked="checked" />4
 									</div>
 								</div>
 							</div>
@@ -255,7 +281,7 @@ ul.tabbernav li.tabberactive a {
 										<input id="rbRecurrenceRisk" name="rbRecurrenceRisk" type="radio" class="radiobuttonfield" alt="Occurrence" title="Occurrence" value="3" />3
 										<input id="rbRecurrenceRisk" name="rbRecurrenceRisk" type="radio" class="radiobuttonfield" alt="Occurrence" title="Occurrence" value="4" />4
 										<input id="rbRecurrenceRisk" name="rbRecurrenceRisk" type="radio" class="radiobuttonfield" alt="Occurrence" title="Occurrence" value="5" />5
-										<input id="rbRecurrenceRisk" name="rbRecurrenceRisk" type="radio" class="radiobuttonfield" alt="Occurrence" title="Occurrence" value="6" />6
+										<input id="rbRecurrenceRisk" name="rbRecurrenceRisk" type="radio" class="radiobuttonfield" alt="Occurrence" title="Occurrence" value="6"checked="checked" />6
 									</div>
 								</div>
 							</div>
@@ -267,7 +293,7 @@ ul.tabbernav li.tabberactive a {
 								</div>
 								<div class="leftField">
 									<div class="formField34">
-										<input id="txtRiskScore" type="text" class="textfield readonly" alt="Risk Score" title="Risk Score" readonly="readonly"/>
+										<input id="txtRiskScore" type="text" class="textfield readonly" alt="Risk Score" title="Risk Score" readonly="readonly" value ="10"/>
 									</div>
 
 									<div class="subLabel">
@@ -362,7 +388,39 @@ ul.tabbernav li.tabberactive a {
 								</div>
 								<div class="clearBoth"></div>
 							</div>
-
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Initiate & Assessment Signature</div>
+							<div class="signatureData">
+								<table class="signatureTable" cellpadding="0" cellspacing="0">
+									<thead>
+										<tr>
+											<th scope="col" class="signatureName">
+												<label for="mastercontrol.route.esig.users.step1">Name</label>
+											</th>
+											<th scope="col" class="signatureDate">
+												<label for="mastercontrol.route.esig.timestamps.step1">Date</label>
+											</th>
+											<th scope="col" class="signatureStatus">
+												<label for="mastercontrol.route.esig.sigstatus.step1">Signoff Status</label>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<textarea id="mastercontrol.route.esig.users.step1" rows="3" readonly="readonly" class="signaturefields" title="Step1 Name"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.timestamps.step1" rows="3" readonly="readonly" class="signaturefields" title="Step1 Date"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.sigstatus.step1" rows="3" readonly="readonly" class="signaturefields" title="Step1 Signoff Status"></textarea>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 						</div><!-- previous section end -->
 					</div><!-- previouse page end -->
 				</div><!-- previous tabber end -->
@@ -372,12 +430,24 @@ ul.tabbernav li.tabberactive a {
 						<div class="sectionData">
 						<div class="sectionHeading">Investigation</div>
 
-							<div id="divtxtCAPARootCause" class="fieldRow">
+							<div id="divInvestigationResults" class="fieldRow">
 								<div class="leftLabel labelWidth20">
-									<label for="txtCAPARootCause">Root Cause:</label>
+									<label for="txtInvestigationResults">Investigation Results:</label>
 								</div>
 								<div class="leftField">
-									<textarea id="txtCAPARootCause" class="textarea" rows="5" cols="20" title="Root Cause" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
+									<textarea id="txtInvestigationResults" class="textarea yesInvestigation" rows="5" cols="20" title="Investigation Results" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divtxtCAPARootCause" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="mastercontrol.dataset.recordids.CAPARootCause.Name">Root Cause:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<select id="mastercontrol.dataset.recordids.CAPARootCause.Name" class="selectfield" title="Root Cause"></select>
+									</div>
 								</div>
 							</div>
 							<div class="clearBoth"></div>
@@ -410,6 +480,39 @@ ul.tabbernav li.tabberactive a {
 							</div>
 
 						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Investigation Signature</div>
+							<div class="signatureData">
+								<table class="signatureTable" cellpadding="0" cellspacing="0">
+									<thead>
+										<tr>
+											<th scope="col" class="signatureName">
+												<label for="mastercontrol.route.esig.users.step2">Name</label>
+											</th>
+											<th scope="col" class="signatureDate">
+												<label for="mastercontrol.route.esig.timestamps.step2">Date</label>
+											</th>
+											<th scope="col" class="signatureStatus">
+												<label for="mastercontrol.route.esig.sigstatus.step2">Signoff Status</label>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<textarea id="mastercontrol.route.esig.users.step2" rows="3" readonly="readonly" class="signaturefields" title="Step2 Name"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.timestamps.step2" rows="3" readonly="readonly" class="signaturefields" title="Step2 Date"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.sigstatus.step2" rows="3" readonly="readonly" class="signaturefields" title="Step2 Signoff Status"></textarea>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div><!-- previous section end -->
 					</div><!-- previouse page end -->
 				</div><!-- previous tabber end -->
 				<div id="divActionPlanTab" class="tabbertab" title="Action Plan"><!-- Action Plan tabbertab begin -->
@@ -436,7 +539,8 @@ ul.tabbernav li.tabberactive a {
 								</div>
 								<div class="leftField">
 									<div class="formField34">
-										<select id="mastercontrol.role.CAPAActionTaskOwner.CAPAActionTask1Owner" class="selectfield" alt="Action Task 1 Owner" title="Action Task 1 Owner"></select>
+										<select id="mastercontrol.role.CAPAActionTaskOwner.CAPAActionTask1Owner" class="selectfield actionDiv" alt="Action Task 1 Owner" title="Action Task 1 Owner">
+										</select>
 
 									</div>
 								</div>
@@ -450,7 +554,7 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtCAPATaskDue_date1_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 1 Target Date" title="Task 1 Target Date" />
-										<input id="btntxtCAPATaskDue_date1Calendar" type="button" class="calendarImage" title="Task 1 Target Date" />
+										<input id="btnCAPATaskDue_date1Calendar" type="button" class="calendarImage" title="Task 1 Target Date" />
 									</div>
 
 									<div class="subLabel">
@@ -458,7 +562,7 @@ ul.tabbernav li.tabberactive a {
 									</div>
 									<div class="formField34">
 										<input id="txtCAPATaskComplete_date1_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 1 Completion Date" title="Task 1 Completion Date" />
-										<input id="btntxtCAPATaskComplete_date1Calendar" type="button" class="calendarImage" title="Task 1 Completion Date" />
+										<input id="btnCAPATaskComplete_date1Calendar" type="button" class="calendarImage" title="Task 1 Completion Date" />
 									</div>
 								</div>
 							</div>
@@ -498,7 +602,7 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtCAPATaskDue_date2_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 2 Target Date" title="Task 2 Target Date" />
-										<input id="btntxtCAPATaskDue_date2Calendar" type="button" class="calendarImage" title="Task 2 Target Date" />
+										<input id="btnCAPATaskDue_date2Calendar" type="button" class="calendarImage" title="Task 2 Target Date" />
 									</div>
 
 									<div class="subLabel">
@@ -506,7 +610,7 @@ ul.tabbernav li.tabberactive a {
 									</div>
 									<div class="formField34">
 										<input id="txtCAPATaskComplete_date2_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 2 Completion Date" title="Task 2 Completion Date" />
-										<input id="btntxtCAPATaskComplete_date2Calendar" type="button" class="calendarImage" title="Task 2 Completion Date" />
+										<input id="btnCAPATaskComplete_date2Calendar" type="button" class="calendarImage" title="Task 2 Completion Date" />
 									</div>
 								</div>
 							</div>
@@ -546,7 +650,7 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtCAPATaskDue_date3_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 3 Target Date" title="Task 3 Target Date" />
-										<input id="btntxtCAPATaskDue_date3Calendar" type="button" class="calendarImage" title="Task 3 Target Date" />
+										<input id="btnCAPATaskDue_date3Calendar" type="button" class="calendarImage" title="Task 3 Target Date" />
 									</div>
 
 									<div class="subLabel">
@@ -554,7 +658,7 @@ ul.tabbernav li.tabberactive a {
 									</div>
 									<div class="formField34">
 										<input id="txtCAPATaskComplete_date3_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 3 Completion Date" title="Task 3 Completion Date" />
-										<input id="btntxtCAPATaskComplete_date3Calendar" type="button" class="calendarImage" title="Task 3 Completion Date" />
+										<input id="btnCAPATaskComplete_date3Calendar" type="button" class="calendarImage" title="Task 3 Completion Date" />
 									</div>
 								</div>
 							</div>
@@ -594,7 +698,7 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtCAPATaskDue_date4_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 4 Target Date" title="Task 4 Target Date" />
-										<input id="btntxtCAPATaskDue_date4Calendar" type="button" class="calendarImage" title="Task 4 Target Date" />
+										<input id="btnCAPATaskDue_date4Calendar" type="button" class="calendarImage" title="Task 4 Target Date" />
 									</div>
 
 									<div class="subLabel">
@@ -602,7 +706,7 @@ ul.tabbernav li.tabberactive a {
 									</div>
 									<div class="formField34">
 										<input id="txtCAPATaskComplete_date4_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 4 Completion Date" title="Task 4 Completion Date" />
-										<input id="btntxtCAPATaskComplete_date4Calendar" type="button" class="calendarImage" title="Task 4 Completion Date" />
+										<input id="btnCAPATaskComplete_date4Calendar" type="button" class="calendarImage" title="Task 4 Completion Date" />
 									</div>
 								</div>
 							</div>
@@ -642,7 +746,7 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtCAPATaskDue_date5_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 5 Target Date" title="Task 5 Target Date" />
-										<input id="btntxtCAPATaskDue_date5Calendar" type="button" class="calendarImage" title="Task 5 Target Date" />
+										<input id="btnCAPATaskDue_date5Calendar" type="button" class="calendarImage" title="Task 5 Target Date" />
 									</div>
 
 									<div class="subLabel">
@@ -650,7 +754,7 @@ ul.tabbernav li.tabberactive a {
 									</div>
 									<div class="formField34">
 										<input id="txtCAPATaskComplete_date5_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 5 Completion Date" title="Task 5 Completion Date" />
-										<input id="btntxtCAPATaskComplete_date5Calendar" type="button" class="calendarImage" title="Task 5 Completion Date" />
+										<input id="btnCAPATaskComplete_date5Calendar" type="button" class="calendarImage" title="Task 5 Completion Date" />
 									</div>
 								</div>
 							</div>
@@ -690,7 +794,7 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtCAPATaskDue_date6_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 6 Target Date" title="Task 6 Target Date" />
-										<input id="btntxtCAPATaskDue_date6Calendar" type="button" class="calendarImage" title="Task 6 Target Date" />
+										<input id="btnCAPATaskDue_date6Calendar" type="button" class="calendarImage" title="Task 6 Target Date" />
 									</div>
 
 									<div class="subLabel">
@@ -698,7 +802,7 @@ ul.tabbernav li.tabberactive a {
 									</div>
 									<div class="formField34">
 										<input id="txtCAPATaskComplete_date6_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 6 Completion Date" title="Task 6 Completion Date" />
-										<input id="btntxtCAPATaskComplete_date6Calendar" type="button" class="calendarImage" title="Task 6 Completion Date" />
+										<input id="btnCAPATaskComplete_date6Calendar" type="button" class="calendarImage" title="Task 6 Completion Date" />
 									</div>
 								</div>
 							</div>
@@ -738,7 +842,7 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtCAPATaskDue_date7_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 7 Target Date" title="Task 7 Target Date" />
-										<input id="btntxtCAPATaskDue_date7Calendar" type="button" class="calendarImage" title="Task 7 Target Date" />
+										<input id="btnCAPATaskDue_date7Calendar" type="button" class="calendarImage" title="Task 7 Target Date" />
 									</div>
 
 									<div class="subLabel">
@@ -746,7 +850,7 @@ ul.tabbernav li.tabberactive a {
 									</div>
 									<div class="formField34">
 										<input id="txtCAPATaskComplete_date7_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 7 Completion Date" title="Task 7 Completion Date" />
-										<input id="btntxtCAPATaskComplete_date7Calendar" type="button" class="calendarImage" title="Task 7 Completion Date" />
+										<input id="btnCAPATaskComplete_date7Calendar" type="button" class="calendarImage" title="Task 7 Completion Date" />
 									</div>
 								</div>
 							</div>
@@ -786,7 +890,7 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtCAPATaskDue_date8_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 8 Target Date" title="Task 8 Target Date" />
-										<input id="btntxtCAPATaskDue_date8Calendar" type="button" class="calendarImage" title="Task 8 Target Date" />
+										<input id="btnCAPATaskDue_date8Calendar" type="button" class="calendarImage" title="Task 8 Target Date" />
 									</div>
 
 									<div class="subLabel">
@@ -794,7 +898,7 @@ ul.tabbernav li.tabberactive a {
 									</div>
 									<div class="formField34">
 										<input id="txtCAPATaskComplete_date8_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 8 Completion Date" title="Task 8 Completion Date" />
-										<input id="btntxtCAPATaskComplete_date8Calendar" type="button" class="calendarImage" title="Task 8 Completion Date" />
+										<input id="btnCAPATaskComplete_date8Calendar" type="button" class="calendarImage" title="Task 8 Completion Date" />
 									</div>
 								</div>
 							</div>
@@ -834,7 +938,7 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtCAPATaskDue_date9_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 9 Target Date" title="Task 9 Target Date" />
-										<input id="btntxtCAPATaskDue_date9Calendar" type="button" class="calendarImage" title="Task 9 Target Date" />
+										<input id="btnCAPATaskDue_date9Calendar" type="button" class="calendarImage" title="Task 9 Target Date" />
 									</div>
 
 									<div class="subLabel">
@@ -842,7 +946,7 @@ ul.tabbernav li.tabberactive a {
 									</div>
 									<div class="formField34">
 										<input id="txtCAPATaskComplete_date9_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 9 Completion Date" title="Task 9 Completion Date" />
-										<input id="btntxtCAPATaskComplete_date9Calendar" type="button" class="calendarImage" title="Task 9 Completion Date" />
+										<input id="btnCAPATaskComplete_date9Calendar" type="button" class="calendarImage" title="Task 9 Completion Date" />
 									</div>
 								</div>
 							</div>
@@ -882,7 +986,7 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtCAPATaskDue_date10_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 10 Target Date" title="Task 10 Target Date" />
-										<input id="btntxtCAPATaskDue_date10Calendar" type="button" class="calendarImage" title="Task 10 Target Date" />
+										<input id="btnCAPATaskDue_date10Calendar" type="button" class="calendarImage" title="Task 10 Target Date" />
 									</div>
 
 									<div class="subLabel">
@@ -890,7 +994,7 @@ ul.tabbernav li.tabberactive a {
 									</div>
 									<div class="formField34">
 										<input id="txtCAPATaskComplete_date10_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 10 Completion Date" title="Task 10 Completion Date" />
-										<input id="btntxtCAPATaskComplete_date10Calendar" type="button" class="calendarImage" title="Task 10 Completion Date" />
+										<input id="btnCAPATaskComplete_date10Calendar" type="button" class="calendarImage" title="Task 10 Completion Date" />
 									</div>
 								</div>
 							</div>
@@ -924,13 +1028,46 @@ ul.tabbernav li.tabberactive a {
 							</div>
 
 						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Action Plan Signature</div>
+							<div class="signatureData">
+								<table class="signatureTable" cellpadding="0" cellspacing="0">
+									<thead>
+										<tr>
+											<th scope="col" class="signatureName">
+												<label for="mastercontrol.route.esig.users.step3">Name</label>
+											</th>
+											<th scope="col" class="signatureDate">
+												<label for="mastercontrol.route.esig.timestamps.step3">Date</label>
+											</th>
+											<th scope="col" class="signatureStatus">
+												<label for="mastercontrol.route.esig.sigstatus.step3">Signoff Status</label>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<textarea id="mastercontrol.route.esig.users.step3" rows="3" readonly="readonly" class="signaturefields" title="Step3 Name"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.timestamps.step3" rows="3" readonly="readonly" class="signaturefields" title="Step3 Date"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.sigstatus.step3" rows="3" readonly="readonly" class="signaturefields" title="Step3 Signoff Status"></textarea>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div><!-- previous section end -->
 					</div><!-- previouse page end -->
 				</div><!-- previous tabber end -->
 				<div id="divImplementationTab" class="tabbertab" title="Implementation"><!-- Implementation tabbertab begin -->
 					<div id="mcPage_006" class="mcPage"><!-- page 6 begin -->
 					<span class="tabHeading">Implementation</span>
 						<div class="sectionData">
-						<div class="sectionHeading">Verification Task 1</div>
+						<div class="sectionHeading">Implementation Verification Task 1</div>
 
 							<div id="divtxtVerificationTaskDescription1" class="fieldRow">
 								<div class="leftLabel labelWidth20">
@@ -963,7 +1100,7 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtVerificationTaskDue_date1_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 1 Target Date" title="Task 1 Target Date" />
-										<input id="btntxtVerificationTaskDue_date1Calendar" type="button" class="calendarImage" title="Task 1 Target Date" />
+										<input id="btnVerificationTaskDue_date1Calendar" type="button" class="calendarImage" title="Task 1 Target Date" />
 									</div>
 
 									<div class="subLabel">
@@ -971,14 +1108,14 @@ ul.tabbernav li.tabberactive a {
 									</div>
 									<div class="formField34">
 										<input id="txtVerificationTaskComplete_date1_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 1 Completion Date" title="Task 1 Completion Date" />
-										<input id="btntxtVerificationTaskComplete_date1Calendar" type="button" class="calendarImage" title="Task 1 Completion Date" />
+										<input id="btnVerificationTaskComplete_date1Calendar" type="button" class="calendarImage" title="Task 1 Completion Date" />
 									</div>
 								</div>
 							</div>
 							<div class="clearBoth"></div>
 						</div><!-- previous section end -->
 						<div class="sectionData">
-						<div class="sectionHeading">Verification Task 2</div>
+						<div class="sectionHeading">Implementation Verification Task 2</div>
 
 							<div id="divtxtVerificationTaskDescription2" class="fieldRow">
 								<div class="leftLabel labelWidth20">
@@ -1011,7 +1148,7 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtVerificationTaskDue_date2_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 2 Target Date" title="Task 2 Target Date" />
-										<input id="btntxtVerificationTaskDue_date2Calendar" type="button" class="calendarImage" title="Task 2 Target Date" />
+										<input id="btnVerificationTaskDue_date2Calendar" type="button" class="calendarImage" title="Task 2 Target Date" />
 									</div>
 
 									<div class="subLabel">
@@ -1019,14 +1156,14 @@ ul.tabbernav li.tabberactive a {
 									</div>
 									<div class="formField34">
 										<input id="txtVerificationTaskComplete_date2_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 2 Completion Date" title="Task 2 Completion Date" />
-										<input id="btntxtVerificationTaskComplete_date2Calendar" type="button" class="calendarImage" title="Task 2 Completion Date" />
+										<input id="btnVerificationTaskComplete_date2Calendar" type="button" class="calendarImage" title="Task 2 Completion Date" />
 									</div>
 								</div>
 							</div>
 							<div class="clearBoth"></div>
 						</div><!-- previous section end -->
 						<div class="sectionData">
-						<div class="sectionHeading">Verification Task 3</div>
+						<div class="sectionHeading">Implementation Verification Task 3</div>
 
 							<div id="divtxtVerificationTaskDescription3" class="fieldRow">
 								<div class="leftLabel labelWidth20">
@@ -1059,7 +1196,7 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtVerificationTaskDue_date3_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 3 Target Date" title="Task 3 Target Date" />
-										<input id="btntxtVerificationTaskDue_date3Calendar" type="button" class="calendarImage" title="Task 3 Target Date" />
+										<input id="btnVerificationTaskDue_date3Calendar" type="button" class="calendarImage" title="Task 3 Target Date" />
 									</div>
 
 									<div class="subLabel">
@@ -1067,14 +1204,14 @@ ul.tabbernav li.tabberactive a {
 									</div>
 									<div class="formField34">
 										<input id="txtVerificationTaskComplete_date3_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 3 Completion Date" title="Task 3 Completion Date" />
-										<input id="btntxtVerificationTaskComplete_date3Calendar" type="button" class="calendarImage" title="Task 3 Completion Date" />
+										<input id="btnVerificationTaskComplete_date3Calendar" type="button" class="calendarImage" title="Task 3 Completion Date" />
 									</div>
 								</div>
 							</div>
 							<div class="clearBoth"></div>
 						</div><!-- previous section end -->
 						<div class="sectionData">
-						<div class="sectionHeading">Verification Task 4</div>
+						<div class="sectionHeading">Implementation Verification Task 4</div>
 
 							<div id="divtxtVerificationTaskDescription4" class="fieldRow">
 								<div class="leftLabel labelWidth20">
@@ -1107,7 +1244,7 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtVerificationTaskDue_date4_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 4 Target Date" title="Task 4 Target Date" />
-										<input id="btntxtVerificationTaskDue_date4Calendar" type="button" class="calendarImage" title="Task 4 Target Date" />
+										<input id="btnVerificationTaskDue_date4Calendar" type="button" class="calendarImage" title="Task 4 Target Date" />
 									</div>
 
 									<div class="subLabel">
@@ -1115,14 +1252,14 @@ ul.tabbernav li.tabberactive a {
 									</div>
 									<div class="formField34">
 										<input id="txtVerificationTaskComplete_date4_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 4 Completion Date" title="Task 4 Completion Date" />
-										<input id="btntxtVerificationTaskComplete_date4Calendar" type="button" class="calendarImage" title="Task 4 Completion Date" />
+										<input id="btnVerificationTaskComplete_date4Calendar" type="button" class="calendarImage" title="Task 4 Completion Date" />
 									</div>
 								</div>
 							</div>
 							<div class="clearBoth"></div>
 						</div><!-- previous section end -->
 						<div class="sectionData">
-						<div class="sectionHeading">Verification Task 5</div>
+						<div class="sectionHeading">Implementation Verification Task 5</div>
 
 							<div id="divtxtVerificationTaskDescription5" class="fieldRow">
 								<div class="leftLabel labelWidth20">
@@ -1155,7 +1292,7 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtVerificationTaskDue_date5_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 5 Target Date" title="Task 5 Target Date" />
-										<input id="btntxtVerificationTaskDue_date5Calendar" type="button" class="calendarImage" title="Task 5 Target Date" />
+										<input id="btnVerificationTaskDue_date5Calendar" type="button" class="calendarImage" title="Task 5 Target Date" />
 									</div>
 
 									<div class="subLabel">
@@ -1163,14 +1300,14 @@ ul.tabbernav li.tabberactive a {
 									</div>
 									<div class="formField34">
 										<input id="txtVerificationTaskComplete_date5_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 5 Completion Date" title="Task 5 Completion Date" />
-										<input id="btntxtVerificationTaskComplete_date5Calendar" type="button" class="calendarImage" title="Task 5 Completion Date" />
+										<input id="btnVerificationTaskComplete_date5Calendar" type="button" class="calendarImage" title="Task 5 Completion Date" />
 									</div>
 								</div>
 							</div>
 							<div class="clearBoth"></div>
 						</div><!-- previous section end -->
 						<div class="sectionData">
-						<div class="sectionHeading">Verification Task 6</div>
+						<div class="sectionHeading">Implementation Verification Task 6</div>
 
 							<div id="divtxtVerificationTaskDescription6" class="fieldRow">
 								<div class="leftLabel labelWidth20">
@@ -1203,7 +1340,7 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtVerificationTaskDue_date6_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 6 Target Date" title="Task 6 Target Date" />
-										<input id="btntxtVerificationTaskDue_date6Calendar" type="button" class="calendarImage" title="Task 6 Target Date" />
+										<input id="btnVerificationTaskDue_date6Calendar" type="button" class="calendarImage" title="Task 6 Target Date" />
 									</div>
 
 									<div class="subLabel">
@@ -1211,14 +1348,14 @@ ul.tabbernav li.tabberactive a {
 									</div>
 									<div class="formField34">
 										<input id="txtVerificationTaskComplete_date6_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 6 Completion Date" title="Task 6 Completion Date" />
-										<input id="btntxtVerificationTaskComplete_date6Calendar" type="button" class="calendarImage" title="Task 6 Completion Date" />
+										<input id="btnVerificationTaskComplete_date6Calendar" type="button" class="calendarImage" title="Task 6 Completion Date" />
 									</div>
 								</div>
 							</div>
 							<div class="clearBoth"></div>
 						</div><!-- previous section end -->
 						<div class="sectionData">
-						<div class="sectionHeading">Verification Task 7</div>
+						<div class="sectionHeading">Implementation Verification Task 7</div>
 
 							<div id="divtxtVerificationTaskDescription" class="fieldRow">
 								<div class="leftLabel labelWidth20">
@@ -1251,7 +1388,7 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtVerificationTaskDue_date7_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 7 Target Date" title="Task 7 Target Date" />
-										<input id="btntxtVerificationTaskDue_date7Calendar" type="button" class="calendarImage" title="Task 7 Target Date" />
+										<input id="btnVerificationTaskDue_date7Calendar" type="button" class="calendarImage" title="Task 7 Target Date" />
 									</div>
 
 									<div class="subLabel">
@@ -1259,14 +1396,14 @@ ul.tabbernav li.tabberactive a {
 									</div>
 									<div class="formField34">
 										<input id="txtVerificationTaskComplete_date7_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 7 Completion Date" title="Task 7 Completion Date" />
-										<input id="btntxtVerificationTaskComplete_date7Calendar" type="button" class="calendarImage" title="Task 7 Completion Date" />
+										<input id="btnVerificationTaskComplete_date7Calendar" type="button" class="calendarImage" title="Task 7 Completion Date" />
 									</div>
 								</div>
 							</div>
 							<div class="clearBoth"></div>
 						</div><!-- previous section end -->
 						<div class="sectionData">
-						<div class="sectionHeading">Verification Task 8</div>
+						<div class="sectionHeading">Implementation Verification Task 8</div>
 
 							<div id="divtxtVerificationTaskDescription8" class="fieldRow">
 								<div class="leftLabel labelWidth20">
@@ -1299,7 +1436,7 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtVerificationTaskDue_date8_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 8 Target Date" title="Task 8 Target Date" />
-										<input id="btntxtVerificationTaskDue_date8Calendar" type="button" class="calendarImage" title="Task 8 Target Date" />
+										<input id="btnVerificationTaskDue_date8Calendar" type="button" class="calendarImage" title="Task 8 Target Date" />
 									</div>
 
 									<div class="subLabel">
@@ -1307,14 +1444,14 @@ ul.tabbernav li.tabberactive a {
 									</div>
 									<div class="formField34">
 										<input id="txtVerificationTaskComplete_date8_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 8 Completion Date" title="Task 8 Completion Date" />
-										<input id="btntxtVerificationTaskComplete_date8Calendar" type="button" class="calendarImage" title="Task 8 Completion Date" />
+										<input id="btnVerificationTaskComplete_date8Calendar" type="button" class="calendarImage" title="Task 8 Completion Date" />
 									</div>
 								</div>
 							</div>
 							<div class="clearBoth"></div>
 						</div><!-- previous section end -->
 						<div class="sectionData">
-						<div class="sectionHeading">Verification Task 9</div>
+						<div class="sectionHeading">Implementation Verification Task 9</div>
 
 							<div id="divtxtVerificationTaskDescription9" class="fieldRow">
 								<div class="leftLabel labelWidth20">
@@ -1347,7 +1484,7 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtVerificationTaskDue_date9_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 9 Target Date" title="Task 9 Target Date" />
-										<input id="btntxtVerificationTaskDue_date9Calendar" type="button" class="calendarImage" title="Task 9 Target Date" />
+										<input id="btnVerificationTaskDue_date9Calendar" type="button" class="calendarImage" title="Task 9 Target Date" />
 									</div>
 
 									<div class="subLabel">
@@ -1355,14 +1492,14 @@ ul.tabbernav li.tabberactive a {
 									</div>
 									<div class="formField34">
 										<input id="txtVerificationTaskComplete_date9_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 9 Completion Date" title="Task 9 Completion Date" />
-										<input id="btntxtVerificationTaskComplete_date9Calendar" type="button" class="calendarImage" title="Task 9 Completion Date" />
+										<input id="btnVerificationTaskComplete_date9Calendar" type="button" class="calendarImage" title="Task 9 Completion Date" />
 									</div>
 								</div>
 							</div>
 							<div class="clearBoth"></div>
 						</div><!-- previous section end -->
 						<div class="sectionData">
-						<div class="sectionHeading">Verification Task 10</div>
+						<div class="sectionHeading">Implementation Verification Task 10</div>
 
 							<div id="divtxtVerificationTaskDescription10" class="fieldRow">
 								<div class="leftLabel labelWidth20">
@@ -1395,15 +1532,15 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtVerificationTaskDue_date10_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 10 Target Date" title="Task 10 Target Date" />
-										<input id="btntxtVerificationTaskDue_date10Calendar" type="button" class="calendarImage" title="Task 10 Target Date" />
+										<input id="btnVerificationTaskDue_date10Calendar" type="button" class="calendarImage" title="Task 10 Target Date" />
 									</div>
 
 									<div class="subLabel">
 										<label for="txtVerificationTaskComplete_date10_date">Task 10 Completion Date:</label>
 									</div>
-									<div class="formField68">
+									<div class="formField34">
 										<input id="txtVerificationTaskComplete_date10_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 10 Completion Date" title="Task 10 Completion Date" />
-										<input id="btntxtVerificationTaskComplete_date10Calendar" type="button" class="calendarImage" title="Task 10 Completion Date" />
+										<input id="btnVerificationTaskComplete_date10Calendar" type="button" class="calendarImage" title="Task 10 Completion Date" />
 									</div>
 								</div>
 							</div>
@@ -1436,6 +1573,72 @@ ul.tabbernav li.tabberactive a {
 								<div class="clearBoth"></div>
 							</div>
 
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Implementation Plan Signature</div>
+							<div class="signatureData">
+								<table class="signatureTable" cellpadding="0" cellspacing="0">
+									<thead>
+										<tr>
+											<th scope="col" class="signatureName">
+												<label for="mastercontrol.route.esig.users.step4">Name</label>
+											</th>
+											<th scope="col" class="signatureDate">
+												<label for="mastercontrol.route.esig.timestamps.step4">Date</label>
+											</th>
+											<th scope="col" class="signatureStatus">
+												<label for="mastercontrol.route.esig.sigstatus.step4">Signoff Status</label>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<textarea id="mastercontrol.route.esig.users.step4" rows="3" readonly="readonly" class="signaturefields" title="Step4 Name"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.timestamps.step4" rows="3" readonly="readonly" class="signaturefields" title="Step4 Date"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.sigstatus.step4" rows="3" readonly="readonly" class="signaturefields" title="Step4 Signoff Status"></textarea>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Implementation Plan Approval Signature</div>
+							<div class="signatureData">
+								<table class="signatureTable" cellpadding="0" cellspacing="0">
+									<thead>
+										<tr>
+											<th scope="col" class="signatureName">
+												<label for="mastercontrol.route.esig.users.step5">Name</label>
+											</th>
+											<th scope="col" class="signatureDate">
+												<label for="mastercontrol.route.esig.timestamps.step5">Date</label>
+											</th>
+											<th scope="col" class="signatureStatus">
+												<label for="mastercontrol.route.esig.sigstatus.step5">Signoff Status</label>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<textarea id="mastercontrol.route.esig.users.step5" rows="3" readonly="readonly" class="signaturefields" title="Step5 Name"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.timestamps.step5" rows="3" readonly="readonly" class="signaturefields" title="Step5 Date"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.sigstatus.step5" rows="3" readonly="readonly" class="signaturefields" title="Step5 Signoff Status"></textarea>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 						</div><!-- previous section end -->
 					</div><!-- previouse page end -->
 				</div><!-- previous tabber end -->
@@ -1476,7 +1679,7 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtEVPTaskDue_date1_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 1 Target Date" title="Task 1 Target Date" />
-										<input id="btntxtEVPTaskDue_date1Calendar" type="button" class="calendarImage" title="Task 1 Target Date" />
+										<input id="btnEVPTaskDue_date1Calendar" type="button" class="calendarImage" title="Task 1 Target Date" />
 									</div>
 
 									<div class="subLabel">
@@ -1484,7 +1687,7 @@ ul.tabbernav li.tabberactive a {
 									</div>
 									<div class="formField34">
 										<input id="txtEVPTaskComplete_date1_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 1 Completion Date" title="Task 1 Completion Date" />
-										<input id="btntxtEVPTaskComplete_date1Calendar" type="button" class="calendarImage" title="Task 1 Completion Date" />
+										<input id="btnEVPTaskComplete_date1Calendar" type="button" class="calendarImage" title="Task 1 Completion Date" />
 									</div>
 								</div>
 							</div>
@@ -1524,7 +1727,7 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtEVPTaskDue_date2_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 2 Target Date" title="Task 2 Target Date" />
-										<input id="btntxtEVPTaskDue_date2Calendar" type="button" class="calendarImage" title="Task 2 Target Date" />
+										<input id="btnEVPTaskDue_date2Calendar" type="button" class="calendarImage" title="Task 2 Target Date" />
 									</div>
 
 									<div class="subLabel">
@@ -1532,7 +1735,7 @@ ul.tabbernav li.tabberactive a {
 									</div>
 									<div class="formField34">
 										<input id="txtEVPTaskComplete_date2_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 2 Completion Date" title="Task 2 Completion Date" />
-										<input id="btntxtEVPTaskComplete_date2Calendar" type="button" class="calendarImage" title="Task 2 Completion Date" />
+										<input id="btnEVPTaskComplete_date2Calendar" type="button" class="calendarImage" title="Task 2 Completion Date" />
 									</div>
 								</div>
 							</div>
@@ -1572,7 +1775,7 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtEVPTaskDue_date3_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 3 Target Date" title="Task 3 Target Date" />
-										<input id="btntxtEVPTaskDue_date3Calendar" type="button" class="calendarImage" title="Task 3 Target Date" />
+										<input id="btnEVPTaskDue_date3Calendar" type="button" class="calendarImage" title="Task 3 Target Date" />
 									</div>
 
 									<div class="subLabel">
@@ -1580,7 +1783,7 @@ ul.tabbernav li.tabberactive a {
 									</div>
 									<div class="formField34">
 										<input id="txtEVPTaskComplete_date3_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 3 Completion Date" title="Task 3 Completion Date" />
-										<input id="btntxtEVPTaskComplete_date3Calendar" type="button" class="calendarImage" title="Task 3 Completion Date" />
+										<input id="btnEVPTaskComplete_date3Calendar" type="button" class="calendarImage" title="Task 3 Completion Date" />
 									</div>
 								</div>
 							</div>
@@ -1620,7 +1823,7 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtEVPTaskDue_date4_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 4 Target Date" title="Task 4 Target Date" />
-										<input id="btntxtEVPTaskDue_date4Calendar" type="button" class="calendarImage" title="Task 4 Target Date" />
+										<input id="btnEVPTaskDue_date4Calendar" type="button" class="calendarImage" title="Task 4 Target Date" />
 									</div>
 
 									<div class="subLabel">
@@ -1628,7 +1831,7 @@ ul.tabbernav li.tabberactive a {
 									</div>
 									<div class="formField34">
 										<input id="txtEVPTaskComplete_date4_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 4 Completion Date" title="Task 4 Completion Date" />
-										<input id="btntxtEVPTaskComplete_date4Calendar" type="button" class="calendarImage" title="Task 4 Completion Date" />
+										<input id="btnEVPTaskComplete_date4Calendar" type="button" class="calendarImage" title="Task 4 Completion Date" />
 									</div>
 								</div>
 							</div>
@@ -1668,7 +1871,7 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtEVPTaskDue_date5_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 5 Target Date" title="Task 5 Target Date" />
-										<input id="btntxtEVPTaskDue_date5Calendar" type="button" class="calendarImage" title="Task 5 Target Date" />
+										<input id="btnEVPTaskDue_date5Calendar" type="button" class="calendarImage" title="Task 5 Target Date" />
 									</div>
 
 									<div class="subLabel">
@@ -1676,7 +1879,7 @@ ul.tabbernav li.tabberactive a {
 									</div>
 									<div class="formField34">
 										<input id="txtEVPTaskComplete_date5_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 5 Completion Date" title="Task 5 Completion Date" />
-										<input id="btntxtEVPTaskComplete_date5Calendar" type="button" class="calendarImage" title="Task 5 Completion Date" />
+										<input id="btnEVPTaskComplete_date5Calendar" type="button" class="calendarImage" title="Task 5 Completion Date" />
 									</div>
 								</div>
 							</div>
@@ -1716,7 +1919,7 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtEVPTaskDue_date6_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 6 Target Date" title="Task 6 Target Date" />
-										<input id="btntxtEVPTaskDue_date6Calendar" type="button" class="calendarImage" title="Task 6 Target Date" />
+										<input id="btnEVPTaskDue_date6Calendar" type="button" class="calendarImage" title="Task 6 Target Date" />
 									</div>
 
 									<div class="subLabel">
@@ -1724,7 +1927,7 @@ ul.tabbernav li.tabberactive a {
 									</div>
 									<div class="formField34">
 										<input id="txtEVPTaskComplete_date6_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 6 Completion Date" title="Task 6 Completion Date" />
-										<input id="btntxtEVPTaskComplete_date6Calendar" type="button" class="calendarImage" title="Task 6 Completion Date" />
+										<input id="btnEVPTaskComplete_date6Calendar" type="button" class="calendarImage" title="Task 6 Completion Date" />
 									</div>
 								</div>
 							</div>
@@ -1764,7 +1967,7 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtEVPTaskDue_date7_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 7 Target Date" title="Task 7 Target Date" />
-										<input id="btntxtEVPTaskDue_date7Calendar" type="button" class="calendarImage" title="Task 7 Target Date" />
+										<input id="btnEVPTaskDue_date7Calendar" type="button" class="calendarImage" title="Task 7 Target Date" />
 									</div>
 
 									<div class="subLabel">
@@ -1772,7 +1975,7 @@ ul.tabbernav li.tabberactive a {
 									</div>
 									<div class="formField34">
 										<input id="txtEVPTaskComplete_date7_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 7 Completion Date" title="Task 7 Completion Date" />
-										<input id="btntxtEVPTaskComplete_date7Calendar" type="button" class="calendarImage" title="Task 7 Completion Date" />
+										<input id="btnEVPTaskComplete_date7Calendar" type="button" class="calendarImage" title="Task 7 Completion Date" />
 									</div>
 								</div>
 							</div>
@@ -1812,7 +2015,7 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtEVPTaskDue_date8_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 8 Target Date" title="Task 8 Target Date" />
-										<input id="btntxtEVPTaskDue_date8Calendar" type="button" class="calendarImage" title="Task 8 Target Date" />
+										<input id="btnEVPTaskDue_date8Calendar" type="button" class="calendarImage" title="Task 8 Target Date" />
 									</div>
 
 									<div class="subLabel">
@@ -1820,7 +2023,7 @@ ul.tabbernav li.tabberactive a {
 									</div>
 									<div class="formField34">
 										<input id="txtEVPTaskComplete_date8_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 8 Completion Date" title="Task 8 Completion Date" />
-										<input id="btntxtEVPTaskComplete_date8Calendar" type="button" class="calendarImage" title="Task 8 Completion Date" />
+										<input id="btnEVPTaskComplete_date8Calendar" type="button" class="calendarImage" title="Task 8 Completion Date" />
 									</div>
 								</div>
 							</div>
@@ -1860,7 +2063,7 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtEVPTaskDue_date9_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 9 Target Date" title="Task 9 Target Date" />
-										<input id="btntxtEVPTaskDue_date9Calendar" type="button" class="calendarImage" title="Task 9 Target Date" />
+										<input id="btnEVPTaskDue_date9Calendar" type="button" class="calendarImage" title="Task 9 Target Date" />
 									</div>
 
 									<div class="subLabel">
@@ -1868,7 +2071,7 @@ ul.tabbernav li.tabberactive a {
 									</div>
 									<div class="formField34">
 										<input id="txtEVPTaskComplete_date9_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 9 Completion Date" title="Task 9 Completion Date" />
-										<input id="btntxtEVPTaskComplete_date9Calendar" type="button" class="calendarImage" title="Task 9 Completion Date" />
+										<input id="btnEVPTaskComplete_date9Calendar" type="button" class="calendarImage" title="Task 9 Completion Date" />
 									</div>
 								</div>
 							</div>
@@ -1908,7 +2111,7 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="txtEVPTaskDue_date10_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 10 Target Date" title="Task 10 Target Date" />
-										<input id="btntxtEVPTaskDue_date10Calendar" type="button" class="calendarImage" title="Task 10 Target Date" />
+										<input id="btnEVPTaskDue_date10Calendar" type="button" class="calendarImage" title="Task 10 Target Date" />
 									</div>
 
 									<div class="subLabel">
@@ -1916,7 +2119,7 @@ ul.tabbernav li.tabberactive a {
 									</div>
 									<div class="formField34">
 										<input id="txtEVPTaskComplete_date10_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Task 10 Completion Date" title="Task 10 Completion Date" />
-										<input id="btntxtEVPTaskComplete_date10Calendar" type="button" class="calendarImage" title="Task 10 Completion Date" />
+										<input id="btnEVPTaskComplete_date10Calendar" type="button" class="calendarImage" title="Task 10 Completion Date" />
 									</div>
 								</div>
 							</div>
@@ -1950,6 +2153,72 @@ ul.tabbernav li.tabberactive a {
 							</div>
 
 						</div><!-- previous section end -->
+												<div class="sectionData">
+						<div class="sectionHeading">Effectiveness Verification Plan Signature</div>
+							<div class="signatureData">
+								<table class="signatureTable" cellpadding="0" cellspacing="0">
+									<thead>
+										<tr>
+											<th scope="col" class="signatureName">
+												<label for="mastercontrol.route.esig.users.step6">Name</label>
+											</th>
+											<th scope="col" class="signatureDate">
+												<label for="mastercontrol.route.esig.timestamps.step6">Date</label>
+											</th>
+											<th scope="col" class="signatureStatus">
+												<label for="mastercontrol.route.esig.sigstatus.step6">Signoff Status</label>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<textarea id="mastercontrol.route.esig.users.step6" rows="3" readonly="readonly" class="signaturefields" title="Step6 Name"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.timestamps.step6" rows="3" readonly="readonly" class="signaturefields" title="Step6 Date"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.sigstatus.step6" rows="3" readonly="readonly" class="signaturefields" title="Step6 Signoff Status"></textarea>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Effectiveness Verification Approval Signature</div>
+							<div class="signatureData">
+								<table class="signatureTable" cellpadding="0" cellspacing="0">
+									<thead>
+										<tr>
+											<th scope="col" class="signatureName">
+												<label for="mastercontrol.route.esig.users.step6">Name</label>
+											</th>
+											<th scope="col" class="signatureDate">
+												<label for="mastercontrol.route.esig.timestamps.step6">Date</label>
+											</th>
+											<th scope="col" class="signatureStatus">
+												<label for="mastercontrol.route.esig.sigstatus.step6">Signoff Status</label>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<textarea id="mastercontrol.route.esig.users.step6" rows="3" readonly="readonly" class="signaturefields" title="Step6 Name"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.timestamps.step6" rows="3" readonly="readonly" class="signaturefields" title="Step6 Date"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.sigstatus.step6" rows="3" readonly="readonly" class="signaturefields" title="Step6 Signoff Status"></textarea>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div><!-- previous section end -->
 					</div><!-- previouse page end -->
 				</div><!-- previous tabber end -->
 			</div><!-- formTabs end -->
@@ -1961,18 +2230,18 @@ ul.tabbernav li.tabberactive a {
 <script type='text/javascript' src='#mastercontrol.javascript(jquery-1.7.1.min.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(Calendar.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(StdLibrary.js)#'></script>
-<!--  <script type="text/javascript" src="#mastercontrol.javascript(SPLib-1.0.0.js)#"> </script> -->
 <script type='text/javascript' src='#mastercontrol.javascript(RHLib.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(CAPAForm.js)#'></script>
-<!-- outside links
+
+<!-- outside links 
 <script type="text/javascript" src="js/tabber.js"></script>
 <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="js/Calendar.js"></script>
 <script type="text/javascript" src="js/StdLibrary.js"></script>
 <script type="text/javascript" src="js/RHLib.js"></script>
 <script type="text/javascript" src="js/CAPAForm.js"></script>
-
 -->
+
 <script language="javascript" type="text/javascript">
 var jQ = jQuery.noConflict();
 jQ(function() {
