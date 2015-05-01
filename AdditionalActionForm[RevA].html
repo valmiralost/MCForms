@@ -72,7 +72,7 @@ ul.tabbernav li.tabberactive a {
 						</td>
 						<td>&nbsp;</td>
 						<td>
-							<input id="mastercontrol.route.stepname" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Step Name" title="" />
+							<input id="mastercontrol.route.stepname" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Step Due Date" title="" />
 						</td>
 						<td>&nbsp;</td>
 					</tr><!-- header second row end -->
@@ -124,10 +124,10 @@ ul.tabbernav li.tabberactive a {
 						</td>
 						<td>&nbsp;</td>
 					</tr><!-- header eight row end -->
-					<div id="divHiddenTitle" class="hide print-hide"><!-- hidden title fields div begin -->
+					<div id="divHiddenTitle" class="hide"><!-- hidden title fields div begin -->
 						<input type="text" id="mastercontrol.form.title" alt="Task Title" />
 						<!-- hidden select for the launch source button -->
-						<select id="mastercontrol.links.source" multiple=style="display:none""" size="1" name="mastercontrol.links.source" title="Source Reference" >
+						<select id="mastercontrol.links.source" multiple=style="display:none" size="1" name="mastercontrol.links.source" title="Source Reference" >
 						</select>
 					</div><!-- hidden title fields div end -->
 				</table><!-- header table end -->
@@ -163,9 +163,7 @@ ul.tabbernav li.tabberactive a {
 										<input id="mastercontrol.task.parentformid" name="mastercontrol.task.parentformid" type="text" class="textfield" alt="Source" title="Source" disabled="disabled"/>
 									</div>
 									<div class="formField34">
-										<span id="ViewSource" class="print-hide" style="padding-left:10px;">
-											<input name="mastercontrol.form.creator" type="hidden" id="mastercontrol.form.creator" title="Creator Name">
-          									<input name="mastercontrol.form.creatorname" type="hidden" id="mastercontrol.form.creatorname" title="Creator ID">
+										<span id="ViewSource" style="padding-left:10px;">
 											<input name="mastercontrol.links.view.source" type="button" class="formButton115 viewTask" id="mastercontrol.links.view.source" title="View Source" alt="View Source" value="View Source">
 
               							</span>
@@ -198,11 +196,11 @@ ul.tabbernav li.tabberactive a {
 										<input id="txtAssignedTo" type="text" class="textfield required" alt="Assigned To" title="Assigned To" />
 									</div>
 									<div class="subLabel">
-										<label for="txtDueDate_date" class="reqdLabel">* Due Date:</label>
+										<label for="txtActionDue_date" class="reqdLabel">* Due Date:</label>
 									</div>
 									<div class="formField34">
-										<input id="txtDueDate_date" type="text" class="readonly textfield textfield35 required" readonly="readonly" alt="Due Date" title="Due Date" />
-										<input id="btnDueDateCalendar" type="button" class="calendarImage" title="Due Date" />
+										<input id="txtActionDue_date" type="text" class="readonly textfield textfield35 required" readonly="readonly" alt="Due Date" />
+										<input id="btnActionDueCalendar" type="button" class="calendarImage" title="Due Date Image" />
 									</div>
 								</div>
 							</div>
@@ -325,6 +323,7 @@ ul.tabbernav li.tabberactive a {
 <!-- Mastercontrol outside links
 <script type="text/javascript" src="js/tabber.js"></script>
 <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/Calendar.js"></script>
 <script type="text/javascript" src="js/StdLibrary.js"></script>
 <script type="text/javascript" src="js/RHLib.js"></script>
 <script type="text/javascript" src="js/AAForm.js"></script>

@@ -87,6 +87,7 @@ function formStart(){
         calcRisk('txtIDRiskScore','#rbIDSeverityRisk','#rbIDRecurrenceRisk','rbIDSeverityRisk');
         calcRisk('txtRiskScore','#rbSeverityRisk','#rbRecurrenceRisk','rbSeverityRisk');
         investigationEval();
+        initalDisposition();
         capaRequired();
         dcnLaunched();
         additionalActionRequired();
