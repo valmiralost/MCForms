@@ -17,9 +17,14 @@ function formStart(){
        }
     });
     jQ("#mastercontrol\\.dataset\\.recordids\\.AdverseEvents\\.Name").change(function() {
-        setAdverseEventDD();
-        displayOther('mastercontrol.dataset.recordids.AdverseEvents.Name','txtAdverseEventOther','lbAdverseEventOther');
-        displayOther('cmbAdverseEventSubCategory','txtAdverseEventSubCategoryOther','lblAdverseEventSubCategoryOther');
+        if (this.options[this.selectedIndex].value){
+            setAdverseEventDD();
+            displayOther('mastercontrol.dataset.recordids.AdverseEvents.Name','txtAdverseEventOther','lbAdverseEventOther');
+            displayOther('cmbAdverseEventSubCategory','txtAdverseEventSubCategoryOther','lblAdverseEventSubCategoryOther');
+       } else {
+            jQ('#cmbAdverseEventSubCategory').children().remove();
+            displayOther('cmbAdverseEventSubCategory','txtAdverseEventSubCategoryOther','lblAdverseEventSubCategoryOther');
+       }
     });
     jQ('input[type=radio][name=rbCAPARequired]').click(function() {
         capaRequired();
@@ -90,12 +95,13 @@ function formStart(){
     notifyRequired();
     capaRequired();  
     makeAllReadOnly(sFormStatus);
+    setRequiredForStep();
 }
 
 function setRequiredForStep(){
     if (stepNumber == 2 && sFormStatus=='editstep' ){
-        jQ('#txtTitle)'.addClass('required');
-        jQ('label[for=txtTitle]').addClass('reqdLabel').text("* Title");  ;
+        jQ('#txtTitle').addClass('required');
+        jQ('label[for=txtTitle]').addClass('reqdLabel').text("* Title");
     }
 }
 function setDefectCombo() {

@@ -75,7 +75,10 @@ function handleMenuButtonClicks() {
 }
 
 function setTaskTitle() {
-	document.getElementById("mastercontrol.form.title").value = document.getElementById("mastercontrol.form.number").value +": "+ document.getElementById("txtTitle").value;
+    var titleText = document.getElementById("mastercontrol.form.number").value +": "+ document.getElementById("txtTitle").value;
+    if (document.getElementById("mastercontrol.form.title").value != "titleText"){
+	   document.getElementById("mastercontrol.form.title").value = document.getElementById("mastercontrol.form.number").value +": "+ document.getElementById("txtTitle").value;
+    }
 }
 
 function findAllFieldIds() {
