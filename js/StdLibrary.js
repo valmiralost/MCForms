@@ -75,11 +75,7 @@ function handleMenuButtonClicks() {
 }
 
 function setTaskTitle() {
-    var titleText = document.getElementById("txtTitle").value;
-
-    if (document.getElementById("mastercontrol.form.title").indexOf(titleText) != -1) {
-	   document.getElementById("mastercontrol.form.title").value = document.getElementById("mastercontrol.form.number").value +": "+ document.getElementById("txtTitle").value;
-    }
+	document.getElementById("mastercontrol.form.title").value = document.getElementById("mastercontrol.form.number").value +": "+ document.getElementById("txtTitle").value;
 }
 
 function findAllFieldIds() {

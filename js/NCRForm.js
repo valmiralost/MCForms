@@ -94,11 +94,19 @@ function formStart(){
         finalDisposition();
         displayOther('cmbDefect','txtDefectOther','lblDefectOther');
         setProductDataEntry();
+        setRequiredForStep();
     } catch(e){}
      SP_CheckAndAddBlank("mastercontrol.role.NCRInvestigators");
      makeAllReadOnly(sFormStatus);
 
 }/* END start  */
+function setRequiredForStep(){
+    if (stepNumber == 2 && sFormStatus=='editstep' ){
+        jQ('#txtTitle').addClass('required');
+        jQ('label[for=txtTitle]').addClass('reqdLabel').text("* Title");
+    }
+}
+
 function setProductDataEntry(){
     var selectedValue = jQ("#mastercontrol\\.dataset\\.recordids\\.Products\\.Name").val();
     if (selectedValue == 'Documentation' || selectedValue == 'Quality System' ){

@@ -108,7 +108,7 @@ function displayOther(ddField,otherField,otherLabel){
 function makeAllReadOnly(sFormStatus){
         if (sFormStatus != 'editstep') {
         jQ('#mcForm input,#mcForm textarea').attr('readonly', 'readonly');
-        jQ('#mcForm select, #mcForm :button, #mcForm :radio').prop("disabled", true);
+        jQ('#mcForm select, #mcForm :button, #mcForm :radio, @mcForm :checkbox').prop("disabled", true);
      }
 }/* END read only */
 
