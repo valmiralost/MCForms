@@ -91,7 +91,7 @@ function formStart(){
     capaRequired();  
     if (sFormStatus != 'editstep') {
         jQ('#mcForm input,#mcForm textarea').attr('readonly', 'readonly');
-        jQ('#mcForm select, #mcForm button, #mcForm radio').attr("disabled", true); 
+        jQ('#mcForm select, #mcForm button, #mcForm :radio').prop("disabled", true);
      }
 }
 
