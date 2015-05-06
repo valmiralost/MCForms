@@ -164,7 +164,7 @@ function setAdverseEventDD(){
         {
             //TODO Check is this is the same as NCR, if so remove Complaint from DS name
             //dataset=Name of External DataSource and the filter parametername   GetProductDefects  Product  this is the xml query string that will get the data
-            var Url = document.getElementById("txtMCUrl").value + "/Main/NOC/html_forms/query.cfm?dataset=getAdverseEventSubCatorgies&AdverseEvent=" + selItem1;
+            var Url = document.getElementById("txtMCUrl").value + "/Main/NOC/html_forms/query.cfm?dataset=getAdverseEventSubCategories&AdverseEvent=" + selItem1;
             cmbClear(fldName);
             defects = xmlQuery(Url);
             opt = document.createElement('option');
