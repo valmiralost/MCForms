@@ -96,7 +96,7 @@ function formStart(){
         setProductDataEntry();
     } catch(e){}
      SP_CheckAndAddBlank("mastercontrol.role.NCRInvestigators");
-
+     makeAllReadOnly(sFormStatus);
 
 }/* END start  */
 function setProductDataEntry(){

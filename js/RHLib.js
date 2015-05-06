@@ -102,6 +102,13 @@ function displayOther(ddField,otherField,otherLabel){
             oField.value = '';
         }   
     } /* END  displays related other field with other is selected from a dd */
+/*make all fields and buttons read only when the form is displayed in any other mode than edit mode */
+function makeAllReadOnly(sFormStatus){
+        if (sFormStatus != 'editstep') {
+        jQ('#mcForm input,#mcForm textarea').attr('readonly', 'readonly');
+        jQ('#mcForm select, #mcForm :button, #mcForm :radio').prop("disabled", true);
+     }
+}/* END read only */
 
 function SP_InsertBlank()
 {   

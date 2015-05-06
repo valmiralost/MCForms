@@ -89,12 +89,15 @@ function formStart(){
     dhrReview(); 
     notifyRequired();
     capaRequired();  
-    if (sFormStatus != 'editstep') {
-        jQ('#mcForm input,#mcForm textarea').attr('readonly', 'readonly');
-        jQ('#mcForm select, #mcForm button, #mcForm :radio').prop("disabled", true);
-     }
+    makeAllReadOnly(sFormStatus);
 }
 
+function setRequiredForStep(){
+    if (stepNumber == 2 && sFormStatus=='editstep' ){
+        jQ('#txtTitle)'.addClass('required');
+        jQ('label[for=txtTitle]').addClass('reqdLabel').text("* Title");  ;
+    }
+}
 function setDefectCombo() {
     //Parent dropdown
     var item1 = document.getElementById("mastercontrol.dataset.recordids.Products.Name");

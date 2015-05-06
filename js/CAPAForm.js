@@ -47,6 +47,7 @@ function formStart(){
     if (stype == "N/A"){
         document.getElementById("mastercontrol.links.view.source").disabled = true;
     }
+    makeAllReadOnly(sFormStatus);
 }/* END Hide fields on start  */
 
 
