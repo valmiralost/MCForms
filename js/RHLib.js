@@ -5,9 +5,9 @@ function radioEnableDisableClass(enableClass,disableClass)
             if (enableClass != false ) {
         var enableArray = document.getElementsByClassName(enableClass);
         for(i = 0; i < enableArray.length; i++) {
+            jQ(enableArray[i]).removeClass('readonlyNoDataEntry');
             var vid = jQ(enableArray[i]).attr("id");
-            if(vid.indexOf("_date")<0){
-                jQ(enableArray[i]).removeClass('readonlyNoDataEntry');
+            if(vid.indexOf("_date")<0){             
                 jQ(enableArray[i]).prop('readonly', false);
             }          
              if(jQ(enableArray[i]).is("select")) {
