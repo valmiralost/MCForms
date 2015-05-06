@@ -13,6 +13,7 @@ function formStart(){
             setDefectCombo();
        } else {
             jQ('#cmbDefect').children().remove();
+            displayOther('cmbDefect','txtDefectOther','lblDefectOther');
        }
     });
     jQ("#mastercontrol\\.dataset\\.recordids\\.AdverseEvents\\.Name").change(function() {
@@ -89,7 +90,7 @@ function formStart(){
     notifyRequired();
     capaRequired();  
     if (sFormStatus != 'editstep') {
-        jQ('#mcForm input').attr('readonly', 'readonly');
+        jQ('#mcForm input,#mcForm textarea, #mcForm select').attr('readonly', 'readonly');
      }
 }
 
