@@ -5,8 +5,10 @@ function radioEnableDisableClass(enableClass,disableClass)
         if (enableClass != false ) {
         var enableArray = document.getElementsByClassName(enableClass);
         for(i = 0; i < enableArray.length; i++) {
-            jQ(enableArray[i]).prop('readonly', false);
-            jQ(enableArray[i]).removeClass('readonlyNoDataEntry');
+            if(enableArray[i].name.indexOf('_date') != -1){
+                jQ(enableArray[i]).prop('readonly', false);
+                jQ(enableArray[i]).removeClass('readonlyNoDataEntry');
+            }        
              if(jQ(enableArray[i]).is("select")) {
                 jQ(enableArray[i]).prop('disabled', false);
             } else if (jQ(enableArray[i]).is(":radio")){
