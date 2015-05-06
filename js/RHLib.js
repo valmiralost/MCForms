@@ -7,13 +7,13 @@ function radioEnableDisableClass(enableClass,disableClass)
         for(i = 0; i < enableArray.length; i++) {
             var vid = jQ(enableArray[i]).attr("id");
             if(vid.indexOf("_date")<0){
-                jQ(enableArray[i]).removeClass('readonly');
+                jQ(enableArray[i]).removeClass('readonlyNoDataEntry');
                 jQ(enableArray[i]).prop('readonly', false);
-                 if(jQ(enableArray[i]).is("select")) {
-                    jQ(enableArray[i]).removeAttr('disabled');
-                } else if (jQ(enableArray[i]).is(":radio")){
-                    jQ(enableArray[i]).attr("disabled",false);
-                }
+            }          
+             if(jQ(enableArray[i]).is("select")) {
+                jQ(enableArray[i]).removeAttr('disabled');
+            } else if (jQ(enableArray[i]).is(":radio")){
+                jQ(enableArray[i]).attr("disabled",false);
             }
         }
     }
