@@ -90,7 +90,8 @@ function formStart(){
     notifyRequired();
     capaRequired();  
     if (sFormStatus != 'editstep') {
-        jQ('#mcForm input,#mcForm textarea, #mcForm select').attr('readonly', 'readonly');
+        jQ('#mcForm input,#mcForm textarea').attr('readonly', 'readonly');
+        jQ('#mcForm select, #mcForm button, #mcForm radio').attr("disabled", true); 
      }
 }
 
