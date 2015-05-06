@@ -2,7 +2,7 @@
 /* Global Vars */
     var stepId  =  document.getElementById("mastercontrol.route.stepid").value*1;
     var stepNumber =  document.getElementById("mastercontrol.route.stepnumber").value*1;
-    var sFormStatus= document.getElementById("mastercontrol.hidden.event").value;  /*viewOnly*/
+    var sFormStatus = document.getElementById("mastercontrol.hidden.event").value.toLowerCase();
     var gSelected=jQ("#mastercontrol\\.route\\.stepusers\\.step4 option:selected").map(function(){ return this.value }).get();
     
 
@@ -95,7 +95,8 @@ function formStart(){
         displayOther('cmbDefect','txtDefectOther','lblDefectOther');
         setProductDataEntry();
     } catch(e){}
-     SP_CheckAndAddBlank("mastercontrol.role.NCRInvestigators"); 
+     SP_CheckAndAddBlank("mastercontrol.role.NCRInvestigators");
+
 
 }/* END start  */
 function setProductDataEntry(){
@@ -104,7 +105,8 @@ function setProductDataEntry(){
         radioEnableDisableClass('nonProductField','productField');
         jQ("#mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name,label[for=mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name]").show();
     } else if (selectedValue == ""){
-        jQ("#mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name,label[for=mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name]").hide(); 
+        jQ("#mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name,label[for=mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name]").hide();
+        jQ('#cmbDefect').children().remove(); 
     } else {
         jQ("#mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name,label[for=mastercontrol\\.dataset\\.recordids\\.QualitySystemLocation\\.Name]").hide(); 
         radioEnableDisableClass('productField','nonProductField');    

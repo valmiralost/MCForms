@@ -2,7 +2,7 @@
 /* Global Vars */
     var stepId  =  document.getElementById("mastercontrol.route.stepid").value*1;
     var stepNumber =  document.getElementById("mastercontrol.route.stepnumber").value*1;
-    var sFormStatus= document.getElementById("mastercontrol.hidden.event").value;  /*viewOnly*/
+    var sFormStatus = document.getElementById("mastercontrol.hidden.event").value.toLowerCase();
     var gSelected=jQ("#mastercontrol\\.route\\.stepusers\\.step2 option:selected").map(function(){ return this.value }).get();
 
 
@@ -11,6 +11,8 @@ function formStart(){
     jQ("#mastercontrol\\.dataset\\.recordids\\.Products\\.Name").change(function() {
        if (this.options[this.selectedIndex].value){
             setDefectCombo();
+       } else {
+            jQ('#cmbDefect').children().remove();
        }
     });
     jQ("#mastercontrol\\.dataset\\.recordids\\.AdverseEvents\\.Name").change(function() {
@@ -86,6 +88,9 @@ function formStart(){
     dhrReview(); 
     notifyRequired();
     capaRequired();  
+    if (sFormStatus != 'editstep') {
+        jQ('#mcForm input').attr('readonly', 'readonly');
+     }
 }
 
 function setDefectCombo() {
