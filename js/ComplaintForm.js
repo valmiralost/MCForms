@@ -31,7 +31,7 @@ function formStart(){
     });
     jQ("#btnLaunchCAPA").click(function () {
         mapSourceFields();
-        selectRouteLaunched("CAPANew", "mastercontrol.task.routes");
+        selectRouteLaunched("CAPA", "mastercontrol.task.routes");
         jQ("#mastercontrol\\.task\\.launch").click();
         capaRequired();                    
     });
@@ -226,8 +226,8 @@ function dhrReview(){
  /* CAPA Required Functionality */
 
 function capaRequired(){
-    var oListFormNos = document.getElementById("mastercontrol.links.CAPANew");
-    var oViewButton = document.getElementById("mastercontrol.links.view.CAPANew");
+    var oListFormNos = document.getElementById("mastercontrol.links.CAPA");
+    var oViewButton = document.getElementById("mastercontrol.links.view.CAPA");
     var oLaunchbutton = document.getElementById("btnLaunchCAPA");
     var valueField = document.getElementById("txtCAPANumber");  
     var justField = document.getElementById("txtNoCAPAJustification"); 
@@ -279,7 +279,7 @@ function GetLaunchedFormNo(vform)
     if(vform == 1){
         var oListFormNos = document.getElementById("mastercontrol.links.Additional Action");
     } else if(vform == 2){
-        var oListFormNos = document.getElementById("mastercontrol.links.CAPANew");
+        var oListFormNos = document.getElementById("mastercontrol.links.CAPA");
     } else{
         alert("cannot locate form link");
         return "issue locating links select";
