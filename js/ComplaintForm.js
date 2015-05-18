@@ -96,8 +96,15 @@ function formStart(){
     capaRequired();  
     makeAllReadOnly(sFormStatus);
     setRequiredForStep();
+    updateFormTitle();
 }
 
+function updateFormTitle(){
+    var vtitle = document.getElementById('txtTitle').value;
+    if(vtitle != ""){
+        document.getElementById('mastercontrol.form.title').value = document.getElementById('mastercontrol.form.number').value + " : " + vtitle;
+    }
+}
 function setRequiredForStep(){
     if (stepNumber == 2 && sFormStatus=='editstep' ){
         jQ('#txtTitle').addClass('required');
