@@ -309,15 +309,6 @@ function GetLaunchedFormNo(vform)
     }  
 }
 
-function removeClass(vclass,vobj){
-    var myClassName=" "+ vclass; //must keep a space before class name
-    vobj.className=vobj.className.replace(myClassName,"");
-}
-function addClass(vclass,vobj){
-    var myClassName=" "+ vclass; //must keep a space before class name
-    vobj.className=vobj.className.replace(myClassName,""); // first remove the class name if that already exists
-    vobj.className = vobj.className + myClassName; // adding new class name
-}
 
 /* Final dispositon functionality */
 function finalDisposition(){

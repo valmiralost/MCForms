@@ -53,7 +53,7 @@ ul.tabbernav li.tabberactive a {
 	<div class="container"><!-- container begin -->
 		<div class="formHeader"><!-- formHeader begin -->
 			<div id="mcPage_001" class="mcPage"><!-- page001 begin -->
-				<div class="formLogo"><img src="#mastercontrol.imagelink(logo.jpg)#" width="125px" height="125px" alt="Company Logo" /></div>
+				<div class="formLogo"><img src="#mastercontrol.imagelink(logo.png)#" width="420px" height="78px" alt="Company Logo" /></div>
 				<table width="100%" border="0" cellspacing="0" cellpadding="0"><!-- header table begin -->
 					<tr><!-- processName row begin -->
 						<td width="5%">&nbsp;</td>
@@ -128,11 +128,10 @@ ul.tabbernav li.tabberactive a {
 						</td>
 						<td>&nbsp;</td>
 					</tr><!-- header eight row end -->
-					<div id="divHiddenTitle" class="hide"><!-- hidden title fields div begin -->
-						<input type="text" id="mastercontrol.form.title" alt="Task Title" />
-						 <input name="mastercontrol.form.creator" type="hidden" id="mastercontrol.form.creator" title="Creator ID">
-						<input name="mastercontrol.route.stepnumber" type="hidden" id="mastercontrol.route.stepnumber" title="Step Number" />
-          				<input name="mastercontrol.route.stepid" type="hidden" id="mastercontrol.route.stepid" title="Step ID" />
+					<div id="divHiddenTitle" class="hide print-hide"><!-- hidden title fields div begin -->
+						<input name="mastercontrol.route.stepnumber" type="hidden" id="mastercontrol.route.stepnumber" title="Step Number">
+			          	<input name="mastercontrol.route.stepid" type="hidden" id="mastercontrol.route.stepid" title="Step ID">
+			          	<input name="mastercontrol.form.creator" type="hidden" id="mastercontrol.form.creator" title="Creator ID">
 						<select id="mastercontrol.links.source" multiple=style="display:none" size="1" name="mastercontrol.links.source" title="Source Reference" >
 						</select>
 						<select multiple id="mastercontrol.route.stepusers.step2" class="selectfield" title="Invest Step" style="display:none" >
@@ -140,8 +139,9 @@ ul.tabbernav li.tabberactive a {
 					</div><!-- hidden title fields div end -->
 				</table><!-- header table end -->
 			</div><!-- page001 end -->
+			<div class="clearBoth"></div>
 		</div><!-- formHeader end -->
-
+		<div class="clearBoth"></div>
 		<div class="formBody"><!-- formBody begin -->
 			<div class="tabber" id="formTabs"><!-- formTabs begin -->
 				<div id="divInitiateTab" class="tabbertab" title="Initiate"><!-- Initiate tabbertab begin -->
@@ -262,7 +262,7 @@ ul.tabbernav li.tabberactive a {
 										<input id="rbSeverityRisk" name="rbSeverityRisk" type="radio" class="radiobuttonfield" alt="Severity" title="Severity" value="1" />1
 										<input id="rbSeverityRisk" name="rbSeverityRisk" type="radio" class="radiobuttonfield" alt="Severity" title="Severity" value="2" />2
 										<input id="rbSeverityRisk" name="rbSeverityRisk" type="radio" class="radiobuttonfield" alt="Severity" title="Severity" value="3" />3
-										<input id="rbSeverityRisk" name="rbSeverityRisk" type="radio" class="radiobuttonfield" alt="Severity" title="Severity" value="4" />4
+										<input id="rbSeverityRisk" name="rbSeverityRisk" type="radio" class="radiobuttonfield" alt="Severity" title="Severity" value="4" checked="checked" />4
 									</div>
 								</div>
 							</div>
@@ -280,7 +280,7 @@ ul.tabbernav li.tabberactive a {
 										<input id="rbRecurrenceRisk" name="rbRecurrenceRisk" type="radio" class="radiobuttonfield" alt="Occurrence" title="Occurrence" value="3" />3
 										<input id="rbRecurrenceRisk" name="rbRecurrenceRisk" type="radio" class="radiobuttonfield" alt="Occurrence" title="Occurrence" value="4" />4
 										<input id="rbRecurrenceRisk" name="rbRecurrenceRisk" type="radio" class="radiobuttonfield" alt="Occurrence" title="Occurrence" value="5" />5
-										<input id="rbRecurrenceRisk" name="rbRecurrenceRisk" type="radio" class="radiobuttonfield" alt="Occurrence" title="Occurrence" value="6"/>6
+										<input id="rbRecurrenceRisk" name="rbRecurrenceRisk" type="radio" class="radiobuttonfield" alt="Occurrence" title="Occurrence" value="6"checked="checked" />6
 									</div>
 								</div>
 							</div>
@@ -2247,6 +2247,5 @@ jQ(function() {
 	retainHeightWidth();
 	SP_InsertBlank();
 	formStart();
-	setTaskTitle();
 });
 </script>

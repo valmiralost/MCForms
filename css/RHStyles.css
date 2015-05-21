@@ -23,19 +23,86 @@
 	}
 @media print {
 
-	html, body { height: auto; }
-	ul.tabbernav {
-	border-bottom:none;
+	.container{
+		width:700px;
+		zoom:110%;
 	}
-	.tabberlive .tabbertab {
-
-  	border: none;
-
+	.tabbernav,.tabbernav{
+		display:none;
 	}
-
-	#mcPage_001{
-  	page-break-after: avoid;
-  	width: 100%;
+	
+	.tabberlive .tabbertabhide{
+		display:block;
+	}
+	
+	.tabberlive .tabbertab{
+		border-width:0;
+	}
+	
+	#tabHeading{
+		display:block;
+		font-weight:bold;
+		font-size:14px;
+	}
+	.signatureTable {
+		width:100%;
+	}
+	.button_icon{
+		display:block;
+	}
+	.hide {
+		display: block;
+	}
+	.print-hide {
+		display: none;
+	}
+	.Slide {
+		display: block;
+	}
+	* {
+		position: static !important;
+		box-sizing: border-box;
+		line-height: normal;
+	}
+	body {
+		margin: 0;
+		overflow-y: visible;
+	}
+	.container {
+		display: inline;
+		float: none !important;
+	}
+	.print-div {
+		border: solid 1px #A5C0dF;
+		padding: 2px;
+		page-break-inside: auto;
+		min-height: 1em;
+	}
+	.mcPage {
+		padding: 3em;
+		overflow-y: visible;
+		height:99%;
+		page-break-before: avoid;
+	}
+/*	.mcPage+.mcPage {
+    page-break-before: always;
+}
+*/
+	.vSpacer {
+		float: none !important;
+		clear: both;
+		display: inline;
+		page-break-inside: avoid;
+	}
+	.vSpacer * {
+		float: none !important;
+	}
+	.sectionHeading {
+		display: inline;
+	}
+	@page {
+		size: A4;
+		margin: 0.5in;
 	}
 
 }

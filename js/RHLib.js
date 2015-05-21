@@ -46,7 +46,7 @@ function calcRisk(riskFld,sevField,OccField,test) {
      var riskNum = document.getElementById(riskFld);
      var severity = parseInt(jQ(sevField+":checked").val(), 10);
     var selected = parseInt(jQ(OccField+":checked").val(), 10);
-     var riskScore = selected + severity;
+     var riskScore = selected * severity;
      if(riskScore >0){
             riskNum.value = riskScore;
             if (severity == 1) { 
@@ -110,6 +110,16 @@ function makeAllReadOnly(sFormStatus){
         jQ('#mcForm select, #mcForm :button, #mcForm :radio, @mcForm :checkbox').prop("disabled", true);
      }
 }/* END read only */
+
+function removeClass(vclass,vobj){
+    var myClassName=" "+ vclass; //must keep a space before class name
+    vobj.className=vobj.className.replace(myClassName,"");
+}
+function addClass(vclass,vobj){
+    var myClassName=" "+ vclass; //must keep a space before class name
+    vobj.className=vobj.className.replace(myClassName,""); // first remove the class name if that already exists
+    vobj.className = vobj.className + myClassName; // adding new class name
+}
 
 function SP_InsertBlank()
 {   
@@ -706,6 +716,11 @@ function SP_AdjustTabberWidth()
         TabberObj.style.width = defaultWidth;
     }
 }
+
+function RH_setTaskTitle() {
+    document.getElementById("mastercontrol.form.title").value = document.getElementById("mastercontrol.form.number").value +": "+ document.getElementById("txtTitle").value;
+}
+
 
 //////////////////////////////////// END TABBER FORMATTING FUNCTIONS /////////////////////////////////////////////////////////
 
