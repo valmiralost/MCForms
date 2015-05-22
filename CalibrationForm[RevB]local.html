@@ -117,6 +117,10 @@ ul.tabbernav li.tabberactive a {
 				        <select id="mastercontrol.task.routes"  name="mastercontrol.task.routes" title="Available Routes" style="display:none" >
 				        </select>
 				        <input id="mastercontrol.task.launch" type="button" class="mastercontrol.task.launch" alt="Form launch" title="Form launch" style="display:none" />
+				        <!-- Required to add investigator to step 2 -->
+				        <select multiple id="mastercontrol.route.stepusers.step2" class="selectfield" title="Cal Technician Step" style="display:none" >
+						</select>
+						<!-- required to populated related equipment fields -->
 						<input type="button" id="mastercontrol.dataset.show.EquipmentMaster" name="mastercontrol.dataset.show.EquipmentMaster"  class="longtextfield" title="Click to Populate Related Fields" value="Refresh" />	    
 						    <input type="text" id="Ncrlaunch" name="Ncrlaunch" title="NCR Launched" alt="NCR Launched"/>
 						    <input type="text" id="txtMCURL" name="txtMCURL" title="MC URL" value="#mastercontrol.url#" />
@@ -237,15 +241,17 @@ ul.tabbernav li.tabberactive a {
 
 							<div id="divTechName" class="fieldRow">
 								<div class="leftLabel labelWidth20">
-									<label for="txtTechName" >Technician Name: </label>
+									<label for="mastercontrol.role.CalibrationTech" class="selectfield yesInvestigation">Assigned To:</label>
 								</div>
 								<div class="leftField">
 									<div class="formField68">
-										<input type="text" id="txtTechName" name="txtTechName" alt="Technician Name" class="longtextfield" title="Technician Name" name="Technician Name"/>
+										<select id="mastercontrol.role.CalibrationTech" class="selectfield yesInvestigation" title="Assigned To"></select>
 									</div>
 								</div>
 							</div>
 							<div class="clearBoth"></div>
+
+
 							<div id="divDateOfService" class="fieldRow">
 								<div class="leftLabel labelWidth20">
 									<label for="txtDateOfServ_date" >Date of Service: </label>
@@ -316,7 +322,7 @@ ul.tabbernav li.tabberactive a {
 								<div class="leftField">
 									<div class="formField34">
 										<input id="btnLaunchNCR" type="button" class="formButton115" alt="Launch NCR" title="Launch NCR" value="Launch NCR"  />
-										<input type="button" name="mastercontrol.links.view.NCR" id="mastercontrol.links.view.NCR" value="View Form"  alt="View NCR"  />
+										<input type="button" name="mastercontrol.links.view.NCR" id="mastercontrol.links.view.NCR" value="View Form"  alt="View NCR" />
 									</div>
 
 									<div class="subLabel">
@@ -325,7 +331,7 @@ ul.tabbernav li.tabberactive a {
 									<div class="formField34">
 										<select id="mastercontrol.links.NCR" multiple  size="1" name="mastercontrol.links.NCR" title="NCR Reference" style="display:none" >
 		    							</select>
-										<input id="txtNCRNumber" type="text" class="textfield readonly" alt="NCR Number" title="NCR Number" readonly="readonly" value="34434"/>
+										<input id="txtNCRNumber" type="text" class="textfield readonly" alt="NCR Number" title="NCR Number" readonly="readonly" />
 									</div>
 								</div>
 							</div>

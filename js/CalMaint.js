@@ -1,4 +1,5 @@
 var JQ = jQuery.noConflict();
+var gSelected=jQ("#mastercontrol\\.route\\.stepusers\\.step2 option:selected").map(function(){ return this.value }).get();
 
 
 var mcURL = JQ('#txtMCURL').val();
@@ -21,6 +22,26 @@ function startup(){
         jQ("#mastercontrol\\.task\\.launch").click();  
         ncrRequired();               
     });
+
+   jQ("#mastercontrol\\.role\\.ComplaintInvestigators").change(function(){   
+    var selectedValue = jQ("#mastercontrol\\.role\\.ComplaintInvestigators").val();
+    var trimmedValue = trimUserID(selectedValue);
+    if (selectedValue != ""){
+        if(jQ.inArray(trimmedValue, gSelected) == -1 ) {
+            var currentSelected = gSelected.slice();
+            currentSelected.push(trimmedValue);
+            jQ('#mastercontrol\\.route\\.stepusers\\.step2').val(currentSelected);
+        } else {
+            jQ('#mastercontrol\\.route\\.stepusers\\.step2').val(gSelected);
+        }
+
+    } else {
+        jQ('#mastercontrol\\.route\\.stepusers\\.step2').val(gSelected);
+    }
+
+        });
+
+
       ncrRequired();
 }
 function mapSourceFields(){

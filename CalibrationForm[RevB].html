@@ -117,6 +117,10 @@ ul.tabbernav li.tabberactive a {
 				        <select id="mastercontrol.task.routes"  name="mastercontrol.task.routes" title="Available Routes" style="display:none" >
 				        </select>
 				        <input id="mastercontrol.task.launch" type="button" class="mastercontrol.task.launch" alt="Form launch" title="Form launch" style="display:none" />
+				        <!-- Required to add investigator to step 2 -->
+				        <select id="mastercontrol.route.stepusers.step2" class="selectfield" title="Cal Technician Step" style="display:none" >
+						</select>
+						<!-- required to populated related equipment fields -->
 						<input type="button" id="mastercontrol.dataset.show.EquipmentMaster" name="mastercontrol.dataset.show.EquipmentMaster"  class="longtextfield" title="Click to Populate Related Fields" value="Refresh" />	    
 						    <input type="text" id="Ncrlaunch" name="Ncrlaunch" title="NCR Launched" alt="NCR Launched"/>
 						    <input type="text" id="txtMCURL" name="txtMCURL" title="MC URL" value="#mastercontrol.url#" />
@@ -237,15 +241,17 @@ ul.tabbernav li.tabberactive a {
 
 							<div id="divTechName" class="fieldRow">
 								<div class="leftLabel labelWidth20">
-									<label for="txtTechName" >Technician Name: </label>
+									<label for="mastercontrol.role.CalibrationTechnician" class="selectfield yesInvestigation">Assigned To:</label>
 								</div>
 								<div class="leftField">
 									<div class="formField68">
-										<input type="text" id="txtTechName" name="txtTechName" alt="Technician Name" class="longtextfield" title="Technician Name" name="Technician Name"/>
+										<select id="mastercontrol.role.CalibrationTechnician" class="selectfield yesInvestigation" title="Assigned To"></select>
 									</div>
 								</div>
 							</div>
 							<div class="clearBoth"></div>
+
+
 							<div id="divDateOfService" class="fieldRow">
 								<div class="leftLabel labelWidth20">
 									<label for="txtDateOfServ_date" >Date of Service: </label>
@@ -521,6 +527,6 @@ var jQ = jQuery.noConflict();
 
 jQ(function() {
 	retainHeightWidth();});
-
+	SP_InsertBlank();
 	startup();
 </script>
