@@ -45,6 +45,7 @@ ul.tabbernav li.tabberactive a {
 }
 </style>
 
+
 <form id="mcForm" method="post" action=""><!-- form begin -->
 	<div class="container"><!-- container begin -->
 		<div class="formHeader"><!-- formHeader begin -->
@@ -62,7 +63,7 @@ ul.tabbernav li.tabberactive a {
 						<td width="5%">&nbsp;</td>
 						<td width="20%" class="TopLabel"><label for="mastercontrol.form.number">Form Number</label></td>
 						<td width="1%">&nbsp;</td>
-						<td width="20%" class="TopLabel"><label for="mastercontrol.route.stepname">Step Name</label></td>
+						<td width="20%" class="TopLabel"><label for="mastercontrol.route.stepname">Current Step Name</label></td>
 						<td width="5%">&nbsp;</td>
 					</tr><!-- header first row end -->
 					<tr><!-- header second row begin -->
@@ -118,7 +119,7 @@ ul.tabbernav li.tabberactive a {
 				        </select>
 				        <input id="mastercontrol.task.launch" type="button" class="mastercontrol.task.launch" alt="Form launch" title="Form launch" style="display:none" />
 				        <!-- Required to add investigator to step 2 -->
-				        <select multiple id="mastercontrol.route.stepusers.step2" class="selectfield" title="Cal Technician Step" style="display:none" >
+				        <select id="mastercontrol.route.stepusers.step2" class="selectfield" title="Cal Technician Step" style="display:none" >
 						</select>
 						<!-- required to populated related equipment fields -->
 						<input type="button" id="mastercontrol.dataset.show.EquipmentMaster" name="mastercontrol.dataset.show.EquipmentMaster"  class="longtextfield" title="Click to Populate Related Fields" value="Refresh" />	    
@@ -223,6 +224,18 @@ ul.tabbernav li.tabberactive a {
 						</div><!-- previous section end -->
 						<div class="sectionData">
 						<div class="sectionHeading">Service Information</div>
+						
+							<div id="divTechName" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="mastercontrol.role.CalibrationTechnician" class="selectfield reqdLabel">* Assigned To:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<select id="mastercontrol.role.CalibrationTechnician" class="selectfield yesInvestigation required" title="Assigned To"></select>
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
 							<div id="divServiceType" class="fieldRow">
 								<div class="leftLabel labelWidth20">
 									<label for="ServiceType">Type of Service: </label>
@@ -239,17 +252,6 @@ ul.tabbernav li.tabberactive a {
 							</div>
 							<div class="clearBoth"></div>
 
-							<div id="divTechName" class="fieldRow">
-								<div class="leftLabel labelWidth20">
-									<label for="mastercontrol.role.CalibrationTech" class="selectfield yesInvestigation">Assigned To:</label>
-								</div>
-								<div class="leftField">
-									<div class="formField68">
-										<select id="mastercontrol.role.CalibrationTech" class="selectfield yesInvestigation" title="Assigned To"></select>
-									</div>
-								</div>
-							</div>
-							<div class="clearBoth"></div>
 
 
 							<div id="divDateOfService" class="fieldRow">
@@ -257,7 +259,7 @@ ul.tabbernav li.tabberactive a {
 									<label for="txtDateOfServ_date" >Date of Service: </label>
 								</div>
 								<div class="leftField">
-										<input id="txtDateOfServ_date" type="text" class="readonly textfield textfield35 required" readonly="readonly" alt="Date of Service" title="Date Requested" />
+										<input id="txtDateOfServ_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Date of Service" title="Date Requested" />
 										<input id="btnDateOfServCalendar" type="button" class="calendarImage" title="DDate of Service" />
 								</div>
 							</div>
@@ -343,7 +345,7 @@ ul.tabbernav li.tabberactive a {
 								</div>
 								<div class="leftField">
 									<div class="formField68">
-				                        <textarea id="txtJustification" name="txtJustification" class="longtextarea"  title="Justification Comment Box" rows="5" cols="20"   onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"> </textarea>
+				                        <textarea id="txtJustification" name="txtJustification" class="longtextarea"  title="Justification Comment Box" rows="5" cols="20"   maxlength="2000" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"> </textarea>
 									</div>
 								</div>
 							</div>
@@ -369,7 +371,7 @@ ul.tabbernav li.tabberactive a {
 								</div>
 								<div class="leftField">
 									<div class="formField68">
-				                        <textarea id="Notes" class="longtextarea" title="Notes" rows="5" cols="20" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
+				                        <textarea id="Notes" class="longtextarea" title="Notes" rows="5" cols="20" maxlength="2000" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
 									</div>
 								</div>
 							</div>
@@ -486,13 +488,13 @@ ul.tabbernav li.tabberactive a {
 									<tbody>
 										<tr>
 											<td>
-												<textarea id="mastercontrol.route.esig.users.step3" rows="3" readonly="readonly" class="signaturefields" title="Step3 Name"></textarea>
+												<textarea id="mastercontrol.route.esig.users.step3" rows="4" readonly="readonly" class="signaturefields" title="Step3 Name"></textarea>
 											</td>
 											<td>
-												<textarea id="mastercontrol.route.esig.timestamps.step3" rows="3" readonly="readonly" class="signaturefields" title="Step3 Date"></textarea>
+												<textarea id="mastercontrol.route.esig.timestamps.step3" rows="4" readonly="readonly" class="signaturefields" title="Step3 Date"></textarea>
 											</td>
 											<td>
-												<textarea id="mastercontrol.route.esig.sigstatus.step3" rows="3" readonly="readonly" class="signaturefields" title="Step3 Signoff Status"></textarea>
+												<textarea id="mastercontrol.route.esig.sigstatus.step3" rows="4" readonly="readonly" class="signaturefields" title="Step3 Signoff Status"></textarea>
 											</td>
 										</tr>
 									</tbody>

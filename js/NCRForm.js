@@ -65,7 +65,7 @@ function formStart(){
         });
         jQ("#btnLaunchCAPA").click(function () {
             mapSourceFields();
-            selectRouteLaunched("CAPANew", "mastercontrol.task.routes");
+            selectRouteLaunched("CAPA", "mastercontrol.task.routes");
             jQ("#mastercontrol\\.task\\.launch").click();
             capaRequired();                   
         });
@@ -101,9 +101,11 @@ function formStart(){
 
 }/* END start  */
 function setRequiredForStep(){
-    if (stepNumber == 2 && sFormStatus=='editstep' ){
+    if (stepNumber == 2 ){
         jQ('#txtTitle').addClass('required');
         jQ('label[for=txtTitle]').addClass('reqdLabel').text("* Title");
+        jQ('#txtContainment').addClass('required');
+        jQ('label[for=txtContainment]').addClass('reqdLabel').text("* Containment");
     }
 }
 
@@ -199,8 +201,8 @@ function investigationEval(){
 
  /* CAPA Required Functionality */
 function capaRequired(){
-    var oListFormNos = document.getElementById("mastercontrol.links.CAPANew");
-    var oViewButton = document.getElementById("mastercontrol.links.view.CAPANew");
+    var oListFormNos = document.getElementById("mastercontrol.links.CAPA");
+    var oViewButton = document.getElementById("mastercontrol.links.view.CAPA");
     var oLaunchbutton = document.getElementById("btnLaunchCAPA");
     var valueField = document.getElementById("txtCAPANumber");  
     var justField = document.getElementById("txtNoCAPAJustification"); 

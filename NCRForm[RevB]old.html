@@ -1,13 +1,13 @@
-<!--  Inside MasterControl  
+<!--  Inside MasterControl  -->
 <link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/SPScreenInt.css' type='text/css'>
 <link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/RHStyles.css' type='text/css'>
 <link rel='stylesheet' title='main' href='#mastercontrol.url#/css/Forms_HTML/NCRForm.css' type='text/css'>
--->
-<!--  Outside MasterControl -->
 
+<!--  Outside MasterControl 
 <link rel='stylesheet' title='main' href='css/SPScreenInt.css' type='text/css'>
 <link rel='stylesheet' title='main' href='css/RHStyles.css' type='text/css'>
 <link rel='stylesheet' title='main' href='css/NCRForm.css' type='text/css'>
+-->
 
 
 <style>
@@ -56,7 +56,7 @@ body{
 	<div class="container"><!-- container begin -->
 		<div class="formHeader"><!-- formHeader begin -->
 			<div id="mcPage_001" class="mcPage"><!-- page001 begin -->
-				<div class="formLogo"><img src="#mastercontrol.imagelink(logo.png)#" width="420px" height="78px" alt="Company Logo" /></div>
+				<div class="formLogo"><img src="#mastercontrol.imagelink(logo.jpg)#" width="125px" height="125px" alt="Company Logo" /></div>
 				<table width="100%" border="0" cellspacing="0" cellpadding="0"><!-- header table begin -->
 					<tr><!-- processName row begin -->
 						<td width="5%">&nbsp;</td>
@@ -69,7 +69,7 @@ body{
 						<td width="5%">&nbsp;</td>
 						<td width="20%" class="TopLabel"><label for="mastercontrol.form.number">Form Number</label></td>
 						<td width="1%">&nbsp;</td>
-						<td width="20%" class="TopLabel"><label for="mastercontrol.route.stepname">Current Step Name</label></td>
+						<td width="20%" class="TopLabel"><label for="mastercontrol.route.stepname">Step Name</label></td>
 						<td width="5%">&nbsp;</td>
 					</tr><!-- header first row end -->
 					<tr><!-- header second row begin -->
@@ -139,7 +139,8 @@ body{
           <input name="mastercontrol.route.stepnumber" type="hidden" id="mastercontrol.route.stepnumber" title="Step Number" />
           <input name="mastercontrol.route.stepid" type="hidden" id="mastercontrol.route.stepid" title="Step ID" />
           <input name="mastercontrol.form.title" type="hidden" id="mastercontrol.form.title" title="Form Title" />
-          <input name="mastercontrol.form.creator" type="hidden" id="mastercontrol.form.creator" title="Creator ID" />
+          <input name="mastercontrol.form.creator" type="hidden" id="mastercontrol.form.creator" title="Creator Name" />
+          <input name="mastercontrol.form.creatorname" type="hidden" id="mastercontrol.form.creatorname" title="Creator ID" />
           <input name="hlpSourceType" type="hidden" id="hlpSourceType" title="SourceType" value="NCR" />
           <input name="hlpNCRNumber" type="hidden" id="hlpNCRNumber" title="Source Number" />
           <input name="hlpNCRCreated" type="hidden" id="hlpNCRCreated" title="Source Create Date"  />
@@ -363,7 +364,7 @@ body{
 								</div>
 								<div class="leftField">
 									<div class="formField68">
-										<textarea id="txtDescriptionNCR" type="text" class="textarea" alt="Decription of Non-Conformance" rows="5" cols="20" title="Decription of Non-Conformance" maxlength="2000" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"> </textarea> 
+										<textarea id="txtDescriptionNCR" type="text" class="textarea" alt="Decription of Non-Conformance" rows="5" cols="20" title="Decription of Non-Conformance" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"> </textarea> 
 									</div>
 								</div>
 							</div>
@@ -438,14 +439,14 @@ body{
 					<span class="tabHeading">Initial Disposition</span>
 						<div class="sectionData">
 						<div class="sectionHeading">Initial Disposition</div>
-						<div> <input id="mastercontrol.form.number" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Form Number" title="" /></div>
+
 							<div id="divContainment" class="fieldRow">
 								<div class="leftLabel labelWidth20">
 									<label for="txtContainment">Containment:</label>
 								</div>
 								<div class="leftField">
 									<div class="formField68">
-										<textarea id="txtContainment" type="text" class="textarea" alt="Containment" title="Containment" rows="5" cols="20" maxlength="2000" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"> </textarea> 
+										<textarea id="txtContainment" type="text" class="textarea" alt="Containment" title="Containment" rows="5" cols="20" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"> </textarea> 
 									</div>
 								</div>
 							</div>
@@ -471,7 +472,7 @@ body{
 									<label for="txtInitialDispositionInstructions">Initial Disposition Instructions:</label>
 								</div>
 								<div class="leftField">
-									<textarea id="txtInitialDispositionInstructions" class="textarea initialDisNo" rows="5" cols="20" title="Initial Disposition Instructions" onKeyDown="SP_GrowUP(this);" maxlength="2000" onKeyUp="SP_GrowUP(this);"></textarea>
+									<textarea id="txtInitialDispositionInstructions" class="textarea initialDisNo" rows="5" cols="20" title="Initial Disposition Instructions" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
 								</div>
 							</div>
 							<div class="clearBoth"></div>
@@ -481,7 +482,7 @@ body{
 									<label for="txtInitialDispositionJustification">Initial Disposition Justification:</label>
 								</div>
 								<div class="leftField">
-									<textarea id="txtInitialDispositionJustification" class="textarea initialDisNo" rows="5" cols="20" title="Initial Disposition Justification" maxlength="2000" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
+									<textarea id="txtInitialDispositionJustification" class="textarea initialDisNo" rows="5" cols="20" title="Initial Disposition Justification" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
 								</div>
 							</div>
 							<div class="clearBoth"></div>
@@ -729,7 +730,7 @@ body{
 									<label for="txtInvestigationResults">Investigation Results:</label>
 								</div>
 								<div class="leftField">
-									<textarea id="txtInvestigationResults" class="textarea yesInvestigation" rows="5" cols="20" title="Investigation Results" maxlength="2000" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
+									<textarea id="txtInvestigationResults" class="textarea yesInvestigation" rows="5" cols="20" title="Investigation Results" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
 								</div>
 							</div>
 							<div class="clearBoth"></div>
@@ -739,7 +740,7 @@ body{
 									<label for="txtNoInvestigationJustification">No Investigation Justification:</label>
 								</div>
 								<div class="leftField">
-									<textarea id="txtNoInvestigationJustification" class="textarea noInvestigation" rows="5" cols="20" title="No Investigation Justification" maxlength="2000" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
+									<textarea id="txtNoInvestigationJustification" class="textarea noInvestigation" rows="5" cols="20" title="No Investigation Justification" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
 								</div>
 							</div>
 							<div class="clearBoth"></div>
@@ -747,13 +748,13 @@ body{
 						<div class="sectionData">
 						<div class="sectionHeading">Root Cause</div>
 
-							<div id="divtxtNCRRootCause" class="fieldRow">
+							<div id="divtxtCAPARootCause" class="fieldRow">
 								<div class="leftLabel labelWidth20">
-									<label for="mastercontrol.dataset.recordids.NCRRootCause.Name">Root Cause:</label>
+									<label for="mastercontrol.dataset.recordids.CAPARootCause.Name">Root Cause:</label>
 								</div>
 								<div class="leftField">
 									<div class="formField68">
-										<select id="mastercontrol.dataset.recordids.NCRRootCause.Name" class="selectfield" title="Root Cause"></select>
+										<select id="mastercontrol.dataset.recordids.CAPARootCause.Name" class="selectfield" title="Root Cause"></select>
 									</div>
 								</div>
 							</div>
@@ -890,14 +891,14 @@ body{
 								<div class="leftField">
 									<div class="formField34">
 										<input id="btnLaunchCAPA" type="button" class="formButton115" alt="Launch CAPA" title="Launch CAPA" value="Launch CAPA"/>
-										<input type="button" name="mastercontrol.links.view.CAPA" id="mastercontrol.links.view.CAPA" value="CAPA Form" class="formButton11 hide"  alt="View CAPA"/>
+										<input type="button" name="mastercontrol.links.view.CAPANew" id="mastercontrol.links.view.CAPANew" value="View Form" class="formButton11 hide"  alt="View Additional Action"/>
 									</div>
 
 									<div class="subLabel">
 										<label for="txtCAPANumber">CAPA Number:</label>
 									</div>
 									<div class="formField34">
-										<select id="mastercontrol.links.CAPA" multiple  size="1" name="mastercontrol.links.CAPA" title="CAPA Reference" style="display:none" >
+										<select id="mastercontrol.links.CAPANew" multiple  size="1" name="mastercontrol.links.CAPANew" title="CAPANew Reference" style="display:none" >
 		    							</select>
 										<input id="txtCAPANumber" type="text" class="textfield readonly" alt="CAPA Number" title="CAPA Number" readonly="readonly" />
 									</div>
@@ -910,7 +911,7 @@ body{
 									<label for="txtNoCAPAJustification">No CAPA Justification:</label>
 								</div>
 								<div class="leftField">
-									<textarea id="txtNoCAPAJustification" class="textarea" rows="5" cols="20" alt="txtNoCAPAJustification" title="No CAPA Justification" maxlength="2000" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
+									<textarea id="txtNoCAPAJustification" class="textarea" rows="5" cols="20" alt="txtNoCAPAJustification" title="No CAPA Justification" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
 								</div>
 							</div>
 							<div class="clearBoth"></div>
@@ -1005,7 +1006,7 @@ body{
 					<span class="tabHeading">Disposition</span>
 						<div class="sectionData">
 						<div class="sectionHeading">Disposition</div>
-						<div> <input id="mastercontrol.form.number" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Form Number" title="" /></div>
+
 							<div id="divFinalDisposition" class="fieldRow">
 								<div class="leftLabel labelWidth20">
 									<label for="">Disposition:</label>
@@ -1038,7 +1039,7 @@ body{
 									<label for="txtDispositionDescription">Describe Disposition:</label>
 								</div>
 								<div class="leftField">
-									<textarea id="txtDispositionDescription" class="textarea" rows="5" cols="20" title="Describe Disposition" maxlength="2000" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
+									<textarea id="txtDispositionDescription" class="textarea" rows="5" cols="20" title="Describe Disposition" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
 								</div>
 							</div>
 							<div class="clearBoth"></div>
@@ -1048,7 +1049,7 @@ body{
 									<label for="txtDispositionJustification">Disposition Justification:</label>
 								</div>
 								<div class="leftField">
-									<textarea id="txtDispositionJustification" class="textarea reqJust" rows="5" cols="20" title="Describe Disposition" maxlength="2000" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
+									<textarea id="txtDispositionJustification" class="textarea reqJust" rows="5" cols="20" title="Describe Disposition" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
 								</div>
 							</div>
 							<div class="clearBoth"></div>
@@ -1152,26 +1153,27 @@ body{
 		</div><!-- formBody end -->
 	</div><!-- container end -->
 </form><!-- form end -->
+<!--  Inside MasterControl  -->
 <script type='text/javascript' src='#mastercontrol.javascript(tabber.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(jquery-1.7.1.min.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(Calendar.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(StdLibrary.js)#'></script>
+
 <script type='text/javascript' src='#mastercontrol.javascript(RHLib.js)#'></script>
 <script type='text/javascript' src='#mastercontrol.javascript(NCRForm.js)#'></script>
 
-<!--  Inside MasterControl  -->
+<!--  Inside MasterControl  
 <script type='text/javascript' src='js/tabber.js'></script>
 <script type='text/javascript' src='js/jquery-1.7.1.min.js'></script>
 <script type='text/javascript' src='js/Calendar.js'></script>
 <script type='text/javascript' src='js/StdLibrary.js'></script>
 <script type='text/javascript' src='js/RHLib.js'></script>
 <script type='text/javascript' src='js/NCRForm.js'></script>
-
+-->
 <script language="javascript" type="text/javascript">
 var jQ = jQuery.noConflict();
 
 jQ(function() {
-
 	formStart();
 	retainHeightWidth();
 	setTaskTitle();

@@ -96,7 +96,6 @@ function formStart(){
     capaRequired();  
     makeAllReadOnly(sFormStatus);
     setRequiredForStep();
-    updateFormTitle();
 }
 
 function updateFormTitle(){

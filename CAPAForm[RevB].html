@@ -66,7 +66,7 @@ ul.tabbernav li.tabberactive a {
 						<td width="5%">&nbsp;</td>
 						<td width="20%" class="TopLabel"><label for="mastercontrol.form.number">Form Number</label></td>
 						<td width="1%">&nbsp;</td>
-						<td width="20%" class="TopLabel"><label for="mastercontrol.route.stepname">Step Name</label></td>
+						<td width="20%" class="TopLabel"><label for="mastercontrol.route.stepname">Current Step Name</label></td>
 						<td width="5%">&nbsp;</td>
 					</tr><!-- header first row end -->
 					<tr><!-- header second row begin -->
@@ -212,7 +212,7 @@ ul.tabbernav li.tabberactive a {
 									<label for="txtCAPAProblemDescription" class="reqdLabel">* Problem Description:</label>
 								</div>
 								<div class="leftField">
-									<textarea id="txtCAPAProblemDescription" class="textarea required" rows="5" cols="20" title="Problem Description" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
+									<textarea id="txtCAPAProblemDescription" class="textarea required" rows="5" cols="20" title="Problem Description" maxlength="2000" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
 								</div>
 							</div>
 							<div class="clearBoth"></div>
@@ -262,7 +262,7 @@ ul.tabbernav li.tabberactive a {
 										<input id="rbSeverityRisk" name="rbSeverityRisk" type="radio" class="radiobuttonfield" alt="Severity" title="Severity" value="1" />1
 										<input id="rbSeverityRisk" name="rbSeverityRisk" type="radio" class="radiobuttonfield" alt="Severity" title="Severity" value="2" />2
 										<input id="rbSeverityRisk" name="rbSeverityRisk" type="radio" class="radiobuttonfield" alt="Severity" title="Severity" value="3" />3
-										<input id="rbSeverityRisk" name="rbSeverityRisk" type="radio" class="radiobuttonfield" alt="Severity" title="Severity" value="4" checked="checked" />4
+										<input id="rbSeverityRisk" name="rbSeverityRisk" type="radio" class="radiobuttonfield" alt="Severity" title="Severity" value="4" />4
 									</div>
 								</div>
 							</div>
@@ -280,7 +280,7 @@ ul.tabbernav li.tabberactive a {
 										<input id="rbRecurrenceRisk" name="rbRecurrenceRisk" type="radio" class="radiobuttonfield" alt="Occurrence" title="Occurrence" value="3" />3
 										<input id="rbRecurrenceRisk" name="rbRecurrenceRisk" type="radio" class="radiobuttonfield" alt="Occurrence" title="Occurrence" value="4" />4
 										<input id="rbRecurrenceRisk" name="rbRecurrenceRisk" type="radio" class="radiobuttonfield" alt="Occurrence" title="Occurrence" value="5" />5
-										<input id="rbRecurrenceRisk" name="rbRecurrenceRisk" type="radio" class="radiobuttonfield" alt="Occurrence" title="Occurrence" value="6"checked="checked" />6
+										<input id="rbRecurrenceRisk" name="rbRecurrenceRisk" type="radio" class="radiobuttonfield" alt="Occurrence" title="Occurrence" value="6" />6
 									</div>
 								</div>
 							</div>
@@ -434,7 +434,7 @@ ul.tabbernav li.tabberactive a {
 									<label for="txtInvestigationResults">Investigation Results:</label>
 								</div>
 								<div class="leftField">
-									<textarea id="txtInvestigationResults" class="textarea yesInvestigation" rows="5" cols="20" title="Investigation Results" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
+									<textarea id="txtInvestigationResults" class="textarea yesInvestigation" rows="5" cols="20" title="Investigation Results" maxlength="2000" onKeyDown="SP_GrowUP(this);" onKeyUp="SP_GrowUP(this);"></textarea>
 								</div>
 							</div>
 							<div class="clearBoth"></div>
